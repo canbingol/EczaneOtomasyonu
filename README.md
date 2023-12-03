@@ -1,0 +1,2 @@
+# EczaneOtomasyonu
+ my OOP project
