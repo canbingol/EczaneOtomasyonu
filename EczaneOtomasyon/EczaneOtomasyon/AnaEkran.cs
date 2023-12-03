@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace EczaneOtomasyon
 {
-    public partial class Login : Form
+    public partial class AnaEkran : Form
     {
-        public Login()
+        public AnaEkran()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
