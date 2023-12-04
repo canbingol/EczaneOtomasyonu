@@ -12,3 +12,4 @@ C:\Users\canbi\OneDrive\Documents\GitHub\EczaneOtomasyonu\EczaneOtomasyon\Eczane
 C:\Users\canbi\OneDrive\Documents\GitHub\EczaneOtomasyonu\EczaneOtomasyon\EczaneOtomasyon\obj\Debug\EczaneOtomasyon.exe.manifest
 C:\Users\canbi\OneDrive\Documents\GitHub\EczaneOtomasyonu\EczaneOtomasyon\EczaneOtomasyon\obj\Debug\EczaneOtomasyon.application
 C:\Users\canbi\OneDrive\Documents\GitHub\EczaneOtomasyonu\EczaneOtomasyon\EczaneOtomasyon\obj\Debug\EczaneOtomasyon.Login.resources
+C:\Users\canbi\OneDrive\Documents\GitHub\EczaneOtomasyonu\EczaneOtomasyon\EczaneOtomasyon\obj\Debug\EczaneOtomasyon.AnaEkran.resources

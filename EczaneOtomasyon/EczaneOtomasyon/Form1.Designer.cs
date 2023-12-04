@@ -97,6 +97,7 @@
             this.btn_Giriş.TabIndex = 2;
             this.btn_Giriş.Text = "GİRİŞ";
             this.btn_Giriş.UseVisualStyleBackColor = false;
+            this.btn_Giriş.Click += new System.EventHandler(this.btn_Giriş_Click);
             // 
             // linkLabel1
             // 
@@ -137,6 +138,7 @@
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
