@@ -30,7 +30,7 @@ namespace EczaneOtomasyon.Forms.Hasta
                 string ad = txt_ad.Text;
                 string soyad = txt_soyad.Text;
                 string telNo = txt_tcNo.Text;
-                DateTime dogumTarihi = dogumtarihi.Value;
+                DateTime dogumTarihi = dogumtarihi.Value.Date;
                 string adres = txt_adres.Text;
 
 
@@ -112,6 +112,12 @@ namespace EczaneOtomasyon.Forms.Hasta
             {
                 e.Handled = true;
             }
+        }
+
+        private void btn_KayıtKapat_Click(object sender, EventArgs e)
+        {
+            HastaAnaSayfa anaSayfa = new HastaAnaSayfa();
+            anaSayfa.panel_işlemler.Visible = false;
         }
     }
 }

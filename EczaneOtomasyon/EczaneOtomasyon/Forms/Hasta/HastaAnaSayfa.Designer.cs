@@ -39,8 +39,8 @@
             this.btn_anaMenü = new System.Windows.Forms.ToolStripMenuItem();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.txt_hastaAra = new System.Windows.Forms.TextBox();
-            this.data_hasta = new System.Windows.Forms.DataGridView();
             this.btn_listele = new System.Windows.Forms.Button();
+            this.data_hasta = new System.Windows.Forms.DataGridView();
             this.panel_işlemler = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -57,7 +57,7 @@
             this.btn_anaMenü});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(777, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(843, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -83,6 +83,7 @@
             this.btn_hastaGüncelle.Name = "btn_hastaGüncelle";
             this.btn_hastaGüncelle.Size = new System.Drawing.Size(135, 24);
             this.btn_hastaGüncelle.Text = "Hasta Güncelle";
+            this.btn_hastaGüncelle.Click += new System.EventHandler(this.btn_hastaGüncelle_Click);
             // 
             // btn_anaMenü
             // 
@@ -98,7 +99,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 28);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(777, 44);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(843, 44);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
             // txt_hastaAra
@@ -112,6 +113,19 @@
             this.txt_hastaAra.TabIndex = 0;
             this.txt_hastaAra.Text = "Hasta Ara";
             this.txt_hastaAra.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_hastaAra.Click += new System.EventHandler(this.txt_hastaAra_Click);
+            this.txt_hastaAra.TextChanged += new System.EventHandler(this.txt_hastaAra_TextChanged);
+            // 
+            // btn_listele
+            // 
+            this.btn_listele.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_listele.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_listele.Location = new System.Drawing.Point(172, 3);
+            this.btn_listele.Name = "btn_listele";
+            this.btn_listele.Size = new System.Drawing.Size(94, 35);
+            this.btn_listele.TabIndex = 1;
+            this.btn_listele.Text = "LİSTELE";
+            this.btn_listele.UseVisualStyleBackColor = true;
             // 
             // data_hasta
             // 
@@ -143,6 +157,7 @@
             this.data_hasta.DefaultCellStyle = dataGridViewCellStyle3;
             this.data_hasta.Dock = System.Windows.Forms.DockStyle.Fill;
             this.data_hasta.GridColor = System.Drawing.Color.DodgerBlue;
+            this.data_hasta.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.data_hasta.Location = new System.Drawing.Point(0, 72);
             this.data_hasta.Name = "data_hasta";
             this.data_hasta.ReadOnly = true;
@@ -156,27 +171,16 @@
             this.data_hasta.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.data_hasta.RowHeadersWidth = 45;
             this.data_hasta.RowTemplate.Height = 24;
-            this.data_hasta.Size = new System.Drawing.Size(777, 697);
+            this.data_hasta.Size = new System.Drawing.Size(843, 697);
             this.data_hasta.TabIndex = 3;
-            // 
-            // btn_listele
-            // 
-            this.btn_listele.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_listele.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btn_listele.Location = new System.Drawing.Point(172, 3);
-            this.btn_listele.Name = "btn_listele";
-            this.btn_listele.Size = new System.Drawing.Size(94, 35);
-            this.btn_listele.TabIndex = 1;
-            this.btn_listele.Text = "LİSTELE";
-            this.btn_listele.UseVisualStyleBackColor = true;
             // 
             // panel_işlemler
             // 
             this.panel_işlemler.BackColor = System.Drawing.Color.White;
-            this.panel_işlemler.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel_işlemler.Location = new System.Drawing.Point(340, 72);
+            this.panel_işlemler.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel_işlemler.Location = new System.Drawing.Point(287, 74);
             this.panel_işlemler.Name = "panel_işlemler";
-            this.panel_işlemler.Size = new System.Drawing.Size(437, 697);
+            this.panel_işlemler.Size = new System.Drawing.Size(512, 695);
             this.panel_işlemler.TabIndex = 4;
             this.panel_işlemler.Visible = false;
             // 
@@ -184,7 +188,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(777, 769);
+            this.ClientSize = new System.Drawing.Size(843, 769);
             this.Controls.Add(this.panel_işlemler);
             this.Controls.Add(this.data_hasta);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -215,6 +219,6 @@
         private System.Windows.Forms.TextBox txt_hastaAra;
         private System.Windows.Forms.Button btn_listele;
         private System.Windows.Forms.DataGridView data_hasta;
-        private System.Windows.Forms.Panel panel_işlemler;
+        public  System.Windows.Forms.Panel panel_işlemler;
     }
 }

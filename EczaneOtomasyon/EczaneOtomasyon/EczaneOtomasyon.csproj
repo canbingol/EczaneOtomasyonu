@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationRevision>2</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -92,6 +92,12 @@
     <Compile Include="Forms\Hasta\HastaAnaSayfa.Designer.cs">
       <DependentUpon>HastaAnaSayfa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Hasta\HastaGüncelle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Hasta\HastaGüncelle.Designer.cs">
+      <DependentUpon>HastaGüncelle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Hasta\HastaKayıt.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Hasta\HastaAnaSayfa.resx">
       <DependentUpon>HastaAnaSayfa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Hasta\HastaGüncelle.resx">
+      <DependentUpon>HastaGüncelle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Hasta\HastaKayıt.resx">
       <DependentUpon>HastaKayıt.cs</DependentUpon>

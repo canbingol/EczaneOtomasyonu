@@ -81,7 +81,7 @@
             this.lbl_KullanıcıAdı.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.lbl_KullanıcıAdı.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lbl_KullanıcıAdı.ForeColor = System.Drawing.Color.Black;
-            this.lbl_KullanıcıAdı.Location = new System.Drawing.Point(481, 109);
+            this.lbl_KullanıcıAdı.Location = new System.Drawing.Point(474, 109);
             this.lbl_KullanıcıAdı.Name = "lbl_KullanıcıAdı";
             this.lbl_KullanıcıAdı.Size = new System.Drawing.Size(154, 29);
             this.lbl_KullanıcıAdı.TabIndex = 0;

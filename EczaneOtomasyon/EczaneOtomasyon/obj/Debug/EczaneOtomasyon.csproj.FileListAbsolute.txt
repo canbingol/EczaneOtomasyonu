@@ -15,3 +15,4 @@ C:\Users\canbi\OneDrive\Documents\GitHub\EczaneOtomasyonu\EczaneOtomasyon\Eczane
 C:\Users\canbi\OneDrive\Documents\GitHub\EczaneOtomasyonu\EczaneOtomasyon\EczaneOtomasyon\obj\Debug\EczaneOtomasyon.AnaEkran.resources
 C:\Users\canbi\OneDrive\Documents\GitHub\EczaneOtomasyonu\EczaneOtomasyon\EczaneOtomasyon\obj\Debug\EczaneOtomasyon.Forms.Hasta.HastaAnaSayfa.resources
 C:\Users\canbi\OneDrive\Documents\GitHub\EczaneOtomasyonu\EczaneOtomasyon\EczaneOtomasyon\obj\Debug\EczaneOtomasyon.Forms.Hasta.HastaKayıt.resources
+C:\Users\canbi\OneDrive\Documents\GitHub\EczaneOtomasyonu\EczaneOtomasyon\EczaneOtomasyon\obj\Debug\EczaneOtomasyon.Forms.Hasta.HastaGüncelle.resources

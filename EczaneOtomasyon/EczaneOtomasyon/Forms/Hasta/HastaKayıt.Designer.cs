@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HastaKayıt));
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -47,6 +48,8 @@
             this.lbl_kayıtAdresHata = new System.Windows.Forms.Label();
             this.lbl_kayıtTelHata = new System.Windows.Forms.Label();
             this.btn_hastaKaydet = new System.Windows.Forms.Button();
+            this.btn_KayıtKapat = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_KayıtKapat)).BeginInit();
             this.SuspendLayout();
             // 
             // label6
@@ -257,12 +260,25 @@
             this.btn_hastaKaydet.UseVisualStyleBackColor = true;
             this.btn_hastaKaydet.Click += new System.EventHandler(this.btn_hastaKaydet_Click);
             // 
+            // btn_KayıtKapat
+            // 
+            this.btn_KayıtKapat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_KayıtKapat.Image = ((System.Drawing.Image)(resources.GetObject("btn_KayıtKapat.Image")));
+            this.btn_KayıtKapat.Location = new System.Drawing.Point(438, 4);
+            this.btn_KayıtKapat.Name = "btn_KayıtKapat";
+            this.btn_KayıtKapat.Size = new System.Drawing.Size(35, 35);
+            this.btn_KayıtKapat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btn_KayıtKapat.TabIndex = 52;
+            this.btn_KayıtKapat.TabStop = false;
+            this.btn_KayıtKapat.Click += new System.EventHandler(this.btn_KayıtKapat_Click);
+            // 
             // HastaKayıt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(475, 675);
+            this.Controls.Add(this.btn_KayıtKapat);
             this.Controls.Add(this.btn_hastaKaydet);
             this.Controls.Add(this.lbl_kayıtTelHata);
             this.Controls.Add(this.lbl_kayıtAdresHata);
@@ -285,6 +301,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "HastaKayıt";
             this.Text = "HastaKayıt";
+            ((System.ComponentModel.ISupportInitialize)(this.btn_KayıtKapat)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -311,5 +328,6 @@
         public System.Windows.Forms.Label lbl_kayıtAdresHata;
         public System.Windows.Forms.Label lbl_kayıtTelHata;
         public System.Windows.Forms.Button btn_hastaKaydet;
+        private System.Windows.Forms.PictureBox btn_KayıtKapat;
     }
 }
