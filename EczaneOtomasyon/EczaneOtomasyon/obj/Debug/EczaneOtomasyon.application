@@ -7,14 +7,14 @@
     <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="EczaneOtomasyon.exe.manifest" size="3545">
+    <dependentAssembly dependencyType="install" codebase="EczaneOtomasyon.exe.manifest" size="3546">
       <assemblyIdentity name="EczaneOtomasyon.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>KDHrvwo+ksHm7LI+6LP8X/umdRKhOKZkdP+IbiAGdP4=</dsig:DigestValue>
+        <dsig:DigestValue>e2LcFyqFZiQDaMMIJ5KehfgteFnkBi9ynqmI7MANxnA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

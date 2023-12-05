@@ -19,7 +19,11 @@ namespace EczaneOtomasyon
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+           Forms.Hasta.HastaAnaSayfa anaSayfa= new Forms.Hasta.HastaAnaSayfa();
+            anaSayfa.TopLevel = false;
+            anaSayfa.AutoScroll = true;
+            panel_göster.Controls.Add(anaSayfa);
+            anaSayfa.Show();
         }
     }
 }

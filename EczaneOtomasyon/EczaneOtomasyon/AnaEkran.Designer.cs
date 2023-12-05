@@ -29,99 +29,111 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btn_satışİşlemleri = new System.Windows.Forms.Button();
+            this.btn_reçeteİşlemleri = new System.Windows.Forms.Button();
+            this.btn_ilaçİşlemleri = new System.Windows.Forms.Button();
+            this.btn_hastaİşlemleri = new System.Windows.Forms.Button();
+            this.btn_anaPanel = new System.Windows.Forms.Button();
+            this.panel_göster = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Location = new System.Drawing.Point(-1, -1);
+            this.panel1.Controls.Add(this.btn_satışİşlemleri);
+            this.panel1.Controls.Add(this.btn_reçeteİşlemleri);
+            this.panel1.Controls.Add(this.btn_ilaçİşlemleri);
+            this.panel1.Controls.Add(this.btn_hastaİşlemleri);
+            this.panel1.Controls.Add(this.btn_anaPanel);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(234, 851);
+            this.panel1.Size = new System.Drawing.Size(234, 716);
             this.panel1.TabIndex = 0;
             // 
-            // button1
+            // btn_satışİşlemleri
             // 
-            this.button1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button1.Location = new System.Drawing.Point(-6, 88);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(242, 70);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "ANA PANEL";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_satışİşlemleri.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btn_satışİşlemleri.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_satışİşlemleri.Location = new System.Drawing.Point(-6, 532);
+            this.btn_satışİşlemleri.Name = "btn_satışİşlemleri";
+            this.btn_satışİşlemleri.Size = new System.Drawing.Size(242, 70);
+            this.btn_satışİşlemleri.TabIndex = 0;
+            this.btn_satışİşlemleri.Text = "SATIŞ İŞLEMLERİ";
+            this.btn_satışİşlemleri.UseVisualStyleBackColor = false;
+            this.btn_satışİşlemleri.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btn_reçeteİşlemleri
             // 
-            this.button2.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button2.Location = new System.Drawing.Point(-6, 199);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(242, 70);
-            this.button2.TabIndex = 0;
-            this.button2.Text = " HASTA İŞLEMLERİ";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button1_Click);
+            this.btn_reçeteİşlemleri.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btn_reçeteİşlemleri.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_reçeteİşlemleri.Location = new System.Drawing.Point(-5, 421);
+            this.btn_reçeteİşlemleri.Name = "btn_reçeteİşlemleri";
+            this.btn_reçeteİşlemleri.Size = new System.Drawing.Size(240, 70);
+            this.btn_reçeteİşlemleri.TabIndex = 0;
+            this.btn_reçeteİşlemleri.Text = "REÇETE İŞLMELERİ";
+            this.btn_reçeteİşlemleri.UseVisualStyleBackColor = false;
+            this.btn_reçeteİşlemleri.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button3
+            // btn_ilaçİşlemleri
             // 
-            this.button3.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button3.Location = new System.Drawing.Point(-5, 310);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(240, 70);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "İLAÇ İŞLEMLERİ";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button1_Click);
+            this.btn_ilaçİşlemleri.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btn_ilaçİşlemleri.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_ilaçİşlemleri.Location = new System.Drawing.Point(-5, 310);
+            this.btn_ilaçİşlemleri.Name = "btn_ilaçİşlemleri";
+            this.btn_ilaçİşlemleri.Size = new System.Drawing.Size(240, 70);
+            this.btn_ilaçİşlemleri.TabIndex = 0;
+            this.btn_ilaçİşlemleri.Text = "İLAÇ İŞLEMLERİ";
+            this.btn_ilaçİşlemleri.UseVisualStyleBackColor = false;
+            this.btn_ilaçİşlemleri.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button4
+            // btn_hastaİşlemleri
             // 
-            this.button4.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button4.Location = new System.Drawing.Point(-5, 421);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(240, 70);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "REÇETE İŞLMELERİ";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button1_Click);
+            this.btn_hastaİşlemleri.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btn_hastaİşlemleri.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_hastaİşlemleri.Location = new System.Drawing.Point(-6, 199);
+            this.btn_hastaİşlemleri.Name = "btn_hastaİşlemleri";
+            this.btn_hastaİşlemleri.Size = new System.Drawing.Size(242, 70);
+            this.btn_hastaİşlemleri.TabIndex = 0;
+            this.btn_hastaİşlemleri.Text = " HASTA İŞLEMLERİ";
+            this.btn_hastaİşlemleri.UseVisualStyleBackColor = false;
+            this.btn_hastaİşlemleri.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button5
+            // btn_anaPanel
             // 
-            this.button5.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button5.Location = new System.Drawing.Point(-6, 532);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(242, 70);
-            this.button5.TabIndex = 0;
-            this.button5.Text = "SATIŞ İŞLEMLERİ";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button1_Click);
+            this.btn_anaPanel.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btn_anaPanel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_anaPanel.Location = new System.Drawing.Point(-6, 88);
+            this.btn_anaPanel.Name = "btn_anaPanel";
+            this.btn_anaPanel.Size = new System.Drawing.Size(242, 70);
+            this.btn_anaPanel.TabIndex = 0;
+            this.btn_anaPanel.Text = "ANA PANEL";
+            this.btn_anaPanel.UseVisualStyleBackColor = false;
+            this.btn_anaPanel.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // panel_göster
+            // 
+            this.panel_göster.Cursor = System.Windows.Forms.Cursors.No;
+            this.panel_göster.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_göster.Location = new System.Drawing.Point(234, 0);
+            this.panel_göster.Name = "panel_göster";
+            this.panel_göster.Size = new System.Drawing.Size(582, 716);
+            this.panel_göster.TabIndex = 1;
             // 
             // AnaEkran
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1000, 850);
+            this.ClientSize = new System.Drawing.Size(816, 716);
+            this.Controls.Add(this.panel_göster);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AnaEkran";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AnaEkran";
+            this.Text = " ";
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -130,10 +142,11 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btn_anaPanel;
+        private System.Windows.Forms.Button btn_reçeteİşlemleri;
+        private System.Windows.Forms.Button btn_ilaçİşlemleri;
+        private System.Windows.Forms.Button btn_hastaİşlemleri;
+        private System.Windows.Forms.Button btn_satışİşlemleri;
+        private System.Windows.Forms.Panel panel_göster;
     }
 }
