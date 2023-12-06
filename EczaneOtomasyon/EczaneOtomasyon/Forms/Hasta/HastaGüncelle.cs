@@ -48,7 +48,6 @@ namespace EczaneOtomasyon.Forms.Hasta
         private void btn_hastaGüncelle_Click(object sender, EventArgs e)
         {
 
-
             HastaMetod metod = new HastaMetod();
             try
             {
@@ -84,7 +83,7 @@ namespace EczaneOtomasyon.Forms.Hasta
                 {
                     conn.Open();
 
-                    OleDbCommand hastaGuncelle = new OleDbCommand("UPDATE Hastalar SET Adı = @p1, Soyadı = @p2, Adres = @p3, Telno = @p4, Dogumtarihi = @p5 WHERE Tc = @p6", conn);
+                    OleDbCommand hastaGuncelle = new OleDbCommand("UPDATE Hastalar SET adı = @p1, soyadı = @p2, adres = @p3, Telno = @p4, dogumtarihi = @p5 WHERE tc = @p6", conn);
                     hastaGuncelle.Parameters.AddWithValue("@p1", ad);
                     hastaGuncelle.Parameters.AddWithValue("@p2", soyad);
                     hastaGuncelle.Parameters.AddWithValue("@p6", tcNo);

@@ -89,7 +89,7 @@ namespace EczaneOtomasyon.Forms.Hasta
                 else
                 {
                     con.Open();
-                    OleDbCommand hastaEkle = new OleDbCommand("INSERT INTO Hastalar (Adı, Soyadı, Tc, Adres, Telno, Dogumtarihi) VALUES (@ad, @soyad,@tcno, @adres,  @telno, @dogumtarihi)", con);
+                    OleDbCommand hastaEkle = new OleDbCommand("INSERT INTO Hastalar (adı, soyadı, tc, adres, telno, dogumtarihi) VALUES (@ad, @soyad,@tcno, @adres,  @telno, @dogumtarihi)", con);
                     hastaEkle.Parameters.AddWithValue("@ad", ad);
                     hastaEkle.Parameters.AddWithValue("@soyad", soyad);
                     hastaEkle.Parameters.AddWithValue("@tcno", tcNo);

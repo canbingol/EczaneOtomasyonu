@@ -105,6 +105,18 @@
       <DependentUpon>HastaKayıt.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Hasta\HastaMetod.cs" />
+    <Compile Include="Forms\İlaç\İlaçAnaSayfa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\İlaç\İlaçAnaSayfa.Designer.cs">
+      <DependentUpon>İlaçAnaSayfa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\İlaç\İlaçListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\İlaç\İlaçListesi.Designer.cs">
+      <DependentUpon>İlaçListesi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AnaEkran.resx">
@@ -121,6 +133,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Hasta\HastaKayıt.resx">
       <DependentUpon>HastaKayıt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\İlaç\İlaçAnaSayfa.resx">
+      <DependentUpon>İlaçAnaSayfa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\İlaç\İlaçListesi.resx">
+      <DependentUpon>İlaçListesi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

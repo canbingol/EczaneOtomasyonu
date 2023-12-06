@@ -17,13 +17,25 @@ namespace EczaneOtomasyon
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        
+
+        private void btn_hastaİşlemleri_Click(object sender, EventArgs e)
         {
-           Forms.Hasta.HastaAnaSayfa anaSayfa= new Forms.Hasta.HastaAnaSayfa();
+            Forms.Hasta.HastaAnaSayfa anaSayfa = new Forms.Hasta.HastaAnaSayfa();
             anaSayfa.TopLevel = false;
             anaSayfa.AutoScroll = true;
             panel_göster.Controls.Add(anaSayfa);
             anaSayfa.Show();
+        }
+
+        private void btn_ilaçİşlemleri_Click(object sender, EventArgs e)
+        {
+            Forms.İlaç.İlaçAnaSayfa ilaç = new Forms.İlaç.İlaçAnaSayfa();
+            ilaç.TopLevel = false;
+            ilaç.AutoScroll = true;
+            panel_göster.Controls.Add(ilaç);
+            ilaç.Show();
+            
         }
     }
 }

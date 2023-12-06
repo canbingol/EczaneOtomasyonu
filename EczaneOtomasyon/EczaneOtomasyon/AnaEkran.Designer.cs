@@ -62,7 +62,6 @@
             this.btn_satışİşlemleri.TabIndex = 0;
             this.btn_satışİşlemleri.Text = "SATIŞ İŞLEMLERİ";
             this.btn_satışİşlemleri.UseVisualStyleBackColor = false;
-            this.btn_satışİşlemleri.Click += new System.EventHandler(this.button1_Click);
             // 
             // btn_reçeteİşlemleri
             // 
@@ -74,7 +73,6 @@
             this.btn_reçeteİşlemleri.TabIndex = 0;
             this.btn_reçeteİşlemleri.Text = "REÇETE İŞLMELERİ";
             this.btn_reçeteİşlemleri.UseVisualStyleBackColor = false;
-            this.btn_reçeteİşlemleri.Click += new System.EventHandler(this.button1_Click);
             // 
             // btn_ilaçİşlemleri
             // 
@@ -86,7 +84,7 @@
             this.btn_ilaçİşlemleri.TabIndex = 0;
             this.btn_ilaçİşlemleri.Text = "İLAÇ İŞLEMLERİ";
             this.btn_ilaçİşlemleri.UseVisualStyleBackColor = false;
-            this.btn_ilaçİşlemleri.Click += new System.EventHandler(this.button1_Click);
+            this.btn_ilaçİşlemleri.Click += new System.EventHandler(this.btn_ilaçİşlemleri_Click);
             // 
             // btn_hastaİşlemleri
             // 
@@ -98,7 +96,7 @@
             this.btn_hastaİşlemleri.TabIndex = 0;
             this.btn_hastaİşlemleri.Text = " HASTA İŞLEMLERİ";
             this.btn_hastaİşlemleri.UseVisualStyleBackColor = false;
-            this.btn_hastaİşlemleri.Click += new System.EventHandler(this.button1_Click);
+            this.btn_hastaİşlemleri.Click += new System.EventHandler(this.btn_hastaİşlemleri_Click);
             // 
             // btn_anaPanel
             // 
@@ -110,7 +108,6 @@
             this.btn_anaPanel.TabIndex = 0;
             this.btn_anaPanel.Text = "ANA PANEL";
             this.btn_anaPanel.UseVisualStyleBackColor = false;
-            this.btn_anaPanel.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel_göster
             // 

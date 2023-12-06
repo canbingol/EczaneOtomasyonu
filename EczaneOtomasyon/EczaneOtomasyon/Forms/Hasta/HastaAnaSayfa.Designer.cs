@@ -154,7 +154,6 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.data_hasta.DefaultCellStyle = dataGridViewCellStyle3;
-            this.data_hasta.Dock = System.Windows.Forms.DockStyle.Fill;
             this.data_hasta.GridColor = System.Drawing.Color.DodgerBlue;
             this.data_hasta.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.data_hasta.Location = new System.Drawing.Point(0, 72);
@@ -170,8 +169,9 @@
             this.data_hasta.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.data_hasta.RowHeadersWidth = 45;
             this.data_hasta.RowTemplate.Height = 24;
-            this.data_hasta.Size = new System.Drawing.Size(843, 697);
+            this.data_hasta.Size = new System.Drawing.Size(804, 697);
             this.data_hasta.TabIndex = 3;
+            this.data_hasta.DoubleClick += new System.EventHandler(this.data_hasta_DoubleClick);
             // 
             // HastaAnaSayfa
             // 

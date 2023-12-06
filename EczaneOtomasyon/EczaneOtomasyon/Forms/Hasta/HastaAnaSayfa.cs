@@ -106,5 +106,10 @@ namespace EczaneOtomasyon.Forms.Hasta
 
             kayıt.Show();
         }
+
+        private void data_hasta_DoubleClick(object sender, EventArgs e)
+        {
+
+        }
     }
 }
