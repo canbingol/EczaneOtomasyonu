@@ -41,7 +41,6 @@
             this.txt_hastaAra = new System.Windows.Forms.TextBox();
             this.btn_listele = new System.Windows.Forms.Button();
             this.data_hasta = new System.Windows.Forms.DataGridView();
-            this.panel_işlemler = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data_hasta)).BeginInit();
@@ -174,22 +173,11 @@
             this.data_hasta.Size = new System.Drawing.Size(843, 697);
             this.data_hasta.TabIndex = 3;
             // 
-            // panel_işlemler
-            // 
-            this.panel_işlemler.BackColor = System.Drawing.Color.White;
-            this.panel_işlemler.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel_işlemler.Location = new System.Drawing.Point(287, 74);
-            this.panel_işlemler.Name = "panel_işlemler";
-            this.panel_işlemler.Size = new System.Drawing.Size(512, 695);
-            this.panel_işlemler.TabIndex = 4;
-            this.panel_işlemler.Visible = false;
-            // 
             // HastaAnaSayfa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(843, 769);
-            this.Controls.Add(this.panel_işlemler);
             this.Controls.Add(this.data_hasta);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
@@ -219,6 +207,5 @@
         private System.Windows.Forms.TextBox txt_hastaAra;
         private System.Windows.Forms.Button btn_listele;
         private System.Windows.Forms.DataGridView data_hasta;
-        public  System.Windows.Forms.Panel panel_işlemler;
     }
 }

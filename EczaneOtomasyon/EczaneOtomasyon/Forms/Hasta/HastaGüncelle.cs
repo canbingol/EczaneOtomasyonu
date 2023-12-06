@@ -16,16 +16,39 @@ namespace EczaneOtomasyon.Forms.Hasta
         public HastaGüncelle()
         {
             InitializeComponent();
+            txt_tcNo.TextChanged += TextBox_TextChanged;
+            txt_ad.TextChanged += TextBox_TextChanged;
+            txt_soyad.TextChanged += TextBox_TextChanged;
+            txt_adres.TextChanged += TextBox_TextChanged;
+            txt_telNo.TextChanged += TextBox_TextChanged;
         }
 
-        private void txt_tcNo_KeyPress(object sender, KeyPressEventArgs e)
+        private void TextBox_TextChanged(object sender, EventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
-                e.Handled = true;
+            // TextBox'lardaki değerleri kontrol et
+            string deger1 = txt_tcNo.Text;
+            string deger2 = txt_ad.Text;
+            string deger3 = txt_soyad.Text;
+            string deger4 = txt_adres.Text;
+            string deger5 = txt_telNo.Text;
+
+
+            // Eğer herhangi bir TextBox boşsa, arka plan rengini kırmızı yap; aksi halde beyaz yap
+            if (string.IsNullOrEmpty(deger1) || string.IsNullOrEmpty(deger2) ||
+                string.IsNullOrEmpty(deger3) || string.IsNullOrEmpty(deger4) || string.IsNullOrEmpty(deger5))
+            {
+                btn_hastaGüncelle.BackColor = System.Drawing.Color.Red;
+            }
+            else
+            {
+                btn_hastaGüncelle.BackColor = System.Drawing.Color.White;
+            }
         }
         OleDbConnection conn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=EczaneVeri.accdb");
         private void btn_hastaGüncelle_Click(object sender, EventArgs e)
         {
+
+
             HastaMetod metod = new HastaMetod();
             try
             {
@@ -108,9 +131,85 @@ namespace EczaneOtomasyon.Forms.Hasta
 
         }
 
-        private void label5_Click(object sender, EventArgs e)
+        #region  textBox kontrolleri
+        private void txt_telNo_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+                e.Handled = true;
+        }
+        private void txt_tcNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+                e.Handled = true;
+        }
+        new void MouseHover(TextBox txt)
+        {
+            txt.BorderStyle = BorderStyle.FixedSingle;
+            txt.BackColor = Color.Silver;
+            txt.ForeColor = Color.DodgerBlue;
+        }
+        new void MouseLeave(TextBox txt)
+        {
+            txt.BorderStyle = BorderStyle.None;
+            txt.BackColor = Color.White;
+            txt.ForeColor = Color.Black;
+        }
 
+        private void txt_tcNo_MouseHover(object sender, EventArgs e)
+        {
+            MouseHover(txt_tcNo);
+        }
+
+        private void txt_tcNo_MouseLeave(object sender, EventArgs e)
+        {
+            MouseLeave(txt_tcNo);
+        }
+
+        private void txt_ad_MouseHover(object sender, EventArgs e)
+        {
+            MouseHover(txt_ad);
+        }
+
+        private void txt_ad_MouseLeave(object sender, EventArgs e)
+        {
+            MouseLeave(txt_ad);
+        }
+
+        private void txt_soyad_MouseHover(object sender, EventArgs e)
+        {
+            MouseHover(txt_soyad);
+        }
+
+        private void txt_soyad_MouseLeave(object sender, EventArgs e)
+        {
+            MouseLeave(txt_soyad);
+        }
+
+        private void txt_telNo_MouseHover(object sender, EventArgs e)
+        {
+            MouseHover(txt_telNo);
+        }
+
+        private void txt_telNo_MouseLeave(object sender, EventArgs e)
+        {
+            MouseLeave(txt_telNo);
+        }
+
+        private void txt_adres_MouseHover(object sender, EventArgs e)
+        {
+            MouseHover(txt_adres);
+        }
+
+        private void txt_adres_MouseLeave(object sender, EventArgs e)
+        {
+            MouseLeave(txt_adres);
+        }
+
+        #endregion
+
+        private void btn_EkranKapat_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

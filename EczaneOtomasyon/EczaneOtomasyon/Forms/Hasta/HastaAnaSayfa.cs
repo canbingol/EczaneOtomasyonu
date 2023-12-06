@@ -14,6 +14,8 @@ namespace EczaneOtomasyon.Forms.Hasta
     public partial class HastaAnaSayfa : Form
     {
         string connection = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=EczaneVeri.accdb";
+        HastaKayıt kayıt = new HastaKayıt();
+        HastaGüncelle güncelle = new HastaGüncelle();
 
         public void Listele()
         {
@@ -32,25 +34,12 @@ namespace EczaneOtomasyon.Forms.Hasta
 
         private void HastaAnaSayfa_Load(object sender, EventArgs e)
         {
-
             Listele();
         }
 
         private void btn_hastaListele_Click(object sender, EventArgs e)
         {
-            if (panel_işlemler.Visible == true)
-                panel_işlemler.Visible = false;
             Listele();
-        }
-
-        private void btn_hastaKaydet_Click(object sender, EventArgs e)
-        {
-            panel_işlemler.Visible = true;
-            HastaKayıt kayıt = new HastaKayıt();
-            kayıt.TopLevel = false;
-            kayıt.AutoScroll = true;
-            panel_işlemler.Controls.Add(kayıt);
-            kayıt.Show();
         }
 
         private void txt_hastaAra_TextChanged(object sender, EventArgs e)
@@ -99,14 +88,23 @@ namespace EczaneOtomasyon.Forms.Hasta
 
         private void btn_hastaGüncelle_Click(object sender, EventArgs e)
         {
-            if (panel_işlemler.Visible == false)
-                panel_işlemler.Visible = true;
+            if (kayıt.Visible)
+                kayıt.Visible = false;
 
-            HastaGüncelle hasta = new HastaGüncelle();
-            hasta.TopLevel = false;
-            hasta.AutoScroll = true;
-            panel_işlemler.Controls.Add(hasta);
-            hasta.Show();
+            if (!güncelle.Visible)
+                güncelle.Visible = true;
+
+            güncelle.Show();
+        }
+        private void btn_hastaKaydet_Click(object sender, EventArgs e)
+        {/*
+            if (!kayıt.Visible)
+                kayıt.Visible = true;
+
+            if (güncelle.Visible)
+                güncelle.Visible = false;*/
+
+            kayıt.Show();
         }
     }
 }

@@ -117,7 +117,7 @@
             this.txt_KullanıcıAdı.Multiline = true;
             this.txt_KullanıcıAdı.Name = "txt_KullanıcıAdı";
             this.txt_KullanıcıAdı.Size = new System.Drawing.Size(217, 32);
-            this.txt_KullanıcıAdı.TabIndex = 1;
+            this.txt_KullanıcıAdı.TabIndex = 0;
             // 
             // btn_Giriş
             // 
@@ -161,6 +161,7 @@
             this.PanelYeniKayıt.Controls.Add(this.btn_kayıtKapat);
             this.PanelYeniKayıt.Controls.Add(this.label5);
             this.PanelYeniKayıt.Controls.Add(this.lbl_yeniParolaTekrar);
+            this.PanelYeniKayıt.Controls.Add(this.panel_SifreDegistir);
             this.PanelYeniKayıt.Controls.Add(this.lbl_hataKayıtParola2);
             this.PanelYeniKayıt.Controls.Add(this.lbl_hataKayıtParola1);
             this.PanelYeniKayıt.Controls.Add(this.lbl_hataKayıtKullanıcıAdı);
@@ -339,7 +340,7 @@
             this.panel_SifreDegistir.Controls.Add(this.label1);
             this.panel_SifreDegistir.Controls.Add(this.txt_parolaKullanıcıAdı);
             this.panel_SifreDegistir.Controls.Add(this.label3);
-            this.panel_SifreDegistir.Location = new System.Drawing.Point(447, 141);
+            this.panel_SifreDegistir.Location = new System.Drawing.Point(41, 135);
             this.panel_SifreDegistir.Name = "panel_SifreDegistir";
             this.panel_SifreDegistir.Size = new System.Drawing.Size(444, 474);
             this.panel_SifreDegistir.TabIndex = 6;
@@ -528,7 +529,6 @@
             this.Controls.Add(this.btn_cıkıs);
             this.Controls.Add(this.lbl_hataParola);
             this.Controls.Add(this.lbl_hataKullanıcıAdı);
-            this.Controls.Add(this.panel_SifreDegistir);
             this.Controls.Add(this.PanelYeniKayıt);
             this.Controls.Add(this.btn_yeniKullanıcı);
             this.Controls.Add(this.btn_sifreUnuttum);
