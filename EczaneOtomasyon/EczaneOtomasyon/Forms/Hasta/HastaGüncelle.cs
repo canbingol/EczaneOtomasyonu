@@ -32,7 +32,7 @@ namespace EczaneOtomasyon.Forms.Hasta
                 string tcNo = txt_tcNo.Text;
                 string ad = txt_ad.Text;
                 string soyad = txt_soyad.Text;
-                string telNo = txt_adres.Text;
+                string telNo = txt_telNo.Text;
                 DateTime dogumTarihi = dogumtarihi.Value.Date;
                 string adres = txt_adres.Text;
 
@@ -61,15 +61,25 @@ namespace EczaneOtomasyon.Forms.Hasta
                 {
                     conn.Open();
 
-                    OleDbCommand hastaGuncelle = new OleDbCommand("UPDATE Hastalar SET Adı = @p1, Soyadı = @p2, Adres = @p5, Telno = @p3, Dogumtarihi = @p4 WHERE tcno = @p6", conn);
+                    OleDbCommand hastaGuncelle = new OleDbCommand("UPDATE Hastalar SET Adı = @p1, Soyadı = @p2, Adres = @p3, Telno = @p4, Dogumtarihi = @p5 WHERE Tc = @p6", conn);
                     hastaGuncelle.Parameters.AddWithValue("@p1", ad);
                     hastaGuncelle.Parameters.AddWithValue("@p2", soyad);
-                    hastaGuncelle.Parameters.AddWithValue("@p3", telNo);
-                    hastaGuncelle.Parameters.AddWithValue("@p4", dogumTarihi);
-                    hastaGuncelle.Parameters.AddWithValue("@p5", adres);
                     hastaGuncelle.Parameters.AddWithValue("@p6", tcNo);
+                    hastaGuncelle.Parameters.AddWithValue("@p3", adres);
+                    hastaGuncelle.Parameters.AddWithValue("@p4", telNo);
+                    hastaGuncelle.Parameters.AddWithValue("@p5", dogumTarihi);
 
-                    metod.Temizle(txt_tcNo, txt_ad, txt_soyad, txt_telNo, txt_adres);
+                    //    metod.Temizle(txt_tcNo, txt_ad, txt_soyad, txt_telNo, txt_adres);
+                    if (conn.State == ConnectionState.Open)
+                    {
+                        // Bağlantı açık
+                        MessageBox.Show("Veritabanı bağlantısı açık.");
+                    }
+                    else
+                    {
+                        // Bağlantı kapalı
+                        MessageBox.Show("Veritabanı bağlantısı kapalı.");
+                    }
 
                     int sayac = hastaGuncelle.ExecuteNonQuery();
                     conn.Close();
@@ -89,12 +99,12 @@ namespace EczaneOtomasyon.Forms.Hasta
                 }
             }
 
-            catch (Exception ex)
+            catch (OleDbException sqlEx)
             {
-                MessageBox.Show("Hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("SQL Hatası: " + sqlEx.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 metod.Temizle(txt_tcNo, txt_ad, txt_soyad, txt_telNo, txt_adres);
-
             }
+
 
         }
 
