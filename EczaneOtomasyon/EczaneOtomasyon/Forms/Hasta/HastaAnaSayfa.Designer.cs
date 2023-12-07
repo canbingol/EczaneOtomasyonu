@@ -41,6 +41,7 @@
             this.txt_hastaAra = new System.Windows.Forms.TextBox();
             this.btn_listele = new System.Windows.Forms.Button();
             this.data_hasta = new System.Windows.Forms.DataGridView();
+            this.panel_hastaAnaSayfa = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data_hasta)).BeginInit();
@@ -56,7 +57,7 @@
             this.btn_anaMenü});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(928, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(928, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -64,7 +65,7 @@
             // 
             this.btn_hastaListele.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btn_hastaListele.Name = "btn_hastaListele";
-            this.btn_hastaListele.Size = new System.Drawing.Size(108, 26);
+            this.btn_hastaListele.Size = new System.Drawing.Size(108, 24);
             this.btn_hastaListele.Text = "Hasta Listesi";
             this.btn_hastaListele.Click += new System.EventHandler(this.btn_hastaListele_Click);
             // 
@@ -72,7 +73,7 @@
             // 
             this.btn_hastaKaydet.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btn_hastaKaydet.Name = "btn_hastaKaydet";
-            this.btn_hastaKaydet.Size = new System.Drawing.Size(119, 26);
+            this.btn_hastaKaydet.Size = new System.Drawing.Size(119, 24);
             this.btn_hastaKaydet.Text = "hasta Kaydet";
             this.btn_hastaKaydet.Click += new System.EventHandler(this.btn_hastaKaydet_Click);
             // 
@@ -80,14 +81,14 @@
             // 
             this.btn_hastaGüncelle.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_hastaGüncelle.Name = "btn_hastaGüncelle";
-            this.btn_hastaGüncelle.Size = new System.Drawing.Size(135, 26);
+            this.btn_hastaGüncelle.Size = new System.Drawing.Size(135, 24);
             this.btn_hastaGüncelle.Text = "Hasta Güncelle";
             this.btn_hastaGüncelle.Click += new System.EventHandler(this.btn_hastaGüncelle_Click);
             // 
             // btn_anaMenü
             // 
             this.btn_anaMenü.Name = "btn_anaMenü";
-            this.btn_anaMenü.Size = new System.Drawing.Size(90, 26);
+            this.btn_anaMenü.Size = new System.Drawing.Size(90, 24);
             this.btn_anaMenü.Text = "Ana Manü";
             // 
             // flowLayoutPanel1
@@ -96,7 +97,7 @@
             this.flowLayoutPanel1.Controls.Add(this.txt_hastaAra);
             this.flowLayoutPanel1.Controls.Add(this.btn_listele);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 30);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 28);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(928, 44);
             this.flowLayoutPanel1.TabIndex = 2;
@@ -157,7 +158,7 @@
             this.data_hasta.Dock = System.Windows.Forms.DockStyle.Fill;
             this.data_hasta.GridColor = System.Drawing.Color.DodgerBlue;
             this.data_hasta.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.data_hasta.Location = new System.Drawing.Point(0, 74);
+            this.data_hasta.Location = new System.Drawing.Point(0, 72);
             this.data_hasta.Name = "data_hasta";
             this.data_hasta.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -170,14 +171,26 @@
             this.data_hasta.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.data_hasta.RowHeadersWidth = 45;
             this.data_hasta.RowTemplate.Height = 24;
-            this.data_hasta.Size = new System.Drawing.Size(928, 695);
+            this.data_hasta.Size = new System.Drawing.Size(928, 697);
             this.data_hasta.TabIndex = 3;
+            // 
+            // panel_hastaAnaSayfa
+            // 
+            this.panel_hastaAnaSayfa.BackColor = System.Drawing.Color.White;
+            this.panel_hastaAnaSayfa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_hastaAnaSayfa.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel_hastaAnaSayfa.Location = new System.Drawing.Point(0, 283);
+            this.panel_hastaAnaSayfa.Name = "panel_hastaAnaSayfa";
+            this.panel_hastaAnaSayfa.Size = new System.Drawing.Size(928, 486);
+            this.panel_hastaAnaSayfa.TabIndex = 4;
+            this.panel_hastaAnaSayfa.Visible = false;
             // 
             // HastaAnaSayfa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(928, 769);
+            this.Controls.Add(this.panel_hastaAnaSayfa);
             this.Controls.Add(this.data_hasta);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
@@ -207,5 +220,6 @@
         private System.Windows.Forms.TextBox txt_hastaAra;
         private System.Windows.Forms.Button btn_listele;
         private System.Windows.Forms.DataGridView data_hasta;
+        private System.Windows.Forms.Panel panel_hastaAnaSayfa;
     }
 }

@@ -44,5 +44,9 @@ namespace EczaneOtomasyon
             ilaç.Show();
         }
 
+        private void btn_çıkış_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

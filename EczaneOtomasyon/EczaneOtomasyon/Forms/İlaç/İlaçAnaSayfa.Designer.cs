@@ -28,103 +28,120 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.ilaçListesiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.txt_ilaçListesi = new System.Windows.Forms.ToolStripMenuItem();
             this.ağrıKesicilerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kalpİlaçlarıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alerjiİlaçlarıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.antibiyotiklerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.diyabetİlaçlarıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ilaçKaydetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ilaçGüncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.anaSayfaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.data_ilaçlar = new System.Windows.Forms.DataGridView();
-            this.antideprToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tansiyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.diğerleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.btn_ilaçkaydet = new System.Windows.Forms.ToolStripMenuItem();
+            this.ilaçGüncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.anaSayfaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.antideprToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.data_ilaçlar = new System.Windows.Forms.DataGridView();
+            this.txt_listele = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data_ilaçlar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ilaçListesiToolStripMenuItem,
-            this.ilaçKaydetToolStripMenuItem,
+            this.txt_ilaçListesi,
+            this.btn_ilaçkaydet,
             this.ilaçGüncelleToolStripMenuItem,
-            this.anaSayfaToolStripMenuItem});
+            this.anaSayfaToolStripMenuItem,
+            this.txt_listele});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(824, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // ilaçListesiToolStripMenuItem
+            // txt_ilaçListesi
             // 
-            this.ilaçListesiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.txt_ilaçListesi.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ağrıKesicilerToolStripMenuItem,
             this.kalpİlaçlarıToolStripMenuItem,
             this.alerjiİlaçlarıToolStripMenuItem,
             this.antibiyotiklerToolStripMenuItem,
             this.diyabetİlaçlarıToolStripMenuItem,
-            this.antideprToolStripMenuItem,
             this.tansiyToolStripMenuItem,
             this.diğerleriToolStripMenuItem});
-            this.ilaçListesiToolStripMenuItem.Name = "ilaçListesiToolStripMenuItem";
-            this.ilaçListesiToolStripMenuItem.Size = new System.Drawing.Size(90, 26);
-            this.ilaçListesiToolStripMenuItem.Text = "İlaç Listesi";
+            this.txt_ilaçListesi.Name = "txt_ilaçListesi";
+            this.txt_ilaçListesi.Size = new System.Drawing.Size(90, 24);
+            this.txt_ilaçListesi.Text = "İlaç Listesi";
             // 
             // ağrıKesicilerToolStripMenuItem
             // 
             this.ağrıKesicilerToolStripMenuItem.Name = "ağrıKesicilerToolStripMenuItem";
-            this.ağrıKesicilerToolStripMenuItem.Size = new System.Drawing.Size(197, 26);
+            this.ağrıKesicilerToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
             this.ağrıKesicilerToolStripMenuItem.Text = "Ağrı Kesiciler";
             // 
             // kalpİlaçlarıToolStripMenuItem
             // 
             this.kalpİlaçlarıToolStripMenuItem.Name = "kalpİlaçlarıToolStripMenuItem";
-            this.kalpİlaçlarıToolStripMenuItem.Size = new System.Drawing.Size(197, 26);
+            this.kalpİlaçlarıToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
             this.kalpİlaçlarıToolStripMenuItem.Text = "Kalp İlaçları";
             // 
             // alerjiİlaçlarıToolStripMenuItem
             // 
             this.alerjiİlaçlarıToolStripMenuItem.Name = "alerjiİlaçlarıToolStripMenuItem";
-            this.alerjiİlaçlarıToolStripMenuItem.Size = new System.Drawing.Size(197, 26);
+            this.alerjiİlaçlarıToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
             this.alerjiİlaçlarıToolStripMenuItem.Text = "Alerji İlaçları";
             // 
             // antibiyotiklerToolStripMenuItem
             // 
             this.antibiyotiklerToolStripMenuItem.Name = "antibiyotiklerToolStripMenuItem";
-            this.antibiyotiklerToolStripMenuItem.Size = new System.Drawing.Size(197, 26);
+            this.antibiyotiklerToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
             this.antibiyotiklerToolStripMenuItem.Text = "Antibiyotikler";
             // 
             // diyabetİlaçlarıToolStripMenuItem
             // 
             this.diyabetİlaçlarıToolStripMenuItem.Name = "diyabetİlaçlarıToolStripMenuItem";
-            this.diyabetİlaçlarıToolStripMenuItem.Size = new System.Drawing.Size(197, 26);
+            this.diyabetİlaçlarıToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
             this.diyabetİlaçlarıToolStripMenuItem.Text = "Diyabet İlaçları";
             // 
-            // ilaçKaydetToolStripMenuItem
+            // tansiyToolStripMenuItem
             // 
-            this.ilaçKaydetToolStripMenuItem.Name = "ilaçKaydetToolStripMenuItem";
-            this.ilaçKaydetToolStripMenuItem.Size = new System.Drawing.Size(96, 26);
-            this.ilaçKaydetToolStripMenuItem.Text = "İlaç Kaydet";
+            this.tansiyToolStripMenuItem.Name = "tansiyToolStripMenuItem";
+            this.tansiyToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
+            this.tansiyToolStripMenuItem.Text = "Tansiyon İlaçları";
+            // 
+            // diğerleriToolStripMenuItem
+            // 
+            this.diğerleriToolStripMenuItem.Name = "diğerleriToolStripMenuItem";
+            this.diğerleriToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
+            this.diğerleriToolStripMenuItem.Text = "Diğerleri";
+            // 
+            // btn_ilaçkaydet
+            // 
+            this.btn_ilaçkaydet.Name = "btn_ilaçkaydet";
+            this.btn_ilaçkaydet.Size = new System.Drawing.Size(96, 24);
+            this.btn_ilaçkaydet.Text = "İlaç Kaydet";
+            this.btn_ilaçkaydet.Click += new System.EventHandler(this.btn_ilaçkaydet_Click);
             // 
             // ilaçGüncelleToolStripMenuItem
             // 
             this.ilaçGüncelleToolStripMenuItem.Name = "ilaçGüncelleToolStripMenuItem";
-            this.ilaçGüncelleToolStripMenuItem.Size = new System.Drawing.Size(107, 26);
+            this.ilaçGüncelleToolStripMenuItem.Size = new System.Drawing.Size(107, 24);
             this.ilaçGüncelleToolStripMenuItem.Text = "İlaç Güncelle";
             // 
             // anaSayfaToolStripMenuItem
             // 
             this.anaSayfaToolStripMenuItem.Name = "anaSayfaToolStripMenuItem";
-            this.anaSayfaToolStripMenuItem.Size = new System.Drawing.Size(89, 26);
+            this.anaSayfaToolStripMenuItem.Size = new System.Drawing.Size(89, 24);
             this.anaSayfaToolStripMenuItem.Text = "Ana Sayfa";
+            // 
+            // antideprToolStripMenuItem
+            // 
+            this.antideprToolStripMenuItem.Name = "antideprToolStripMenuItem";
+            this.antideprToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.antideprToolStripMenuItem.Text = "Antidepresanlar";
             // 
             // data_ilaçlar
             // 
@@ -142,23 +159,12 @@
             this.data_ilaçlar.Size = new System.Drawing.Size(824, 741);
             this.data_ilaçlar.TabIndex = 1;
             // 
-            // antideprToolStripMenuItem
+            // txt_listele
             // 
-            this.antideprToolStripMenuItem.Name = "antideprToolStripMenuItem";
-            this.antideprToolStripMenuItem.Size = new System.Drawing.Size(197, 26);
-            this.antideprToolStripMenuItem.Text = "Antidepresanlar";
-            // 
-            // tansiyToolStripMenuItem
-            // 
-            this.tansiyToolStripMenuItem.Name = "tansiyToolStripMenuItem";
-            this.tansiyToolStripMenuItem.Size = new System.Drawing.Size(197, 26);
-            this.tansiyToolStripMenuItem.Text = "Tansiyon İlaçları";
-            // 
-            // diğerleriToolStripMenuItem
-            // 
-            this.diğerleriToolStripMenuItem.Name = "diğerleriToolStripMenuItem";
-            this.diğerleriToolStripMenuItem.Size = new System.Drawing.Size(197, 26);
-            this.diğerleriToolStripMenuItem.Text = "Diğerleri";
+            this.txt_listele.Name = "txt_listele";
+            this.txt_listele.Size = new System.Drawing.Size(65, 24);
+            this.txt_listele.Text = "Listele";
+            this.txt_listele.Click += new System.EventHandler(this.txt_listele_Click);
             // 
             // İlaçAnaSayfa
             // 
@@ -175,7 +181,6 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data_ilaçlar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,8 +189,8 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem ilaçListesiToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ilaçKaydetToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem txt_ilaçListesi;
+        private System.Windows.Forms.ToolStripMenuItem btn_ilaçkaydet;
         private System.Windows.Forms.ToolStripMenuItem ilaçGüncelleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem anaSayfaToolStripMenuItem;
         private System.Windows.Forms.DataGridView data_ilaçlar;
@@ -197,6 +202,6 @@
         private System.Windows.Forms.ToolStripMenuItem antideprToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tansiyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem diğerleriToolStripMenuItem;
-        private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.ToolStripMenuItem txt_listele;
     }
 }

@@ -105,6 +105,8 @@
       <DependentUpon>HastaKayıt.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Hasta\HastaMetod.cs" />
+    <Compile Include="Forms\Hasta\IHastaİslemleri.cs" />
+    <Compile Include="Forms\İlaç\Iilaçİşlemleri.cs" />
     <Compile Include="Forms\İlaç\İlaçAnaSayfa.cs">
       <SubType>Form</SubType>
     </Compile>

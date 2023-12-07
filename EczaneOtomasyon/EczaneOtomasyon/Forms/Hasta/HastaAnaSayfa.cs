@@ -14,8 +14,6 @@ namespace EczaneOtomasyon.Forms.Hasta
     public partial class HastaAnaSayfa : Form
     {
         string connection = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=EczaneVeri.accdb";
-        HastaKayıt kayıt = new HastaKayıt();
-        HastaGüncelle güncelle = new HastaGüncelle();
 
         public void Listele()
         {
@@ -88,20 +86,28 @@ namespace EczaneOtomasyon.Forms.Hasta
 
         private void btn_hastaGüncelle_Click(object sender, EventArgs e)
         {
-            if (kayıt.Visible)
-                kayıt.Visible = false;
-
-            if (!güncelle.Visible)
-                güncelle.Visible = true;
-
+            HastaGüncelle güncelle = new HastaGüncelle();
+            if (panel_hastaAnaSayfa.Visible == false)
+                panel_hastaAnaSayfa.Visible = true;
+            güncelle.TopLevel = false;
+            güncelle.AutoScroll = true;
+            panel_hastaAnaSayfa.Controls.Clear();
+            panel_hastaAnaSayfa.Controls.Add(güncelle);
             güncelle.Show();
+
         }
         private void btn_hastaKaydet_Click(object sender, EventArgs e)
         {
-            kayıt.Show();
+            HastaKayıt kayit = new HastaKayıt();
+            if (panel_hastaAnaSayfa.Visible == false)
+                panel_hastaAnaSayfa.Visible = true;
+            kayit.TopLevel = false;
+            kayit.AutoScroll = true;
+            panel_hastaAnaSayfa.Controls.Clear();
+
+            panel_hastaAnaSayfa.Controls.Add(kayit);
+            kayit.Show();
         }
-
-
 
     }
 }

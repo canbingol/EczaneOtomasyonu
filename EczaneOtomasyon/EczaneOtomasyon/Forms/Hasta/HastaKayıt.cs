@@ -13,8 +13,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar;
 
 namespace EczaneOtomasyon.Forms.Hasta
 {
-    public partial class HastaKayıt : Form, IVeriİslemleri
+    public partial class HastaKayıt : Form, IHastaİslemleri
     {
+        // yapıcı metod 
         public HastaKayıt()
         {
             InitializeComponent();
@@ -48,12 +49,11 @@ namespace EczaneOtomasyon.Forms.Hasta
 
         HastaMetod metod = new HastaMetod();
         OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=EczaneVeri.accdb");
+        // hasta kaydet buton işlemleri
         private void btn_hastaKaydet_Click(object sender, EventArgs e)
         {
-
             try
             {
-
                 string tcNo = txt_tcNo.Text;
                 string ad = txt_ad.Text;
                 string soyad = txt_soyad.Text;
@@ -61,16 +61,11 @@ namespace EczaneOtomasyon.Forms.Hasta
                 DateTime dogumTarihi = dogumtarihi.Value.Date;
                 string adres = txt_adres.Text;
 
-
-
                 if (string.IsNullOrEmpty(tcNo) || string.IsNullOrEmpty(ad) || string.IsNullOrEmpty(soyad) || string.IsNullOrEmpty(telNo) || dogumTarihi == null || string.IsNullOrEmpty(adres))
                 {
 
-
                     MessageBox.Show("Lütfen bütün satırları doldurun", "Kayıt Hatası", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
                     HataMesajlariGoster(txt_tcNo, txt_ad, txt_soyad, txt_telNo, txt_adres, lbl_kayıtTcHata, lbl_kayıtAdHata, lbl_hayıtSoyadHata, lbl_kayıtTelHata, lbl_kayıtAdresHata);
-
 
                 }
                 else if (tcNo.Length != 11)
@@ -148,13 +143,13 @@ namespace EczaneOtomasyon.Forms.Hasta
         }
         new void MouseHover(System.Windows.Forms.TextBox txt)
         {
-            txt.BorderStyle = BorderStyle.FixedSingle;
+            txt.BorderStyle = BorderStyle.None;
             txt.BackColor = Color.Silver;
             txt.ForeColor = Color.DodgerBlue;
         }
         new void MouseLeave(System.Windows.Forms.TextBox txt)
         {
-            txt.BorderStyle = BorderStyle.None;
+            txt.BorderStyle = BorderStyle.FixedSingle;
             txt.BackColor = Color.White;
             txt.ForeColor = Color.Black;
         }
@@ -210,6 +205,7 @@ namespace EczaneOtomasyon.Forms.Hasta
             MouseLeave(txt_telNo);
         }
         #endregion
+        #region Ihastaİşlemleri metodları
         public int TcVarmi(string tcno)
         {
             con.Open();
@@ -219,7 +215,6 @@ namespace EczaneOtomasyon.Forms.Hasta
             con.Close();
             return count;
         }
-        #region IVeriİslemleri arayüzü metodları
         public void AlanlariTemizle(System.Windows.Forms.TextBox txtTcno, System.Windows.Forms.TextBox txtAd, System.Windows.Forms.TextBox txtSoyad, System.Windows.Forms.TextBox txtTelNo, System.Windows.Forms.TextBox txtAdres)
         {
             txtTcno.Clear();
@@ -256,6 +251,13 @@ namespace EczaneOtomasyon.Forms.Hasta
             else
                 lblAdresHata.Visible = false;
         }
+
+
         #endregion
+
+        private void btn_EkranKapat_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }

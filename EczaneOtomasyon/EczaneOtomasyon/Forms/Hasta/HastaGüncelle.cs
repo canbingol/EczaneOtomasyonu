@@ -11,8 +11,9 @@ using System.Windows.Forms;
 
 namespace EczaneOtomasyon.Forms.Hasta
 {
-    public partial class HastaGüncelle : Form, IVeriİslemleri
+    public partial class HastaGüncelle : Form, IHastaİslemleri
     {
+        // yapıcı metod 
         public HastaGüncelle()
         {
             InitializeComponent();
@@ -129,15 +130,11 @@ namespace EczaneOtomasyon.Forms.Hasta
 
 
         }
-        public int TcVarmi(string tcno)
+        private void btn_EkranKapat_Click(object sender, EventArgs e)
         {
-            con.Open();
-            OleDbCommand tcVarmı = new OleDbCommand("SELECT COUNT(*) FROM Hastalar WHERE Tc = @Tc", con);
-            tcVarmı.Parameters.AddWithValue("@Tc", tcno);
-            int count = (int)tcVarmı.ExecuteScalar();
-            con.Close();
-            return count;
+            this.Hide();
         }
+
         #region  textBox kontrolleri
         private void txt_telNo_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -151,13 +148,13 @@ namespace EczaneOtomasyon.Forms.Hasta
         }
         new void MouseHover(TextBox txt)
         {
-            txt.BorderStyle = BorderStyle.FixedSingle;
-            txt.BackColor = Color.Silver;
+            txt.BorderStyle = BorderStyle.None;
+             txt.BackColor = Color.Silver;
             txt.ForeColor = Color.DodgerBlue;
         }
         new void MouseLeave(TextBox txt)
         {
-            txt.BorderStyle = BorderStyle.None;
+            txt.BorderStyle = BorderStyle.FixedSingle;
             txt.BackColor = Color.White;
             txt.ForeColor = Color.Black;
         }
@@ -213,13 +210,16 @@ namespace EczaneOtomasyon.Forms.Hasta
         }
 
         #endregion
-
-        private void btn_EkranKapat_Click(object sender, EventArgs e)
+        #region IHastaİşlemleri metodları
+        public int TcVarmi(string tcno)
         {
-            this.Hide();
+            con.Open();
+            OleDbCommand tcVarmı = new OleDbCommand("SELECT COUNT(*) FROM Hastalar WHERE Tc = @Tc", con);
+            tcVarmı.Parameters.AddWithValue("@Tc", tcno);
+            int count = (int)tcVarmı.ExecuteScalar();
+            con.Close();
+            return count;
         }
-
-        #region IVeriİslemleri arayüzü metodları
         public void AlanlariTemizle(System.Windows.Forms.TextBox txtTcno, System.Windows.Forms.TextBox txtAd, System.Windows.Forms.TextBox txtSoyad, System.Windows.Forms.TextBox txtTelNo, System.Windows.Forms.TextBox txtAdres)
         {
             txtTcno.Clear();
