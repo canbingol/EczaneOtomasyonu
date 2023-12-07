@@ -111,12 +111,13 @@
     <Compile Include="Forms\İlaç\İlaçAnaSayfa.Designer.cs">
       <DependentUpon>İlaçAnaSayfa.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\İlaç\İlaçListesi.cs">
+    <Compile Include="Forms\İlaç\İlaçKayıt.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\İlaç\İlaçListesi.Designer.cs">
-      <DependentUpon>İlaçListesi.cs</DependentUpon>
+    <Compile Include="Forms\İlaç\İlaçKayıt.Designer.cs">
+      <DependentUpon>İlaçKayıt.cs</DependentUpon>
     </Compile>
+    <Compile Include="IVeriİslemleri.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AnaEkran.resx">
@@ -137,8 +138,8 @@
     <EmbeddedResource Include="Forms\İlaç\İlaçAnaSayfa.resx">
       <DependentUpon>İlaçAnaSayfa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\İlaç\İlaçListesi.resx">
-      <DependentUpon>İlaçListesi.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\İlaç\İlaçKayıt.resx">
+      <DependentUpon>İlaçKayıt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

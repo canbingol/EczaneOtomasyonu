@@ -13,7 +13,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar;
 
 namespace EczaneOtomasyon.Forms.Hasta
 {
-    public partial class HastaKayıt : Form
+    public partial class HastaKayıt : Form, IVeriİslemleri
     {
         public HastaKayıt()
         {
@@ -45,6 +45,7 @@ namespace EczaneOtomasyon.Forms.Hasta
                 btn_hastaKaydet.BackColor = System.Drawing.Color.White;
             }
         }
+
         HastaMetod metod = new HastaMetod();
         OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=EczaneVeri.accdb");
         private void btn_hastaKaydet_Click(object sender, EventArgs e)
@@ -68,21 +69,21 @@ namespace EczaneOtomasyon.Forms.Hasta
 
                     MessageBox.Show("Lütfen bütün satırları doldurun", "Kayıt Hatası", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                    metod.HataMesajları(txt_tcNo, txt_ad, txt_soyad, txt_telNo, txt_adres, lbl_kayıtTcHata, lbl_kayıtAdHata, lbl_hayıtSoyadHata, lbl_kayıtTelHata, lbl_kayıtAdresHata);
+                    HataMesajlariGoster(txt_tcNo, txt_ad, txt_soyad, txt_telNo, txt_adres, lbl_kayıtTcHata, lbl_kayıtAdHata, lbl_hayıtSoyadHata, lbl_kayıtTelHata, lbl_kayıtAdresHata);
 
 
                 }
                 else if (tcNo.Length != 11)
                 {
                     MessageBox.Show("Ltfen TC  kimlik numarınızı 11 haneli olarak giriniz");
-                    metod.HataMesajları(txt_tcNo, txt_ad, txt_soyad, txt_telNo, txt_adres, lbl_kayıtTcHata, lbl_kayıtAdHata, lbl_hayıtSoyadHata, lbl_kayıtTelHata, lbl_kayıtAdresHata);
+                    HataMesajlariGoster(txt_tcNo, txt_ad, txt_soyad, txt_telNo, txt_adres, lbl_kayıtTcHata, lbl_kayıtAdHata, lbl_hayıtSoyadHata, lbl_kayıtTelHata, lbl_kayıtAdresHata);
 
                 }
-                else if (metod.TcVarmı(txt_tcNo.Text) != 0)
+                else if (TcVarmi(txt_tcNo.Text) != 0)
                 {
                     MessageBox.Show("Bu hasta zaten Kayıtlı", " Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     //   metod.HataMesajları(txt_tcNo, txt_ad, txt_soyad, txt_telNo, txt_adres, lbl_kayıtTcHata, lbl_kayıtAdHata, lbl_hayıtSoyadHata, lbl_kayıtTelHata, lbl_kayıtAdresHata);
-                    metod.Temizle(txt_tcNo, txt_ad, txt_soyad, txt_telNo, txt_adres);
+                    AlanlariTemizle(txt_tcNo, txt_ad, txt_soyad, txt_telNo, txt_adres);
 
                 }
 
@@ -101,7 +102,7 @@ namespace EczaneOtomasyon.Forms.Hasta
                     con.Close();
                     HastaAnaSayfa anaSayfa = new HastaAnaSayfa();
                     anaSayfa.Listele();
-                    metod.Temizle(txt_tcNo, txt_ad, txt_soyad, txt_telNo, txt_adres);
+                    AlanlariTemizle(txt_tcNo, txt_ad, txt_soyad, txt_telNo, txt_adres);
 
                     if (sayac > 0)
                     {
@@ -110,7 +111,7 @@ namespace EczaneOtomasyon.Forms.Hasta
                     else
                     {
                         MessageBox.Show("Kayıt eklenemedi", "Başarısız", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        metod.Temizle(txt_tcNo, txt_ad, txt_soyad, txt_telNo, txt_adres);
+                        AlanlariTemizle(txt_tcNo, txt_ad, txt_soyad, txt_telNo, txt_adres);
 
                     }
 
@@ -119,7 +120,7 @@ namespace EczaneOtomasyon.Forms.Hasta
             catch (Exception ex)
             {
                 MessageBox.Show("Hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                metod.Temizle(txt_tcNo, txt_ad, txt_soyad, txt_telNo, txt_adres);
+                AlanlariTemizle(txt_tcNo, txt_ad, txt_soyad, txt_telNo, txt_adres);
 
             }
 
@@ -209,8 +210,52 @@ namespace EczaneOtomasyon.Forms.Hasta
             MouseLeave(txt_telNo);
         }
         #endregion
-        private void HastaKayıt_Load(object sender, EventArgs e)
+        public int TcVarmi(string tcno)
         {
+            con.Open();
+            OleDbCommand tcVarmı = new OleDbCommand("SELECT COUNT(*) FROM Hastalar WHERE Tc = @Tc", con);
+            tcVarmı.Parameters.AddWithValue("@Tc", tcno);
+            int count = (int)tcVarmı.ExecuteScalar();
+            con.Close();
+            return count;
         }
+        #region IVeriİslemleri arayüzü metodları
+        public void AlanlariTemizle(System.Windows.Forms.TextBox txtTcno, System.Windows.Forms.TextBox txtAd, System.Windows.Forms.TextBox txtSoyad, System.Windows.Forms.TextBox txtTelNo, System.Windows.Forms.TextBox txtAdres)
+        {
+            txtTcno.Clear();
+            txtAd.Clear();
+            txtSoyad.Clear();
+            txtTelNo.Clear();
+            txtAdres.Clear();
+        }
+
+        public void HataMesajlariGoster(System.Windows.Forms.TextBox txtTcno, System.Windows.Forms.TextBox txtAd, System.Windows.Forms.TextBox txtSoyad, System.Windows.Forms.TextBox txtTelNo, System.Windows.Forms.TextBox txtAdres, Label lblTcHata, Label lblAdHata, Label lblSoyadHata, Label lblTelHata, Label lblAdresHata)
+        {
+            if (string.IsNullOrEmpty(txtTcno.Text))
+                lblTcHata.Visible = true;
+            else
+                lblTcHata.Visible = false;
+
+            if (string.IsNullOrEmpty(txtAd.Text))
+                lblAdHata.Visible = true;
+            else
+                lblAdHata.Visible = false;
+
+            if (string.IsNullOrEmpty(txtSoyad.Text))
+                lblSoyadHata.Visible = true;
+            else
+                lblSoyadHata.Visible = false;
+
+            if (string.IsNullOrEmpty(txtTelNo.Text))
+                lblTelHata.Visible = true;
+            else
+                lblTelHata.Visible = false;
+
+            if (string.IsNullOrEmpty(txtAdres.Text))
+                lblAdresHata.Visible = true;
+            else
+                lblAdresHata.Visible = false;
+        }
+        #endregion
     }
 }

@@ -97,19 +97,11 @@ namespace EczaneOtomasyon.Forms.Hasta
             güncelle.Show();
         }
         private void btn_hastaKaydet_Click(object sender, EventArgs e)
-        {/*
-            if (!kayıt.Visible)
-                kayıt.Visible = true;
-
-            if (güncelle.Visible)
-                güncelle.Visible = false;*/
-
+        {
             kayıt.Show();
         }
 
-        private void data_hasta_DoubleClick(object sender, EventArgs e)
-        {
 
-        }
+
     }
 }

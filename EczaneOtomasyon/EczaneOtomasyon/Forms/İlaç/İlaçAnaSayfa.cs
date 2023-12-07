@@ -32,5 +32,7 @@ namespace EczaneOtomasyon.Forms.İlaç
         {
             listele();
         }
+
+      
     }
 }

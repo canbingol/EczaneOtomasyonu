@@ -55,6 +55,7 @@
             // btn_satışİşlemleri
             // 
             this.btn_satışİşlemleri.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btn_satışİşlemleri.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_satışİşlemleri.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btn_satışİşlemleri.Location = new System.Drawing.Point(-6, 532);
             this.btn_satışİşlemleri.Name = "btn_satışİşlemleri";
@@ -66,6 +67,7 @@
             // btn_reçeteİşlemleri
             // 
             this.btn_reçeteİşlemleri.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btn_reçeteİşlemleri.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_reçeteİşlemleri.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btn_reçeteİşlemleri.Location = new System.Drawing.Point(-5, 421);
             this.btn_reçeteİşlemleri.Name = "btn_reçeteİşlemleri";
@@ -77,6 +79,7 @@
             // btn_ilaçİşlemleri
             // 
             this.btn_ilaçİşlemleri.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btn_ilaçİşlemleri.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_ilaçİşlemleri.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btn_ilaçİşlemleri.Location = new System.Drawing.Point(-5, 310);
             this.btn_ilaçİşlemleri.Name = "btn_ilaçİşlemleri";
@@ -89,6 +92,7 @@
             // btn_hastaİşlemleri
             // 
             this.btn_hastaİşlemleri.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btn_hastaİşlemleri.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_hastaİşlemleri.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btn_hastaİşlemleri.Location = new System.Drawing.Point(-6, 199);
             this.btn_hastaİşlemleri.Name = "btn_hastaİşlemleri";
@@ -101,6 +105,7 @@
             // btn_anaPanel
             // 
             this.btn_anaPanel.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btn_anaPanel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_anaPanel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btn_anaPanel.Location = new System.Drawing.Point(-6, 88);
             this.btn_anaPanel.Name = "btn_anaPanel";
@@ -115,7 +120,7 @@
             this.panel_göster.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_göster.Location = new System.Drawing.Point(234, 0);
             this.panel_göster.Name = "panel_göster";
-            this.panel_göster.Size = new System.Drawing.Size(582, 716);
+            this.panel_göster.Size = new System.Drawing.Size(706, 716);
             this.panel_göster.TabIndex = 1;
             // 
             // AnaEkran
@@ -123,7 +128,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(816, 716);
+            this.ClientSize = new System.Drawing.Size(940, 716);
             this.Controls.Add(this.panel_göster);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
