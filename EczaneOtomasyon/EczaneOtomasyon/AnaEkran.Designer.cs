@@ -73,11 +73,12 @@
             // btn_reçeteİşlemleri
             // 
             this.btn_reçeteİşlemleri.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btn_reçeteİşlemleri.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_reçeteİşlemleri.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_reçeteİşlemleri.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btn_reçeteİşlemleri.Location = new System.Drawing.Point(-5, 420);
+            this.btn_reçeteİşlemleri.Location = new System.Drawing.Point(0, 420);
             this.btn_reçeteİşlemleri.Name = "btn_reçeteİşlemleri";
-            this.btn_reçeteİşlemleri.Size = new System.Drawing.Size(240, 70);
+            this.btn_reçeteİşlemleri.Size = new System.Drawing.Size(236, 70);
             this.btn_reçeteİşlemleri.TabIndex = 0;
             this.btn_reçeteİşlemleri.Text = "REÇETE İŞLMELERİ";
             this.btn_reçeteİşlemleri.UseVisualStyleBackColor = false;
@@ -124,7 +125,7 @@
             // 
             this.btn_çıkış.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_çıkış.Image = ((System.Drawing.Image)(resources.GetObject("btn_çıkış.Image")));
-            this.btn_çıkış.Location = new System.Drawing.Point(648, 5);
+            this.btn_çıkış.Location = new System.Drawing.Point(635, 5);
             this.btn_çıkış.Name = "btn_çıkış";
             this.btn_çıkış.Size = new System.Drawing.Size(35, 35);
             this.btn_çıkış.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -150,7 +151,7 @@
             this.panel_üst.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_üst.Location = new System.Drawing.Point(234, 0);
             this.panel_üst.Name = "panel_üst";
-            this.panel_üst.Size = new System.Drawing.Size(683, 43);
+            this.panel_üst.Size = new System.Drawing.Size(673, 43);
             this.panel_üst.TabIndex = 2;
             // 
             // panel_göster
@@ -158,7 +159,7 @@
             this.panel_göster.Cursor = System.Windows.Forms.Cursors.No;
             this.panel_göster.Location = new System.Drawing.Point(234, 42);
             this.panel_göster.Name = "panel_göster";
-            this.panel_göster.Size = new System.Drawing.Size(682, 674);
+            this.panel_göster.Size = new System.Drawing.Size(670, 674);
             this.panel_göster.TabIndex = 1;
             // 
             // AnaEkran
@@ -166,7 +167,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(917, 716);
+            this.ClientSize = new System.Drawing.Size(907, 716);
             this.Controls.Add(this.panel_üst);
             this.Controls.Add(this.panel_göster);
             this.Controls.Add(this.panel1);

@@ -27,6 +27,7 @@ namespace EczaneOtomasyon.Forms.Hasta
         }
         public HastaAnaSayfa()
         {
+
             InitializeComponent();
         }
 
@@ -37,9 +38,13 @@ namespace EczaneOtomasyon.Forms.Hasta
 
         private void btn_hastaListele_Click(object sender, EventArgs e)
         {
+            panel_anaSayfa.Visible = false;
             Listele();
         }
-
+        public void PanelGizle()
+        {
+            panel_hastaAnaSayfa.Visible = false;
+        }
         private void txt_hastaAra_TextChanged(object sender, EventArgs e)
         {
             string aranan = txt_hastaAra.Text;
@@ -87,26 +92,27 @@ namespace EczaneOtomasyon.Forms.Hasta
         private void btn_hastaGüncelle_Click(object sender, EventArgs e)
         {
             HastaGüncelle güncelle = new HastaGüncelle();
-            if (panel_hastaAnaSayfa.Visible == false)
-                panel_hastaAnaSayfa.Visible = true;
+            if (panel_anaSayfa.Visible == false)
+                panel_anaSayfa.Visible = true;
             güncelle.TopLevel = false;
             güncelle.AutoScroll = true;
-            panel_hastaAnaSayfa.Controls.Clear();
-            panel_hastaAnaSayfa.Controls.Add(güncelle);
+            panel_anaSayfa.Controls.Clear();
+            panel_anaSayfa.Controls.Add(güncelle);
             güncelle.Show();
 
         }
         private void btn_hastaKaydet_Click(object sender, EventArgs e)
         {
+            if (panel_anaSayfa.Visible == false)
+                panel_anaSayfa.Visible = true;
             HastaKayıt kayit = new HastaKayıt();
-            if (panel_hastaAnaSayfa.Visible == false)
-                panel_hastaAnaSayfa.Visible = true;
+            panel_anaSayfa.Visible = true;
             kayit.TopLevel = false;
             kayit.AutoScroll = true;
-            panel_hastaAnaSayfa.Controls.Clear();
-
-            panel_hastaAnaSayfa.Controls.Add(kayit);
+            panel_anaSayfa.Controls.Clear();
+            panel_anaSayfa.Controls.Add(kayit);
             kayit.Show();
+           
         }
 
     }

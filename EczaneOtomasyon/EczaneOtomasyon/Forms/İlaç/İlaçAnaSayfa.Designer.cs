@@ -40,9 +40,9 @@
             this.btn_ilaçkaydet = new System.Windows.Forms.ToolStripMenuItem();
             this.ilaçGüncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.anaSayfaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.txt_listele = new System.Windows.Forms.ToolStripMenuItem();
             this.antideprToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.data_ilaçlar = new System.Windows.Forms.DataGridView();
-            this.txt_listele = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data_ilaçlar)).BeginInit();
             this.SuspendLayout();
@@ -58,7 +58,7 @@
             this.txt_listele});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(824, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(952, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -137,6 +137,13 @@
             this.anaSayfaToolStripMenuItem.Size = new System.Drawing.Size(89, 24);
             this.anaSayfaToolStripMenuItem.Text = "Ana Sayfa";
             // 
+            // txt_listele
+            // 
+            this.txt_listele.Name = "txt_listele";
+            this.txt_listele.Size = new System.Drawing.Size(65, 24);
+            this.txt_listele.Text = "Listele";
+            this.txt_listele.Click += new System.EventHandler(this.txt_listele_Click);
+            // 
             // antideprToolStripMenuItem
             // 
             this.antideprToolStripMenuItem.Name = "antideprToolStripMenuItem";
@@ -149,28 +156,22 @@
             this.data_ilaçlar.AllowUserToDeleteRows = false;
             this.data_ilaçlar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.data_ilaçlar.BackgroundColor = System.Drawing.Color.White;
+            this.data_ilaçlar.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.data_ilaçlar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.data_ilaçlar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.data_ilaçlar.Location = new System.Drawing.Point(0, 28);
+            this.data_ilaçlar.Location = new System.Drawing.Point(0, 30);
             this.data_ilaçlar.Name = "data_ilaçlar";
             this.data_ilaçlar.ReadOnly = true;
             this.data_ilaçlar.RowHeadersWidth = 51;
             this.data_ilaçlar.RowTemplate.Height = 24;
-            this.data_ilaçlar.Size = new System.Drawing.Size(824, 741);
+            this.data_ilaçlar.Size = new System.Drawing.Size(952, 739);
             this.data_ilaçlar.TabIndex = 1;
-            // 
-            // txt_listele
-            // 
-            this.txt_listele.Name = "txt_listele";
-            this.txt_listele.Size = new System.Drawing.Size(65, 24);
-            this.txt_listele.Text = "Listele";
-            this.txt_listele.Click += new System.EventHandler(this.txt_listele_Click);
             // 
             // İlaçAnaSayfa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(824, 769);
+            this.ClientSize = new System.Drawing.Size(952, 769);
             this.Controls.Add(this.data_ilaçlar);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

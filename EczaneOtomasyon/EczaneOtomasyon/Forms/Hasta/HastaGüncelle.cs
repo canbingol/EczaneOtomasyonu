@@ -149,7 +149,7 @@ namespace EczaneOtomasyon.Forms.Hasta
         new void MouseHover(TextBox txt)
         {
             txt.BorderStyle = BorderStyle.None;
-             txt.BackColor = Color.Silver;
+            txt.BackColor = Color.Silver;
             txt.ForeColor = Color.DodgerBlue;
         }
         new void MouseLeave(TextBox txt)

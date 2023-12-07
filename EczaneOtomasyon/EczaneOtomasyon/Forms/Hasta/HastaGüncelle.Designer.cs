@@ -276,7 +276,7 @@
             // 
             this.btn_EkranKapat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_EkranKapat.Image = ((System.Drawing.Image)(resources.GetObject("btn_EkranKapat.Image")));
-            this.btn_EkranKapat.Location = new System.Drawing.Point(850, 1);
+            this.btn_EkranKapat.Location = new System.Drawing.Point(873, 4);
             this.btn_EkranKapat.Name = "btn_EkranKapat";
             this.btn_EkranKapat.Size = new System.Drawing.Size(35, 35);
             this.btn_EkranKapat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

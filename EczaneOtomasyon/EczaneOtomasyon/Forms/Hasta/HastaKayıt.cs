@@ -47,7 +47,6 @@ namespace EczaneOtomasyon.Forms.Hasta
             }
         }
 
-        HastaMetod metod = new HastaMetod();
         OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=EczaneVeri.accdb");
         // hasta kaydet buton işlemleri
         private void btn_hastaKaydet_Click(object sender, EventArgs e)

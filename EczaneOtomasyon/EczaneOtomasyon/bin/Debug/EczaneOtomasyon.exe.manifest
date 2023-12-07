@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EczaneOtomasyon.exe" size="146336">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EczaneOtomasyon.exe" size="147872">
       <assemblyIdentity name="EczaneOtomasyon" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>bHZsrSYRtCCE5BIEdlq2wSwnkVXblN6m7QiL7X668jo=</dsig:DigestValue>
+        <dsig:DigestValue>lavVSQt76H7bqyYMo/GXVkUXRJrbEXlR9YaABGE6MSk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

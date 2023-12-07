@@ -42,6 +42,7 @@
             this.btn_listele = new System.Windows.Forms.Button();
             this.data_hasta = new System.Windows.Forms.DataGridView();
             this.panel_hastaAnaSayfa = new System.Windows.Forms.Panel();
+            this.panel_anaSayfa = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data_hasta)).BeginInit();
@@ -57,7 +58,7 @@
             this.btn_anaMenü});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(928, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(952, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -99,7 +100,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 28);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(928, 44);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(952, 44);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
             // txt_hastaAra
@@ -171,26 +172,35 @@
             this.data_hasta.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.data_hasta.RowHeadersWidth = 45;
             this.data_hasta.RowTemplate.Height = 24;
-            this.data_hasta.Size = new System.Drawing.Size(928, 697);
+            this.data_hasta.Size = new System.Drawing.Size(952, 697);
             this.data_hasta.TabIndex = 3;
             // 
             // panel_hastaAnaSayfa
             // 
-            this.panel_hastaAnaSayfa.BackColor = System.Drawing.Color.White;
+            this.panel_hastaAnaSayfa.BackColor = System.Drawing.Color.Silver;
             this.panel_hastaAnaSayfa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel_hastaAnaSayfa.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel_hastaAnaSayfa.Location = new System.Drawing.Point(0, 283);
+            this.panel_hastaAnaSayfa.Location = new System.Drawing.Point(0, 297);
             this.panel_hastaAnaSayfa.Name = "panel_hastaAnaSayfa";
-            this.panel_hastaAnaSayfa.Size = new System.Drawing.Size(928, 486);
+            this.panel_hastaAnaSayfa.Size = new System.Drawing.Size(928, 472);
             this.panel_hastaAnaSayfa.TabIndex = 4;
             this.panel_hastaAnaSayfa.Visible = false;
+            // 
+            // panel_anaSayfa
+            // 
+            this.panel_anaSayfa.BackColor = System.Drawing.Color.White;
+            this.panel_anaSayfa.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel_anaSayfa.Location = new System.Drawing.Point(0, 305);
+            this.panel_anaSayfa.Name = "panel_anaSayfa";
+            this.panel_anaSayfa.Size = new System.Drawing.Size(952, 464);
+            this.panel_anaSayfa.TabIndex = 4;
             // 
             // HastaAnaSayfa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(928, 769);
-            this.Controls.Add(this.panel_hastaAnaSayfa);
+            this.ClientSize = new System.Drawing.Size(952, 769);
+            this.Controls.Add(this.panel_anaSayfa);
             this.Controls.Add(this.data_hasta);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
@@ -220,6 +230,7 @@
         private System.Windows.Forms.TextBox txt_hastaAra;
         private System.Windows.Forms.Button btn_listele;
         private System.Windows.Forms.DataGridView data_hasta;
-        private System.Windows.Forms.Panel panel_hastaAnaSayfa;
+        public  System.Windows.Forms.Panel panel_hastaAnaSayfa;
+        private System.Windows.Forms.Panel panel_anaSayfa;
     }
 }
