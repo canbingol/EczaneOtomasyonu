@@ -53,11 +53,13 @@ namespace EczaneOtomasyon.Forms.Hasta
         {
             try
             {
+                DateTime dogumTarihi = dogumtarihi.Value;
+                string formatliTarih = dogumTarihi.ToString("dd.MM.yyyy");
                 string tcNo = txt_tcNo.Text;
                 string ad = txt_ad.Text;
                 string soyad = txt_soyad.Text;
-                string telNo = txt_tcNo.Text;
-                DateTime dogumTarihi = dogumtarihi.Value.Date;
+                string telNo = txt_telNo.Text;
+                 dogumTarihi = dogumtarihi.Value.Date;
                 string adres = txt_adres.Text;
 
                 if (string.IsNullOrEmpty(tcNo) || string.IsNullOrEmpty(ad) || string.IsNullOrEmpty(soyad) || string.IsNullOrEmpty(telNo) || dogumTarihi == null || string.IsNullOrEmpty(adres))

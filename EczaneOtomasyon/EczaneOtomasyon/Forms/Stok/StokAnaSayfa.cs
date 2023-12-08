@@ -16,5 +16,7 @@ namespace EczaneOtomasyon.Forms.Stok
         {
             InitializeComponent();
         }
+
+      
     }
 }

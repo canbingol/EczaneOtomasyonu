@@ -24,6 +24,86 @@ namespace EczaneOtomasyon.Forms.Hasta
             txt_telNo.TextChanged += TextBox_TextChanged;
         }
 
+        
+        OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=EczaneVeri.accdb");
+
+        // hasta güncelleme işlemleri
+        private void btn_hastaGüncelle_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                string tcNo = txt_tcNo.Text;
+                string ad = txt_ad.Text;
+                string soyad = txt_soyad.Text;
+                string telNo = txt_telNo.Text;
+                DateTime dogumTarihi = dogumtarihi.Value.Date;
+                string adres = txt_adres.Text;
+
+                if (string.IsNullOrEmpty(tcNo) || string.IsNullOrEmpty(ad) || string.IsNullOrEmpty(soyad) || string.IsNullOrEmpty(telNo) || dogumtarihi == null || string.IsNullOrEmpty(adres))
+                {
+
+                    MessageBox.Show("Lütfen bütün satırları doldurun", "Kayıt Hatası", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    HataMesajlariGoster(txt_tcNo, txt_ad, txt_soyad, txt_telNo, txt_adres, lbl_güncelleAdHata, lbl_gücelleTcHata, lbl_güncelleSoyadHata, lbl_güncelleTelHata, lbl_güncelleAdresHata);
+
+                }
+                else if (txt_tcNo.Text.Length != 11)
+                {
+                    MessageBox.Show("Ltfen Tc noyu 11 haneli olarak giriniz");
+                    HataMesajlariGoster(txt_tcNo, txt_ad, txt_soyad, txt_telNo, txt_adres, lbl_güncelleAdHata, lbl_gücelleTcHata, lbl_güncelleSoyadHata, lbl_güncelleTelHata, lbl_güncelleAdresHata);
+
+                }
+                else if (TcVarmi(txt_tcNo.Text) == 0)
+                {
+                    MessageBox.Show("Bu hasta Kayıtlı değil lütfen önce kayıt oluşturun", " Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //   metod.HataMesajları(txt_tcNo, txt_ad, txt_soyad, txt_telNo, txt_adres, lbl_kayıtTcHata, lbl_kayıtAdHata, lbl_hayıtSoyadHata, lbl_kayıtTelHata, lbl_kayıtAdresHata);
+                    AlanlariTemizle(txt_tcNo, txt_ad, txt_soyad, txt_telNo, txt_adres);
+
+                }
+
+                else
+                {
+                    con.Open();
+                    OleDbCommand hastaEkle = new OleDbCommand("UPDATE  İlaçlar SET  Adı =@p1, Soyadı=@p2, Adres=@p4, Telno=@p5, Dogumtarihi=@p6 WHERE  Tc=@p3", con);
+                    hastaEkle.Parameters.AddWithValue("@p1", ad);
+                    hastaEkle.Parameters.AddWithValue("@p2", soyad);
+                    hastaEkle.Parameters.AddWithValue("@p3", tcNo);
+                    hastaEkle.Parameters.AddWithValue("@p4", adres);
+                    hastaEkle.Parameters.AddWithValue("@p5", telNo);
+                    hastaEkle.Parameters.AddWithValue("@p6", dogumTarihi);
+
+                    int sayac = hastaEkle.ExecuteNonQuery();
+                    con.Close();
+                    HastaAnaSayfa anaSayfa = new HastaAnaSayfa();
+                    anaSayfa.Listele();
+                    AlanlariTemizle(txt_tcNo, txt_ad, txt_soyad, txt_telNo, txt_adres);
+
+                    if (sayac > 0)
+                    {
+                        MessageBox.Show("Kayıt başarıyla güncellendi", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Kayıt güncellenemedi", "Başarısız", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        AlanlariTemizle(txt_tcNo, txt_ad, txt_soyad, txt_telNo, txt_adres);
+
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                AlanlariTemizle(txt_tcNo, txt_ad, txt_soyad, txt_telNo, txt_adres);
+
+            }
+        }
+            private void btn_EkranKapat_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        #region  textBox kontrolleri
         private void TextBox_TextChanged(object sender, EventArgs e)
         {
             // TextBox'lardaki değerleri kontrol et
@@ -45,97 +125,6 @@ namespace EczaneOtomasyon.Forms.Hasta
                 btn_hastaGüncelle.BackColor = System.Drawing.Color.White;
             }
         }
-        OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=EczaneVeri.accdb");
-        private void btn_hastaGüncelle_Click(object sender, EventArgs e)
-        {
-
-            HastaMetod metod = new HastaMetod();
-            try
-            {
-                string tcNo = txt_tcNo.Text;
-                string ad = txt_ad.Text;
-                string soyad = txt_soyad.Text;
-                string telNo = txt_telNo.Text;
-                DateTime dogumTarihi = dogumtarihi.Value.Date;
-                string adres = txt_adres.Text;
-
-                if (string.IsNullOrEmpty(tcNo) || string.IsNullOrEmpty(ad) || string.IsNullOrEmpty(soyad) || string.IsNullOrEmpty(telNo) || dogumTarihi == null || string.IsNullOrEmpty(adres))
-                {
-                    MessageBox.Show("Lütfen bütün satırları doldurun", "Kayıt Hatası", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    HataMesajlariGoster(txt_tcNo, txt_ad, txt_soyad, txt_telNo, txt_adres, lbl_gücelleTcHata, lbl_güncelleAdHata, lbl_güncelleSoyadHata, lbl_güncelleTelHata, lbl_güncelleAdresHata);
-
-
-                }
-                else if (tcNo.Length != 11)
-                {
-
-                    MessageBox.Show("Ltfen TC  kimlik numarınızı 11 haneli olarak giriniz");
-                    HataMesajlariGoster(txt_tcNo, txt_ad, txt_soyad, txt_telNo, txt_adres, lbl_gücelleTcHata, lbl_güncelleAdHata, lbl_güncelleSoyadHata, lbl_gücelleTcHata, lbl_güncelleAdresHata);
-
-                }
-
-                else if (TcVarmi(txt_tcNo.Text) == 0)
-                {
-                    MessageBox.Show("GİRİLEN TC NO İLE KAYITLI HASTA BULUNAMADI !", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    HataMesajlariGoster(txt_tcNo, txt_ad, txt_soyad, txt_telNo, txt_adres, lbl_gücelleTcHata, lbl_güncelleAdHata, lbl_güncelleSoyadHata, lbl_gücelleTcHata, lbl_güncelleAdresHata);
-
-                }
-                else
-                {
-                    con.Open();
-
-                    OleDbCommand hastaGuncelle = new OleDbCommand("UPDATE Hastalar SET adı = @p1, soyadı = @p2, adres = @p3, Telno = @p4, dogumtarihi = @p5 WHERE tc = @p6", con);
-                    hastaGuncelle.Parameters.AddWithValue("@p1", ad);
-                    hastaGuncelle.Parameters.AddWithValue("@p2", soyad);
-                    hastaGuncelle.Parameters.AddWithValue("@p6", tcNo);
-                    hastaGuncelle.Parameters.AddWithValue("@p3", adres);
-                    hastaGuncelle.Parameters.AddWithValue("@p4", telNo);
-                    hastaGuncelle.Parameters.AddWithValue("@p5", dogumTarihi);
-
-                    //    metod.Temizle(txt_tcNo, txt_ad, txt_soyad, txt_telNo, txt_adres);
-                    if (con.State == ConnectionState.Open)
-                    {
-                        // Bağlantı açık
-                        MessageBox.Show("Veritabanı bağlantısı açık.");
-                    }
-                    else
-                    {
-                        // Bağlantı kapalı
-                        MessageBox.Show("Veritabanı bağlantısı kapalı.");
-                    }
-
-                    int sayac = hastaGuncelle.ExecuteNonQuery();
-                    con.Close();
-                    if (sayac > 0)
-                    {
-                        MessageBox.Show("Kayıt başarıyla güncellendi", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        AlanlariTemizle(txt_tcNo, txt_ad, txt_soyad, txt_telNo, txt_adres);
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("Kayıt güncellenemedi", "Başarısız", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        AlanlariTemizle(txt_tcNo, txt_ad, txt_soyad, txt_telNo, txt_adres);
-
-                    }
-
-                }
-            }
-
-            catch (OleDbException sqlEx)
-            {
-                MessageBox.Show("SQL Hatası: " + sqlEx.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                AlanlariTemizle(txt_tcNo, txt_ad, txt_soyad, txt_telNo, txt_adres);
-            }
-
-
-        }
-        private void btn_EkranKapat_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-        }
-
-        #region  textBox kontrolleri
         private void txt_telNo_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
@@ -146,6 +135,7 @@ namespace EczaneOtomasyon.Forms.Hasta
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
                 e.Handled = true;
         }
+
         new void MouseHover(TextBox txt)
         {
             txt.BorderStyle = BorderStyle.None;
