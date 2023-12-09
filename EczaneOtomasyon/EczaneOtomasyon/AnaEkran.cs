@@ -1,4 +1,7 @@
-﻿using System;
+﻿using EczaneOtomasyon.Forms.Hasta;
+using EczaneOtomasyon.Forms.İlaç;
+using EczaneOtomasyon.Forms.Stok;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,48 +19,119 @@ namespace EczaneOtomasyon
         public AnaEkran()
         {
             InitializeComponent();
+            panelAyarları();
         }
-        Forms.Hasta.HastaAnaSayfa hasta = new Forms.Hasta.HastaAnaSayfa();
-        Forms.İlaç.İlaçAnaSayfa ilaç = new Forms.İlaç.İlaçAnaSayfa();
-        Forms.Stok.StokAnaSayfa stok = new Forms.Stok.StokAnaSayfa();
 
+        #region Tıklama işlemleri 
         private void btn_hastaİşlemleri_Click(object sender, EventArgs e)
         {
-            panel_göster.Controls.Clear();
-            hasta.TopLevel = false;
-            hasta.AutoScroll = true;
-            panel_göster.Controls.Add(hasta);
-            ilaç.Hide();
-            stok.Hide();
-            hasta.Show();
+            AltMenüSakla();
+            AltFormGöster(new Forms.Hasta.HastaAnaSayfa());
+            AltMenüGöster(pnl_hasta);
+        }
+
+        private void btn_anaSayfa_Click_1(object sender, EventArgs e)
+        {
+            AltMenüSakla();
+        }
+        private void btn_hastaKaydet_Click(object sender, EventArgs e)
+        {
+            AltFormİşlemGöster(new HastaKayıt());
         }
 
         private void btn_ilaçİşlemleri_Click(object sender, EventArgs e)
         {
-            panel_göster.Controls.Clear();
-            ilaç.TopLevel = false;
-            ilaç.AutoScroll = true;
-            panel_göster.Controls.Add(ilaç);
-            hasta.Hide();
-            stok.Hide();
-            ilaç.Show();
+            AltMenüSakla();
+            AltFormGöster(new Forms.İlaç.İlaçAnaSayfa());
+            AltMenüGöster(pnl_ilaç);
         }
-        private void btn_Stokİşlemleri_Click(object sender, EventArgs e)
+        private void btn_reçeteİşlemleri_Click(object sender, EventArgs e)
         {
-            panel_göster.Controls.Clear();
-            stok.TopLevel = false;
-            stok.AutoScroll = true;
-            panel_göster.Controls.Add(stok);
-            hasta.Hide();
-            ilaç.Hide();
-            stok.Show();
-        }
-        private void btn_çıkış_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
+            AltMenüSakla();
+
         }
 
-        #region Buton kontrolleri
+        private void btn_stokİşlemleri_Click(object sender, EventArgs e)
+        {
+            AltMenüSakla();
+            AltFormGöster(new StokAnaSayfa());
+            AltMenüSakla();
+
+        }
+
+        private void btn_satış_Click(object sender, EventArgs e)
+        {
+            AltMenüSakla();
+
+        }
+        #endregion
+
+        #region panel metodları
+        void panelAyarları()
+        {
+            pnl_ilaç.Visible = false;
+            pnl_hasta.Visible = false;
+        }
+        void AltMenüSakla()
+        {
+            if (pnl_hasta.Visible == true)
+                pnl_hasta.Visible = false;
+            if (pnl_ilaç.Visible == true)
+                pnl_ilaç.Visible = false;
+            if (pnl_işlemler.Visible == true)
+                pnl_işlemler.Visible = false;
+        }
+        void AltMenüGöster(Panel pnl)
+        {
+            if (pnl.Visible == false)
+            {
+                AltMenüSakla();
+                pnl.Visible = true;
+            }
+            else
+                pnl.Visible = false;
+        }
+
+        void AltFormİşlemGöster(Form altForm)
+        {
+            pnl_işlemler.Controls.Clear();
+            if (pnl_işlemler.Visible == false)
+            {
+                pnl_işlemler.Visible = true;
+                pnl_x.Visible = true;
+            }
+
+            altForm.TopLevel = false;
+            altForm.FormBorderStyle = FormBorderStyle.None;
+            altForm.Dock = DockStyle.Fill;
+            pnl_işlemler.Controls.Add(altForm);
+            pnl_işlemler.Tag = altForm;
+            altForm.BringToFront();
+            altForm.Show();
+        }
+
+
+
+        Form aktifForm = null;
+        void AltFormGöster(Form altForm)
+        {
+            if (aktifForm != null)
+                aktifForm.Close();
+            if (pnl_işlemler.Visible == true)
+                pnl_işlemler.Visible = false;
+            aktifForm = altForm;
+            altForm.TopLevel = false;
+            altForm.FormBorderStyle = FormBorderStyle.None;
+            altForm.Dock = DockStyle.Fill;
+            pnl_altForm.Controls.Add(altForm);
+            pnl_altForm.Tag = altForm;
+            altForm.BringToFront();
+            altForm.Show();
+
+        }
+        #endregion
+
+        #region Buton renk ayarları
         new void MouseHover(Button btn)
         {
             btn.BackColor = Color.White;
@@ -65,18 +139,17 @@ namespace EczaneOtomasyon
         }
         new void MouseLeave(Button btn)
         {
-            btn.BackColor = Color.DodgerBlue;
+            btn.BackColor = Color.Transparent;
             btn.ForeColor = Color.White;
         }
-
-        private void btn_anaPanel_MouseHover(object sender, EventArgs e)
+        private void btn_anaSayfa_MouseHover(object sender, EventArgs e)
         {
-            MouseHover(btn_anaPanel);
+            MouseHover(btn_anaSayfa);
         }
 
-        private void btn_anaPanel_MouseLeave(object sender, EventArgs e)
+        private void btn_anaSayfa_MouseLeave(object sender, EventArgs e)
         {
-            MouseLeave(btn_anaPanel);
+            MouseLeave(btn_anaSayfa);
         }
 
         private void btn_hastaİşlemleri_MouseHover(object sender, EventArgs e)
@@ -109,27 +182,67 @@ namespace EczaneOtomasyon
             MouseLeave(btn_reçeteİşlemleri);
         }
 
-        private void btn_Stokİşlemleri_MouseHover(object sender, EventArgs e)
+        private void btn_stokİşlemleri_MouseHover(object sender, EventArgs e)
         {
-            MouseHover(btn_Stokİşlemleri);
+            MouseHover(btn_stokİşlemleri);
         }
 
-        private void btn_Stokİşlemleri_MouseLeave(object sender, EventArgs e)
+        private void btn_stokİşlemleri_MouseLeave(object sender, EventArgs e)
         {
-            MouseLeave(btn_Stokİşlemleri);
+            MouseLeave(btn_stokİşlemleri);
         }
 
-        private void btn_satışİşlemleri_MouseHover(object sender, EventArgs e)
+        private void btn_satış_MouseHover(object sender, EventArgs e)
         {
-            MouseHover(btn_satışİşlemleri);
+            MouseHover(btn_satış);
         }
 
-        private void btn_satışİşlemleri_MouseLeave(object sender, EventArgs e)
+        private void btn_satış_MouseLeave(object sender, EventArgs e)
         {
-            MouseLeave(btn_satışİşlemleri);
+            MouseLeave(btn_satış);
         }
+
+
         #endregion
 
+        private void btn_EkranKapat_Click(object sender, EventArgs e)
+        {
+            pnl_işlemler.Controls.Clear();
+            pnl_işlemler.Visible = false;
+        }
 
+        private void btn_hastaGüncelle_Click(object sender, EventArgs e)
+        {
+            AltFormİşlemGöster(new HastaGüncelle());
+
+        }
+
+        private void btn_hastaListele_Click(object sender, EventArgs e)
+        {
+            HastaAnaSayfa anaSayfa = new HastaAnaSayfa();
+            anaSayfa.Listele();
+            if (pnl_işlemler.Visible == true)
+                pnl_işlemler.Visible = false;
+        }
+
+        private void btn_ilaçKaydet_Click(object sender, EventArgs e)
+        {
+            AltFormİşlemGöster(new İlaçKayıt());
+
+        }
+
+        private void btn_ilaçGüncelle_Click(object sender, EventArgs e)
+        {
+            AltFormİşlemGöster(new İlaçGüncelle());
+
+        }
+        İlaçAnaSayfa ilaç = new İlaçAnaSayfa();
+        private void btn_ilaçListele_Click(object sender, EventArgs e)
+        {
+            ilaç.Listele();
+            if (pnl_işlemler.Visible == true)
+                pnl_işlemler.Visible = false;
+
+        }
     }
 }

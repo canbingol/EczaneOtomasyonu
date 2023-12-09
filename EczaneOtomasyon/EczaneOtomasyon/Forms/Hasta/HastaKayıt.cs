@@ -43,7 +43,7 @@ namespace EczaneOtomasyon.Forms.Hasta
             }
             else
             {
-                btn_hastaKaydet.BackColor = System.Drawing.Color.White;
+                btn_hastaKaydet.BackColor = System.Drawing.Color.Black;
             }
         }
 

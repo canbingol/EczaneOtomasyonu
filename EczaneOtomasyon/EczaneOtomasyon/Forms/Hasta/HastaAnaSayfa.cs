@@ -38,7 +38,7 @@ namespace EczaneOtomasyon.Forms.Hasta
 
         private void btn_hastaListele_Click(object sender, EventArgs e)
         {
-            panel_anaSayfa.Visible = false;
+            //panel_anaSayfa.Visible = false;
             Listele();
         }
         public void PanelGizle()
@@ -87,32 +87,6 @@ namespace EczaneOtomasyon.Forms.Hasta
         private void txt_hastaAra_Click(object sender, EventArgs e)
         {
             txt_hastaAra.Text = string.Empty;
-        }
-
-        private void btn_hastaGüncelle_Click(object sender, EventArgs e)
-        {
-            HastaGüncelle güncelle = new HastaGüncelle();
-            if (panel_anaSayfa.Visible == false)
-                panel_anaSayfa.Visible = true;
-            güncelle.TopLevel = false;
-            güncelle.AutoScroll = true;
-            panel_anaSayfa.Controls.Clear();
-            panel_anaSayfa.Controls.Add(güncelle);
-            güncelle.Show();
-
-        }
-        private void btn_hastaKaydet_Click(object sender, EventArgs e)
-        {
-            if (panel_anaSayfa.Visible == false)
-                panel_anaSayfa.Visible = true;
-            HastaKayıt kayit = new HastaKayıt();
-            panel_anaSayfa.Visible = true;
-            kayit.TopLevel = false;
-            kayit.AutoScroll = true;
-            panel_anaSayfa.Controls.Clear();
-            panel_anaSayfa.Controls.Add(kayit);
-            kayit.Show();
-           
         }
 
     }

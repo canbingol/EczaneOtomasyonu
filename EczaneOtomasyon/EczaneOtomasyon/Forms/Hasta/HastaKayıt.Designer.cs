@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HastaKayıt));
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -48,8 +47,6 @@
             this.lbl_kayıtAdresHata = new System.Windows.Forms.Label();
             this.lbl_kayıtTelHata = new System.Windows.Forms.Label();
             this.btn_hastaKaydet = new System.Windows.Forms.Button();
-            this.btn_EkranKapat = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_EkranKapat)).BeginInit();
             this.SuspendLayout();
             // 
             // label6
@@ -271,25 +268,12 @@
             this.btn_hastaKaydet.UseVisualStyleBackColor = false;
             this.btn_hastaKaydet.Click += new System.EventHandler(this.btn_hastaKaydet_Click);
             // 
-            // btn_EkranKapat
-            // 
-            this.btn_EkranKapat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_EkranKapat.Image = ((System.Drawing.Image)(resources.GetObject("btn_EkranKapat.Image")));
-            this.btn_EkranKapat.Location = new System.Drawing.Point(868, 8);
-            this.btn_EkranKapat.Name = "btn_EkranKapat";
-            this.btn_EkranKapat.Size = new System.Drawing.Size(35, 35);
-            this.btn_EkranKapat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btn_EkranKapat.TabIndex = 72;
-            this.btn_EkranKapat.TabStop = false;
-            this.btn_EkranKapat.Click += new System.EventHandler(this.btn_EkranKapat_Click);
-            // 
             // HastaKayıt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(913, 361);
-            this.Controls.Add(this.btn_EkranKapat);
             this.Controls.Add(this.btn_hastaKaydet);
             this.Controls.Add(this.lbl_kayıtTelHata);
             this.Controls.Add(this.lbl_kayıtAdresHata);
@@ -309,11 +293,11 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "HastaKayıt";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "HastaKayıt";
-            ((System.ComponentModel.ISupportInitialize)(this.btn_EkranKapat)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -340,6 +324,5 @@
         public System.Windows.Forms.Label lbl_kayıtAdresHata;
         public System.Windows.Forms.Label lbl_kayıtTelHata;
         public System.Windows.Forms.Button btn_hastaKaydet;
-        private System.Windows.Forms.PictureBox btn_EkranKapat;
     }
 }

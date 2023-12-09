@@ -38,8 +38,6 @@
             this.btn_tansiyon = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_depresan = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_diğer = new System.Windows.Forms.ToolStripMenuItem();
-            this.btn_ilaçkaydet = new System.Windows.Forms.ToolStripMenuItem();
-            this.btn_ilaçGüncelle = new System.Windows.Forms.ToolStripMenuItem();
             this.anaSayfaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txt_listele = new System.Windows.Forms.ToolStripMenuItem();
             this.antideprToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,8 +52,6 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.txt_ilaçListesi,
-            this.btn_ilaçkaydet,
-            this.btn_ilaçGüncelle,
             this.anaSayfaToolStripMenuItem,
             this.txt_listele});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -135,20 +131,6 @@
             this.btn_diğer.Text = "Diğer İlaçlar";
             this.btn_diğer.Click += new System.EventHandler(this.btn_diğer_Click);
             // 
-            // btn_ilaçkaydet
-            // 
-            this.btn_ilaçkaydet.Name = "btn_ilaçkaydet";
-            this.btn_ilaçkaydet.Size = new System.Drawing.Size(96, 24);
-            this.btn_ilaçkaydet.Text = "İlaç Kaydet";
-            this.btn_ilaçkaydet.Click += new System.EventHandler(this.btn_ilaçkaydet_Click);
-            // 
-            // btn_ilaçGüncelle
-            // 
-            this.btn_ilaçGüncelle.Name = "btn_ilaçGüncelle";
-            this.btn_ilaçGüncelle.Size = new System.Drawing.Size(107, 24);
-            this.btn_ilaçGüncelle.Text = "İlaç Güncelle";
-            this.btn_ilaçGüncelle.Click += new System.EventHandler(this.btn_ilaçGüncelle_Click);
-            // 
             // anaSayfaToolStripMenuItem
             // 
             this.anaSayfaToolStripMenuItem.Name = "anaSayfaToolStripMenuItem";
@@ -187,7 +169,7 @@
             // 
             // panel_ilaçAnaSayfa
             // 
-            this.panel_ilaçAnaSayfa.BackColor = System.Drawing.Color.White;
+            this.panel_ilaçAnaSayfa.BackColor = System.Drawing.Color.Transparent;
             this.panel_ilaçAnaSayfa.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel_ilaçAnaSayfa.Location = new System.Drawing.Point(0, 317);
             this.panel_ilaçAnaSayfa.Name = "panel_ilaçAnaSayfa";
@@ -199,6 +181,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(987, 769);
             this.Controls.Add(this.panel_ilaçAnaSayfa);
             this.Controls.Add(this.data_ilaçlar);
@@ -220,8 +203,6 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem txt_ilaçListesi;
-        private System.Windows.Forms.ToolStripMenuItem btn_ilaçkaydet;
-        private System.Windows.Forms.ToolStripMenuItem btn_ilaçGüncelle;
         private System.Windows.Forms.ToolStripMenuItem anaSayfaToolStripMenuItem;
         private System.Windows.Forms.DataGridView data_ilaçlar;
         private System.Windows.Forms.ToolStripMenuItem btn_ağrıKesici;

@@ -289,6 +289,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(964, 413);
             this.Controls.Add(this.btn_barkodBul);
             this.Controls.Add(this.lbl_hataİlaçBarkod);
@@ -312,7 +313,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "İlaçGüncelle";
             this.Text = "İlaçGüncelle";
-//            this.Load += new System.EventHandler(this.İlaçGüncelle_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txt_adet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -31,7 +31,15 @@ namespace EczaneOtomasyon.Forms.İlaç
             da.Fill(dt);
             data_ilaçlar.DataSource = dt;
         }
-
+        public void Listele()
+        {
+            OleDbConnection con = new OleDbConnection(connection);
+            OleDbCommand cmd = new OleDbCommand("SELECT isim, kategori, fiyat, barkod, adet FROM İlaçlar", con);
+            OleDbDataAdapter da = new OleDbDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            data_ilaçlar.DataSource = dt;
+        }
         private void İlaçAnaSayfa_Load(object sender, EventArgs e)
         {
             Listele("SELECT isim, kategori, fiyat, barkod, adet FROM İlaçlar");
@@ -62,10 +70,7 @@ namespace EczaneOtomasyon.Forms.İlaç
         }
 
         #region kategoriye göre ilaç listeleme buton işlemleri 
-        private void txt_listele_Click(object sender, EventArgs e)
-        {
-            Listele("SELECT isim, kategori, fiyat, barkod, adet FROM İlaçlar");
-        }
+
         private void btn_ağrıKesici_Click(object sender, EventArgs e)
         {
             Listele("SELECT isim, kategori, fiyat, barkod, adet FROM İlaçlar WHERE Kategori = 'Ağrı Kesici'");
@@ -112,7 +117,13 @@ namespace EczaneOtomasyon.Forms.İlaç
             Listele("SELECT isim, kategori, fiyat, barkod, adet FROM İlaçlar WHERE Kategori = 'Diğer'");
 
         }
+
         #endregion
+
+        private void txt_listele_Click(object sender, EventArgs e)
+        {
+            Listele();
+        }
     }
 
 

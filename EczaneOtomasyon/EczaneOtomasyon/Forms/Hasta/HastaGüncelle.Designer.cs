@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HastaGüncelle));
             this.btn_hastaGüncelle = new System.Windows.Forms.Button();
             this.lbl_güncelleTelHata = new System.Windows.Forms.Label();
             this.lbl_güncelleAdresHata = new System.Windows.Forms.Label();
@@ -49,8 +48,6 @@
             this.txt_telNo = new System.Windows.Forms.TextBox();
             this.txt_adres = new System.Windows.Forms.TextBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.btn_EkranKapat = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_EkranKapat)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_hastaGüncelle
@@ -186,6 +183,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(453, 233);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(177, 22);
@@ -196,6 +194,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(458, 154);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(129, 22);
@@ -206,6 +205,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(8, 233);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(136, 22);
@@ -216,6 +216,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(453, 75);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(139, 22);
@@ -226,6 +227,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(8, 154);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(106, 22);
@@ -236,6 +238,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(8, 75);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(125, 22);
@@ -272,25 +275,12 @@
             this.txt_adres.MouseLeave += new System.EventHandler(this.txt_adres_MouseLeave);
             this.txt_adres.MouseHover += new System.EventHandler(this.txt_adres_MouseHover);
             // 
-            // btn_EkranKapat
-            // 
-            this.btn_EkranKapat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_EkranKapat.Image = ((System.Drawing.Image)(resources.GetObject("btn_EkranKapat.Image")));
-            this.btn_EkranKapat.Location = new System.Drawing.Point(873, 4);
-            this.btn_EkranKapat.Name = "btn_EkranKapat";
-            this.btn_EkranKapat.Size = new System.Drawing.Size(35, 35);
-            this.btn_EkranKapat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btn_EkranKapat.TabIndex = 71;
-            this.btn_EkranKapat.TabStop = false;
-            this.btn_EkranKapat.Click += new System.EventHandler(this.btn_EkranKapat_Click);
-            // 
             // HastaGüncelle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(913, 361);
-            this.Controls.Add(this.btn_EkranKapat);
             this.Controls.Add(this.btn_hastaGüncelle);
             this.Controls.Add(this.lbl_güncelleTelHata);
             this.Controls.Add(this.lbl_güncelleAdresHata);
@@ -315,7 +305,6 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "HastaGüncelle";
-            ((System.ComponentModel.ISupportInitialize)(this.btn_EkranKapat)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -343,7 +332,6 @@
         private System.Windows.Forms.TextBox txt_telNo;
         private System.Windows.Forms.TextBox txt_adres;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.PictureBox btn_EkranKapat;
         // public System.Windows.Forms.RichTextBox txt_adres;
     }
 }

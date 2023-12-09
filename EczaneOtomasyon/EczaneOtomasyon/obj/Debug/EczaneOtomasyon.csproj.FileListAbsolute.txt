@@ -24,3 +24,4 @@ C:\Users\canbi\OneDrive\Documents\GitHub\EczaneOtomasyonu\EczaneOtomasyon\Eczane
 C:\Users\canbi\OneDrive\Documents\GitHub\EczaneOtomasyonu\EczaneOtomasyon\EczaneOtomasyon\bin\Debug\WinFormAnimation.dll
 C:\Users\canbi\OneDrive\Documents\GitHub\EczaneOtomasyonu\EczaneOtomasyon\EczaneOtomasyon\bin\Debug\CircularProgressBar.xml
 C:\Users\canbi\OneDrive\Documents\GitHub\EczaneOtomasyonu\EczaneOtomasyon\EczaneOtomasyon\obj\Debug\EczaneOtomasyon.csproj.CopyComplete
+C:\Users\canbi\OneDrive\Documents\GitHub\EczaneOtomasyonu\EczaneOtomasyon\EczaneOtomasyon\obj\Debug\EczaneOtomasyon.Forms.AnaPanel.AnaPanel.resources
