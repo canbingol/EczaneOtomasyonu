@@ -126,6 +126,4 @@ namespace EczaneOtomasyon.Forms.İlaç
         }
     }
 
-
-
 }

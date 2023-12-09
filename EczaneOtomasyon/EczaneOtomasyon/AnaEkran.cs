@@ -1,5 +1,6 @@
 ﻿using EczaneOtomasyon.Forms.Hasta;
 using EczaneOtomasyon.Forms.İlaç;
+using EczaneOtomasyon.Forms.Reçete;
 using EczaneOtomasyon.Forms.Stok;
 using System;
 using System.Collections.Generic;
@@ -42,11 +43,13 @@ namespace EczaneOtomasyon
         private void btn_ilaçİşlemleri_Click(object sender, EventArgs e)
         {
             AltMenüSakla();
-            AltFormGöster(new Forms.İlaç.İlaçAnaSayfa());
+            AltFormGöster(new İlaçAnaSayfa());
             AltMenüGöster(pnl_ilaç);
         }
         private void btn_reçeteİşlemleri_Click(object sender, EventArgs e)
         {
+            AltFormGöster(new ReçeteAnaSayfa());
+
             AltMenüSakla();
 
         }

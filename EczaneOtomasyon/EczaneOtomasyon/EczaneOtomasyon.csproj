@@ -89,6 +89,12 @@
     <Compile Include="AnaEkran.Designer.cs">
       <DependentUpon>AnaEkran.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Reçete\ReçeteAnaSayfa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Reçete\ReçeteAnaSayfa.Designer.cs">
+      <DependentUpon>ReçeteAnaSayfa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +157,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AnaEkran.resx">
       <DependentUpon>AnaEkran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reçete\ReçeteAnaSayfa.resx">
+      <DependentUpon>ReçeteAnaSayfa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
