@@ -256,6 +256,11 @@ namespace EczaneOtomasyon.Forms.İlaç
         {
             Borkodvarmı();
         }
+
+        private void İlaçGüncelle_Load(object sender, EventArgs e)
+        {
+            MessageBox.Show(" GÜNCELLEMEK İSTEDİĞİNİZ HASTANIN TC NOSUNU GİRİNİZ");
+        }
     }
 
 

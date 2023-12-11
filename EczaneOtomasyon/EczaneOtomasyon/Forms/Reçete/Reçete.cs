@@ -11,7 +11,6 @@ namespace EczaneOtomasyon.Forms.Reçete
         String ad, soyad, tc, ilaçAdı, barkodNo;
         int adet, fiyat, toplamFiyat;
 
-
         public Reçete()
         {
                 

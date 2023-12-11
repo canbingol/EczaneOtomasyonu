@@ -1,6 +1,8 @@
-﻿using EczaneOtomasyon.Forms.Hasta;
+﻿using EczaneOtomasyon.Forms.AnaPanel;
+using EczaneOtomasyon.Forms.Hasta;
 using EczaneOtomasyon.Forms.İlaç;
 using EczaneOtomasyon.Forms.Reçete;
+using EczaneOtomasyon.Forms.Satış;
 using EczaneOtomasyon.Forms.Stok;
 using System;
 using System.Collections.Generic;
@@ -27,13 +29,14 @@ namespace EczaneOtomasyon
         private void btn_hastaİşlemleri_Click(object sender, EventArgs e)
         {
             AltMenüSakla();
-            AltFormGöster(new Forms.Hasta.HastaAnaSayfa());
+            AltFormGöster(new HastaAnaSayfa());
             AltMenüGöster(pnl_hasta);
         }
 
         private void btn_anaSayfa_Click_1(object sender, EventArgs e)
         {
             AltMenüSakla();
+            AltFormGöster(new AnaPanel());
         }
         private void btn_hastaKaydet_Click(object sender, EventArgs e)
         {
@@ -65,6 +68,8 @@ namespace EczaneOtomasyon
         private void btn_satış_Click(object sender, EventArgs e)
         {
             AltMenüSakla();
+            AltFormGöster(new SatışAnaSayfa());
+
 
         }
         #endregion
@@ -246,6 +251,12 @@ namespace EczaneOtomasyon
             if (pnl_işlemler.Visible == true)
                 pnl_işlemler.Visible = false;
 
+        }
+
+        private void AnaEkran_Load(object sender, EventArgs e)
+        {
+            AltMenüSakla();
+            AltFormGöster(new AnaPanel());
         }
     }
 }

@@ -43,10 +43,12 @@ namespace EczaneOtomasyon.Forms.Stok
                     // Eğer sonuç varsa
                     if (result != null )
                     {
-                        label1.Text = result.ToString();
-                        int deger = Convert.ToUInt16(label1.Text);
+                        lbl_toplamAdet.Text = result.ToString();
+                        int deger = Convert.ToUInt16(lbl_toplamAdet.Text);
                         pBar.Value = deger;
                         pBar.Text =deger.ToString()+"%";
+                        bar.Value = deger;
+                        
                     }
                     else
                     {

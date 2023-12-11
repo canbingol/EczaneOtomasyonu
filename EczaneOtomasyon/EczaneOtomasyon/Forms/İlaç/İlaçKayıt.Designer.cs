@@ -57,7 +57,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label7.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label7.Location = new System.Drawing.Point(390, -1);
+            this.label7.Location = new System.Drawing.Point(253, -1);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(238, 34);
             this.label7.TabIndex = 35;
@@ -67,9 +67,9 @@
             // 
             this.btn_ilaçKaydet.BackColor = System.Drawing.Color.Red;
             this.btn_ilaçKaydet.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btn_ilaçKaydet.Location = new System.Drawing.Point(597, 281);
+            this.btn_ilaçKaydet.Location = new System.Drawing.Point(155, 252);
             this.btn_ilaçKaydet.Name = "btn_ilaçKaydet";
-            this.btn_ilaçKaydet.Size = new System.Drawing.Size(300, 112);
+            this.btn_ilaçKaydet.Size = new System.Drawing.Size(439, 56);
             this.btn_ilaçKaydet.TabIndex = 52;
             this.btn_ilaçKaydet.Text = "BÜTÜN ALANLARI DOLDURUN";
             this.btn_ilaçKaydet.UseVisualStyleBackColor = false;
@@ -92,7 +92,7 @@
             this.lbl_hataİlaçBarkod.AutoSize = true;
             this.lbl_hataİlaçBarkod.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lbl_hataİlaçBarkod.ForeColor = System.Drawing.Color.Red;
-            this.lbl_hataİlaçBarkod.Location = new System.Drawing.Point(638, 119);
+            this.lbl_hataİlaçBarkod.Location = new System.Drawing.Point(132, 109);
             this.lbl_hataİlaçBarkod.Name = "lbl_hataİlaçBarkod";
             this.lbl_hataİlaçBarkod.Size = new System.Drawing.Size(198, 17);
             this.lbl_hataİlaçBarkod.TabIndex = 95;
@@ -104,7 +104,7 @@
             this.lbl_hataİlaçKategori.AutoSize = true;
             this.lbl_hataİlaçKategori.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lbl_hataİlaçKategori.ForeColor = System.Drawing.Color.Red;
-            this.lbl_hataİlaçKategori.Location = new System.Drawing.Point(195, 133);
+            this.lbl_hataİlaçKategori.Location = new System.Drawing.Point(509, 103);
             this.lbl_hataİlaçKategori.Name = "lbl_hataİlaçKategori";
             this.lbl_hataİlaçKategori.Size = new System.Drawing.Size(198, 17);
             this.lbl_hataİlaçKategori.TabIndex = 94;
@@ -116,7 +116,7 @@
             this.lbl_hataİlaçFiyat.AutoSize = true;
             this.lbl_hataİlaçFiyat.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lbl_hataİlaçFiyat.ForeColor = System.Drawing.Color.Red;
-            this.lbl_hataİlaçFiyat.Location = new System.Drawing.Point(637, 33);
+            this.lbl_hataİlaçFiyat.Location = new System.Drawing.Point(509, 31);
             this.lbl_hataİlaçFiyat.Name = "lbl_hataİlaçFiyat";
             this.lbl_hataİlaçFiyat.Size = new System.Drawing.Size(198, 17);
             this.lbl_hataİlaçFiyat.TabIndex = 93;
@@ -128,7 +128,7 @@
             this.lbl_hataİlaçAd.AutoSize = true;
             this.lbl_hataİlaçAd.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lbl_hataİlaçAd.ForeColor = System.Drawing.Color.Red;
-            this.lbl_hataİlaçAd.Location = new System.Drawing.Point(194, 31);
+            this.lbl_hataİlaçAd.Location = new System.Drawing.Point(131, 31);
             this.lbl_hataİlaçAd.Name = "lbl_hataİlaçAd";
             this.lbl_hataİlaçAd.Size = new System.Drawing.Size(198, 17);
             this.lbl_hataİlaçAd.TabIndex = 91;
@@ -139,7 +139,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label15.Location = new System.Drawing.Point(5, 229);
+            this.label15.Location = new System.Drawing.Point(4, 200);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(204, 22);
             this.label15.TabIndex = 87;
@@ -149,7 +149,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label16.Location = new System.Drawing.Point(508, 224);
+            this.label16.Location = new System.Drawing.Point(395, 199);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(111, 22);
             this.label16.TabIndex = 86;
@@ -159,7 +159,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label17.Location = new System.Drawing.Point(508, 147);
+            this.label17.Location = new System.Drawing.Point(4, 131);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(115, 22);
             this.label17.TabIndex = 88;
@@ -169,7 +169,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label18.Location = new System.Drawing.Point(22, 156);
+            this.label18.Location = new System.Drawing.Point(395, 132);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(96, 22);
             this.label18.TabIndex = 85;
@@ -179,7 +179,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label19.Location = new System.Drawing.Point(508, 64);
+            this.label19.Location = new System.Drawing.Point(400, 57);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(56, 22);
             this.label19.TabIndex = 84;
@@ -189,7 +189,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label21.Location = new System.Drawing.Point(22, 64);
+            this.label21.Location = new System.Drawing.Point(4, 64);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(86, 22);
             this.label21.TabIndex = 82;
@@ -197,10 +197,10 @@
             // 
             // txt_sontarih
             // 
-            this.txt_sontarih.Location = new System.Drawing.Point(239, 224);
+            this.txt_sontarih.Location = new System.Drawing.Point(215, 194);
             this.txt_sontarih.Margin = new System.Windows.Forms.Padding(4);
             this.txt_sontarih.Name = "txt_sontarih";
-            this.txt_sontarih.Size = new System.Drawing.Size(258, 28);
+            this.txt_sontarih.Size = new System.Drawing.Size(167, 28);
             this.txt_sontarih.TabIndex = 81;
             // 
             // txt_kategori
@@ -215,7 +215,7 @@
             "Diyabet İlacı",
             "Kalp İlacı",
             "Tansiyon İlacı"});
-            this.txt_kategori.Location = new System.Drawing.Point(198, 154);
+            this.txt_kategori.Location = new System.Drawing.Point(512, 129);
             this.txt_kategori.Margin = new System.Windows.Forms.Padding(4);
             this.txt_kategori.Name = "txt_kategori";
             this.txt_kategori.Size = new System.Drawing.Size(258, 29);
@@ -224,7 +224,7 @@
             // 
             // txt_adet
             // 
-            this.txt_adet.Location = new System.Drawing.Point(641, 218);
+            this.txt_adet.Location = new System.Drawing.Point(512, 194);
             this.txt_adet.Margin = new System.Windows.Forms.Padding(4);
             this.txt_adet.Maximum = new decimal(new int[] {
             1000,
@@ -248,7 +248,7 @@
             // txt_fiyat
             // 
             this.txt_fiyat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_fiyat.Location = new System.Drawing.Point(640, 56);
+            this.txt_fiyat.Location = new System.Drawing.Point(512, 52);
             this.txt_fiyat.Margin = new System.Windows.Forms.Padding(4);
             this.txt_fiyat.MaxLength = 13;
             this.txt_fiyat.Multiline = true;
@@ -259,7 +259,7 @@
             // txt_barkod
             // 
             this.txt_barkod.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_barkod.Location = new System.Drawing.Point(640, 140);
+            this.txt_barkod.Location = new System.Drawing.Point(134, 131);
             this.txt_barkod.Margin = new System.Windows.Forms.Padding(4);
             this.txt_barkod.MaxLength = 13;
             this.txt_barkod.Multiline = true;
@@ -270,7 +270,7 @@
             // txt_ilaçAd
             // 
             this.txt_ilaçAd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_ilaçAd.Location = new System.Drawing.Point(198, 56);
+            this.txt_ilaçAd.Location = new System.Drawing.Point(135, 56);
             this.txt_ilaçAd.Margin = new System.Windows.Forms.Padding(4);
             this.txt_ilaçAd.Multiline = true;
             this.txt_ilaçAd.Name = "txt_ilaçAd";
@@ -281,8 +281,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(964, 413);
+            this.BackColor = System.Drawing.Color.LightGray;
+            this.ClientSize = new System.Drawing.Size(839, 367);
             this.Controls.Add(this.lbl_hataİlaçBarkod);
             this.Controls.Add(this.lbl_hataİlaçKategori);
             this.Controls.Add(this.lbl_hataİlaçFiyat);

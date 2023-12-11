@@ -16,7 +16,7 @@ namespace EczaneOtomasyon.Forms.İlaç
 {
     public partial class İlaçAnaSayfa : Form
     {
-        string connection = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=EczaneVeri.accdb";
+        string baglantı = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=EczaneVeri.accdb";
 
         public İlaçAnaSayfa()
         {
@@ -24,7 +24,7 @@ namespace EczaneOtomasyon.Forms.İlaç
         }
         public void Listele(string command)
         {
-            OleDbConnection con = new OleDbConnection(connection);
+            OleDbConnection con = new OleDbConnection(baglantı);
             OleDbCommand cmd = new OleDbCommand(command, con);
             OleDbDataAdapter da = new OleDbDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -33,7 +33,7 @@ namespace EczaneOtomasyon.Forms.İlaç
         }
         public void Listele()
         {
-            OleDbConnection con = new OleDbConnection(connection);
+            OleDbConnection con = new OleDbConnection(baglantı);
             OleDbCommand cmd = new OleDbCommand("SELECT isim, kategori, fiyat, barkod, adet FROM İlaçlar", con);
             OleDbDataAdapter da = new OleDbDataAdapter(cmd);
             DataTable dt = new DataTable();

@@ -96,6 +96,12 @@
     <Compile Include="Forms\Reçete\ReçeteAnaSayfa.Designer.cs">
       <DependentUpon>ReçeteAnaSayfa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Satış\ReçeteSeç.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Satış\ReçeteSeç.Designer.cs">
+      <DependentUpon>ReçeteSeç.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Satış\SatışAnaSayfa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Reçete\ReçeteAnaSayfa.resx">
       <DependentUpon>ReçeteAnaSayfa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Satış\ReçeteSeç.resx">
+      <DependentUpon>ReçeteSeç.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Satış\SatışAnaSayfa.resx">
       <DependentUpon>SatışAnaSayfa.cs</DependentUpon>

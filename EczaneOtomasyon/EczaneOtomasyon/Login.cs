@@ -20,7 +20,7 @@ namespace EczaneOtomasyon
         {
             InitializeComponent();
         }
-
+      public static string aktifKullanıcı;
         private void btn_Giriş_Click(object sender, EventArgs e)
         {
             string kullanıcıAdı = txt_KullanıcıAdı.Text;
@@ -44,10 +44,15 @@ namespace EczaneOtomasyon
                     cmd.Parameters.AddWithValue("@Password", parola);
                     using (OleDbDataReader reader = cmd.ExecuteReader())
                     {
+                        if (reader.Read())
+                        {
+                            aktifKullanıcı = reader["kullanıcıAdı"].ToString();
+
+                        }
+
                         if (reader.HasRows)
                         {
                             // Kullanıcı doğrulandı, giriş yapabilirsiniz.
-                            MessageBox.Show("Giriş başarılı!");
                             AnaEkran anaEkran = new AnaEkran();
                             anaEkran.Show();
                             this.Hide();
@@ -235,6 +240,11 @@ namespace EczaneOtomasyon
                     }
                 }
             }
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

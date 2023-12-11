@@ -16,5 +16,14 @@ namespace EczaneOtomasyon.Forms.Satış
         {
             InitializeComponent();
         }
+
+        private void BTN_Click(object sender, EventArgs e)
+        {
+            ReçeteSeç reçete = new ReçeteSeç();
+            reçete.TopLevel = false;
+            reçete.AutoScroll = true;
+            panel1.Controls.Add(reçete);
+            reçete.Show();
+        }
     }
 }

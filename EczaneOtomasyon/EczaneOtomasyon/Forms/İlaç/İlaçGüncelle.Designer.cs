@@ -102,9 +102,9 @@
             // 
             this.btn_ilaçGüncelle.BackColor = System.Drawing.Color.Red;
             this.btn_ilaçGüncelle.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btn_ilaçGüncelle.Location = new System.Drawing.Point(628, 285);
+            this.btn_ilaçGüncelle.Location = new System.Drawing.Point(275, 313);
             this.btn_ilaçGüncelle.Name = "btn_ilaçGüncelle";
-            this.btn_ilaçGüncelle.Size = new System.Drawing.Size(300, 114);
+            this.btn_ilaçGüncelle.Size = new System.Drawing.Size(439, 56);
             this.btn_ilaçGüncelle.TabIndex = 69;
             this.btn_ilaçGüncelle.Text = "BÜTÜN ALANLARI DOLDURUN";
             this.btn_ilaçGüncelle.UseVisualStyleBackColor = false;
@@ -255,6 +255,7 @@
             // txt_barkod
             // 
             this.txt_barkod.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_barkod.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txt_barkod.Location = new System.Drawing.Point(237, 60);
             this.txt_barkod.Margin = new System.Windows.Forms.Padding(4);
             this.txt_barkod.MaxLength = 13;
@@ -289,7 +290,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(964, 413);
             this.Controls.Add(this.btn_barkodBul);
             this.Controls.Add(this.lbl_hataİlaçBarkod);
@@ -313,6 +314,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "İlaçGüncelle";
             this.Text = "İlaçGüncelle";
+            this.Load += new System.EventHandler(this.İlaçGüncelle_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txt_adet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

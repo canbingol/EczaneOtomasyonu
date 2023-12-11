@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -38,6 +39,10 @@ namespace EczaneOtomasyon.Forms.Reçete
                             lbl_tc.Text = hastaTc.ToUpper();
                             lbl_hastaAd.Text = hastaAdı.ToUpper();
                             lbl_soyad.Text = hastaSoyad.ToUpper();
+
+                            lbl_hastaAd.Visible = true;
+                            lbl_tc.Visible = true;
+                            lbl_soyad.Visible = true;
                         }
                         else
                         {
@@ -67,6 +72,7 @@ namespace EczaneOtomasyon.Forms.Reçete
                     {
                         if (barkodOku.Read())
                         {
+                            barkod = barkodOku["barkod"].ToString();
                             ad = barkodOku["isim"].ToString();
                             kategori = barkodOku["kategori"].ToString();
                             İlaçFiyat = barkodOku["fiyat"].ToString();
@@ -85,7 +91,6 @@ namespace EczaneOtomasyon.Forms.Reçete
                             btn_adetEkle.Visible = true;
                             label.Visible = true;
                             txt_adet.Visible = true;
-                            lbl_adet.Visible = true;
                         }
                         else
                         {
@@ -106,8 +111,8 @@ namespace EczaneOtomasyon.Forms.Reçete
             }
             else
             {
-                ++sayac;
-                if (sayac == 9)
+                
+                if (sayac >= 9)
                 {
                     MessageBox.Show(" DAHA FAZLA İLAÇ EKLENEMEZ");
                     return;
@@ -122,12 +127,17 @@ namespace EczaneOtomasyon.Forms.Reçete
                 toplamFiyat += olanAdet * Convert.ToInt32(İlaçFiyat);
                 lbl_toplamFiyat.Text = toplamFiyat.ToString();
 
+                lbl_ilaçAd.Text = null;lbl_kategori.Text = null; lbl_fiyat.Text = null;
+                lbl_adet.Text = null; txt_adet.Text = "1";
+
                 MessageBox.Show(" İLAÇ REÇETEYE EKLENDİ");
             }
 
         }
         void ReçeteyeEkle()
         {
+            ++sayac;
+
             switch (sayac)
             {
                 case 1:
@@ -198,6 +208,8 @@ namespace EczaneOtomasyon.Forms.Reçete
             if (olanAdet >= istenenAdet && istenenAdet != 0)
             {
                 lbl_adet.Text = istenenAdet.ToString();
+                lbl_adet.Visible = true;
+
                 MessageBox.Show("adet eklendi");
             }
             else
@@ -217,6 +229,10 @@ namespace EczaneOtomasyon.Forms.Reçete
                 hastaKayıtlımı = true;
                 pnl_hasta.Visible = false;
                 txt_hastaTc.Clear();
+                pnl_ilaçEkle.Visible = true;
+                lbl_hastaTc.Visible = true;
+                lbl_hastaAdı.Visible = true;
+                lbl_hastaSoyad.Visible = true;
             }
             else
                 MessageBox.Show("HASTA GİRİŞİ YAPINIZ");
@@ -233,6 +249,8 @@ namespace EczaneOtomasyon.Forms.Reçete
         {
             hastaKayıtlımı = false;
             pnl_hasta.Visible = true;
+            pnl_ilaçEkle.Visible = false;
+            lbl_toplamFiyat.Text = "0";
         }
     }
 }
