@@ -48,10 +48,9 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
             this.lbl_ilaçSayısı = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.pnl_kullanıcı.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -291,16 +290,6 @@
             this.label5.Text = "TOPLAM REÇETE";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(128, 177);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // panel6
             // 
             this.panel6.Controls.Add(this.lbl_ilaçSayısı);
@@ -309,6 +298,18 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(326, 97);
             this.panel6.TabIndex = 11;
+            // 
+            // lbl_ilaçSayısı
+            // 
+            this.lbl_ilaçSayısı.AutoSize = true;
+            this.lbl_ilaçSayısı.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(84)))), ((int)(((byte)(193)))));
+            this.lbl_ilaçSayısı.Font = new System.Drawing.Font("Microsoft YaHei", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lbl_ilaçSayısı.ForeColor = System.Drawing.Color.Black;
+            this.lbl_ilaçSayısı.Location = new System.Drawing.Point(271, 39);
+            this.lbl_ilaçSayısı.Name = "lbl_ilaçSayısı";
+            this.lbl_ilaçSayısı.Size = new System.Drawing.Size(34, 37);
+            this.lbl_ilaçSayısı.TabIndex = 3;
+            this.lbl_ilaçSayısı.Text = "0";
             // 
             // label12
             // 
@@ -326,18 +327,6 @@
             this.label12.Text = "İLAÇ SAYISI";
             this.label12.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // lbl_ilaçSayısı
-            // 
-            this.lbl_ilaçSayısı.AutoSize = true;
-            this.lbl_ilaçSayısı.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(84)))), ((int)(((byte)(193)))));
-            this.lbl_ilaçSayısı.Font = new System.Drawing.Font("Microsoft YaHei", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lbl_ilaçSayısı.ForeColor = System.Drawing.Color.Black;
-            this.lbl_ilaçSayısı.Location = new System.Drawing.Point(271, 39);
-            this.lbl_ilaçSayısı.Name = "lbl_ilaçSayısı";
-            this.lbl_ilaçSayısı.Size = new System.Drawing.Size(34, 37);
-            this.lbl_ilaçSayısı.TabIndex = 3;
-            this.lbl_ilaçSayısı.Text = "0";
-            // 
             // AnaPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -345,7 +334,6 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(718, 746);
             this.Controls.Add(this.panel6);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -395,7 +383,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lbl_aktifKullanıcı;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label lbl_ilaçSayısı;
         private System.Windows.Forms.Label label12;

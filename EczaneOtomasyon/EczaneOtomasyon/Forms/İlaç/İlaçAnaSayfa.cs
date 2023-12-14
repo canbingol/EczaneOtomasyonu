@@ -45,6 +45,7 @@ namespace EczaneOtomasyon.Forms.İlaç
             Listele("SELECT isim, kategori, fiyat, barkod, adet FROM İlaçlar");
         }
 
+        /*
         private void btn_ilaçkaydet_Click(object sender, EventArgs e)
         {
             if (panel_ilaçAnaSayfa.Visible == false)
@@ -68,7 +69,7 @@ namespace EczaneOtomasyon.Forms.İlaç
             panel_ilaçAnaSayfa.Controls.Add(güncelle);
             güncelle.Show();
         }
-
+        */
         #region kategoriye göre ilaç listeleme buton işlemleri 
 
         private void btn_ağrıKesici_Click(object sender, EventArgs e)

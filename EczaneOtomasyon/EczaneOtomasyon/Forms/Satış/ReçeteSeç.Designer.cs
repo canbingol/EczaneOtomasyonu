@@ -39,21 +39,9 @@
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 16;
-            this.listBox1.Items.AddRange(new object[] {
-            "Can",
-            "Meryem",
-            "ali",
-            "Hz isa",
-            "muhammed",
-            "yakup",
-            "aslı",
-            "merveler kötü",
-            "parol",
-            "adem",
-            "Havva"});
-            this.listBox1.Location = new System.Drawing.Point(12, 107);
+            this.listBox1.Location = new System.Drawing.Point(14, 107);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(142, 276);
+            this.listBox1.Size = new System.Drawing.Size(140, 308);
             this.listBox1.TabIndex = 0;
             // 
             // label1
@@ -81,7 +69,7 @@
             this.listBox2.ItemHeight = 16;
             this.listBox2.Location = new System.Drawing.Point(172, 107);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(488, 276);
+            this.listBox2.Size = new System.Drawing.Size(516, 308);
             this.listBox2.TabIndex = 0;
             // 
             // label2

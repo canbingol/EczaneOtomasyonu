@@ -20,6 +20,7 @@ namespace EczaneOtomasyon.Forms.AnaPanel
         {
             InitializeComponent();
         }
+
         void ToplamDeger(string sorgu, Label lbl)
         {
             using (OleDbConnection con = new OleDbConnection(baglantı))
@@ -58,11 +59,10 @@ namespace EczaneOtomasyon.Forms.AnaPanel
             ToplamDeger("SELECT COUNT(*) FROM İlaçlar", lbl_ilaçSayısı);
             ToplamDeger("SELECT SUM(adet) FROM İlaçlar", lbl_toplamİlaç);
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             ToplamDeger("SELECT COUNT(*) FROM Hastalar", label1);
-           
+
         }
     }
 }

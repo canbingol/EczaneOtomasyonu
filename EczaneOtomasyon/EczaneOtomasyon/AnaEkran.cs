@@ -250,13 +250,24 @@ namespace EczaneOtomasyon
             ilaç.Listele();
             if (pnl_işlemler.Visible == true)
                 pnl_işlemler.Visible = false;
-
+            
         }
 
         private void AnaEkran_Load(object sender, EventArgs e)
         {
             AltMenüSakla();
             AltFormGöster(new AnaPanel());
+        }
+
+        private void btn_uygulamaKapat_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+
+        }
+
+        private void btn_maksimize_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Maximized;    
         }
     }
 }

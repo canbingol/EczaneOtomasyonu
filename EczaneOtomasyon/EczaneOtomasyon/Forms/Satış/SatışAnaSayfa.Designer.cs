@@ -114,12 +114,12 @@
             // 
             this.panel1.Location = new System.Drawing.Point(2, 222);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(700, 450);
+            this.panel1.Size = new System.Drawing.Size(700, 453);
             this.panel1.TabIndex = 6;
             // 
             // BTN
             // 
-            this.BTN.Location = new System.Drawing.Point(234, 149);
+            this.BTN.Location = new System.Drawing.Point(26, 151);
             this.BTN.Name = "BTN";
             this.BTN.Size = new System.Drawing.Size(150, 41);
             this.BTN.TabIndex = 7;
