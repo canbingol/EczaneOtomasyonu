@@ -269,5 +269,15 @@ namespace EczaneOtomasyon
         {
             WindowState = FormWindowState.Maximized;    
         }
+
+        private void pnl_işlemler_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pnl_logo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -191,6 +191,11 @@ namespace EczaneOtomasyon.Forms.Reçete
             }
         }
 
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
         public ReçeteAnaSayfa()
         {
             InitializeComponent();

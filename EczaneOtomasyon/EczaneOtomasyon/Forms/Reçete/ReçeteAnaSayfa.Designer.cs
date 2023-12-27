@@ -1137,6 +1137,7 @@
             this.label14.Size = new System.Drawing.Size(64, 23);
             this.label14.TabIndex = 6;
             this.label14.Text = "ADETİ";
+            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // lbl_ilaçAdeti1
             // 

@@ -24,7 +24,7 @@ namespace EczaneOtomasyon.Forms.Hasta
             txt_telNo.TextChanged += TextBox_TextChanged;
         }
 
-        
+
         OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=EczaneVeri.accdb");
 
         // hasta güncelleme işlemleri
@@ -37,7 +37,7 @@ namespace EczaneOtomasyon.Forms.Hasta
                 string ad = txt_ad.Text;
                 string soyad = txt_soyad.Text;
                 string telNo = txt_telNo.Text;
-                DateTime dogumTarihi = dogumtarihi.Value.Date;
+                string dogumTarihi = dogumtarihi.Value.Date.ToString();
                 string adres = txt_adres.Text;
 
                 if (string.IsNullOrEmpty(tcNo) || string.IsNullOrEmpty(ad) || string.IsNullOrEmpty(soyad) || string.IsNullOrEmpty(telNo) || dogumtarihi == null || string.IsNullOrEmpty(adres))
@@ -98,7 +98,7 @@ namespace EczaneOtomasyon.Forms.Hasta
 
             }
         }
-            private void btn_EkranKapat_Click(object sender, EventArgs e)
+        private void btn_EkranKapat_Click(object sender, EventArgs e)
         {
             this.Hide();
         }
@@ -112,7 +112,7 @@ namespace EczaneOtomasyon.Forms.Hasta
             string deger3 = txt_soyad.Text;
             string deger4 = txt_adres.Text;
             string deger5 = txt_telNo.Text;
-
+            string deger6 = dogumtarihi.Text;
 
             // Eğer herhangi bir TextBox boşsa, arka plan rengini kırmızı yap; aksi halde beyaz yap
             if (string.IsNullOrEmpty(deger1) || string.IsNullOrEmpty(deger2) ||
@@ -122,6 +122,7 @@ namespace EczaneOtomasyon.Forms.Hasta
             }
             else
             {
+
                 btn_hastaGüncelle.BackColor = System.Drawing.Color.White;
             }
         }
