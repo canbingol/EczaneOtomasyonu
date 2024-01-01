@@ -27,7 +27,7 @@ namespace EczaneOtomasyon.Forms.Hasta
         }
         public HastaAnaSayfa()
         {
-
+            
             InitializeComponent();
         }
 
@@ -36,15 +36,6 @@ namespace EczaneOtomasyon.Forms.Hasta
             Listele();
         }
 
-        private void btn_hastaListele_Click(object sender, EventArgs e)
-        {
-            //panel_anaSayfa.Visible = false;
-            Listele();
-        }
-        public void PanelGizle()
-        {
-            panel_hastaAnaSayfa.Visible = false;
-        }
         private void txt_hastaAra_TextChanged(object sender, EventArgs e)
         {
             string aranan = txt_hastaAra.Text;
@@ -78,7 +69,7 @@ namespace EczaneOtomasyon.Forms.Hasta
             }
             else
             {
-                Listele(); // Listele() fonksiyonu, tüm kayıtları listeler; uygulandığından emin olun
+                Listele(); 
             }
 
 
@@ -89,5 +80,9 @@ namespace EczaneOtomasyon.Forms.Hasta
             txt_hastaAra.Text = string.Empty;
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Listele();
+        }
     }
 }

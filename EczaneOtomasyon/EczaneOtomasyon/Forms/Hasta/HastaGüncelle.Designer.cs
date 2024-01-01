@@ -52,8 +52,9 @@
             // 
             // btn_hastaGüncelle
             // 
-            this.btn_hastaGüncelle.BackColor = System.Drawing.Color.Red;
+            this.btn_hastaGüncelle.BackColor = System.Drawing.Color.Green;
             this.btn_hastaGüncelle.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_hastaGüncelle.ForeColor = System.Drawing.Color.White;
             this.btn_hastaGüncelle.Location = new System.Drawing.Point(238, 293);
             this.btn_hastaGüncelle.Name = "btn_hastaGüncelle";
             this.btn_hastaGüncelle.Size = new System.Drawing.Size(439, 56);
@@ -306,6 +307,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "HastaGüncelle";
+            this.Load += new System.EventHandler(this.HastaGüncelle_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

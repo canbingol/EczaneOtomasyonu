@@ -47,6 +47,7 @@
             this.txt_barkod = new System.Windows.Forms.TextBox();
             this.txt_ilaçAd = new System.Windows.Forms.TextBox();
             this.btn_barkodBul = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.txt_adet)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,7 +80,7 @@
             this.lbl_hataİlaçFiyat.AutoSize = true;
             this.lbl_hataİlaçFiyat.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lbl_hataİlaçFiyat.ForeColor = System.Drawing.Color.Red;
-            this.lbl_hataİlaçFiyat.Location = new System.Drawing.Point(669, 37);
+            this.lbl_hataİlaçFiyat.Location = new System.Drawing.Point(774, 39);
             this.lbl_hataİlaçFiyat.Name = "lbl_hataİlaçFiyat";
             this.lbl_hataİlaçFiyat.Size = new System.Drawing.Size(198, 17);
             this.lbl_hataİlaçFiyat.TabIndex = 72;
@@ -91,7 +92,7 @@
             this.lbl_hataİlaçAd.AutoSize = true;
             this.lbl_hataİlaçAd.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lbl_hataİlaçAd.ForeColor = System.Drawing.Color.Red;
-            this.lbl_hataİlaçAd.Location = new System.Drawing.Point(668, 119);
+            this.lbl_hataİlaçAd.Location = new System.Drawing.Point(774, 123);
             this.lbl_hataİlaçAd.Name = "lbl_hataİlaçAd";
             this.lbl_hataİlaçAd.Size = new System.Drawing.Size(198, 17);
             this.lbl_hataİlaçAd.TabIndex = 70;
@@ -137,7 +138,7 @@
             // 
             this.lbl_adet.AutoSize = true;
             this.lbl_adet.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lbl_adet.Location = new System.Drawing.Point(540, 228);
+            this.lbl_adet.Location = new System.Drawing.Point(637, 233);
             this.lbl_adet.Name = "lbl_adet";
             this.lbl_adet.Size = new System.Drawing.Size(111, 22);
             this.lbl_adet.TabIndex = 65;
@@ -180,7 +181,7 @@
             // 
             this.lbl_ad.AutoSize = true;
             this.lbl_ad.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lbl_ad.Location = new System.Drawing.Point(528, 151);
+            this.lbl_ad.Location = new System.Drawing.Point(662, 156);
             this.lbl_ad.Name = "lbl_ad";
             this.lbl_ad.Size = new System.Drawing.Size(86, 22);
             this.lbl_ad.TabIndex = 61;
@@ -215,10 +216,11 @@
             this.txt_kategori.Sorted = true;
             this.txt_kategori.TabIndex = 59;
             this.txt_kategori.Visible = false;
+            this.txt_kategori.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_kategori_KeyPress_1);
             // 
             // txt_adet
             // 
-            this.txt_adet.Location = new System.Drawing.Point(673, 222);
+            this.txt_adet.Location = new System.Drawing.Point(777, 228);
             this.txt_adet.Margin = new System.Windows.Forms.Padding(4);
             this.txt_adet.Maximum = new decimal(new int[] {
             1000,
@@ -243,7 +245,7 @@
             // txt_fiyat
             // 
             this.txt_fiyat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_fiyat.Location = new System.Drawing.Point(672, 60);
+            this.txt_fiyat.Location = new System.Drawing.Point(777, 58);
             this.txt_fiyat.Margin = new System.Windows.Forms.Padding(4);
             this.txt_fiyat.MaxLength = 13;
             this.txt_fiyat.Multiline = true;
@@ -251,6 +253,9 @@
             this.txt_fiyat.Size = new System.Drawing.Size(258, 43);
             this.txt_fiyat.TabIndex = 56;
             this.txt_fiyat.Visible = false;
+            this.txt_fiyat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_fiyat_KeyPress);
+            this.txt_fiyat.MouseLeave += new System.EventHandler(this.txt_fiyat_MouseLeave);
+            this.txt_fiyat.MouseHover += new System.EventHandler(this.txt_fiyat_MouseHover);
             // 
             // txt_barkod
             // 
@@ -263,17 +268,22 @@
             this.txt_barkod.Name = "txt_barkod";
             this.txt_barkod.Size = new System.Drawing.Size(258, 43);
             this.txt_barkod.TabIndex = 55;
+            this.txt_barkod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_barkod_KeyPress);
+            this.txt_barkod.MouseLeave += new System.EventHandler(this.txt_barkod_MouseLeave);
+            this.txt_barkod.MouseHover += new System.EventHandler(this.txt_barkod_MouseHover);
             // 
             // txt_ilaçAd
             // 
             this.txt_ilaçAd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_ilaçAd.Location = new System.Drawing.Point(672, 144);
+            this.txt_ilaçAd.Location = new System.Drawing.Point(777, 144);
             this.txt_ilaçAd.Margin = new System.Windows.Forms.Padding(4);
             this.txt_ilaçAd.Multiline = true;
             this.txt_ilaçAd.Name = "txt_ilaçAd";
             this.txt_ilaçAd.Size = new System.Drawing.Size(258, 43);
             this.txt_ilaçAd.TabIndex = 54;
             this.txt_ilaçAd.Visible = false;
+            this.txt_ilaçAd.MouseLeave += new System.EventHandler(this.txt_ilaçAd_MouseLeave);
+            this.txt_ilaçAd.MouseHover += new System.EventHandler(this.txt_ilaçAd_MouseHover_1);
             // 
             // btn_barkodBul
             // 
@@ -286,12 +296,23 @@
             this.btn_barkodBul.UseVisualStyleBackColor = false;
             this.btn_barkodBul.Click += new System.EventHandler(this.btn_barkodBul_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.Location = new System.Drawing.Point(662, 68);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(106, 22);
+            this.label1.TabIndex = 61;
+            this.label1.Text = "İLAÇ FİYATI";
+            this.label1.Visible = false;
+            // 
             // İlaçGüncelle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(964, 413);
+            this.ClientSize = new System.Drawing.Size(1048, 413);
             this.Controls.Add(this.btn_barkodBul);
             this.Controls.Add(this.lbl_hataİlaçBarkod);
             this.Controls.Add(this.lbl_hataİlaçKategori);
@@ -304,6 +325,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lbl_kategori);
             this.Controls.Add(this.lbl_fiyat);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lbl_ad);
             this.Controls.Add(this.txt_sontarih);
             this.Controls.Add(this.txt_kategori);
@@ -342,5 +364,6 @@
         private System.Windows.Forms.TextBox txt_barkod;
         private System.Windows.Forms.TextBox txt_ilaçAd;
         private System.Windows.Forms.Button btn_barkodBul;
+        private System.Windows.Forms.Label label1;
     }
 }

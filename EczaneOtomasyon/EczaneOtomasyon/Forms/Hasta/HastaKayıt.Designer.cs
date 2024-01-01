@@ -264,7 +264,7 @@
             // 
             // btn_hastaKaydet
             // 
-            this.btn_hastaKaydet.BackColor = System.Drawing.Color.Red;
+            this.btn_hastaKaydet.BackColor = System.Drawing.Color.Green;
             this.btn_hastaKaydet.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btn_hastaKaydet.Location = new System.Drawing.Point(249, 280);
             this.btn_hastaKaydet.Name = "btn_hastaKaydet";
@@ -304,6 +304,7 @@
             this.Name = "HastaKayıt";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "HastaKayıt";
+            this.Load += new System.EventHandler(this.HastaKayıt_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -307,6 +307,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "İlaçKayıt";
             this.Text = "İlaçKayıt";
+            this.Load += new System.EventHandler(this.İlaçKayıt_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btn_KayıtKapat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_adet)).EndInit();
             this.ResumeLayout(false);

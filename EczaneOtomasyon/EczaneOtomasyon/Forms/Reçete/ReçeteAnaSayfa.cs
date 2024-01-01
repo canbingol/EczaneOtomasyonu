@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EczaneOtomasyon.Forms.Hasta;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,8 +20,9 @@ namespace EczaneOtomasyon.Forms.Reçete
 
         string hastaAdı, hastaSoyad, hastaTc;
 
-        void TcListele()
+        bool TcListele()
         {
+            bool oldumu;
             using (OleDbConnection con = new OleDbConnection(baglantı))
             {
                 string Tc = txt_hastaTc.Text;
@@ -43,21 +45,24 @@ namespace EczaneOtomasyon.Forms.Reçete
                             lbl_hastaAd.Visible = true;
                             lbl_tc.Visible = true;
                             lbl_soyad.Visible = true;
+                            oldumu = true;
                         }
                         else
                         {
-                            MessageBox.Show("KAYIT OKUNAMADI");
+                            oldumu = false;
+                            MessageBox.Show("KAYIT BULUNAMADI");
+
                         }
                     }
                 }
             }
-
+            return oldumu;
         }
 
         int olanAdet, istenenAdet, sayac = 0;
         string ad, kategori, İlaçFiyat, barkod;
 
-        void BArkodListele()
+        void BarkodListele()
         {
             using (OleDbConnection con = new OleDbConnection(baglantı))
             {
@@ -87,10 +92,7 @@ namespace EczaneOtomasyon.Forms.Reçete
                             lbl_kategori.Visible = true;
                             lbl_fiyat.Visible = true;
 
-                            MessageBox.Show(" LÜTFEN İLAÇ ADEDİ GİRİN");
-                            btn_adetEkle.Visible = true;
-                            label.Visible = true;
-                            txt_adet.Visible = true;
+
                         }
                         else
                         {
@@ -111,7 +113,7 @@ namespace EczaneOtomasyon.Forms.Reçete
             }
             else
             {
-                
+
                 if (sayac >= 9)
                 {
                     MessageBox.Show(" DAHA FAZLA İLAÇ EKLENEMEZ");
@@ -127,7 +129,7 @@ namespace EczaneOtomasyon.Forms.Reçete
                 toplamFiyat += olanAdet * Convert.ToInt32(İlaçFiyat);
                 lbl_toplamFiyat.Text = toplamFiyat.ToString();
 
-                lbl_ilaçAd.Text = null;lbl_kategori.Text = null; lbl_fiyat.Text = null;
+                lbl_ilaçAd.Text = null; lbl_kategori.Text = null; lbl_fiyat.Text = null;
                 lbl_adet.Text = null; txt_adet.Text = "1";
 
                 MessageBox.Show(" İLAÇ REÇETEYE EKLENDİ");
@@ -145,6 +147,7 @@ namespace EczaneOtomasyon.Forms.Reçete
                     lbl_ilaçAdeti1.Text = istenenAdet.ToString(); lbl_ilaçFiyat1.Text = İlaçFiyat;
                     lbl_ilaçAdı1.Visible = true; lbl_ilaçKategori1.Visible = true; lbl_barkoNo1.Visible = true;
                     lbl_ilaçAdeti1.Visible = true; lbl_ilaçFiyat1.Visible = true;
+                    İlaçEkle(hastaTc, ad, İlaçFiyat, "ilac1", "fiyat1");
                     break;
                 case 2:
                     lbl_ilaçAdı2.Text = ad; lbl_ilaçKategori2.Text = kategori; lbl_barkoNo2.Text = barkod;
@@ -190,8 +193,39 @@ namespace EczaneOtomasyon.Forms.Reçete
                     break;
             }
         }
+        void İlaçEkle(string tc, string ilac, string fiyat, string ilacSıra, string fiyatSıra)
+        {
+            using (OleDbConnection con = new OleDbConnection(baglantı))
+            {
+                string sorgu = $"INSERT INTO Reçeteler (tc, {ilacSıra}, {fiyatSıra}) VALUES (@tcno, @ilac, @fiyat)";
 
-        private void label14_Click(object sender, EventArgs e)
+                using (OleDbCommand ilaçEkle = new OleDbCommand(sorgu, con))
+                {
+                    con.Open();
+                    ilaçEkle.Parameters.AddWithValue("@tcno", tc);
+                    ilaçEkle.Parameters.AddWithValue("@ilac", ilac);
+                    ilaçEkle.Parameters.AddWithValue("@fiyat", fiyat);
+
+                    con.Close();
+                    HastaAnaSayfa anaSayfa = new HastaAnaSayfa();
+                    anaSayfa.Listele();
+
+                    if (sayac > 0)
+                    {
+                        MessageBox.Show("Kayıt başarıyla eklendi", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Kayıt eklenemedi", "Başarısız", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    }
+                }
+            }
+
+
+        }
+
+        private void pnl_hasta_Paint(object sender, PaintEventArgs e)
         {
 
         }
@@ -203,7 +237,15 @@ namespace EczaneOtomasyon.Forms.Reçete
 
         private void btn_barkodBul_Click_1(object sender, EventArgs e)
         {
-            BArkodListele();
+            if (istenenAdet == 0)
+            {
+                MessageBox.Show("İLAÇ ADETİ GİRMENİZ GEREKMEKTEDİR");
+            }
+            else
+            {
+                BarkodListele();
+            }
+
         }
 
         private void btn_adetEkle_Click_1(object sender, EventArgs e)
@@ -222,11 +264,12 @@ namespace EczaneOtomasyon.Forms.Reçete
                 MessageBox.Show(" İLAÇ ADETİ YETERSİZ");
             }
         }
-        bool hastaKayıtlımı = false;
-        private void btn_hastaOnayla_Click(object sender, EventArgs e)
-        {
 
-            if (!string.IsNullOrEmpty(hastaTc) || !string.IsNullOrEmpty(hastaAdı) || !string.IsNullOrEmpty(hastaSoyad))
+        bool hastaKayıtlımı = false;
+
+        private void btn_tcBul_Click(object sender, EventArgs e)
+        {
+            if (TcListele())
             {
                 lbl_hastaTc.Text = hastaTc;
                 lbl_hastaAdı.Text = hastaAdı;
@@ -240,14 +283,10 @@ namespace EczaneOtomasyon.Forms.Reçete
                 lbl_hastaSoyad.Visible = true;
             }
             else
-                MessageBox.Show("HASTA GİRİŞİ YAPINIZ");
+            {
+                MessageBox.Show("HATA OLUŞTU TEKRAR DENEYİNM");
+            }
 
-        }
-
-        private void btn_tcBul_Click(object sender, EventArgs e)
-        {
-
-            TcListele();
         }
 
         private void btn_reçeteOnayla_Click(object sender, EventArgs e)

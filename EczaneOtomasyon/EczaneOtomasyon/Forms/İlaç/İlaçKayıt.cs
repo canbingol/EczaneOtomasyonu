@@ -17,11 +17,7 @@ namespace EczaneOtomasyon.Forms.İlaç
         public İlaçKayıt()
         {
             InitializeComponent();
-            txt_fiyat.TextChanged += TextBox_TextChanged;
-            txt_adet.TextChanged += TextBox_TextChanged;
-            txt_barkod.TextChanged += TextBox_TextChanged;
-            txt_ilaçAd.TextChanged += TextBox_TextChanged;
-            txt_kategori.TextChanged += TextBox_TextChanged;
+
         }
 
         OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=EczaneVeri.accdb");
@@ -163,30 +159,7 @@ namespace EczaneOtomasyon.Forms.İlaç
 
         }
         // textBoxların değişimini kontrol eden metod
-        private void TextBox_TextChanged(object sender, EventArgs e)
-        {
-            // TextBox'lardaki değerleri kontrol et
-            string deger1 = txt_ilaçAd.Text;
-            string deger2 = txt_adet.Text;
-            string deger3 = txt_barkod.Text;
-            string deger5 = txt_kategori.Text;
-            string deger6 = txt_fiyat.Text;
 
-            // Eğer herhangi bir TextBox boşsa, arka plan rengini kırmızı yap; aksi halde beyaz yap
-            if (string.IsNullOrEmpty(deger1) || string.IsNullOrEmpty(deger2) || string.IsNullOrEmpty(deger6) ||
-                string.IsNullOrEmpty(deger3) || string.IsNullOrEmpty(deger5))
-            {
-                btn_ilaçKaydet.BackColor = System.Drawing.Color.Red;
-                btn_ilaçKaydet.Text = "BÜTÜN ALANLARI DOLDURUN";
-
-
-            }
-            else
-            {
-                btn_ilaçKaydet.BackColor = System.Drawing.Color.White;
-                btn_ilaçKaydet.Text = "İLAÇ KAYDI OLUŞTUR";
-            }
-        }
         new void MouseHover(TextBox txt)
         {
             txt.BorderStyle = BorderStyle.None;
@@ -235,9 +208,13 @@ namespace EczaneOtomasyon.Forms.İlaç
             MouseLeave(txt_barkod);
         }
 
+
         #endregion
 
+        private void İlaçKayıt_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }
 

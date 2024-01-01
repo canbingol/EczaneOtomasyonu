@@ -13,6 +13,8 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
     <PublishUrl>C:\Users\canbi\OneDrive\Desktop\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -23,13 +25,11 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationRevision>8</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -89,24 +89,18 @@
     <Compile Include="AnaEkran.Designer.cs">
       <DependentUpon>AnaEkran.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Reçete\Recete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Reçete\Recete.Designer.cs">
+      <DependentUpon>Recete.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Reçete\Reçete.cs" />
     <Compile Include="Forms\Reçete\ReçeteAnaSayfa.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Reçete\ReçeteAnaSayfa.Designer.cs">
       <DependentUpon>ReçeteAnaSayfa.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Satış\ReçeteSeç.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Satış\ReçeteSeç.Designer.cs">
-      <DependentUpon>ReçeteSeç.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Satış\SatışAnaSayfa.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Satış\SatışAnaSayfa.Designer.cs">
-      <DependentUpon>SatışAnaSayfa.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -171,14 +165,11 @@
     <EmbeddedResource Include="AnaEkran.resx">
       <DependentUpon>AnaEkran.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reçete\Recete.resx">
+      <DependentUpon>Recete.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Reçete\ReçeteAnaSayfa.resx">
       <DependentUpon>ReçeteAnaSayfa.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Satış\ReçeteSeç.resx">
-      <DependentUpon>ReçeteSeç.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Satış\SatışAnaSayfa.resx">
-      <DependentUpon>SatışAnaSayfa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

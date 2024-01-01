@@ -20,7 +20,19 @@ namespace EczaneOtomasyon
         {
             InitializeComponent();
         }
-      public static string aktifKullanıcı;
+        public static string aktifKullanıcı;
+
+        void Temizle(TextBox txt, TextBox txt2, TextBox txt3)
+        {
+            txt.Clear();
+            txt2.Clear();
+            txt3.Clear();
+        }
+        void Temizle(TextBox txt, TextBox txt2)
+        {
+            txt.Clear();
+            txt2.Clear();
+        }
         private void btn_Giriş_Click(object sender, EventArgs e)
         {
             string kullanıcıAdı = txt_KullanıcıAdı.Text;
@@ -33,7 +45,8 @@ namespace EczaneOtomasyon
 
             if (string.IsNullOrEmpty(parola))
                 lbl_hataParola.Visible = true;
-            else lbl_hataParola.Visible = false;
+            else 
+                lbl_hataParola.Visible = false;
 
             using (OleDbConnection con = new OleDbConnection(connection))
             {
@@ -66,6 +79,7 @@ namespace EczaneOtomasyon
                     }
                 }
             }
+           // Temizle(txt_Parola, txt_KullanıcıAdı);
         }
         public bool KullaniciAdiMevcutMu(string kullaniciAdi)
         {
@@ -90,6 +104,8 @@ namespace EczaneOtomasyon
 
         private void btn_yeniParolaKaydet_Click(object sender, EventArgs e)
         {
+            
+
             string parola1 = txt_YeniParola.Text;
             string parola2 = txt_YeniParola2.Text;
             String kullanıcı = txt_parolaKullanıcıAdı.Text;
@@ -124,7 +140,7 @@ namespace EczaneOtomasyon
 
                                     con.Open();
                                     int etkilenenSatırSayısı = cmd.ExecuteNonQuery();
-                                    con.Close();
+                                    //con.Close();
 
                                     if (etkilenenSatırSayısı > 0)
                                     {
@@ -142,6 +158,7 @@ namespace EczaneOtomasyon
                         }
                     }
                 }
+              //  Temizle(txt_YeniParola2, txt_YeniParola, txt_parolaKullanıcıAdı);
             }
             else
             {
@@ -151,44 +168,47 @@ namespace EczaneOtomasyon
         }
         private void btn_yeniKullanıcı_Click(object sender, EventArgs e)
         {
+          
             // panel görünür kılındı ve lokasyınu yeniden ayarlandı
             PanelYeniKayıt.Visible = true;
-            PanelYeniKayıt.Location = new Point(345, 28);
+            PanelYeniKayıt.Location = new Point(345, 10);
             if (panel_SifreDegistir.Visible == true)
             {
                 panel_SifreDegistir.Visible = false;
             }
+            Temizle(txt_kayıtKullanıcıAdı, txt_Parola);
         }
 
         private void btn_sifreUnuttum_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+           
             panel_SifreDegistir.Visible = true;
-            panel_SifreDegistir.Location = new Point(346, 63);
-
+            panel_SifreDegistir.Location = new Point(346, 1);
+            btn_YeniKayıtEkle.Visible = false;
             if (PanelYeniKayıt.Visible == true)
             {
                 PanelYeniKayıt.Visible = false;
             }
+            Temizle(txt_KullanıcıAdı, txt_Parola);
         }
         private void btn_kayıtKapat_Click(object sender, EventArgs e)
         {
+          
             PanelYeniKayıt.Visible = false;
-
+            Temizle(txt_kayıtKullanıcıAdı, txt_kayıtParola, txt_kayıtParola2);
         }
 
         private void btn_parolaKapat_Click(object sender, EventArgs e)
         {
+            
             panel_SifreDegistir.Visible = false;
-
-        }
-
-        private void btn_cıkıs_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
+            btn_YeniKayıtEkle.Visible = true;
+Temizle(txt_YeniParola2, txt_YeniParola, txt_parolaKullanıcıAdı);
         }
 
         private void btn_YeniKayıtEkle_Click(object sender, EventArgs e)
         {
+
             string kullanıcı = txt_kayıtKullanıcıAdı.Text;
             string parola1 = txt_kayıtParola.Text;
             string parola2 = txt_kayıtParola2.Text;
@@ -240,11 +260,29 @@ namespace EczaneOtomasyon
                     }
                 }
             }
+           // Temizle(txt_kayıtKullanıcıAdı, txt_kayıtParola, txt_kayıtParola2);
+        }
+
+        private void btn_cıkıs_Click_1(object sender, EventArgs e)
+        {
+            DialogResult sonuc;
+            sonuc = MessageBox.Show("ÇIKIŞ YAPMAK İSTEDİĞİNE EMİN MİSİN?", "ÇIKIŞ", MessageBoxButtons.OKCancel);
+            if (sonuc == DialogResult.OK)
+            {
+                Application.Exit();
+            }
         }
 
         private void Login_Load(object sender, EventArgs e)
         {
 
+            txt_kayıtParola2.PasswordChar = Encoding.GetEncoding("Windows-1252").GetString(new byte[] { 149, })[0];
+            txt_kayıtParola.PasswordChar = Encoding.GetEncoding("Windows-1252").GetString(new byte[] { 149, })[0];
+            txt_Parola.PasswordChar = Encoding.GetEncoding("Windows-1252").GetString(new byte[] { 149, })[0];
+            txt_YeniParola.PasswordChar = Encoding.GetEncoding("Windows-1252").GetString(new byte[] { 149, })[0];
+            txt_YeniParola2.PasswordChar = Encoding.GetEncoding("Windows-1252").GetString(new byte[] { 149, })[0];
         }
+
     }
+
 }

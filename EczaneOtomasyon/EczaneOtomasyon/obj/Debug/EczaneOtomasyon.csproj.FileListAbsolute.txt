@@ -26,5 +26,4 @@ C:\Users\canbi\OneDrive\Documents\GitHub\EczaneOtomasyonu\EczaneOtomasyon\Eczane
 C:\Users\canbi\OneDrive\Documents\GitHub\EczaneOtomasyonu\EczaneOtomasyon\EczaneOtomasyon\obj\Debug\EczaneOtomasyon.csproj.CopyComplete
 C:\Users\canbi\OneDrive\Documents\GitHub\EczaneOtomasyonu\EczaneOtomasyon\EczaneOtomasyon\obj\Debug\EczaneOtomasyon.Forms.AnaPanel.AnaPanel.resources
 C:\Users\canbi\OneDrive\Documents\GitHub\EczaneOtomasyonu\EczaneOtomasyon\EczaneOtomasyon\obj\Debug\EczaneOtomasyon.Forms.Reçete.ReçeteAnaSayfa.resources
-C:\Users\canbi\OneDrive\Documents\GitHub\EczaneOtomasyonu\EczaneOtomasyon\EczaneOtomasyon\obj\Debug\EczaneOtomasyon.Forms.Satış.SatışAnaSayfa.resources
-C:\Users\canbi\OneDrive\Documents\GitHub\EczaneOtomasyonu\EczaneOtomasyon\EczaneOtomasyon\obj\Debug\EczaneOtomasyon.Forms.Satış.ReçeteSeç.resources
+C:\Users\canbi\OneDrive\Documents\GitHub\EczaneOtomasyonu\EczaneOtomasyon\EczaneOtomasyon\obj\Debug\EczaneOtomasyon.Forms.Reçete.Recete.resources

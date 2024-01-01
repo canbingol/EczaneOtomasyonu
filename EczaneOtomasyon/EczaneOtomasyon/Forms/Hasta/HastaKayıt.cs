@@ -19,33 +19,9 @@ namespace EczaneOtomasyon.Forms.Hasta
         public HastaKayıt()
         {
             InitializeComponent();
-            txt_tcNo.TextChanged += TextBox_TextChanged;
-            txt_ad.TextChanged += TextBox_TextChanged;
-            txt_soyad.TextChanged += TextBox_TextChanged;
-            txt_adres.TextChanged += TextBox_TextChanged;
-            txt_telNo.TextChanged += TextBox_TextChanged;
-        }
-        private void TextBox_TextChanged(object sender, EventArgs e)
-        {
-            // TextBox'lardaki değerleri kontrol et
-            string deger1 = txt_tcNo.Text;
-            string deger2 = txt_ad.Text;
-            string deger3 = txt_soyad.Text;
-            string deger4 = txt_adres.Text;
-            string deger5 = txt_telNo.Text;
 
-
-            // Eğer herhangi bir TextBox boşsa, arka plan rengini kırmızı yap; aksi halde beyaz yap
-            if (string.IsNullOrEmpty(deger1) || string.IsNullOrEmpty(deger2) ||
-                string.IsNullOrEmpty(deger3) || string.IsNullOrEmpty(deger4) || string.IsNullOrEmpty(deger5))
-            {
-                btn_hastaKaydet.BackColor = System.Drawing.Color.Red;
-            }
-            else
-            {
-                btn_hastaKaydet.BackColor = System.Drawing.Color.Black;
-            }
         }
+
 
         OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=EczaneVeri.accdb");
         // hasta kaydet buton işlemleri
@@ -59,7 +35,7 @@ namespace EczaneOtomasyon.Forms.Hasta
                 string ad = txt_ad.Text;
                 string soyad = txt_soyad.Text;
                 string telNo = txt_telNo.Text;
-                 dogumTarihi = dogumtarihi.Value.Date;
+                dogumTarihi = dogumtarihi.Value.Date;
                 string adres = txt_adres.Text;
 
                 if (string.IsNullOrEmpty(tcNo) || string.IsNullOrEmpty(ad) || string.IsNullOrEmpty(soyad) || string.IsNullOrEmpty(telNo) || dogumTarihi == null || string.IsNullOrEmpty(adres))
@@ -82,7 +58,6 @@ namespace EczaneOtomasyon.Forms.Hasta
                     AlanlariTemizle(txt_tcNo, txt_ad, txt_soyad, txt_telNo, txt_adres);
 
                 }
-
                 else
                 {
                     con.Open();
@@ -154,7 +129,6 @@ namespace EczaneOtomasyon.Forms.Hasta
             txt.BackColor = Color.White;
             txt.ForeColor = Color.Black;
         }
-
 
         private void txt_tcNo_MouseHover(object sender, EventArgs e)
         {
@@ -259,6 +233,11 @@ namespace EczaneOtomasyon.Forms.Hasta
         private void btn_EkranKapat_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void HastaKayıt_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

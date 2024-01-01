@@ -2,7 +2,6 @@
 using EczaneOtomasyon.Forms.Hasta;
 using EczaneOtomasyon.Forms.İlaç;
 using EczaneOtomasyon.Forms.Reçete;
-using EczaneOtomasyon.Forms.Satış;
 using EczaneOtomasyon.Forms.Stok;
 using System;
 using System.Collections.Generic;
@@ -51,7 +50,7 @@ namespace EczaneOtomasyon
         }
         private void btn_reçeteİşlemleri_Click(object sender, EventArgs e)
         {
-            AltFormGöster(new ReçeteAnaSayfa());
+            AltFormGöster(new Recete());
 
             AltMenüSakla();
 
@@ -65,13 +64,6 @@ namespace EczaneOtomasyon
 
         }
 
-        private void btn_satış_Click(object sender, EventArgs e)
-        {
-            AltMenüSakla();
-            AltFormGöster(new SatışAnaSayfa());
-
-
-        }
         #endregion
 
         #region panel metodları
@@ -200,17 +192,6 @@ namespace EczaneOtomasyon
             MouseLeave(btn_stokİşlemleri);
         }
 
-        private void btn_satış_MouseHover(object sender, EventArgs e)
-        {
-            MouseHover(btn_satış);
-        }
-
-        private void btn_satış_MouseLeave(object sender, EventArgs e)
-        {
-            MouseLeave(btn_satış);
-        }
-
-
         #endregion
 
         private void btn_EkranKapat_Click(object sender, EventArgs e)
@@ -261,23 +242,31 @@ namespace EczaneOtomasyon
 
         private void btn_uygulamaKapat_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult sonuc;
+            sonuc = MessageBox.Show("ÇIKIŞ YAPMAK İSTEDİĞİNİZDEN EMİNMİSİNİZ","ÇIKIŞ",MessageBoxButtons.OKCancel);
+            if (sonuc==DialogResult.OK)
+            {
+                Application.Exit();
+            }
 
         }
 
         private void btn_maksimize_Click(object sender, EventArgs e)
         {
-            WindowState = FormWindowState.Maximized;    
+           
+            if (WindowState == FormWindowState.Maximized)
+            {
+                WindowState = FormWindowState.Normal;
+            }
+            else
+            {
+                WindowState = FormWindowState.Maximized;
+            }
         }
 
-        private void pnl_işlemler_Paint(object sender, PaintEventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void pnl_logo_Paint(object sender, PaintEventArgs e)
-        {
-
+            WindowState = FormWindowState.Minimized;
         }
     }
 }
