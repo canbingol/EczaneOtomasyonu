@@ -65,16 +65,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txt_ilaçBarkod = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lbl_barkoNo7 = new System.Windows.Forms.Label();
-            this.lbl_barkoNo6 = new System.Windows.Forms.Label();
-            this.lbl_ilaçAdeti7 = new System.Windows.Forms.Label();
-            this.lbl_ilaçAdeti6 = new System.Windows.Forms.Label();
-            this.lbl_ilaçFiyat7 = new System.Windows.Forms.Label();
-            this.lbl_ilaçFiyat6 = new System.Windows.Forms.Label();
-            this.lbl_ilaçKategori7 = new System.Windows.Forms.Label();
-            this.lbl_ilaçKategori6 = new System.Windows.Forms.Label();
-            this.lbl_ilaçAdı7 = new System.Windows.Forms.Label();
-            this.lbl_ilaçAdı6 = new System.Windows.Forms.Label();
             this.lbl_barkoNo5 = new System.Windows.Forms.Label();
             this.lbl_barkoNo4 = new System.Windows.Forms.Label();
             this.lbl_barkoNo3 = new System.Windows.Forms.Label();
@@ -577,16 +567,6 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.lbl_barkoNo7);
-            this.panel2.Controls.Add(this.lbl_barkoNo6);
-            this.panel2.Controls.Add(this.lbl_ilaçAdeti7);
-            this.panel2.Controls.Add(this.lbl_ilaçAdeti6);
-            this.panel2.Controls.Add(this.lbl_ilaçFiyat7);
-            this.panel2.Controls.Add(this.lbl_ilaçFiyat6);
-            this.panel2.Controls.Add(this.lbl_ilaçKategori7);
-            this.panel2.Controls.Add(this.lbl_ilaçKategori6);
-            this.panel2.Controls.Add(this.lbl_ilaçAdı7);
-            this.panel2.Controls.Add(this.lbl_ilaçAdı6);
             this.panel2.Controls.Add(this.lbl_barkoNo5);
             this.panel2.Controls.Add(this.lbl_barkoNo4);
             this.panel2.Controls.Add(this.lbl_barkoNo3);
@@ -620,140 +600,8 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 337);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(777, 376);
+            this.panel2.Size = new System.Drawing.Size(777, 335);
             this.panel2.TabIndex = 6;
-            // 
-            // lbl_barkoNo7
-            // 
-            this.lbl_barkoNo7.AutoSize = true;
-            this.lbl_barkoNo7.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_barkoNo7.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lbl_barkoNo7.ForeColor = System.Drawing.Color.Black;
-            this.lbl_barkoNo7.Location = new System.Drawing.Point(366, 314);
-            this.lbl_barkoNo7.Name = "lbl_barkoNo7";
-            this.lbl_barkoNo7.Size = new System.Drawing.Size(150, 27);
-            this.lbl_barkoNo7.TabIndex = 40;
-            this.lbl_barkoNo7.Text = "BARKOD NO";
-            this.lbl_barkoNo7.Visible = false;
-            // 
-            // lbl_barkoNo6
-            // 
-            this.lbl_barkoNo6.AutoSize = true;
-            this.lbl_barkoNo6.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_barkoNo6.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lbl_barkoNo6.ForeColor = System.Drawing.Color.Black;
-            this.lbl_barkoNo6.Location = new System.Drawing.Point(366, 274);
-            this.lbl_barkoNo6.Name = "lbl_barkoNo6";
-            this.lbl_barkoNo6.Size = new System.Drawing.Size(150, 27);
-            this.lbl_barkoNo6.TabIndex = 41;
-            this.lbl_barkoNo6.Text = "BARKOD NO";
-            this.lbl_barkoNo6.Visible = false;
-            // 
-            // lbl_ilaçAdeti7
-            // 
-            this.lbl_ilaçAdeti7.AutoSize = true;
-            this.lbl_ilaçAdeti7.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_ilaçAdeti7.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lbl_ilaçAdeti7.ForeColor = System.Drawing.Color.Black;
-            this.lbl_ilaçAdeti7.Location = new System.Drawing.Point(575, 314);
-            this.lbl_ilaçAdeti7.Name = "lbl_ilaçAdeti7";
-            this.lbl_ilaçAdeti7.Size = new System.Drawing.Size(75, 27);
-            this.lbl_ilaçAdeti7.TabIndex = 42;
-            this.lbl_ilaçAdeti7.Text = "ADETİ";
-            this.lbl_ilaçAdeti7.Visible = false;
-            // 
-            // lbl_ilaçAdeti6
-            // 
-            this.lbl_ilaçAdeti6.AutoSize = true;
-            this.lbl_ilaçAdeti6.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_ilaçAdeti6.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lbl_ilaçAdeti6.ForeColor = System.Drawing.Color.Black;
-            this.lbl_ilaçAdeti6.Location = new System.Drawing.Point(575, 274);
-            this.lbl_ilaçAdeti6.Name = "lbl_ilaçAdeti6";
-            this.lbl_ilaçAdeti6.Size = new System.Drawing.Size(75, 27);
-            this.lbl_ilaçAdeti6.TabIndex = 43;
-            this.lbl_ilaçAdeti6.Text = "ADETİ";
-            this.lbl_ilaçAdeti6.Visible = false;
-            // 
-            // lbl_ilaçFiyat7
-            // 
-            this.lbl_ilaçFiyat7.AutoSize = true;
-            this.lbl_ilaçFiyat7.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_ilaçFiyat7.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lbl_ilaçFiyat7.ForeColor = System.Drawing.Color.Black;
-            this.lbl_ilaçFiyat7.Location = new System.Drawing.Point(688, 314);
-            this.lbl_ilaçFiyat7.Name = "lbl_ilaçFiyat7";
-            this.lbl_ilaçFiyat7.Size = new System.Drawing.Size(77, 27);
-            this.lbl_ilaçFiyat7.TabIndex = 44;
-            this.lbl_ilaçFiyat7.Text = "FİYATI";
-            this.lbl_ilaçFiyat7.Visible = false;
-            // 
-            // lbl_ilaçFiyat6
-            // 
-            this.lbl_ilaçFiyat6.AutoSize = true;
-            this.lbl_ilaçFiyat6.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_ilaçFiyat6.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lbl_ilaçFiyat6.ForeColor = System.Drawing.Color.Black;
-            this.lbl_ilaçFiyat6.Location = new System.Drawing.Point(688, 274);
-            this.lbl_ilaçFiyat6.Name = "lbl_ilaçFiyat6";
-            this.lbl_ilaçFiyat6.Size = new System.Drawing.Size(77, 27);
-            this.lbl_ilaçFiyat6.TabIndex = 45;
-            this.lbl_ilaçFiyat6.Text = "FİYATI";
-            this.lbl_ilaçFiyat6.Visible = false;
-            // 
-            // lbl_ilaçKategori7
-            // 
-            this.lbl_ilaçKategori7.AutoSize = true;
-            this.lbl_ilaçKategori7.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_ilaçKategori7.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lbl_ilaçKategori7.ForeColor = System.Drawing.Color.Black;
-            this.lbl_ilaçKategori7.Location = new System.Drawing.Point(166, 314);
-            this.lbl_ilaçKategori7.Name = "lbl_ilaçKategori7";
-            this.lbl_ilaçKategori7.Size = new System.Drawing.Size(143, 27);
-            this.lbl_ilaçKategori7.TabIndex = 46;
-            this.lbl_ilaçKategori7.Text = "KATEGORİSİ";
-            this.lbl_ilaçKategori7.Visible = false;
-            // 
-            // lbl_ilaçKategori6
-            // 
-            this.lbl_ilaçKategori6.AutoSize = true;
-            this.lbl_ilaçKategori6.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_ilaçKategori6.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lbl_ilaçKategori6.ForeColor = System.Drawing.Color.Black;
-            this.lbl_ilaçKategori6.Location = new System.Drawing.Point(166, 274);
-            this.lbl_ilaçKategori6.Name = "lbl_ilaçKategori6";
-            this.lbl_ilaçKategori6.Size = new System.Drawing.Size(143, 27);
-            this.lbl_ilaçKategori6.TabIndex = 47;
-            this.lbl_ilaçKategori6.Text = "KATEGORİSİ";
-            this.lbl_ilaçKategori6.Visible = false;
-            // 
-            // lbl_ilaçAdı7
-            // 
-            this.lbl_ilaçAdı7.AutoSize = true;
-            this.lbl_ilaçAdı7.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_ilaçAdı7.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lbl_ilaçAdı7.ForeColor = System.Drawing.Color.Black;
-            this.lbl_ilaçAdı7.Location = new System.Drawing.Point(21, 314);
-            this.lbl_ilaçAdı7.Name = "lbl_ilaçAdı7";
-            this.lbl_ilaçAdı7.Size = new System.Drawing.Size(111, 27);
-            this.lbl_ilaçAdı7.TabIndex = 48;
-            this.lbl_ilaçAdı7.Text = "İLAÇ ADI";
-            this.lbl_ilaçAdı7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl_ilaçAdı7.Visible = false;
-            // 
-            // lbl_ilaçAdı6
-            // 
-            this.lbl_ilaçAdı6.AutoSize = true;
-            this.lbl_ilaçAdı6.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_ilaçAdı6.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lbl_ilaçAdı6.ForeColor = System.Drawing.Color.Black;
-            this.lbl_ilaçAdı6.Location = new System.Drawing.Point(21, 274);
-            this.lbl_ilaçAdı6.Name = "lbl_ilaçAdı6";
-            this.lbl_ilaçAdı6.Size = new System.Drawing.Size(111, 27);
-            this.lbl_ilaçAdı6.TabIndex = 49;
-            this.lbl_ilaçAdı6.Text = "İLAÇ ADI";
-            this.lbl_ilaçAdı6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl_ilaçAdı6.Visible = false;
             // 
             // lbl_barkoNo5
             // 
@@ -763,9 +611,9 @@
             this.lbl_barkoNo5.ForeColor = System.Drawing.Color.Black;
             this.lbl_barkoNo5.Location = new System.Drawing.Point(365, 234);
             this.lbl_barkoNo5.Name = "lbl_barkoNo5";
-            this.lbl_barkoNo5.Size = new System.Drawing.Size(150, 27);
+            this.lbl_barkoNo5.Size = new System.Drawing.Size(20, 27);
             this.lbl_barkoNo5.TabIndex = 10;
-            this.lbl_barkoNo5.Text = "BARKOD NO";
+            this.lbl_barkoNo5.Text = "-";
             this.lbl_barkoNo5.Visible = false;
             // 
             // lbl_barkoNo4
@@ -776,9 +624,9 @@
             this.lbl_barkoNo4.ForeColor = System.Drawing.Color.Black;
             this.lbl_barkoNo4.Location = new System.Drawing.Point(363, 194);
             this.lbl_barkoNo4.Name = "lbl_barkoNo4";
-            this.lbl_barkoNo4.Size = new System.Drawing.Size(150, 27);
+            this.lbl_barkoNo4.Size = new System.Drawing.Size(20, 27);
             this.lbl_barkoNo4.TabIndex = 11;
-            this.lbl_barkoNo4.Text = "BARKOD NO";
+            this.lbl_barkoNo4.Text = "-";
             this.lbl_barkoNo4.Visible = false;
             // 
             // lbl_barkoNo3
@@ -789,9 +637,9 @@
             this.lbl_barkoNo3.ForeColor = System.Drawing.Color.Black;
             this.lbl_barkoNo3.Location = new System.Drawing.Point(363, 154);
             this.lbl_barkoNo3.Name = "lbl_barkoNo3";
-            this.lbl_barkoNo3.Size = new System.Drawing.Size(150, 27);
+            this.lbl_barkoNo3.Size = new System.Drawing.Size(20, 27);
             this.lbl_barkoNo3.TabIndex = 12;
-            this.lbl_barkoNo3.Text = "BARKOD NO";
+            this.lbl_barkoNo3.Text = "-";
             this.lbl_barkoNo3.Visible = false;
             // 
             // lbl_ilaçAdeti5
@@ -802,9 +650,9 @@
             this.lbl_ilaçAdeti5.ForeColor = System.Drawing.Color.Black;
             this.lbl_ilaçAdeti5.Location = new System.Drawing.Point(574, 234);
             this.lbl_ilaçAdeti5.Name = "lbl_ilaçAdeti5";
-            this.lbl_ilaçAdeti5.Size = new System.Drawing.Size(75, 27);
+            this.lbl_ilaçAdeti5.Size = new System.Drawing.Size(20, 27);
             this.lbl_ilaçAdeti5.TabIndex = 26;
-            this.lbl_ilaçAdeti5.Text = "ADETİ";
+            this.lbl_ilaçAdeti5.Text = "-";
             this.lbl_ilaçAdeti5.Visible = false;
             // 
             // lbl_ilaçAdeti4
@@ -815,9 +663,9 @@
             this.lbl_ilaçAdeti4.ForeColor = System.Drawing.Color.Black;
             this.lbl_ilaçAdeti4.Location = new System.Drawing.Point(572, 194);
             this.lbl_ilaçAdeti4.Name = "lbl_ilaçAdeti4";
-            this.lbl_ilaçAdeti4.Size = new System.Drawing.Size(75, 27);
+            this.lbl_ilaçAdeti4.Size = new System.Drawing.Size(20, 27);
             this.lbl_ilaçAdeti4.TabIndex = 25;
-            this.lbl_ilaçAdeti4.Text = "ADETİ";
+            this.lbl_ilaçAdeti4.Text = "-";
             this.lbl_ilaçAdeti4.Visible = false;
             // 
             // lbl_ilaçAdeti3
@@ -828,9 +676,9 @@
             this.lbl_ilaçAdeti3.ForeColor = System.Drawing.Color.Black;
             this.lbl_ilaçAdeti3.Location = new System.Drawing.Point(572, 154);
             this.lbl_ilaçAdeti3.Name = "lbl_ilaçAdeti3";
-            this.lbl_ilaçAdeti3.Size = new System.Drawing.Size(75, 27);
+            this.lbl_ilaçAdeti3.Size = new System.Drawing.Size(20, 27);
             this.lbl_ilaçAdeti3.TabIndex = 24;
-            this.lbl_ilaçAdeti3.Text = "ADETİ";
+            this.lbl_ilaçAdeti3.Text = "-";
             this.lbl_ilaçAdeti3.Visible = false;
             // 
             // lbl_barkoNo2
@@ -841,9 +689,9 @@
             this.lbl_barkoNo2.ForeColor = System.Drawing.Color.Black;
             this.lbl_barkoNo2.Location = new System.Drawing.Point(363, 114);
             this.lbl_barkoNo2.Name = "lbl_barkoNo2";
-            this.lbl_barkoNo2.Size = new System.Drawing.Size(150, 27);
+            this.lbl_barkoNo2.Size = new System.Drawing.Size(20, 27);
             this.lbl_barkoNo2.TabIndex = 13;
-            this.lbl_barkoNo2.Text = "BARKOD NO";
+            this.lbl_barkoNo2.Text = "-";
             this.lbl_barkoNo2.Visible = false;
             // 
             // lbl_ilaçAdeti2
@@ -854,9 +702,9 @@
             this.lbl_ilaçAdeti2.ForeColor = System.Drawing.Color.Black;
             this.lbl_ilaçAdeti2.Location = new System.Drawing.Point(572, 114);
             this.lbl_ilaçAdeti2.Name = "lbl_ilaçAdeti2";
-            this.lbl_ilaçAdeti2.Size = new System.Drawing.Size(75, 27);
+            this.lbl_ilaçAdeti2.Size = new System.Drawing.Size(20, 27);
             this.lbl_ilaçAdeti2.TabIndex = 23;
-            this.lbl_ilaçAdeti2.Text = "ADETİ";
+            this.lbl_ilaçAdeti2.Text = "-";
             this.lbl_ilaçAdeti2.Visible = false;
             // 
             // lbl_ilaçFiyat5
@@ -867,9 +715,9 @@
             this.lbl_ilaçFiyat5.ForeColor = System.Drawing.Color.Black;
             this.lbl_ilaçFiyat5.Location = new System.Drawing.Point(687, 234);
             this.lbl_ilaçFiyat5.Name = "lbl_ilaçFiyat5";
-            this.lbl_ilaçFiyat5.Size = new System.Drawing.Size(77, 27);
+            this.lbl_ilaçFiyat5.Size = new System.Drawing.Size(20, 27);
             this.lbl_ilaçFiyat5.TabIndex = 22;
-            this.lbl_ilaçFiyat5.Text = "FİYATI";
+            this.lbl_ilaçFiyat5.Text = "-";
             this.lbl_ilaçFiyat5.Visible = false;
             // 
             // lbl_ilaçFiyat4
@@ -880,9 +728,9 @@
             this.lbl_ilaçFiyat4.ForeColor = System.Drawing.Color.Black;
             this.lbl_ilaçFiyat4.Location = new System.Drawing.Point(685, 194);
             this.lbl_ilaçFiyat4.Name = "lbl_ilaçFiyat4";
-            this.lbl_ilaçFiyat4.Size = new System.Drawing.Size(77, 27);
+            this.lbl_ilaçFiyat4.Size = new System.Drawing.Size(20, 27);
             this.lbl_ilaçFiyat4.TabIndex = 21;
-            this.lbl_ilaçFiyat4.Text = "FİYATI";
+            this.lbl_ilaçFiyat4.Text = "-";
             this.lbl_ilaçFiyat4.Visible = false;
             // 
             // lbl_ilaçFiyat3
@@ -893,9 +741,9 @@
             this.lbl_ilaçFiyat3.ForeColor = System.Drawing.Color.Black;
             this.lbl_ilaçFiyat3.Location = new System.Drawing.Point(685, 154);
             this.lbl_ilaçFiyat3.Name = "lbl_ilaçFiyat3";
-            this.lbl_ilaçFiyat3.Size = new System.Drawing.Size(77, 27);
+            this.lbl_ilaçFiyat3.Size = new System.Drawing.Size(20, 27);
             this.lbl_ilaçFiyat3.TabIndex = 20;
-            this.lbl_ilaçFiyat3.Text = "FİYATI";
+            this.lbl_ilaçFiyat3.Text = "-";
             this.lbl_ilaçFiyat3.Visible = false;
             // 
             // lbl_ilaçKategori5
@@ -906,9 +754,9 @@
             this.lbl_ilaçKategori5.ForeColor = System.Drawing.Color.Black;
             this.lbl_ilaçKategori5.Location = new System.Drawing.Point(165, 234);
             this.lbl_ilaçKategori5.Name = "lbl_ilaçKategori5";
-            this.lbl_ilaçKategori5.Size = new System.Drawing.Size(143, 27);
+            this.lbl_ilaçKategori5.Size = new System.Drawing.Size(20, 27);
             this.lbl_ilaçKategori5.TabIndex = 33;
-            this.lbl_ilaçKategori5.Text = "KATEGORİSİ";
+            this.lbl_ilaçKategori5.Text = "-";
             this.lbl_ilaçKategori5.Visible = false;
             // 
             // label15
@@ -931,9 +779,9 @@
             this.lbl_barkoNo1.ForeColor = System.Drawing.Color.Black;
             this.lbl_barkoNo1.Location = new System.Drawing.Point(365, 74);
             this.lbl_barkoNo1.Name = "lbl_barkoNo1";
-            this.lbl_barkoNo1.Size = new System.Drawing.Size(150, 27);
+            this.lbl_barkoNo1.Size = new System.Drawing.Size(20, 27);
             this.lbl_barkoNo1.TabIndex = 14;
-            this.lbl_barkoNo1.Text = "BARKOD NO";
+            this.lbl_barkoNo1.Text = "-";
             this.lbl_barkoNo1.Visible = false;
             // 
             // lbl_ilaçKategori4
@@ -944,9 +792,9 @@
             this.lbl_ilaçKategori4.ForeColor = System.Drawing.Color.Black;
             this.lbl_ilaçKategori4.Location = new System.Drawing.Point(163, 194);
             this.lbl_ilaçKategori4.Name = "lbl_ilaçKategori4";
-            this.lbl_ilaçKategori4.Size = new System.Drawing.Size(143, 27);
+            this.lbl_ilaçKategori4.Size = new System.Drawing.Size(20, 27);
             this.lbl_ilaçKategori4.TabIndex = 31;
-            this.lbl_ilaçKategori4.Text = "KATEGORİSİ";
+            this.lbl_ilaçKategori4.Text = "-";
             this.lbl_ilaçKategori4.Visible = false;
             // 
             // lbl_ilaçFiyat2
@@ -957,9 +805,9 @@
             this.lbl_ilaçFiyat2.ForeColor = System.Drawing.Color.Black;
             this.lbl_ilaçFiyat2.Location = new System.Drawing.Point(685, 114);
             this.lbl_ilaçFiyat2.Name = "lbl_ilaçFiyat2";
-            this.lbl_ilaçFiyat2.Size = new System.Drawing.Size(77, 27);
+            this.lbl_ilaçFiyat2.Size = new System.Drawing.Size(20, 27);
             this.lbl_ilaçFiyat2.TabIndex = 19;
-            this.lbl_ilaçFiyat2.Text = "FİYATI";
+            this.lbl_ilaçFiyat2.Text = "-";
             this.lbl_ilaçFiyat2.Visible = false;
             // 
             // lbl_ilaçKategori3
@@ -970,9 +818,9 @@
             this.lbl_ilaçKategori3.ForeColor = System.Drawing.Color.Black;
             this.lbl_ilaçKategori3.Location = new System.Drawing.Point(163, 154);
             this.lbl_ilaçKategori3.Name = "lbl_ilaçKategori3";
-            this.lbl_ilaçKategori3.Size = new System.Drawing.Size(143, 27);
+            this.lbl_ilaçKategori3.Size = new System.Drawing.Size(20, 27);
             this.lbl_ilaçKategori3.TabIndex = 32;
-            this.lbl_ilaçKategori3.Text = "KATEGORİSİ";
+            this.lbl_ilaçKategori3.Text = "-";
             this.lbl_ilaçKategori3.Visible = false;
             // 
             // lbl_ilaçAdı5
@@ -983,9 +831,9 @@
             this.lbl_ilaçAdı5.ForeColor = System.Drawing.Color.Black;
             this.lbl_ilaçAdı5.Location = new System.Drawing.Point(20, 234);
             this.lbl_ilaçAdı5.Name = "lbl_ilaçAdı5";
-            this.lbl_ilaçAdı5.Size = new System.Drawing.Size(111, 27);
+            this.lbl_ilaçAdı5.Size = new System.Drawing.Size(20, 27);
             this.lbl_ilaçAdı5.TabIndex = 35;
-            this.lbl_ilaçAdı5.Text = "İLAÇ ADI";
+            this.lbl_ilaçAdı5.Text = "-";
             this.lbl_ilaçAdı5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbl_ilaçAdı5.Visible = false;
             // 
@@ -1009,9 +857,9 @@
             this.lbl_ilaçAdeti1.ForeColor = System.Drawing.Color.Black;
             this.lbl_ilaçAdeti1.Location = new System.Drawing.Point(572, 74);
             this.lbl_ilaçAdeti1.Name = "lbl_ilaçAdeti1";
-            this.lbl_ilaçAdeti1.Size = new System.Drawing.Size(75, 27);
+            this.lbl_ilaçAdeti1.Size = new System.Drawing.Size(20, 27);
             this.lbl_ilaçAdeti1.TabIndex = 27;
-            this.lbl_ilaçAdeti1.Text = "ADETİ";
+            this.lbl_ilaçAdeti1.Text = "-";
             this.lbl_ilaçAdeti1.Visible = false;
             // 
             // lbl_ilaçAdı4
@@ -1022,9 +870,9 @@
             this.lbl_ilaçAdı4.ForeColor = System.Drawing.Color.Black;
             this.lbl_ilaçAdı4.Location = new System.Drawing.Point(18, 194);
             this.lbl_ilaçAdı4.Name = "lbl_ilaçAdı4";
-            this.lbl_ilaçAdı4.Size = new System.Drawing.Size(111, 27);
+            this.lbl_ilaçAdı4.Size = new System.Drawing.Size(20, 27);
             this.lbl_ilaçAdı4.TabIndex = 38;
-            this.lbl_ilaçAdı4.Text = "İLAÇ ADI";
+            this.lbl_ilaçAdı4.Text = "-";
             this.lbl_ilaçAdı4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbl_ilaçAdı4.Visible = false;
             // 
@@ -1036,9 +884,9 @@
             this.lbl_ilaçKategori2.ForeColor = System.Drawing.Color.Black;
             this.lbl_ilaçKategori2.Location = new System.Drawing.Point(163, 114);
             this.lbl_ilaçKategori2.Name = "lbl_ilaçKategori2";
-            this.lbl_ilaçKategori2.Size = new System.Drawing.Size(143, 27);
+            this.lbl_ilaçKategori2.Size = new System.Drawing.Size(20, 27);
             this.lbl_ilaçKategori2.TabIndex = 30;
-            this.lbl_ilaçKategori2.Text = "KATEGORİSİ";
+            this.lbl_ilaçKategori2.Text = "-";
             this.lbl_ilaçKategori2.Visible = false;
             // 
             // lbl_ilaçAdı3
@@ -1049,9 +897,9 @@
             this.lbl_ilaçAdı3.ForeColor = System.Drawing.Color.Black;
             this.lbl_ilaçAdı3.Location = new System.Drawing.Point(18, 154);
             this.lbl_ilaçAdı3.Name = "lbl_ilaçAdı3";
-            this.lbl_ilaçAdı3.Size = new System.Drawing.Size(111, 27);
+            this.lbl_ilaçAdı3.Size = new System.Drawing.Size(20, 27);
             this.lbl_ilaçAdı3.TabIndex = 34;
-            this.lbl_ilaçAdı3.Text = "İLAÇ ADI";
+            this.lbl_ilaçAdı3.Text = "-";
             this.lbl_ilaçAdı3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbl_ilaçAdı3.Visible = false;
             // 
@@ -1075,9 +923,9 @@
             this.lbl_ilaçFiyat1.ForeColor = System.Drawing.Color.Black;
             this.lbl_ilaçFiyat1.Location = new System.Drawing.Point(687, 74);
             this.lbl_ilaçFiyat1.Name = "lbl_ilaçFiyat1";
-            this.lbl_ilaçFiyat1.Size = new System.Drawing.Size(77, 27);
+            this.lbl_ilaçFiyat1.Size = new System.Drawing.Size(20, 27);
             this.lbl_ilaçFiyat1.TabIndex = 18;
-            this.lbl_ilaçFiyat1.Text = "FİYATI";
+            this.lbl_ilaçFiyat1.Text = "-";
             this.lbl_ilaçFiyat1.Visible = false;
             // 
             // label7
@@ -1100,9 +948,9 @@
             this.lbl_ilaçAdı2.ForeColor = System.Drawing.Color.Black;
             this.lbl_ilaçAdı2.Location = new System.Drawing.Point(18, 114);
             this.lbl_ilaçAdı2.Name = "lbl_ilaçAdı2";
-            this.lbl_ilaçAdı2.Size = new System.Drawing.Size(111, 27);
+            this.lbl_ilaçAdı2.Size = new System.Drawing.Size(20, 27);
             this.lbl_ilaçAdı2.TabIndex = 37;
-            this.lbl_ilaçAdı2.Text = "İLAÇ ADI";
+            this.lbl_ilaçAdı2.Text = "-";
             this.lbl_ilaçAdı2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbl_ilaçAdı2.Visible = false;
             // 
@@ -1114,9 +962,9 @@
             this.lbl_ilaçKategori1.ForeColor = System.Drawing.Color.Black;
             this.lbl_ilaçKategori1.Location = new System.Drawing.Point(165, 74);
             this.lbl_ilaçKategori1.Name = "lbl_ilaçKategori1";
-            this.lbl_ilaçKategori1.Size = new System.Drawing.Size(143, 27);
+            this.lbl_ilaçKategori1.Size = new System.Drawing.Size(20, 27);
             this.lbl_ilaçKategori1.TabIndex = 28;
-            this.lbl_ilaçKategori1.Text = "KATEGORİSİ";
+            this.lbl_ilaçKategori1.Text = "-";
             this.lbl_ilaçKategori1.Visible = false;
             // 
             // label4
@@ -1140,9 +988,9 @@
             this.lbl_ilaçAdı1.ForeColor = System.Drawing.Color.Black;
             this.lbl_ilaçAdı1.Location = new System.Drawing.Point(20, 74);
             this.lbl_ilaçAdı1.Name = "lbl_ilaçAdı1";
-            this.lbl_ilaçAdı1.Size = new System.Drawing.Size(111, 27);
+            this.lbl_ilaçAdı1.Size = new System.Drawing.Size(20, 27);
             this.lbl_ilaçAdı1.TabIndex = 39;
-            this.lbl_ilaçAdı1.Text = "İLAÇ ADI";
+            this.lbl_ilaçAdı1.Text = "-";
             this.lbl_ilaçAdı1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbl_ilaçAdı1.Visible = false;
             // 
@@ -1150,11 +998,11 @@
             // 
             this.label22.AutoSize = true;
             this.label22.BackColor = System.Drawing.Color.White;
-            this.label22.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label22.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label22.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label22.Location = new System.Drawing.Point(21, 742);
+            this.label22.Location = new System.Drawing.Point(7, 692);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(156, 23);
+            this.label22.Size = new System.Drawing.Size(219, 34);
             this.label22.TabIndex = 7;
             this.label22.Text = "TOPLAM FİYAT :";
             // 
@@ -1162,11 +1010,11 @@
             // 
             this.lbl_toplamFiyat.AutoSize = true;
             this.lbl_toplamFiyat.BackColor = System.Drawing.Color.White;
-            this.lbl_toplamFiyat.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lbl_toplamFiyat.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lbl_toplamFiyat.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.lbl_toplamFiyat.Location = new System.Drawing.Point(216, 742);
+            this.lbl_toplamFiyat.Location = new System.Drawing.Point(254, 692);
             this.lbl_toplamFiyat.Name = "lbl_toplamFiyat";
-            this.lbl_toplamFiyat.Size = new System.Drawing.Size(21, 23);
+            this.lbl_toplamFiyat.Size = new System.Drawing.Size(31, 34);
             this.lbl_toplamFiyat.TabIndex = 8;
             this.lbl_toplamFiyat.Text = "0";
             // 
@@ -1181,6 +1029,7 @@
             this.btn_satıs.TabIndex = 7;
             this.btn_satıs.Text = "SATIŞ YAP";
             this.btn_satıs.UseVisualStyleBackColor = false;
+            this.btn_satıs.Click += new System.EventHandler(this.btn_satıs_Click);
             // 
             // Recete
             // 
@@ -1283,15 +1132,5 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label lbl_toplamFiyat;
         private System.Windows.Forms.Button btn_satıs;
-        private System.Windows.Forms.Label lbl_barkoNo7;
-        private System.Windows.Forms.Label lbl_barkoNo6;
-        private System.Windows.Forms.Label lbl_ilaçAdeti7;
-        private System.Windows.Forms.Label lbl_ilaçAdeti6;
-        private System.Windows.Forms.Label lbl_ilaçFiyat7;
-        private System.Windows.Forms.Label lbl_ilaçFiyat6;
-        private System.Windows.Forms.Label lbl_ilaçKategori7;
-        private System.Windows.Forms.Label lbl_ilaçKategori6;
-        private System.Windows.Forms.Label lbl_ilaçAdı7;
-        private System.Windows.Forms.Label lbl_ilaçAdı6;
     }
 }
