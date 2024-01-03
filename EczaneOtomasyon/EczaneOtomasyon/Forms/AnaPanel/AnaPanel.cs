@@ -34,24 +34,6 @@ namespace EczaneOtomasyon.Forms.AnaPanel
             }
         }
 
-        /*   void ToplamİlaçAdet()
-           {
-               using (OleDbConnection con = new OleDbConnection(baglantı))
-               {
-                   string sorgu = ;
-                   using (OleDbCommand adetTopla = new OleDbCommand(sorgu, con))
-                   {
-                       con.Open();
-
-                       object toplam = adetTopla.ExecuteScalar();
-                       if (toplam != DBNull.Value)
-                       {
-                           int toplamİlaç = Convert.ToInt32(toplam);
-                           lbl_toplamİlaç.Text = toplamİlaç.ToString();
-                       }
-                   }
-               }
-           }*/
         private void AnaPanel_Load(object sender, EventArgs e)
         {
             lbl_aktifKullanıcı.Text = Login.aktifKullanıcı.ToUpper();

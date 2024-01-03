@@ -27,7 +27,7 @@ namespace EczaneOtomasyon.Forms.Hasta
         }
         public HastaAnaSayfa()
         {
-            
+
             InitializeComponent();
         }
 
@@ -47,7 +47,6 @@ namespace EczaneOtomasyon.Forms.Hasta
                 {
                     con.Open();
 
-                    // SQL enjeksiyonunu önlemek için parametreli sorgu kullan
                     OleDbCommand cmd = new OleDbCommand("SELECT * FROM Hastalar WHERE Tc LIKE @tcno", con);
                     cmd.Parameters.AddWithValue("@tcno", aranan + "%");
 
@@ -59,7 +58,7 @@ namespace EczaneOtomasyon.Forms.Hasta
                 }
                 catch (OleDbException ex)
                 {
-                    // Veritabanı ile ilgili hataları ele al
+                   
                     MessageBox.Show("Veritabanı hatası: " + ex.Message);
                 }
                 finally
@@ -69,7 +68,7 @@ namespace EczaneOtomasyon.Forms.Hasta
             }
             else
             {
-                Listele(); 
+                Listele();
             }
 
 
@@ -83,6 +82,49 @@ namespace EczaneOtomasyon.Forms.Hasta
         private void button1_Click(object sender, EventArgs e)
         {
             Listele();
+        }
+
+        private void data_hasta_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (data_hasta.SelectedRows.Count > 0)
+            {
+                DataGridViewRow seçiliSatır = data_hasta.SelectedRows[0];
+
+                // İlgili satırdaki verileri alır
+                string hastaAdi = seçiliSatır.Cells["Adı"].Value?.ToString(); 
+                string hastaSoyAdi = seçiliSatır.Cells["Soyadı"].Value?.ToString(); 
+                string hastaTc = seçiliSatır.Cells["Tc"].Value?.ToString(); 
+                string hastaAdres = seçiliSatır.Cells["Adres"].Value?.ToString(); 
+                string hastaTelNo = seçiliSatır.Cells["TelNo"].Value?.ToString(); 
+
+                // Hasta Güncelle formundaki textbox'lara verileri yazar
+                HastaGüncelle hastaGüncelle = new HastaGüncelle();
+
+                hastaGüncelle.txt_ad.Text = hastaAdi;
+                hastaGüncelle.txt_soyad.Text = hastaSoyAdi;
+                hastaGüncelle.txt_tcNo.Text = hastaTc;
+                hastaGüncelle.txt_adres.Text = hastaAdres;
+                hastaGüncelle.txt_telNo.Text = hastaTelNo;
+
+                AnaEkran anaEkran = new AnaEkran();
+                //  hastaGüncelle.ShowDialog();
+                // anaEkran.AltFormİşlemGöster(new HastaGüncelle());
+
+                hastaGüncelle.TopLevel = false;
+                hastaGüncelle.FormBorderStyle = FormBorderStyle.None;
+                hastaGüncelle.Dock = DockStyle.Fill;
+                anaEkran.pnl_işlemler.Controls.Add(hastaGüncelle);
+                anaEkran.pnl_işlemler.Tag = hastaGüncelle;
+                hastaGüncelle.BringToFront(); // diğer formların önünde olmasını sağlar
+                hastaGüncelle.Show();
+
+            }
+            else
+            {
+                MessageBox.Show("Hiç satır seçili değil.");
+            }
+
+                
         }
     }
 }

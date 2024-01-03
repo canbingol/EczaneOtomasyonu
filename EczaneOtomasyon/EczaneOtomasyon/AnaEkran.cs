@@ -2,6 +2,7 @@
 using EczaneOtomasyon.Forms.Hasta;
 using EczaneOtomasyon.Forms.İlaç;
 using EczaneOtomasyon.Forms.Reçete;
+using EczaneOtomasyon.Forms.Satış;
 using EczaneOtomasyon.Forms.Stok;
 using System;
 using System.Collections.Generic;
@@ -91,8 +92,8 @@ namespace EczaneOtomasyon
             else
                 pnl.Visible = false;
         }
-
-        void AltFormİşlemGöster(Form altForm)
+        // ana formların dışında ana formlaara bağımlı formları gösterir /hastaAnasayfa-hastagüncelle
+        public void AltFormİşlemGöster(Form altForm)
         {
             pnl_işlemler.Controls.Clear();
             if (pnl_işlemler.Visible == false)
@@ -106,12 +107,12 @@ namespace EczaneOtomasyon
             altForm.Dock = DockStyle.Fill;
             pnl_işlemler.Controls.Add(altForm);
             pnl_işlemler.Tag = altForm;
-            altForm.BringToFront();
+            altForm.BringToFront(); // diğer formların önünde olmasını sağlar
             altForm.Show();
         }
 
 
-
+        // anaekran içinde diğe formları gösterir
         Form aktifForm = null;
         void AltFormGöster(Form altForm)
         {
@@ -130,7 +131,7 @@ namespace EczaneOtomasyon
 
         }
         #endregion
-
+        // imlecin hareketine göre butonların renkleri değişiyor
         #region Buton renk ayarları
         new void MouseHover(Button btn)
         {
@@ -231,7 +232,7 @@ namespace EczaneOtomasyon
             ilaç.Listele();
             if (pnl_işlemler.Visible == true)
                 pnl_işlemler.Visible = false;
-            
+
         }
 
         private void AnaEkran_Load(object sender, EventArgs e)
@@ -243,8 +244,8 @@ namespace EczaneOtomasyon
         private void btn_uygulamaKapat_Click(object sender, EventArgs e)
         {
             DialogResult sonuc;
-            sonuc = MessageBox.Show("ÇIKIŞ YAPMAK İSTEDİĞİNİZDEN EMİNMİSİNİZ","ÇIKIŞ",MessageBoxButtons.OKCancel);
-            if (sonuc==DialogResult.OK)
+            sonuc = MessageBox.Show("ÇIKIŞ YAPMAK İSTEDİĞİNİZDEN EMİNMİSİNİZ", "ÇIKIŞ", MessageBoxButtons.OKCancel);
+            if (sonuc == DialogResult.OK)
             {
                 Application.Exit();
             }
@@ -253,7 +254,7 @@ namespace EczaneOtomasyon
 
         private void btn_maksimize_Click(object sender, EventArgs e)
         {
-           
+
             if (WindowState == FormWindowState.Maximized)
             {
                 WindowState = FormWindowState.Normal;
@@ -264,7 +265,14 @@ namespace EczaneOtomasyon
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void btn_satısİslemleri_Click(object sender, EventArgs e)
+        {
+            AltMenüSakla();
+            AltFormGöster(new Satış());
+            AltMenüSakla();
+        }
+
+        private void lbl_minimize_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
         }

@@ -45,32 +45,8 @@ namespace EczaneOtomasyon.Forms.İlaç
             Listele("SELECT isim, kategori, fiyat, barkod, adet FROM İlaçlar");
         }
 
-        /*
-        private void btn_ilaçkaydet_Click(object sender, EventArgs e)
-        {
-            if (panel_ilaçAnaSayfa.Visible == false)
-                panel_ilaçAnaSayfa.Visible = true;
-            İlaçKayıt kayıt = new İlaçKayıt();
-            kayıt.TopLevel = false;
-            kayıt.AutoScroll = true;
-            panel_ilaçAnaSayfa.Controls.Clear();
-            panel_ilaçAnaSayfa.Controls.Add(kayıt);
-            kayıt.Show();
-        }
-
-        private void btn_ilaçGüncelle_Click(object sender, EventArgs e)
-        {
-            if (panel_ilaçAnaSayfa.Visible == false)
-                panel_ilaçAnaSayfa.Visible = true;
-            İlaçGüncelle güncelle = new İlaçGüncelle();
-            güncelle.TopLevel = false;
-            güncelle.AutoScroll = true;
-            panel_ilaçAnaSayfa.Controls.Clear();
-            panel_ilaçAnaSayfa.Controls.Add(güncelle);
-            güncelle.Show();
-        }
-        */
         #region kategoriye göre ilaç listeleme buton işlemleri 
+        
 
         private void btn_ağrıKesici_Click(object sender, EventArgs e)
         {
@@ -124,6 +100,11 @@ namespace EczaneOtomasyon.Forms.İlaç
         private void txt_listele_Click(object sender, EventArgs e)
         {
             Listele();
+        }
+
+        private void data_ilaçlar_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 

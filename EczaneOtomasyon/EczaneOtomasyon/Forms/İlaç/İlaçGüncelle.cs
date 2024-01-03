@@ -56,7 +56,7 @@ namespace EczaneOtomasyon.Forms.İlaç
                 else
                 {
                     con.Open();
-                    OleDbCommand ilaçEkle = new OleDbCommand("UPDATE  İlaçlar SET  isim =@p1, üretici=@p2, adet=@p3, kategori=@p4, fiyat=@p5, sontarih=@p6 WHERE barkod=@p7", con);
+                    OleDbCommand ilaçEkle = new OleDbCommand("UPDATE  İlaçlar SET  isim =@p1,  adet=@p3, kategori=@p4, fiyat=@p5, sontarih=@p6 WHERE barkod=@p7", con);
                     ilaçEkle.Parameters.AddWithValue("@p1", ad);
                     ilaçEkle.Parameters.AddWithValue("@p3", adet);
                     ilaçEkle.Parameters.AddWithValue("@p4", kategori);
@@ -93,7 +93,7 @@ namespace EczaneOtomasyon.Forms.İlaç
             }
         }
 
-        #region Iİlaçİşlemleri metodları
+       #region Iİlaçİşlemleri metodları
         public void HataMesajlariGoster(TextBox txtfiyat, TextBox txtad, ComboBox txtkategori, TextBox txtbarkod, Label adhata, Label kategorihata, Label barkodhata, Label fiyathat)
         {
             if (string.IsNullOrEmpty(txtfiyat.Text))
@@ -137,23 +137,6 @@ namespace EczaneOtomasyon.Forms.İlaç
         }
         #endregion
 
-        #region TextBox metodları
-
-        new void MouseHover(TextBox txt)
-        {
-            txt.BorderStyle = BorderStyle.None;
-            txt.BackColor = Color.Silver;
-            txt.ForeColor = Color.DodgerBlue;
-        }
-        new void MouseLeave(TextBox txt)
-        {
-            txt.BorderStyle = BorderStyle.FixedSingle;
-            txt.BackColor = Color.White;
-            txt.ForeColor = Color.Black;
-        }
-
-        #endregion
-
         void Borkodvarmı()
         {
 
@@ -182,6 +165,22 @@ namespace EczaneOtomasyon.Forms.İlaç
         {
             MessageBox.Show(" GÜNCELLEMEK İSTEDİĞİNİZ İLACIN BARKOD NOSUNU GİRİNİZ");
         }
+
+        #region buton işlemleri
+
+        new void MouseHover(TextBox txt)
+        {
+            txt.BorderStyle = BorderStyle.None;
+            txt.BackColor = Color.Silver;
+            txt.ForeColor = Color.DodgerBlue;
+        }
+        new void MouseLeave(TextBox txt)
+        {
+            txt.BorderStyle = BorderStyle.FixedSingle;
+            txt.BackColor = Color.White;
+            txt.ForeColor = Color.Black;
+        }
+
         private void txt_kategori_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
@@ -237,6 +236,6 @@ namespace EczaneOtomasyon.Forms.İlaç
 
         }
     }
-
+#endregion
 
 }

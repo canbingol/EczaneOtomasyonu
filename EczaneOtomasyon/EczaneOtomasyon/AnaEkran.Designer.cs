@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnaEkran));
             this.pnl_yanMenü = new System.Windows.Forms.Panel();
+            this.btn_satısİslemleri = new System.Windows.Forms.Button();
             this.btn_stokİşlemleri = new System.Windows.Forms.Button();
             this.btn_reçeteİşlemleri = new System.Windows.Forms.Button();
             this.pnl_ilaç = new System.Windows.Forms.Panel();
@@ -44,7 +45,7 @@
             this.btn_hastaİşlemleri = new System.Windows.Forms.Button();
             this.btn_anaSayfa = new System.Windows.Forms.Button();
             this.pnl_logo = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_minimize = new System.Windows.Forms.Label();
             this.btn_maksimize = new System.Windows.Forms.Label();
             this.btn_uygulamaKapat = new System.Windows.Forms.Label();
             this.pnl_altForm = new System.Windows.Forms.Panel();
@@ -64,6 +65,7 @@
             // 
             this.pnl_yanMenü.AutoScroll = true;
             this.pnl_yanMenü.BackColor = System.Drawing.Color.DodgerBlue;
+            this.pnl_yanMenü.Controls.Add(this.btn_satısİslemleri);
             this.pnl_yanMenü.Controls.Add(this.btn_stokİşlemleri);
             this.pnl_yanMenü.Controls.Add(this.btn_reçeteİşlemleri);
             this.pnl_yanMenü.Controls.Add(this.pnl_ilaç);
@@ -77,6 +79,23 @@
             this.pnl_yanMenü.Name = "pnl_yanMenü";
             this.pnl_yanMenü.Size = new System.Drawing.Size(223, 746);
             this.pnl_yanMenü.TabIndex = 1;
+            // 
+            // btn_satısİslemleri
+            // 
+            this.btn_satısİslemleri.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_satısİslemleri.FlatAppearance.BorderSize = 0;
+            this.btn_satısİslemleri.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_satısİslemleri.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_satısİslemleri.ForeColor = System.Drawing.Color.White;
+            this.btn_satısİslemleri.Location = new System.Drawing.Point(0, 645);
+            this.btn_satısİslemleri.Name = "btn_satısİslemleri";
+            this.btn_satısİslemleri.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btn_satısİslemleri.Size = new System.Drawing.Size(223, 54);
+            this.btn_satısİslemleri.TabIndex = 15;
+            this.btn_satısİslemleri.Text = "SATIŞ İŞLEMLERİ";
+            this.btn_satısİslemleri.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_satısİslemleri.UseVisualStyleBackColor = true;
+            this.btn_satısİslemleri.Click += new System.EventHandler(this.btn_satısİslemleri_Click);
             // 
             // btn_stokİşlemleri
             // 
@@ -302,7 +321,7 @@
             // pnl_logo
             // 
             this.pnl_logo.BackColor = System.Drawing.Color.DodgerBlue;
-            this.pnl_logo.Controls.Add(this.label1);
+            this.pnl_logo.Controls.Add(this.lbl_minimize);
             this.pnl_logo.Controls.Add(this.btn_maksimize);
             this.pnl_logo.Controls.Add(this.btn_uygulamaKapat);
             this.pnl_logo.Dock = System.Windows.Forms.DockStyle.Top;
@@ -312,16 +331,16 @@
             this.pnl_logo.Size = new System.Drawing.Size(223, 127);
             this.pnl_logo.TabIndex = 0;
             // 
-            // label1
+            // lbl_minimize
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(121, 4);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(31, 39);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "-";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.lbl_minimize.AutoSize = true;
+            this.lbl_minimize.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lbl_minimize.Location = new System.Drawing.Point(121, 4);
+            this.lbl_minimize.Name = "lbl_minimize";
+            this.lbl_minimize.Size = new System.Drawing.Size(31, 39);
+            this.lbl_minimize.TabIndex = 1;
+            this.lbl_minimize.Text = "-";
+            this.lbl_minimize.Click += new System.EventHandler(this.lbl_minimize_Click);
             // 
             // btn_maksimize
             // 
@@ -430,12 +449,13 @@
         private System.Windows.Forms.Button btn_hastaİşlemleri;
         private System.Windows.Forms.Button btn_anaSayfa;
         private System.Windows.Forms.Panel pnl_altForm;
-        private System.Windows.Forms.Panel pnl_işlemler;
+        public System.Windows.Forms.Panel pnl_işlemler;
         private System.Windows.Forms.PictureBox btn_EkranKapat;
         private System.Windows.Forms.Panel pnl_x;
         private System.Windows.Forms.Panel pnl_logo;
         private System.Windows.Forms.Label btn_maksimize;
         private System.Windows.Forms.Label btn_uygulamaKapat;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_minimize;
+        private System.Windows.Forms.Button btn_satısİslemleri;
     }
 }

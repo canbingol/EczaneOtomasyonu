@@ -24,23 +24,7 @@ namespace EczaneOtomasyon.Forms.Reçete
         bool hastaKayıtlımı = false;
         private void btn_tcBul_Click(object sender, EventArgs e)
         {
-            if (TcListele())
-            {
-                lbl_hastaTc.Text = hastaTc;
-                lbl_hastaAdı.Text = hastaAdı;
-                lbl_hastaSoyad.Text = hastaSoyad;
-                hastaKayıtlımı = true;
-                pnl_hasta.Visible = false;
-                txt_hastaTc.Clear();
-                pnl_ilaçEkle.Visible = true;
-                lbl_hastaTc.Visible = true;
-                lbl_hastaAdı.Visible = true;
-                lbl_hastaSoyad.Visible = true;
-            }
-            else
-            {
-                MessageBox.Show("HATA OLUŞTU TEKRAR DENEYİNM");
-            }
+            TcListele();
         }
 
         bool TcListele()
@@ -81,7 +65,7 @@ namespace EczaneOtomasyon.Forms.Reçete
             }
             return oldumu;
         }
-        int olanAdet, istenenAdet, toplamFiyat, sayac = 0;
+        int olanAdet,  toplamFiyat, sayac = 0;
 
 
         private void btn_ilaçEkle_Click(object sender, EventArgs e)
@@ -98,7 +82,7 @@ namespace EczaneOtomasyon.Forms.Reçete
                     MessageBox.Show(" DAHA FAZLA İLAÇ EKLENEMEZ");
                     return;
                 }
-              
+
                 ReçeteyeEkle();
                 toplamFiyat += olanAdet * Convert.ToInt32(İlaçFiyat);
                 lbl_toplamFiyat.Text = toplamFiyat.ToString();
@@ -113,14 +97,65 @@ namespace EczaneOtomasyon.Forms.Reçete
         }
         string ad, kategori, İlaçFiyat, barkod, adet;
 
+        private void btn_hastaOnayla_Click(object sender, EventArgs e)
+        {
+            if (TcListele())
+            {
+                lbl_hastaTc.Text = hastaTc;
+                lbl_hastaAdı.Text = hastaAdı;
+                lbl_hastaSoyad.Text = hastaSoyad;
+                hastaKayıtlımı = true;
+                pnl_hasta.Visible = false;
+                txt_hastaTc.Clear();
+                pnl_ilaçEkle.Visible = true;
+                lbl_hastaTc.Visible = true;
+                lbl_hastaAdı.Visible = true;
+                lbl_hastaSoyad.Visible = true;
+            }
+            else
+            {
+                MessageBox.Show("HATA OLUŞTU TEKRAR DENEYİNM");
+            }
+            pnl_hastaBilgisi.Visible = true;
+            lbl_hastaAd.Text = null; lbl_soyad.Text = null; lbl_tc.Text = null;
+        }
+
+        // reçeteyi veri tabanına ekler ve reçetedeki ilaç label larını temizler, görünürlüklerini kapatır
         private void btn_satıs_Click(object sender, EventArgs e)
         {
-            VeriEkle();
+            // reçeteye eklenecek ilk ilaç üzerinden reçetenin boş olup olmadığını kontrol eder
+            if (lbl_ilaçAdı1.Text == "-" || lbl_ilaçKategori1.Text == "-" || lbl_barkoNo1.Text == "-" ||
+            lbl_ilaçAdeti1.Text == "-" || lbl_ilaçFiyat1.Text == "-")
+            {       
+                MessageBox.Show(" REÇETE BOŞ LÜTFEN ÖNCE İLAÇ EKLEYİN");
+            }
+            else
+            {
+                VeriEkle();
+                Temizle(lbl_ilaçAdı1, lbl_ilaçKategori1, lbl_barkoNo1, lbl_ilaçFiyat1, lbl_ilaçAdeti1);
+                Temizle(lbl_ilaçAdı2, lbl_ilaçKategori2, lbl_barkoNo1, lbl_ilaçFiyat2, lbl_ilaçAdeti2);
+                Temizle(lbl_ilaçAdı3, lbl_ilaçKategori3, lbl_barkoNo1, lbl_ilaçFiyat3, lbl_ilaçAdeti3);
+                Temizle(lbl_ilaçAdı4, lbl_ilaçKategori4, lbl_barkoNo1, lbl_ilaçFiyat4, lbl_ilaçAdeti4);
+                Temizle(lbl_ilaçAdı5, lbl_ilaçKategori5, lbl_barkoNo1, lbl_ilaçFiyat5, lbl_ilaçAdeti5);
+                lbl_hastaAdı.Text = null; lbl_hastaSoyad.Text = null; lbl_hastaTc.Text = null;
+                lbl_hastaAdı.Visible = false; lbl_hastaSoyad.Visible = false; lbl_hastaTc.Visible = false;
+                pnl_hasta.Visible = true;
+                pnl_hastaBilgisi.Visible = false;
+                pnl_ilaçEkle.Visible = false;
+            }
         }
+
+        void Temizle(Label ad, Label kategori, Label barkod, Label fiyat, Label adet)
+        {
+            ad.Text = null; ad.Visible = false; kategori.Text = null; kategori.Visible = false;
+            barkod.Text = null; barkod.Visible = false; fiyat.Text = null; fiyat.Visible = false;
+            adet.Text = null; adet.Visible = false;
+        }
+
         // reçeteye ekleye basıldığı zaman sıras ile eklenen değerler label larda görünür
         void ReçeteyeEkle()
         {
-           
+
 
             switch (sayac)
             {
@@ -200,18 +235,6 @@ namespace EczaneOtomasyon.Forms.Reçete
                         ++sayac;
                     }
                     break;
-                    //case 6:
-                    //    lbl_ilaçAdı6.Text = ad; lbl_ilaçKategori6.Text = kategori; lbl_barkoNo6.Text = barkod;
-                    //    lbl_ilaçAdeti6.Text = adet; lbl_ilaçFiyat6.Text = İlaçFiyat;
-                    //    lbl_ilaçAdı6.Visible = true; lbl_ilaçKategori6.Visible = true; lbl_barkoNo6.Visible = true;
-                    //    lbl_ilaçAdeti6.Visible = true; lbl_ilaçFiyat6.Visible = true;
-                    //    break;
-                    //case 7:
-                    //    lbl_ilaçAdı7.Text = ad; lbl_ilaçKategori7.Text = kategori; lbl_barkoNo7.Text = barkod;
-                    //    lbl_ilaçAdeti7.Text = adet; lbl_ilaçFiyat7.Text = İlaçFiyat;
-                    //    lbl_ilaçAdı7.Visible = true; lbl_ilaçKategori7.Visible = true; lbl_barkoNo7.Visible = true;
-                    //    lbl_ilaçAdeti7.Visible = true; lbl_ilaçFiyat7.Visible = true;
-                    //    break;
 
             }
         }
@@ -259,7 +282,6 @@ namespace EczaneOtomasyon.Forms.Reçete
                         {
                             MessageBox.Show("KAYIT EKLEMEDİ");
                         }
-
                     }
                 }
             }
@@ -299,7 +321,7 @@ namespace EczaneOtomasyon.Forms.Reçete
                     }
                     else
                     {
-                        MessageBox.Show("KAYIT  EKLENemedi", "KAYIT EKLEME HATASI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("KAYIT  EKLENEMEDİ", "KAYIT EKLEME HATASI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                     }
                 }

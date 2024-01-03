@@ -29,16 +29,14 @@ namespace EczaneOtomasyon.Forms.Hasta
         {
             try
             {
-                DateTime dogumTarihi = dogumtarihi.Value;
-                string formatliTarih = dogumTarihi.ToString("dd.MM.yyyy");
+
                 string tcNo = txt_tcNo.Text;
                 string ad = txt_ad.Text;
                 string soyad = txt_soyad.Text;
                 string telNo = txt_telNo.Text;
-                dogumTarihi = dogumtarihi.Value.Date;
                 string adres = txt_adres.Text;
 
-                if (string.IsNullOrEmpty(tcNo) || string.IsNullOrEmpty(ad) || string.IsNullOrEmpty(soyad) || string.IsNullOrEmpty(telNo) || dogumTarihi == null || string.IsNullOrEmpty(adres))
+                if (string.IsNullOrEmpty(tcNo) || string.IsNullOrEmpty(ad) || string.IsNullOrEmpty(soyad) || string.IsNullOrEmpty(telNo) || string.IsNullOrEmpty(adres))
                 {
 
                     MessageBox.Show("Lütfen bütün satırları doldurun", "Kayıt Hatası", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -61,13 +59,12 @@ namespace EczaneOtomasyon.Forms.Hasta
                 else
                 {
                     con.Open();
-                    OleDbCommand hastaEkle = new OleDbCommand("INSERT INTO Hastalar (adı, soyadı, tc, adres, telno, dogumtarihi) VALUES (@ad, @soyad,@tcno, @adres,  @telno, @dogumtarihi)", con);
+                    OleDbCommand hastaEkle = new OleDbCommand("INSERT INTO Hastalar (adı, soyadı, tc, adres, telno) VALUES (@ad, @soyad,@tcno, @adres,  @telno)", con);
                     hastaEkle.Parameters.AddWithValue("@ad", ad);
                     hastaEkle.Parameters.AddWithValue("@soyad", soyad);
                     hastaEkle.Parameters.AddWithValue("@tcno", tcNo);
                     hastaEkle.Parameters.AddWithValue("@adres", adres);
                     hastaEkle.Parameters.AddWithValue("@telno", telNo);
-                    hastaEkle.Parameters.AddWithValue("@dogumtarihi", dogumTarihi);
 
                     int sayac = hastaEkle.ExecuteNonQuery();
                     con.Close();
@@ -96,10 +93,7 @@ namespace EczaneOtomasyon.Forms.Hasta
             }
 
         }
-        private void btn_KayıtKapat_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-        }
+
         #region textbox işlemleri
 
         private void txt_tcNo_KeyPress(object sender, KeyPressEventArgs e)

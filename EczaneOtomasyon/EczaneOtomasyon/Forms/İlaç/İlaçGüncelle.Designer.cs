@@ -101,13 +101,13 @@
             // 
             // btn_ilaçGüncelle
             // 
-            this.btn_ilaçGüncelle.BackColor = System.Drawing.Color.Red;
+            this.btn_ilaçGüncelle.BackColor = System.Drawing.Color.Green;
             this.btn_ilaçGüncelle.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btn_ilaçGüncelle.Location = new System.Drawing.Point(275, 313);
             this.btn_ilaçGüncelle.Name = "btn_ilaçGüncelle";
             this.btn_ilaçGüncelle.Size = new System.Drawing.Size(439, 56);
             this.btn_ilaçGüncelle.TabIndex = 69;
-            this.btn_ilaçGüncelle.Text = "BÜTÜN ALANLARI DOLDURUN";
+            this.btn_ilaçGüncelle.Text = "İLAÇ GÜNCELLE";
             this.btn_ilaçGüncelle.UseVisualStyleBackColor = false;
             this.btn_ilaçGüncelle.Visible = false;
             this.btn_ilaçGüncelle.Click += new System.EventHandler(this.btn_ilaçGüncelle_Click);

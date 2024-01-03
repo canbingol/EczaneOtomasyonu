@@ -65,13 +65,13 @@
             // 
             // btn_ilaçKaydet
             // 
-            this.btn_ilaçKaydet.BackColor = System.Drawing.Color.Red;
+            this.btn_ilaçKaydet.BackColor = System.Drawing.Color.Green;
             this.btn_ilaçKaydet.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btn_ilaçKaydet.Location = new System.Drawing.Point(155, 252);
+            this.btn_ilaçKaydet.Location = new System.Drawing.Point(205, 272);
             this.btn_ilaçKaydet.Name = "btn_ilaçKaydet";
             this.btn_ilaçKaydet.Size = new System.Drawing.Size(439, 56);
             this.btn_ilaçKaydet.TabIndex = 52;
-            this.btn_ilaçKaydet.Text = "BÜTÜN ALANLARI DOLDURUN";
+            this.btn_ilaçKaydet.Text = "YENİ İLAÇ KAYDET";
             this.btn_ilaçKaydet.UseVisualStyleBackColor = false;
             this.btn_ilaçKaydet.Click += new System.EventHandler(this.btn_ilaçKaydet_Click);
             // 

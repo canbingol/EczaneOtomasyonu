@@ -25,7 +25,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>8</ApplicationRevision>
+    <ApplicationRevision>9</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -102,6 +102,12 @@
     <Compile Include="Forms\Reçete\ReçeteAnaSayfa.Designer.cs">
       <DependentUpon>ReçeteAnaSayfa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Satış\Satış.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Satış\Satış.Designer.cs">
+      <DependentUpon>Satış.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Reçete\ReçeteAnaSayfa.resx">
       <DependentUpon>ReçeteAnaSayfa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Satış\Satış.resx">
+      <DependentUpon>Satış.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

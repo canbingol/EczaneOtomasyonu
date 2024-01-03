@@ -45,7 +45,7 @@ namespace EczaneOtomasyon
 
             if (string.IsNullOrEmpty(parola))
                 lbl_hataParola.Visible = true;
-            else 
+            else
                 lbl_hataParola.Visible = false;
 
             using (OleDbConnection con = new OleDbConnection(connection))
@@ -65,21 +65,21 @@ namespace EczaneOtomasyon
 
                         if (reader.HasRows)
                         {
-                            // Kullanıcı doğrulandı, giriş yapabilirsiniz.
+
                             AnaEkran anaEkran = new AnaEkran();
                             anaEkran.Show();
                             this.Hide();
                         }
                         else
                         {
-                            // Kullanıcı doğrulanamadı, hata mesajı gösterin.
+
                             MessageBox.Show("Kullanıcı adı veya şifre hatalı!");
 
                         }
                     }
                 }
             }
-           // Temizle(txt_Parola, txt_KullanıcıAdı);
+
         }
         public bool KullaniciAdiMevcutMu(string kullaniciAdi)
         {
@@ -104,7 +104,7 @@ namespace EczaneOtomasyon
 
         private void btn_yeniParolaKaydet_Click(object sender, EventArgs e)
         {
-            
+
 
             string parola1 = txt_YeniParola.Text;
             string parola2 = txt_YeniParola2.Text;
@@ -158,7 +158,7 @@ namespace EczaneOtomasyon
                         }
                     }
                 }
-              //  Temizle(txt_YeniParola2, txt_YeniParola, txt_parolaKullanıcıAdı);
+                //  Temizle(txt_YeniParola2, txt_YeniParola, txt_parolaKullanıcıAdı);
             }
             else
             {
@@ -168,7 +168,7 @@ namespace EczaneOtomasyon
         }
         private void btn_yeniKullanıcı_Click(object sender, EventArgs e)
         {
-          
+
             // panel görünür kılındı ve lokasyınu yeniden ayarlandı
             PanelYeniKayıt.Visible = true;
             PanelYeniKayıt.Location = new Point(345, 10);
@@ -181,7 +181,7 @@ namespace EczaneOtomasyon
 
         private void btn_sifreUnuttum_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-           
+
             panel_SifreDegistir.Visible = true;
             panel_SifreDegistir.Location = new Point(346, 1);
             btn_YeniKayıtEkle.Visible = false;
@@ -193,17 +193,17 @@ namespace EczaneOtomasyon
         }
         private void btn_kayıtKapat_Click(object sender, EventArgs e)
         {
-          
+
             PanelYeniKayıt.Visible = false;
             Temizle(txt_kayıtKullanıcıAdı, txt_kayıtParola, txt_kayıtParola2);
         }
 
         private void btn_parolaKapat_Click(object sender, EventArgs e)
         {
-            
+
             panel_SifreDegistir.Visible = false;
             btn_YeniKayıtEkle.Visible = true;
-Temizle(txt_YeniParola2, txt_YeniParola, txt_parolaKullanıcıAdı);
+            Temizle(txt_YeniParola2, txt_YeniParola, txt_parolaKullanıcıAdı);
         }
 
         private void btn_YeniKayıtEkle_Click(object sender, EventArgs e)
@@ -222,7 +222,7 @@ Temizle(txt_YeniParola2, txt_YeniParola, txt_parolaKullanıcıAdı);
             else
             {
                 if (string.IsNullOrEmpty(parola2) && string.IsNullOrEmpty(parola1))
-                    MessageBox.Show(" Bütün şifre alanları boş bırakılamaz");
+                    MessageBox.Show("  şifre alanları boş bırakılamaz");
                 else
                 {
                     if (!(parola1 == parola2))
@@ -260,7 +260,7 @@ Temizle(txt_YeniParola2, txt_YeniParola, txt_parolaKullanıcıAdı);
                     }
                 }
             }
-           // Temizle(txt_kayıtKullanıcıAdı, txt_kayıtParola, txt_kayıtParola2);
+            // Temizle(txt_kayıtKullanıcıAdı, txt_kayıtParola, txt_kayıtParola2);
         }
 
         private void btn_cıkıs_Click_1(object sender, EventArgs e)

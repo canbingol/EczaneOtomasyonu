@@ -33,7 +33,6 @@
             this.lbl_güncelleAdresHata = new System.Windows.Forms.Label();
             this.lbl_güncelleSoyadHata = new System.Windows.Forms.Label();
             this.lbl_güncelleAdHata = new System.Windows.Forms.Label();
-            this.dogumtarihi = new System.Windows.Forms.DateTimePicker();
             this.lbl_gücelleTcHata = new System.Windows.Forms.Label();
             this.txt_soyad = new System.Windows.Forms.TextBox();
             this.txt_ad = new System.Windows.Forms.TextBox();
@@ -42,7 +41,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_telNo = new System.Windows.Forms.TextBox();
@@ -67,7 +65,7 @@
             // 
             this.lbl_güncelleTelHata.AutoSize = true;
             this.lbl_güncelleTelHata.ForeColor = System.Drawing.Color.Red;
-            this.lbl_güncelleTelHata.Location = new System.Drawing.Point(647, 122);
+            this.lbl_güncelleTelHata.Location = new System.Drawing.Point(643, 76);
             this.lbl_güncelleTelHata.Name = "lbl_güncelleTelHata";
             this.lbl_güncelleTelHata.Size = new System.Drawing.Size(213, 16);
             this.lbl_güncelleTelHata.TabIndex = 69;
@@ -78,7 +76,7 @@
             // 
             this.lbl_güncelleAdresHata.AutoSize = true;
             this.lbl_güncelleAdresHata.ForeColor = System.Drawing.Color.Red;
-            this.lbl_güncelleAdresHata.Location = new System.Drawing.Point(642, 200);
+            this.lbl_güncelleAdresHata.Location = new System.Drawing.Point(638, 154);
             this.lbl_güncelleAdresHata.Name = "lbl_güncelleAdresHata";
             this.lbl_güncelleAdresHata.Size = new System.Drawing.Size(213, 16);
             this.lbl_güncelleAdresHata.TabIndex = 68;
@@ -106,13 +104,6 @@
             this.lbl_güncelleAdHata.TabIndex = 66;
             this.lbl_güncelleAdHata.Text = " BU ALANI BOŞ BIRAKAMAZSINIZ";
             this.lbl_güncelleAdHata.Visible = false;
-            // 
-            // dogumtarihi
-            // 
-            this.dogumtarihi.Location = new System.Drawing.Point(645, 75);
-            this.dogumtarihi.Name = "dogumtarihi";
-            this.dogumtarihi.Size = new System.Drawing.Size(258, 22);
-            this.dogumtarihi.TabIndex = 65;
             // 
             // lbl_gücelleTcHata
             // 
@@ -185,7 +176,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label6.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label6.Location = new System.Drawing.Point(453, 233);
+            this.label6.Location = new System.Drawing.Point(449, 187);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(177, 22);
             this.label6.TabIndex = 56;
@@ -196,7 +187,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label5.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label5.Location = new System.Drawing.Point(458, 154);
+            this.label5.Location = new System.Drawing.Point(454, 108);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(129, 22);
             this.label5.TabIndex = 52;
@@ -212,17 +203,6 @@
             this.label3.Size = new System.Drawing.Size(136, 22);
             this.label3.TabIndex = 57;
             this.label3.Text = "HASTA SOYADI";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label4.Location = new System.Drawing.Point(453, 75);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(139, 22);
-            this.label4.TabIndex = 53;
-            this.label4.Text = "DOĞUM TARİHİ";
             // 
             // label2
             // 
@@ -251,7 +231,7 @@
             this.txt_telNo.BackColor = System.Drawing.Color.White;
             this.txt_telNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_telNo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txt_telNo.Location = new System.Drawing.Point(647, 219);
+            this.txt_telNo.Location = new System.Drawing.Point(643, 173);
             this.txt_telNo.MaxLength = 11;
             this.txt_telNo.Multiline = true;
             this.txt_telNo.Name = "txt_telNo";
@@ -267,7 +247,7 @@
             this.txt_adres.BackColor = System.Drawing.Color.White;
             this.txt_adres.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_adres.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txt_adres.Location = new System.Drawing.Point(650, 141);
+            this.txt_adres.Location = new System.Drawing.Point(646, 95);
             this.txt_adres.Multiline = true;
             this.txt_adres.Name = "txt_adres";
             this.txt_adres.Size = new System.Drawing.Size(258, 43);
@@ -287,7 +267,6 @@
             this.Controls.Add(this.lbl_güncelleAdresHata);
             this.Controls.Add(this.lbl_güncelleSoyadHata);
             this.Controls.Add(this.lbl_güncelleAdHata);
-            this.Controls.Add(this.dogumtarihi);
             this.Controls.Add(this.lbl_gücelleTcHata);
             this.Controls.Add(this.txt_adres);
             this.Controls.Add(this.txt_telNo);
@@ -298,7 +277,6 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -320,20 +298,18 @@
         public System.Windows.Forms.Label lbl_güncelleAdresHata;
         public System.Windows.Forms.Label lbl_güncelleSoyadHata;
         public System.Windows.Forms.Label lbl_güncelleAdHata;
-        private System.Windows.Forms.DateTimePicker dogumtarihi;
         public System.Windows.Forms.Label lbl_gücelleTcHata;
-        private System.Windows.Forms.TextBox txt_soyad;
-        private System.Windows.Forms.TextBox txt_ad;
-        private System.Windows.Forms.TextBox txt_tcNo;
+        public System.Windows.Forms.TextBox txt_soyad;
+        public System.Windows.Forms.TextBox txt_ad;
+        public System.Windows.Forms.TextBox txt_tcNo;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txt_telNo;
-        private System.Windows.Forms.TextBox txt_adres;
+        public System.Windows.Forms.TextBox txt_telNo;
+        public System.Windows.Forms.TextBox txt_adres;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         // public System.Windows.Forms.RichTextBox txt_adres;
     }

@@ -33,10 +33,9 @@ namespace EczaneOtomasyon.Forms.Hasta
                 string ad = txt_ad.Text;
                 string soyad = txt_soyad.Text;
                 string telNo = txt_telNo.Text;
-                string dogumTarihi = dogumtarihi.Value.Date.ToString();
                 string adres = txt_adres.Text;
 
-                if (string.IsNullOrEmpty(tcNo) || string.IsNullOrEmpty(ad) || string.IsNullOrEmpty(soyad) || string.IsNullOrEmpty(telNo) || dogumtarihi == null || string.IsNullOrEmpty(adres))
+                if (string.IsNullOrEmpty(tcNo) || string.IsNullOrEmpty(ad) || string.IsNullOrEmpty(soyad) || string.IsNullOrEmpty(telNo) || string.IsNullOrEmpty(adres))
                 {
 
                     MessageBox.Show("Lütfen bütün satırları doldurun", "Kayıt Hatası", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -60,13 +59,12 @@ namespace EczaneOtomasyon.Forms.Hasta
                 else
                 {
                     con.Open();
-                    OleDbCommand hastaEkle = new OleDbCommand("UPDATE  İlaçlar SET  Adı =@p1, Soyadı=@p2, Adres=@p4, Telno=@p5, Dogumtarihi=@p6 WHERE  Tc=@p3", con);
+                    OleDbCommand hastaEkle = new OleDbCommand("UPDATE  Hastalar SET  Adı =@p1, Soyadı=@p2, Adres=@p4, Telno=@p5  WHERE  Tc=@p3", con);
                     hastaEkle.Parameters.AddWithValue("@p1", ad);
                     hastaEkle.Parameters.AddWithValue("@p2", soyad);
                     hastaEkle.Parameters.AddWithValue("@p3", tcNo);
                     hastaEkle.Parameters.AddWithValue("@p4", adres);
                     hastaEkle.Parameters.AddWithValue("@p5", telNo);
-                    hastaEkle.Parameters.AddWithValue("@p6", dogumTarihi);
 
                     int sayac = hastaEkle.ExecuteNonQuery();
                     con.Close();
@@ -112,6 +110,7 @@ namespace EczaneOtomasyon.Forms.Hasta
                 e.Handled = true;
         }
 
+       
         new void MouseHover(TextBox txt)
         {
             txt.BorderStyle = BorderStyle.None;

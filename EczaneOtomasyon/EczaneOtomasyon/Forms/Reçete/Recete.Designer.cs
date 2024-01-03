@@ -40,7 +40,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_hastaTc = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnl_hastaBilgisi = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.lbl_hastaSoyad = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -98,8 +98,9 @@
             this.label22 = new System.Windows.Forms.Label();
             this.lbl_toplamFiyat = new System.Windows.Forms.Label();
             this.btn_satıs = new System.Windows.Forms.Button();
+            this.btn_hastaOnayla = new System.Windows.Forms.Button();
             this.pnl_hasta.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.pnl_hastaBilgisi.SuspendLayout();
             this.pnl_ilaçEkle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_adet)).BeginInit();
             this.panel2.SuspendLayout();
@@ -118,6 +119,7 @@
             this.pnl_hasta.Controls.Add(this.label5);
             this.pnl_hasta.Controls.Add(this.label1);
             this.pnl_hasta.Controls.Add(this.txt_hastaTc);
+            this.pnl_hasta.Controls.Add(this.btn_hastaOnayla);
             this.pnl_hasta.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_hasta.Location = new System.Drawing.Point(0, 0);
             this.pnl_hasta.Name = "pnl_hasta";
@@ -142,7 +144,7 @@
             this.label18.BackColor = System.Drawing.Color.Transparent;
             this.label18.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label18.ForeColor = System.Drawing.Color.Black;
-            this.label18.Location = new System.Drawing.Point(432, 36);
+            this.label18.Location = new System.Drawing.Point(404, 29);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(134, 21);
             this.label18.TabIndex = 2;
@@ -154,7 +156,7 @@
             this.lbl_soyad.BackColor = System.Drawing.Color.Transparent;
             this.lbl_soyad.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lbl_soyad.ForeColor = System.Drawing.Color.Black;
-            this.lbl_soyad.Location = new System.Drawing.Point(425, 69);
+            this.lbl_soyad.Location = new System.Drawing.Point(397, 62);
             this.lbl_soyad.Name = "lbl_soyad";
             this.lbl_soyad.Size = new System.Drawing.Size(134, 21);
             this.lbl_soyad.TabIndex = 2;
@@ -166,7 +168,7 @@
             this.label16.BackColor = System.Drawing.Color.Transparent;
             this.label16.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label16.ForeColor = System.Drawing.Color.Black;
-            this.label16.Location = new System.Drawing.Point(319, 36);
+            this.label16.Location = new System.Drawing.Point(291, 29);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(100, 23);
             this.label16.TabIndex = 2;
@@ -177,7 +179,7 @@
             this.lbl_hastaAd.BackColor = System.Drawing.Color.Transparent;
             this.lbl_hastaAd.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lbl_hastaAd.ForeColor = System.Drawing.Color.Black;
-            this.lbl_hastaAd.Location = new System.Drawing.Point(319, 69);
+            this.lbl_hastaAd.Location = new System.Drawing.Point(291, 62);
             this.lbl_hastaAd.Name = "lbl_hastaAd";
             this.lbl_hastaAd.Size = new System.Drawing.Size(100, 23);
             this.lbl_hastaAd.TabIndex = 2;
@@ -189,7 +191,7 @@
             this.label19.BackColor = System.Drawing.Color.Transparent;
             this.label19.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label19.ForeColor = System.Drawing.Color.Black;
-            this.label19.Location = new System.Drawing.Point(572, 36);
+            this.label19.Location = new System.Drawing.Point(544, 29);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(100, 23);
             this.label19.TabIndex = 2;
@@ -200,7 +202,7 @@
             this.lbl_tc.BackColor = System.Drawing.Color.Transparent;
             this.lbl_tc.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lbl_tc.ForeColor = System.Drawing.Color.Black;
-            this.lbl_tc.Location = new System.Drawing.Point(575, 66);
+            this.lbl_tc.Location = new System.Drawing.Point(547, 59);
             this.lbl_tc.Name = "lbl_tc";
             this.lbl_tc.Size = new System.Drawing.Size(100, 23);
             this.lbl_tc.TabIndex = 2;
@@ -213,7 +215,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label5.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label5.Location = new System.Drawing.Point(432, 9);
+            this.label5.Location = new System.Drawing.Point(404, 2);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(168, 23);
             this.label5.TabIndex = 2;
@@ -242,21 +244,22 @@
             this.txt_hastaTc.Size = new System.Drawing.Size(192, 40);
             this.txt_hastaTc.TabIndex = 1;
             // 
-            // panel1
+            // pnl_hastaBilgisi
             // 
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.lbl_hastaSoyad);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.lbl_hastaAdı);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.lbl_hastaTc);
-            this.panel1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 96);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(777, 87);
-            this.panel1.TabIndex = 2;
+            this.pnl_hastaBilgisi.Controls.Add(this.label2);
+            this.pnl_hastaBilgisi.Controls.Add(this.lbl_hastaSoyad);
+            this.pnl_hastaBilgisi.Controls.Add(this.label3);
+            this.pnl_hastaBilgisi.Controls.Add(this.label6);
+            this.pnl_hastaBilgisi.Controls.Add(this.lbl_hastaAdı);
+            this.pnl_hastaBilgisi.Controls.Add(this.label8);
+            this.pnl_hastaBilgisi.Controls.Add(this.lbl_hastaTc);
+            this.pnl_hastaBilgisi.Cursor = System.Windows.Forms.Cursors.Default;
+            this.pnl_hastaBilgisi.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnl_hastaBilgisi.Location = new System.Drawing.Point(0, 96);
+            this.pnl_hastaBilgisi.Name = "pnl_hastaBilgisi";
+            this.pnl_hastaBilgisi.Size = new System.Drawing.Size(777, 87);
+            this.pnl_hastaBilgisi.TabIndex = 2;
+            this.pnl_hastaBilgisi.Visible = false;
             // 
             // label2
             // 
@@ -1027,9 +1030,24 @@
             this.btn_satıs.Name = "btn_satıs";
             this.btn_satıs.Size = new System.Drawing.Size(189, 64);
             this.btn_satıs.TabIndex = 7;
-            this.btn_satıs.Text = "SATIŞ YAP";
+            this.btn_satıs.Text = "REÇETE KAYDET";
             this.btn_satıs.UseVisualStyleBackColor = false;
             this.btn_satıs.Click += new System.EventHandler(this.btn_satıs_Click);
+            // 
+            // btn_hastaOnayla
+            // 
+            this.btn_hastaOnayla.BackColor = System.Drawing.Color.White;
+            this.btn_hastaOnayla.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_hastaOnayla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_hastaOnayla.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_hastaOnayla.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.btn_hastaOnayla.Location = new System.Drawing.Point(653, 33);
+            this.btn_hastaOnayla.Name = "btn_hastaOnayla";
+            this.btn_hastaOnayla.Size = new System.Drawing.Size(121, 50);
+            this.btn_hastaOnayla.TabIndex = 3;
+            this.btn_hastaOnayla.Text = "ONAYLA";
+            this.btn_hastaOnayla.UseVisualStyleBackColor = false;
+            this.btn_hastaOnayla.Click += new System.EventHandler(this.btn_hastaOnayla_Click);
             // 
             // Recete
             // 
@@ -1042,15 +1060,15 @@
             this.Controls.Add(this.btn_satıs);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnl_ilaçEkle);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnl_hastaBilgisi);
             this.Controls.Add(this.pnl_hasta);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Recete";
             this.Text = "Recete";
             this.pnl_hasta.ResumeLayout(false);
             this.pnl_hasta.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnl_hastaBilgisi.ResumeLayout(false);
+            this.pnl_hastaBilgisi.PerformLayout();
             this.pnl_ilaçEkle.ResumeLayout(false);
             this.pnl_ilaçEkle.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_adet)).EndInit();
@@ -1074,7 +1092,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_hastaTc;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnl_hastaBilgisi;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbl_hastaSoyad;
         private System.Windows.Forms.Label label3;
@@ -1132,5 +1150,6 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label lbl_toplamFiyat;
         private System.Windows.Forms.Button btn_satıs;
+        private System.Windows.Forms.Button btn_hastaOnayla;
     }
 }
