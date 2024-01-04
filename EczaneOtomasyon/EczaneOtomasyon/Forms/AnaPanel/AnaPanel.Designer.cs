@@ -51,6 +51,9 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.lbl_ilaçSayısı = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.bar_dolulukOranı = new System.Windows.Forms.ProgressBar();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lbl_doluluk = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.pnl_kullanıcı.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -327,12 +330,46 @@
             this.label12.Text = "İLAÇ SAYISI";
             this.label12.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // bar_dolulukOranı
+            // 
+            this.bar_dolulukOranı.Location = new System.Drawing.Point(51, 654);
+            this.bar_dolulukOranı.Name = "bar_dolulukOranı";
+            this.bar_dolulukOranı.Size = new System.Drawing.Size(245, 62);
+            this.bar_dolulukOranı.TabIndex = 12;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(71, 612);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(177, 27);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "DOLULUK ORANI";
+            // 
+            // lbl_doluluk
+            // 
+            this.lbl_doluluk.AutoSize = true;
+            this.lbl_doluluk.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_doluluk.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lbl_doluluk.ForeColor = System.Drawing.Color.Black;
+            this.lbl_doluluk.Location = new System.Drawing.Point(312, 671);
+            this.lbl_doluluk.Name = "lbl_doluluk";
+            this.lbl_doluluk.Size = new System.Drawing.Size(24, 27);
+            this.lbl_doluluk.TabIndex = 1;
+            this.lbl_doluluk.Text = "0";
+            // 
             // AnaPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(718, 746);
+            this.Controls.Add(this.bar_dolulukOranı);
+            this.Controls.Add(this.lbl_doluluk);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
@@ -359,6 +396,7 @@
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -386,5 +424,8 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label lbl_ilaçSayısı;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ProgressBar bar_dolulukOranı;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbl_doluluk;
     }
 }

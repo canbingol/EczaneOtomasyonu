@@ -275,6 +275,7 @@
             // txt_ilaçAd
             // 
             this.txt_ilaçAd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_ilaçAd.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_ilaçAd.Location = new System.Drawing.Point(777, 144);
             this.txt_ilaçAd.Margin = new System.Windows.Forms.Padding(4);
             this.txt_ilaçAd.Multiline = true;

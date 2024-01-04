@@ -3,11 +3,11 @@ using EczaneOtomasyon.Forms.Hasta;
 using EczaneOtomasyon.Forms.İlaç;
 using EczaneOtomasyon.Forms.Reçete;
 using EczaneOtomasyon.Forms.Satış;
-using EczaneOtomasyon.Forms.Stok;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -18,11 +18,45 @@ namespace EczaneOtomasyon
 {
     public partial class AnaEkran : Form
     {
-        static public int kapasite = 3000;
+        string baglanti = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=EczaneVeri.accdb";
+
         public AnaEkran()
         {
             InitializeComponent();
             panelAyarları();
+        }
+        string kullanıcı = Login.aktifKullanıcı;
+        void YetkiKontrol()
+        {
+            string yetki;
+            using (OleDbConnection con = new OleDbConnection(baglanti))
+            {
+
+                con.Open();
+                string sorgu = "SELECT yetki FROM Kullanıcılar WHERE kullanıcıadı=@kullanıcı";
+                using (OleDbCommand cmd = new OleDbCommand(sorgu, con))
+                {
+                    cmd.Parameters.AddWithValue("@kullanıcı", kullanıcı);
+                    using (OleDbDataReader yetkiOku = cmd.ExecuteReader())
+                    {
+                        if (yetkiOku.Read())
+                        {
+                            yetki = yetkiOku["yetki"].ToString();
+                            if (yetki == "calisan")
+                            {
+                                btn_hastaGüncelle.Enabled = false;
+                                btn_hastaGüncelle.ForeColor = Color.Red;
+                                btn_ilaçGüncelle.Enabled = false;
+                                btn_ilaçGüncelle.ForeColor = Color.Red;
+                                btn_ilaçKaydet.Enabled = false;
+                                btn_ilaçKaydet.ForeColor = Color.Red;
+                                MessageBox.Show("oldu");
+                            }
+                        }
+
+                    }
+                }
+            }
         }
 
         #region Tıklama işlemleri 
@@ -53,14 +87,6 @@ namespace EczaneOtomasyon
         {
             AltFormGöster(new Recete());
 
-            AltMenüSakla();
-
-        }
-
-        private void btn_stokİşlemleri_Click(object sender, EventArgs e)
-        {
-            AltMenüSakla();
-            AltFormGöster(new StokAnaSayfa());
             AltMenüSakla();
 
         }
@@ -183,16 +209,6 @@ namespace EczaneOtomasyon
             MouseLeave(btn_reçeteİşlemleri);
         }
 
-        private void btn_stokİşlemleri_MouseHover(object sender, EventArgs e)
-        {
-            MouseHover(btn_stokİşlemleri);
-        }
-
-        private void btn_stokİşlemleri_MouseLeave(object sender, EventArgs e)
-        {
-            MouseLeave(btn_stokİşlemleri);
-        }
-
         #endregion
 
         private void btn_EkranKapat_Click(object sender, EventArgs e)
@@ -237,6 +253,7 @@ namespace EczaneOtomasyon
 
         private void AnaEkran_Load(object sender, EventArgs e)
         {
+            YetkiKontrol();
             AltMenüSakla();
             AltFormGöster(new AnaPanel());
         }

@@ -25,7 +25,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>9</ApplicationRevision>
+    <ApplicationRevision>10</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -95,13 +95,6 @@
     <Compile Include="Forms\Reçete\Recete.Designer.cs">
       <DependentUpon>Recete.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Reçete\Reçete.cs" />
-    <Compile Include="Forms\Reçete\ReçeteAnaSayfa.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Reçete\ReçeteAnaSayfa.Designer.cs">
-      <DependentUpon>ReçeteAnaSayfa.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Satış\Satış.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,14 +131,7 @@
     <Compile Include="Forms\Hasta\HastaKayıt.Designer.cs">
       <DependentUpon>HastaKayıt.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Hasta\HastaMetod.cs" />
     <Compile Include="Forms\Hasta\IHastaİslemleri.cs" />
-    <Compile Include="Forms\Stok\StokAnaSayfa.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Stok\StokAnaSayfa.Designer.cs">
-      <DependentUpon>StokAnaSayfa.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\İlaç\Iilaçİşlemleri.cs" />
     <Compile Include="Forms\İlaç\İlaçAnaSayfa.cs">
       <SubType>Form</SubType>
@@ -174,9 +160,6 @@
     <EmbeddedResource Include="Forms\Reçete\Recete.resx">
       <DependentUpon>Recete.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Reçete\ReçeteAnaSayfa.resx">
-      <DependentUpon>ReçeteAnaSayfa.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Satış\Satış.resx">
       <DependentUpon>Satış.cs</DependentUpon>
     </EmbeddedResource>
@@ -194,9 +177,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Hasta\HastaKayıt.resx">
       <DependentUpon>HastaKayıt.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Stok\StokAnaSayfa.resx">
-      <DependentUpon>StokAnaSayfa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\İlaç\İlaçAnaSayfa.resx">
       <DependentUpon>İlaçAnaSayfa.cs</DependentUpon>

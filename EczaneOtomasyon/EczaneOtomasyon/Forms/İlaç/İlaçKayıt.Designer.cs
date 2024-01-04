@@ -70,7 +70,7 @@
             this.btn_ilaçKaydet.Location = new System.Drawing.Point(205, 272);
             this.btn_ilaçKaydet.Name = "btn_ilaçKaydet";
             this.btn_ilaçKaydet.Size = new System.Drawing.Size(439, 56);
-            this.btn_ilaçKaydet.TabIndex = 52;
+            this.btn_ilaçKaydet.TabIndex = 5;
             this.btn_ilaçKaydet.Text = "YENİ İLAÇ KAYDET";
             this.btn_ilaçKaydet.UseVisualStyleBackColor = false;
             this.btn_ilaçKaydet.Click += new System.EventHandler(this.btn_ilaçKaydet_Click);
@@ -220,7 +220,7 @@
             this.txt_kategori.Name = "txt_kategori";
             this.txt_kategori.Size = new System.Drawing.Size(258, 29);
             this.txt_kategori.Sorted = true;
-            this.txt_kategori.TabIndex = 80;
+            this.txt_kategori.TabIndex = 3;
             // 
             // txt_adet
             // 
@@ -238,7 +238,7 @@
             0});
             this.txt_adet.Name = "txt_adet";
             this.txt_adet.Size = new System.Drawing.Size(258, 28);
-            this.txt_adet.TabIndex = 79;
+            this.txt_adet.TabIndex = 4;
             this.txt_adet.Value = new decimal(new int[] {
             1,
             0,
@@ -248,34 +248,37 @@
             // txt_fiyat
             // 
             this.txt_fiyat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_fiyat.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_fiyat.Location = new System.Drawing.Point(512, 52);
             this.txt_fiyat.Margin = new System.Windows.Forms.Padding(4);
             this.txt_fiyat.MaxLength = 13;
             this.txt_fiyat.Multiline = true;
             this.txt_fiyat.Name = "txt_fiyat";
             this.txt_fiyat.Size = new System.Drawing.Size(258, 43);
-            this.txt_fiyat.TabIndex = 77;
+            this.txt_fiyat.TabIndex = 2;
             // 
             // txt_barkod
             // 
             this.txt_barkod.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_barkod.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_barkod.Location = new System.Drawing.Point(134, 131);
             this.txt_barkod.Margin = new System.Windows.Forms.Padding(4);
             this.txt_barkod.MaxLength = 13;
             this.txt_barkod.Multiline = true;
             this.txt_barkod.Name = "txt_barkod";
             this.txt_barkod.Size = new System.Drawing.Size(258, 43);
-            this.txt_barkod.TabIndex = 76;
+            this.txt_barkod.TabIndex = 1;
             // 
             // txt_ilaçAd
             // 
             this.txt_ilaçAd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_ilaçAd.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_ilaçAd.Location = new System.Drawing.Point(135, 56);
             this.txt_ilaçAd.Margin = new System.Windows.Forms.Padding(4);
             this.txt_ilaçAd.Multiline = true;
             this.txt_ilaçAd.Name = "txt_ilaçAd";
             this.txt_ilaçAd.Size = new System.Drawing.Size(258, 43);
-            this.txt_ilaçAd.TabIndex = 75;
+            this.txt_ilaçAd.TabIndex = 0;
             // 
             // İlaçKayıt
             // 

@@ -102,9 +102,40 @@ namespace EczaneOtomasyon.Forms.İlaç
             Listele();
         }
 
-        private void data_ilaçlar_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void txt_ilacAra_TextChanged(object sender, EventArgs e)
         {
+            string aranan = txt_ilacAra.Text;
+            OleDbConnection con = new OleDbConnection(baglantı);
 
+            if (aranan.Length >= 1)
+            {
+                try
+                {
+                    con.Open();
+
+                    OleDbCommand cmd = new OleDbCommand("SELECT * FROM İlaçlar WHERE barkod LIKE @barkod", con);
+                    cmd.Parameters.AddWithValue("@barkod", aranan + "%");
+
+                    OleDbDataAdapter da = new OleDbDataAdapter(cmd);
+                    DataTable tablo = new DataTable();
+                    da.Fill(tablo);
+
+                    data_ilaçlar.DataSource = tablo;
+                }
+                catch (OleDbException ex)
+                {
+
+                    MessageBox.Show("Veritabanı hatası: " + ex.Message);
+                }
+                finally
+                {
+                    con.Close();
+                }
+            }
+            else
+            {
+                Listele();
+            }
         }
     }
 

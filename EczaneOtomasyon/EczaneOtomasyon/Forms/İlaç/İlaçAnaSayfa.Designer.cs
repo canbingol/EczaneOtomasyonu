@@ -43,6 +43,7 @@
             this.antideprToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.data_ilaçlar = new System.Windows.Forms.DataGridView();
             this.panel_ilaçAnaSayfa = new System.Windows.Forms.Panel();
+            this.txt_ilacAra = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data_ilaçlar)).BeginInit();
             this.SuspendLayout();
@@ -166,7 +167,7 @@
             this.data_ilaçlar.RowTemplate.Height = 24;
             this.data_ilaçlar.Size = new System.Drawing.Size(987, 741);
             this.data_ilaçlar.TabIndex = 1;
-            this.data_ilaçlar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_ilaçlar_CellContentClick);
+//            this.data_ilaçlar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_ilaçlar_CellContentClick);
             // 
             // panel_ilaçAnaSayfa
             // 
@@ -178,12 +179,22 @@
             this.panel_ilaçAnaSayfa.TabIndex = 2;
             this.panel_ilaçAnaSayfa.Visible = false;
             // 
+            // txt_ilacAra
+            // 
+            this.txt_ilacAra.Location = new System.Drawing.Point(847, 5);
+            this.txt_ilacAra.MaxLength = 13;
+            this.txt_ilacAra.Name = "txt_ilacAra";
+            this.txt_ilacAra.Size = new System.Drawing.Size(128, 22);
+            this.txt_ilacAra.TabIndex = 3;
+            this.txt_ilacAra.TextChanged += new System.EventHandler(this.txt_ilacAra_TextChanged);
+            // 
             // İlaçAnaSayfa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(987, 769);
+            this.Controls.Add(this.txt_ilacAra);
             this.Controls.Add(this.panel_ilaçAnaSayfa);
             this.Controls.Add(this.data_ilaçlar);
             this.Controls.Add(this.menuStrip1);
@@ -217,5 +228,6 @@
         private System.Windows.Forms.ToolStripMenuItem txt_listele;
         private System.Windows.Forms.Panel panel_ilaçAnaSayfa;
         private System.Windows.Forms.ToolStripMenuItem btn_diğer;
+        private System.Windows.Forms.TextBox txt_ilacAra;
     }
 }

@@ -43,10 +43,10 @@
             this.lbl_hataKayıtParola1 = new System.Windows.Forms.Label();
             this.lbl_hataKayıtKullanıcıAdı = new System.Windows.Forms.Label();
             this.btn_YeniKayıtEkle = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.lbl_YeniParola = new System.Windows.Forms.Label();
             this.lblYeniKullanıcıAdı = new System.Windows.Forms.Label();
             this.txt_kayıtKullanıcıAdı = new System.Windows.Forms.TextBox();
+            this.txt_kayıtParola = new System.Windows.Forms.TextBox();
             this.txt_kayıtParola2 = new System.Windows.Forms.TextBox();
             this.panel_SifreDegistir = new System.Windows.Forms.Panel();
             this.btn_parolaKapat = new System.Windows.Forms.PictureBox();
@@ -65,7 +65,8 @@
             this.lbl_hataParola = new System.Windows.Forms.Label();
             this.btn_cıkıs = new System.Windows.Forms.Button();
             this.txt_Parola = new System.Windows.Forms.TextBox();
-            this.txt_kayıtParola = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.comboBox_yetki = new System.Windows.Forms.ComboBox();
             this.PanelYeniKayıt.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_kayıtKapat)).BeginInit();
             this.panel_SifreDegistir.SuspendLayout();
@@ -113,12 +114,13 @@
             // 
             this.btn_Giriş.BackColor = System.Drawing.Color.White;
             this.btn_Giriş.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Giriş.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btn_Giriş.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btn_Giriş.Location = new System.Drawing.Point(645, 238);
             this.btn_Giriş.Name = "btn_Giriş";
             this.btn_Giriş.Size = new System.Drawing.Size(217, 44);
             this.btn_Giriş.TabIndex = 2;
-            this.btn_Giriş.Text = "GİRİŞ";
+            this.btn_Giriş.Text = "&GİRİŞ";
             this.btn_Giriş.UseVisualStyleBackColor = false;
             this.btn_Giriş.Click += new System.EventHandler(this.btn_Giriş_Click);
             // 
@@ -148,20 +150,21 @@
             // PanelYeniKayıt
             // 
             this.PanelYeniKayıt.BackColor = System.Drawing.Color.Transparent;
+            this.PanelYeniKayıt.Controls.Add(this.comboBox_yetki);
             this.PanelYeniKayıt.Controls.Add(this.btn_kayıtKapat);
             this.PanelYeniKayıt.Controls.Add(this.label5);
+            this.PanelYeniKayıt.Controls.Add(this.label6);
             this.PanelYeniKayıt.Controls.Add(this.lbl_yeniParolaTekrar);
             this.PanelYeniKayıt.Controls.Add(this.lbl_hataKayıtParola2);
             this.PanelYeniKayıt.Controls.Add(this.lbl_hataKayıtParola1);
             this.PanelYeniKayıt.Controls.Add(this.lbl_hataKayıtKullanıcıAdı);
             this.PanelYeniKayıt.Controls.Add(this.btn_YeniKayıtEkle);
-            this.PanelYeniKayıt.Controls.Add(this.button2);
             this.PanelYeniKayıt.Controls.Add(this.lbl_YeniParola);
             this.PanelYeniKayıt.Controls.Add(this.lblYeniKullanıcıAdı);
             this.PanelYeniKayıt.Controls.Add(this.txt_kayıtKullanıcıAdı);
             this.PanelYeniKayıt.Controls.Add(this.txt_kayıtParola);
             this.PanelYeniKayıt.Controls.Add(this.txt_kayıtParola2);
-            this.PanelYeniKayıt.Location = new System.Drawing.Point(12, 2);
+            this.PanelYeniKayıt.Location = new System.Drawing.Point(12, 109);
             this.PanelYeniKayıt.Name = "PanelYeniKayıt";
             this.PanelYeniKayıt.Size = new System.Drawing.Size(474, 557);
             this.PanelYeniKayıt.TabIndex = 5;
@@ -241,23 +244,13 @@
             // btn_YeniKayıtEkle
             // 
             this.btn_YeniKayıtEkle.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_YeniKayıtEkle.Location = new System.Drawing.Point(187, 294);
+            this.btn_YeniKayıtEkle.Location = new System.Drawing.Point(185, 375);
             this.btn_YeniKayıtEkle.Name = "btn_YeniKayıtEkle";
             this.btn_YeniKayıtEkle.Size = new System.Drawing.Size(217, 44);
             this.btn_YeniKayıtEkle.TabIndex = 4;
             this.btn_YeniKayıtEkle.Text = "KAYIT EKLE";
             this.btn_YeniKayıtEkle.UseVisualStyleBackColor = true;
             this.btn_YeniKayıtEkle.Click += new System.EventHandler(this.btn_YeniKayıtEkle_Click);
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(185, 294);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(217, 44);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "YENİ KULLANICI";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // lbl_YeniParola
             // 
@@ -295,6 +288,15 @@
             this.txt_kayıtKullanıcıAdı.Name = "txt_kayıtKullanıcıAdı";
             this.txt_kayıtKullanıcıAdı.Size = new System.Drawing.Size(217, 32);
             this.txt_kayıtKullanıcıAdı.TabIndex = 1;
+            // 
+            // txt_kayıtParola
+            // 
+            this.txt_kayıtParola.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txt_kayıtParola.Location = new System.Drawing.Point(185, 159);
+            this.txt_kayıtParola.Multiline = true;
+            this.txt_kayıtParola.Name = "txt_kayıtParola";
+            this.txt_kayıtParola.Size = new System.Drawing.Size(217, 32);
+            this.txt_kayıtParola.TabIndex = 1;
             // 
             // txt_kayıtParola2
             // 
@@ -497,7 +499,7 @@
             this.btn_cıkıs.Name = "btn_cıkıs";
             this.btn_cıkıs.Size = new System.Drawing.Size(42, 36);
             this.btn_cıkıs.TabIndex = 11;
-            this.btn_cıkıs.Text = "X";
+            this.btn_cıkıs.Text = "&X";
             this.btn_cıkıs.UseVisualStyleBackColor = false;
             this.btn_cıkıs.Click += new System.EventHandler(this.btn_cıkıs_Click_1);
             // 
@@ -510,14 +512,31 @@
             this.txt_Parola.Size = new System.Drawing.Size(217, 32);
             this.txt_Parola.TabIndex = 1;
             // 
-            // txt_kayıtParola
+            // label6
             // 
-            this.txt_kayıtParola.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txt_kayıtParola.Location = new System.Drawing.Point(185, 159);
-            this.txt_kayıtParola.Multiline = true;
-            this.txt_kayıtParola.Name = "txt_kayıtParola";
-            this.txt_kayıtParola.Size = new System.Drawing.Size(217, 32);
-            this.txt_kayıtParola.TabIndex = 1;
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.White;
+            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label6.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(75, 281);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(70, 29);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "YETKİ";
+            // 
+            // comboBox_yetki
+            // 
+            this.comboBox_yetki.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.comboBox_yetki.FormattingEnabled = true;
+            this.comboBox_yetki.Items.AddRange(new object[] {
+            "admin",
+            "calisan"});
+            this.comboBox_yetki.Location = new System.Drawing.Point(190, 281);
+            this.comboBox_yetki.Name = "comboBox_yetki";
+            this.comboBox_yetki.Size = new System.Drawing.Size(212, 31);
+            this.comboBox_yetki.TabIndex = 10;
             // 
             // Login
             // 
@@ -571,7 +590,6 @@
         private System.Windows.Forms.TextBox txt_kayıtKullanıcıAdı;
         private System.Windows.Forms.TextBox txt_kayıtParola2;
         private System.Windows.Forms.Button btn_YeniKayıtEkle;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel_SifreDegistir;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btn_yeniParolaKaydet;
@@ -595,6 +613,8 @@
         private System.Windows.Forms.Button btn_cıkıs;
         private System.Windows.Forms.TextBox txt_Parola;
         private System.Windows.Forms.TextBox txt_kayıtParola;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox comboBox_yetki;
     }
 }
 

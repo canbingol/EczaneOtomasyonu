@@ -31,18 +31,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.checklist_hastalar = new System.Windows.Forms.CheckedListBox();
-            this.listBox_receteList = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lbl_tc = new System.Windows.Forms.Label();
+            this.lbl_ad = new System.Windows.Forms.Label();
+            this.lbl_soyad = new System.Windows.Forms.Label();
             this.btn_receteSec = new System.Windows.Forms.Button();
             this.btn_hastaSec = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.lbl_toplamFiyat = new System.Windows.Forms.Label();
+            this.btn_satis = new System.Windows.Forms.Button();
+            this.listBox_receteList = new System.Windows.Forms.CheckedListBox();
             this.SuspendLayout();
             // 
             // label1
@@ -65,36 +65,13 @@
             // 
             // checklist_hastalar
             // 
+            this.checklist_hastalar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.checklist_hastalar.FormattingEnabled = true;
-            this.checklist_hastalar.Items.AddRange(new object[] {
-            "fdgdfgds",
-            "sg",
-            "dsf",
-            "ds",
-            "fds",
-            "fds",
-            "fs",
-            "f",
-            "sf",
-            "sdf",
-            "ds",
-            "f",
-            "s"});
             this.checklist_hastalar.Location = new System.Drawing.Point(12, 66);
             this.checklist_hastalar.Name = "checklist_hastalar";
-            this.checklist_hastalar.Size = new System.Drawing.Size(257, 259);
+            this.checklist_hastalar.Size = new System.Drawing.Size(257, 257);
             this.checklist_hastalar.TabIndex = 1;
             this.checklist_hastalar.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checklist_hastalar_ItemCheck);
-            this.checklist_hastalar.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
-            // 
-            // listBox_receteList
-            // 
-            this.listBox_receteList.FormattingEnabled = true;
-            this.listBox_receteList.ItemHeight = 16;
-            this.listBox_receteList.Location = new System.Drawing.Point(275, 65);
-            this.listBox_receteList.Name = "listBox_receteList";
-            this.listBox_receteList.Size = new System.Drawing.Size(464, 260);
-            this.listBox_receteList.TabIndex = 2;
             // 
             // label3
             // 
@@ -126,44 +103,45 @@
             this.label5.TabIndex = 3;
             this.label5.Text = "SOYAD :";
             // 
-            // label6
+            // lbl_tc
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label6.Location = new System.Drawing.Point(239, 480);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(125, 21);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "TC KİMLİK NO";
+            this.lbl_tc.AutoSize = true;
+            this.lbl_tc.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lbl_tc.Location = new System.Drawing.Point(239, 480);
+            this.lbl_tc.Name = "lbl_tc";
+            this.lbl_tc.Size = new System.Drawing.Size(125, 21);
+            this.lbl_tc.TabIndex = 3;
+            this.lbl_tc.Text = "TC KİMLİK NO";
             // 
-            // label7
+            // lbl_ad
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label7.Location = new System.Drawing.Point(239, 523);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(36, 21);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "AD";
+            this.lbl_ad.AutoSize = true;
+            this.lbl_ad.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lbl_ad.Location = new System.Drawing.Point(239, 523);
+            this.lbl_ad.Name = "lbl_ad";
+            this.lbl_ad.Size = new System.Drawing.Size(36, 21);
+            this.lbl_ad.TabIndex = 3;
+            this.lbl_ad.Text = "AD";
             // 
-            // label8
+            // lbl_soyad
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label8.Location = new System.Drawing.Point(239, 566);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(70, 21);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "SOYAD";
+            this.lbl_soyad.AutoSize = true;
+            this.lbl_soyad.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lbl_soyad.Location = new System.Drawing.Point(239, 566);
+            this.lbl_soyad.Name = "lbl_soyad";
+            this.lbl_soyad.Size = new System.Drawing.Size(70, 21);
+            this.lbl_soyad.TabIndex = 3;
+            this.lbl_soyad.Text = "SOYAD";
             // 
             // btn_receteSec
             // 
-            this.btn_receteSec.Location = new System.Drawing.Point(516, 331);
+            this.btn_receteSec.Location = new System.Drawing.Point(816, 329);
             this.btn_receteSec.Name = "btn_receteSec";
             this.btn_receteSec.Size = new System.Drawing.Size(180, 56);
             this.btn_receteSec.TabIndex = 4;
             this.btn_receteSec.Text = "REÇETE SEÇ";
             this.btn_receteSec.UseVisualStyleBackColor = true;
+            this.btn_receteSec.Click += new System.EventHandler(this.btn_receteSec_Click);
             // 
             // btn_hastaSec
             // 
@@ -185,43 +163,54 @@
             this.label9.TabIndex = 3;
             this.label9.Text = "TOPLAM FİYAT :";
             // 
-            // label10
+            // lbl_toplamFiyat
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label10.Location = new System.Drawing.Point(239, 609);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(55, 21);
-            this.label10.TabIndex = 3;
-            this.label10.Text = "FİYAT";
+            this.lbl_toplamFiyat.AutoSize = true;
+            this.lbl_toplamFiyat.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lbl_toplamFiyat.Location = new System.Drawing.Point(239, 609);
+            this.lbl_toplamFiyat.Name = "lbl_toplamFiyat";
+            this.lbl_toplamFiyat.Size = new System.Drawing.Size(55, 21);
+            this.lbl_toplamFiyat.TabIndex = 3;
+            this.lbl_toplamFiyat.Text = "FİYAT";
             // 
-            // button3
+            // btn_satis
             // 
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button3.Location = new System.Drawing.Point(516, 669);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(180, 56);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "SATIŞ YAP";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn_satis.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_satis.Location = new System.Drawing.Point(816, 672);
+            this.btn_satis.Name = "btn_satis";
+            this.btn_satis.Size = new System.Drawing.Size(180, 56);
+            this.btn_satis.TabIndex = 4;
+            this.btn_satis.Text = "SATIŞ YAP";
+            this.btn_satis.UseVisualStyleBackColor = true;
+            this.btn_satis.Click += new System.EventHandler(this.btn_satis_Click);
+            // 
+            // listBox_receteList
+            // 
+            this.listBox_receteList.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.listBox_receteList.FormattingEnabled = true;
+            this.listBox_receteList.Location = new System.Drawing.Point(275, 66);
+            this.listBox_receteList.Name = "listBox_receteList";
+            this.listBox_receteList.ScrollAlwaysVisible = true;
+            this.listBox_receteList.Size = new System.Drawing.Size(721, 257);
+            this.listBox_receteList.TabIndex = 5;
             // 
             // Satış
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(741, 767);
+            this.ClientSize = new System.Drawing.Size(1008, 767);
+            this.Controls.Add(this.listBox_receteList);
             this.Controls.Add(this.btn_hastaSec);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btn_satis);
             this.Controls.Add(this.btn_receteSec);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.lbl_toplamFiyat);
+            this.Controls.Add(this.lbl_soyad);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.lbl_ad);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lbl_tc);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.listBox_receteList);
             this.Controls.Add(this.checklist_hastalar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -239,17 +228,17 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckedListBox checklist_hastalar;
-        private System.Windows.Forms.ListBox listBox_receteList;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lbl_tc;
+        private System.Windows.Forms.Label lbl_ad;
+        private System.Windows.Forms.Label lbl_soyad;
         private System.Windows.Forms.Button btn_receteSec;
         private System.Windows.Forms.Button btn_hastaSec;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label lbl_toplamFiyat;
+        private System.Windows.Forms.Button btn_satis;
+        private System.Windows.Forms.CheckedListBox listBox_receteList;
     }
 }

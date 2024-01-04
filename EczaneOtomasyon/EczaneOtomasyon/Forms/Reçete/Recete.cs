@@ -65,9 +65,10 @@ namespace EczaneOtomasyon.Forms.Reçete
             }
             return oldumu;
         }
-        int olanAdet,  toplamFiyat, sayac = 0;
+        int olanAdet, toplamUcret, istenenAdet, sayac = 0;
 
 
+       
         private void btn_ilaçEkle_Click(object sender, EventArgs e)
         {
             if (hastaKayıtlımı == false)
@@ -82,11 +83,11 @@ namespace EczaneOtomasyon.Forms.Reçete
                     MessageBox.Show(" DAHA FAZLA İLAÇ EKLENEMEZ");
                     return;
                 }
-
+                istenenAdet = Convert.ToInt32(txt_adet.Text);
                 ReçeteyeEkle();
-                toplamFiyat += olanAdet * Convert.ToInt32(İlaçFiyat);
-                lbl_toplamFiyat.Text = toplamFiyat.ToString();
-
+                toplamUcret += istenenAdet * Convert.ToInt32(İlaçFiyat);
+                lbl_toplamFiyat.Text = toplamUcret.ToString();
+                adetCikar();
                 lbl_ilaçAd.Text = null; lbl_kategori.Text = null; lbl_fiyat.Text = null;
                 lbl_adet.Text = null; txt_adet.Text = "1";
                 txt_ilaçBarkod.Clear();
@@ -126,7 +127,7 @@ namespace EczaneOtomasyon.Forms.Reçete
             // reçeteye eklenecek ilk ilaç üzerinden reçetenin boş olup olmadığını kontrol eder
             if (lbl_ilaçAdı1.Text == "-" || lbl_ilaçKategori1.Text == "-" || lbl_barkoNo1.Text == "-" ||
             lbl_ilaçAdeti1.Text == "-" || lbl_ilaçFiyat1.Text == "-")
-            {       
+            {
                 MessageBox.Show(" REÇETE BOŞ LÜTFEN ÖNCE İLAÇ EKLEYİN");
             }
             else
@@ -142,9 +143,13 @@ namespace EczaneOtomasyon.Forms.Reçete
                 pnl_hasta.Visible = true;
                 pnl_hastaBilgisi.Visible = false;
                 pnl_ilaçEkle.Visible = false;
+                RefMetot(ref toplamUcret);
             }
         }
-
+        private void RefMetot(ref int ucret)
+        {
+            ucret = 0;
+        }
         void Temizle(Label ad, Label kategori, Label barkod, Label fiyat, Label adet)
         {
             ad.Text = null; ad.Visible = false; kategori.Text = null; kategori.Visible = false;
@@ -240,10 +245,38 @@ namespace EczaneOtomasyon.Forms.Reçete
         }
         private void btn_barkodBul_Click(object sender, EventArgs e)
         {
+            if (txt_ilaçBarkod.Text == null)
+            {
+                MessageBox.Show("LİÜTFEN İLAÇ BARKODU GİRİN");
+            }
             BarkodListele();
             txt_ilaçBarkod.ReadOnly = true;
         }
+        void adetCikar()
+        {
+            using (OleDbConnection con = new OleDbConnection(baglantı))
+            {
+                string sorgu = "UPDATE İlaçlar SET adet=@adet WHERE barkod=@barkod";
+                using (OleDbCommand cmd = new OleDbCommand(sorgu,con))
+                {
+                    int sonuc = olanAdet - istenenAdet;
+                    cmd.Parameters.AddWithValue("@adet",sonuc.ToString());
+                    cmd.Parameters.AddWithValue("@barkod",barkod);
+                    con.Open();
+                    int sayac = cmd.ExecuteNonQuery();
+                    con.Close();
+                    if (sayac>0)
+                    {
+                        MessageBox.Show("adet düşüldü");
+                    }
+                    else
+                    {
+                        MessageBox.Show("olmadı");
 
+                    }
+                }
+            }
+        }
         void BarkodListele()
         {
             using (OleDbConnection con = new OleDbConnection(baglantı))
@@ -294,8 +327,8 @@ namespace EczaneOtomasyon.Forms.Reçete
 
             using (OleDbConnection con = new OleDbConnection(baglantı))
             {
-                string sorgu = $"INSERT INTO Reçeteler (tc,ilac1,fiyat1,ilac2,fiyat2,ilac3,fiyat3,ilac4,fiyat4,ilac5,fiyat5,toplamfiyat )" +
-                    $" VALUES (@tc, @i1, @f1,@i2, @f2,@i3, @f3,@i4, @f4,@i5, @f5,@topfiyat)";
+                string sorgu = "INSERT INTO Reçeteler (tc,ilac1,fiyat1,ilac2,fiyat2,ilac3,fiyat3,ilac4,fiyat4,ilac5,fiyat5,toplamfiyat,durum )" +
+                    " VALUES (@tc, @i1, @f1,@i2, @f2,@i3, @f3,@i4, @f4,@i5, @f5,@topfiyat,@durum)";
 
                 using (OleDbCommand cmd = new OleDbCommand(sorgu, con))
                 {
@@ -311,6 +344,7 @@ namespace EczaneOtomasyon.Forms.Reçete
                     cmd.Parameters.AddWithValue("@i5", lbl_ilaçAdı5.Text);
                     cmd.Parameters.AddWithValue("@f5", lbl_ilaçFiyat5.Text);
                     cmd.Parameters.AddWithValue("@topfiyat", lbl_toplamFiyat.Text);
+                    cmd.Parameters.AddWithValue("@durum", false);
 
                     con.Open();
                     int sayac = cmd.ExecuteNonQuery();

@@ -14,6 +14,8 @@ namespace EczaneOtomasyon.Forms.AnaPanel
 
     public partial class AnaPanel : Form
     {
+        static public int kapasite = 30000;
+        string toplamIlac;
         string baglantı = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=EczaneVeri.accdb";
         int deger;
         public AnaPanel()
@@ -33,9 +35,37 @@ namespace EczaneOtomasyon.Forms.AnaPanel
                 }
             }
         }
+        void IlacSayisi()
+        {
+            using (OleDbConnection con = new OleDbConnection(baglantı))
+            {
+                string sorgu = "SELECT SUM(adet) as ToplamAdet FROM İlaçlar";
 
+                using (OleDbCommand cmd = new OleDbCommand(sorgu, con))
+                {
+                    con.Open();
+                    object result = cmd.ExecuteScalar();
+
+                    if (result != DBNull.Value)
+                    {
+                        int toplamAdet = Convert.ToInt32(result);
+                        toplamIlac = toplamAdet.ToString();
+                    }
+                    else
+                    {
+                        toplamIlac = "0";
+                    }
+                }
+            }
+
+        }
         private void AnaPanel_Load(object sender, EventArgs e)
         {
+            
+          IlacSayisi();
+            int value = kapasite /Convert.ToInt32(toplamIlac);
+            bar_dolulukOranı.Value = value;
+            lbl_doluluk.Text= "%" + value.ToString();
             lbl_aktifKullanıcı.Text = Login.aktifKullanıcı.ToUpper();
             ToplamDeger("SELECT COUNT(*) FROM Hastalar", lbl_hasta);
             ToplamDeger("SELECT COUNT(*) FROM İlaçlar", lbl_ilaçSayısı);
@@ -46,5 +76,6 @@ namespace EczaneOtomasyon.Forms.AnaPanel
             ToplamDeger("SELECT COUNT(*) FROM Hastalar", label1);
 
         }
+
     }
 }

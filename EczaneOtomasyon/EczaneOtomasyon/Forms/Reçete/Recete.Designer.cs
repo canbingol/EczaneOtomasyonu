@@ -40,6 +40,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_hastaTc = new System.Windows.Forms.TextBox();
+            this.btn_hastaOnayla = new System.Windows.Forms.Button();
             this.pnl_hastaBilgisi = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.lbl_hastaSoyad = new System.Windows.Forms.Label();
@@ -97,8 +98,7 @@
             this.lbl_ilaçAdı1 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.lbl_toplamFiyat = new System.Windows.Forms.Label();
-            this.btn_satıs = new System.Windows.Forms.Button();
-            this.btn_hastaOnayla = new System.Windows.Forms.Button();
+            this.btn_receteEkle = new System.Windows.Forms.Button();
             this.pnl_hasta.SuspendLayout();
             this.pnl_hastaBilgisi.SuspendLayout();
             this.pnl_ilaçEkle.SuspendLayout();
@@ -243,6 +243,21 @@
             this.txt_hastaTc.Name = "txt_hastaTc";
             this.txt_hastaTc.Size = new System.Drawing.Size(192, 40);
             this.txt_hastaTc.TabIndex = 1;
+            // 
+            // btn_hastaOnayla
+            // 
+            this.btn_hastaOnayla.BackColor = System.Drawing.Color.White;
+            this.btn_hastaOnayla.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_hastaOnayla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_hastaOnayla.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_hastaOnayla.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.btn_hastaOnayla.Location = new System.Drawing.Point(653, 33);
+            this.btn_hastaOnayla.Name = "btn_hastaOnayla";
+            this.btn_hastaOnayla.Size = new System.Drawing.Size(121, 50);
+            this.btn_hastaOnayla.TabIndex = 3;
+            this.btn_hastaOnayla.Text = "ONAYLA";
+            this.btn_hastaOnayla.UseVisualStyleBackColor = false;
+            this.btn_hastaOnayla.Click += new System.EventHandler(this.btn_hastaOnayla_Click);
             // 
             // pnl_hastaBilgisi
             // 
@@ -1021,33 +1036,18 @@
             this.lbl_toplamFiyat.TabIndex = 8;
             this.lbl_toplamFiyat.Text = "0";
             // 
-            // btn_satıs
+            // btn_receteEkle
             // 
-            this.btn_satıs.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btn_satıs.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btn_satıs.ForeColor = System.Drawing.Color.White;
-            this.btn_satıs.Location = new System.Drawing.Point(588, 732);
-            this.btn_satıs.Name = "btn_satıs";
-            this.btn_satıs.Size = new System.Drawing.Size(189, 64);
-            this.btn_satıs.TabIndex = 7;
-            this.btn_satıs.Text = "REÇETE KAYDET";
-            this.btn_satıs.UseVisualStyleBackColor = false;
-            this.btn_satıs.Click += new System.EventHandler(this.btn_satıs_Click);
-            // 
-            // btn_hastaOnayla
-            // 
-            this.btn_hastaOnayla.BackColor = System.Drawing.Color.White;
-            this.btn_hastaOnayla.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_hastaOnayla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_hastaOnayla.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btn_hastaOnayla.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.btn_hastaOnayla.Location = new System.Drawing.Point(653, 33);
-            this.btn_hastaOnayla.Name = "btn_hastaOnayla";
-            this.btn_hastaOnayla.Size = new System.Drawing.Size(121, 50);
-            this.btn_hastaOnayla.TabIndex = 3;
-            this.btn_hastaOnayla.Text = "ONAYLA";
-            this.btn_hastaOnayla.UseVisualStyleBackColor = false;
-            this.btn_hastaOnayla.Click += new System.EventHandler(this.btn_hastaOnayla_Click);
+            this.btn_receteEkle.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btn_receteEkle.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_receteEkle.ForeColor = System.Drawing.Color.White;
+            this.btn_receteEkle.Location = new System.Drawing.Point(493, 732);
+            this.btn_receteEkle.Name = "btn_receteEkle";
+            this.btn_receteEkle.Size = new System.Drawing.Size(284, 64);
+            this.btn_receteEkle.TabIndex = 7;
+            this.btn_receteEkle.Text = "REÇETE KAYDET";
+            this.btn_receteEkle.UseVisualStyleBackColor = false;
+            this.btn_receteEkle.Click += new System.EventHandler(this.btn_satıs_Click);
             // 
             // Recete
             // 
@@ -1055,10 +1055,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(777, 808);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.lbl_toplamFiyat);
-            this.Controls.Add(this.btn_satıs);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.btn_receteEkle);
             this.Controls.Add(this.pnl_ilaçEkle);
             this.Controls.Add(this.pnl_hastaBilgisi);
             this.Controls.Add(this.pnl_hasta);
@@ -1149,7 +1149,7 @@
         private System.Windows.Forms.Label lbl_ilaçAdı1;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label lbl_toplamFiyat;
-        private System.Windows.Forms.Button btn_satıs;
+        private System.Windows.Forms.Button btn_receteEkle;
         private System.Windows.Forms.Button btn_hastaOnayla;
     }
 }

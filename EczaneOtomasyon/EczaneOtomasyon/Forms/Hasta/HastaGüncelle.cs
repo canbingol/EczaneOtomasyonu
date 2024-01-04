@@ -37,34 +37,30 @@ namespace EczaneOtomasyon.Forms.Hasta
 
                 if (string.IsNullOrEmpty(tcNo) || string.IsNullOrEmpty(ad) || string.IsNullOrEmpty(soyad) || string.IsNullOrEmpty(telNo) || string.IsNullOrEmpty(adres))
                 {
-
                     MessageBox.Show("Lütfen bütün satırları doldurun", "Kayıt Hatası", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     HataMesajlariGoster(txt_tcNo, txt_ad, txt_soyad, txt_telNo, txt_adres, lbl_güncelleAdHata, lbl_gücelleTcHata, lbl_güncelleSoyadHata, lbl_güncelleTelHata, lbl_güncelleAdresHata);
-
                 }
                 else if (txt_tcNo.Text.Length != 11)
                 {
                     MessageBox.Show("Ltfen Tc noyu 11 haneli olarak giriniz");
                     HataMesajlariGoster(txt_tcNo, txt_ad, txt_soyad, txt_telNo, txt_adres, lbl_güncelleAdHata, lbl_gücelleTcHata, lbl_güncelleSoyadHata, lbl_güncelleTelHata, lbl_güncelleAdresHata);
-
                 }
                 else if (TcVarmi(txt_tcNo.Text) == 0)
                 {
                     MessageBox.Show("Bu hasta Kayıtlı değil lütfen önce kayıt oluşturun", " Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     //   metod.HataMesajları(txt_tcNo, txt_ad, txt_soyad, txt_telNo, txt_adres, lbl_kayıtTcHata, lbl_kayıtAdHata, lbl_hayıtSoyadHata, lbl_kayıtTelHata, lbl_kayıtAdresHata);
                     AlanlariTemizle(txt_tcNo, txt_ad, txt_soyad, txt_telNo, txt_adres);
-
                 }
 
                 else
                 {
                     con.Open();
-                    OleDbCommand hastaEkle = new OleDbCommand("UPDATE  Hastalar SET  Adı =@p1, Soyadı=@p2, Adres=@p4, Telno=@p5  WHERE  Tc=@p3", con);
+                    OleDbCommand hastaEkle = new OleDbCommand("UPDATE  Hastalar SET  Adı =@p1, Soyadı=@p2, Adres=@p3, Telno=@p4  WHERE  Tc=@p5", con);
                     hastaEkle.Parameters.AddWithValue("@p1", ad);
                     hastaEkle.Parameters.AddWithValue("@p2", soyad);
-                    hastaEkle.Parameters.AddWithValue("@p3", tcNo);
-                    hastaEkle.Parameters.AddWithValue("@p4", adres);
-                    hastaEkle.Parameters.AddWithValue("@p5", telNo);
+                    hastaEkle.Parameters.AddWithValue("@p3", adres);
+                    hastaEkle.Parameters.AddWithValue("@p4", telNo);
+                    hastaEkle.Parameters.AddWithValue("@p5", tcNo);
 
                     int sayac = hastaEkle.ExecuteNonQuery();
                     con.Close();
@@ -80,7 +76,6 @@ namespace EczaneOtomasyon.Forms.Hasta
                     {
                         MessageBox.Show("Kayıt güncellenemedi", "Başarısız", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         AlanlariTemizle(txt_tcNo, txt_ad, txt_soyad, txt_telNo, txt_adres);
-
                     }
 
                 }
@@ -89,7 +84,6 @@ namespace EczaneOtomasyon.Forms.Hasta
             {
                 MessageBox.Show("Hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 AlanlariTemizle(txt_tcNo, txt_ad, txt_soyad, txt_telNo, txt_adres);
-
             }
         }
         private void btn_EkranKapat_Click(object sender, EventArgs e)
@@ -221,12 +215,9 @@ namespace EczaneOtomasyon.Forms.Hasta
             else
                 lblAdresHata.Visible = false;
         }
+
         #endregion
 
-        private void HastaGüncelle_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
 

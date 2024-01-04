@@ -120,6 +120,7 @@
             // 
             this.txt_soyad.BackColor = System.Drawing.Color.White;
             this.txt_soyad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_soyad.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_soyad.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txt_soyad.Location = new System.Drawing.Point(150, 219);
             this.txt_soyad.Multiline = true;
@@ -134,6 +135,7 @@
             // 
             this.txt_ad.BackColor = System.Drawing.Color.White;
             this.txt_ad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_ad.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_ad.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txt_ad.Location = new System.Drawing.Point(151, 141);
             this.txt_ad.Multiline = true;
@@ -148,6 +150,7 @@
             // 
             this.txt_tcNo.BackColor = System.Drawing.Color.White;
             this.txt_tcNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_tcNo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_tcNo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txt_tcNo.Location = new System.Drawing.Point(151, 63);
             this.txt_tcNo.MaxLength = 11;
@@ -230,6 +233,7 @@
             // 
             this.txt_telNo.BackColor = System.Drawing.Color.White;
             this.txt_telNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_telNo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_telNo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txt_telNo.Location = new System.Drawing.Point(643, 173);
             this.txt_telNo.MaxLength = 11;
@@ -246,6 +250,7 @@
             // 
             this.txt_adres.BackColor = System.Drawing.Color.White;
             this.txt_adres.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_adres.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_adres.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txt_adres.Location = new System.Drawing.Point(646, 95);
             this.txt_adres.Multiline = true;
@@ -285,7 +290,6 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "HastaGüncelle";
-            this.Load += new System.EventHandler(this.HastaGüncelle_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnaEkran));
             this.pnl_yanMenü = new System.Windows.Forms.Panel();
             this.btn_satısİslemleri = new System.Windows.Forms.Button();
-            this.btn_stokİşlemleri = new System.Windows.Forms.Button();
             this.btn_reçeteİşlemleri = new System.Windows.Forms.Button();
             this.pnl_ilaç = new System.Windows.Forms.Panel();
             this.btn_ilaçListele = new System.Windows.Forms.Button();
@@ -66,7 +65,6 @@
             this.pnl_yanMenü.AutoScroll = true;
             this.pnl_yanMenü.BackColor = System.Drawing.Color.DodgerBlue;
             this.pnl_yanMenü.Controls.Add(this.btn_satısİslemleri);
-            this.pnl_yanMenü.Controls.Add(this.btn_stokİşlemleri);
             this.pnl_yanMenü.Controls.Add(this.btn_reçeteİşlemleri);
             this.pnl_yanMenü.Controls.Add(this.pnl_ilaç);
             this.pnl_yanMenü.Controls.Add(this.btn_ilaçİşlemleri);
@@ -87,7 +85,7 @@
             this.btn_satısİslemleri.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_satısİslemleri.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btn_satısİslemleri.ForeColor = System.Drawing.Color.White;
-            this.btn_satısİslemleri.Location = new System.Drawing.Point(0, 645);
+            this.btn_satısİslemleri.Location = new System.Drawing.Point(0, 591);
             this.btn_satısİslemleri.Name = "btn_satısİslemleri";
             this.btn_satısİslemleri.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn_satısİslemleri.Size = new System.Drawing.Size(223, 54);
@@ -96,25 +94,6 @@
             this.btn_satısİslemleri.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_satısİslemleri.UseVisualStyleBackColor = true;
             this.btn_satısİslemleri.Click += new System.EventHandler(this.btn_satısİslemleri_Click);
-            // 
-            // btn_stokİşlemleri
-            // 
-            this.btn_stokİşlemleri.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_stokİşlemleri.FlatAppearance.BorderSize = 0;
-            this.btn_stokİşlemleri.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_stokİşlemleri.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btn_stokİşlemleri.ForeColor = System.Drawing.Color.White;
-            this.btn_stokİşlemleri.Location = new System.Drawing.Point(0, 591);
-            this.btn_stokİşlemleri.Name = "btn_stokİşlemleri";
-            this.btn_stokİşlemleri.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btn_stokİşlemleri.Size = new System.Drawing.Size(223, 54);
-            this.btn_stokİşlemleri.TabIndex = 14;
-            this.btn_stokİşlemleri.Text = "STOK İŞLEMLERİ";
-            this.btn_stokİşlemleri.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_stokİşlemleri.UseVisualStyleBackColor = true;
-            this.btn_stokİşlemleri.Click += new System.EventHandler(this.btn_stokİşlemleri_Click);
-            this.btn_stokİşlemleri.MouseLeave += new System.EventHandler(this.btn_stokİşlemleri_MouseLeave);
-            this.btn_stokİşlemleri.MouseHover += new System.EventHandler(this.btn_stokİşlemleri_MouseHover);
             // 
             // btn_reçeteİşlemleri
             // 
@@ -435,7 +414,6 @@
         #endregion
 
         private System.Windows.Forms.Panel pnl_yanMenü;
-        private System.Windows.Forms.Button btn_stokİşlemleri;
         private System.Windows.Forms.Button btn_reçeteİşlemleri;
         private System.Windows.Forms.Panel pnl_ilaç;
         private System.Windows.Forms.Button btn_ilaçListele;

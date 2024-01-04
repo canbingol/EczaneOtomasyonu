@@ -212,7 +212,7 @@ namespace EczaneOtomasyon
             string kullanıcı = txt_kayıtKullanıcıAdı.Text;
             string parola1 = txt_kayıtParola.Text;
             string parola2 = txt_kayıtParola2.Text;
-
+            string yetki = comboBox_yetki.Text;
             HataMesajı(kullanıcı, lbl_hataKayıtKullanıcıAdı);
             HataMesajı(parola1, lbl_hataKayıtParola1);
             HataMesajı(parola2, lbl_hataKayıtParola2);
@@ -221,7 +221,7 @@ namespace EczaneOtomasyon
                 MessageBox.Show(" Bu kullanıcı adı alınmış lütfen tekrar deneyin");
             else
             {
-                if (string.IsNullOrEmpty(parola2) && string.IsNullOrEmpty(parola1))
+                if (string.IsNullOrEmpty(parola2) && string.IsNullOrEmpty(parola1) && string.IsNullOrEmpty(yetki))
                     MessageBox.Show("  şifre alanları boş bırakılamaz");
                 else
                 {
@@ -235,11 +235,12 @@ namespace EczaneOtomasyon
                         {
                             using (OleDbConnection con = new OleDbConnection(connection))
                             {
-                                using (OleDbCommand cmd = new OleDbCommand("INSERT INTO  Kullanıcılar(kullanıcıAdı, parola) VALUES (@kullanıcı, @parola) ", con))
+                                using (OleDbCommand cmd = new OleDbCommand("INSERT INTO  Kullanıcılar(kullanıcıAdı, parola,yetki) VALUES (@kullanıcı, @parola,@yetki) ", con))
                                 {
 
                                     cmd.Parameters.AddWithValue("@kullanıcı", kullanıcı);
                                     cmd.Parameters.AddWithValue("@parola", parola1);
+                                    cmd.Parameters.AddWithValue("@yetki", yetki);
 
                                     con.Open();
                                     int etkilenenSatırSayısı = cmd.ExecuteNonQuery();
@@ -275,7 +276,7 @@ namespace EczaneOtomasyon
 
         private void Login_Load(object sender, EventArgs e)
         {
-
+            comboBox_yetki.DropDownStyle = ComboBoxStyle.DropDownList; // combobox a kullanıcı tarafından değer girilmesi engellendi
             txt_kayıtParola2.PasswordChar = Encoding.GetEncoding("Windows-1252").GetString(new byte[] { 149, })[0];
             txt_kayıtParola.PasswordChar = Encoding.GetEncoding("Windows-1252").GetString(new byte[] { 149, })[0];
             txt_Parola.PasswordChar = Encoding.GetEncoding("Windows-1252").GetString(new byte[] { 149, })[0];

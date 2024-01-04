@@ -58,7 +58,7 @@ namespace EczaneOtomasyon.Forms.İlaç
                 else
                 {
                     con.Open();
-                    OleDbCommand ilaçEkle = new OleDbCommand("INSERT INTO İlaçlar (isim, üretici, adet, kategori, fiyat, sontarih, barkod ) VALUES (@p1, @p2,@p3, @p4,  @p5, @p6,@p7)", con);
+                    OleDbCommand ilaçEkle = new OleDbCommand("INSERT INTO İlaçlar (isim,  adet, kategori, fiyat, sontarih, barkod ) VALUES (@p1, @p3, @p4,  @p5, @p6,@p7)", con);
                     ilaçEkle.Parameters.AddWithValue("@p1", ad);
                     ilaçEkle.Parameters.AddWithValue("@p3", adet);
                     ilaçEkle.Parameters.AddWithValue("@p4", kategori);
