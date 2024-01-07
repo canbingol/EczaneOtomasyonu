@@ -58,6 +58,7 @@
             this.pnl_altForm.SuspendLayout();
             this.pnl_x.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_EkranKapat)).BeginInit();
+            this.pnl_işlemler.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl_yanMenü
@@ -85,7 +86,7 @@
             this.btn_satısİslemleri.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_satısİslemleri.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btn_satısİslemleri.ForeColor = System.Drawing.Color.White;
-            this.btn_satısİslemleri.Location = new System.Drawing.Point(0, 591);
+            this.btn_satısİslemleri.Location = new System.Drawing.Point(0, 551);
             this.btn_satısİslemleri.Name = "btn_satısİslemleri";
             this.btn_satısİslemleri.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn_satısİslemleri.Size = new System.Drawing.Size(223, 54);
@@ -102,7 +103,7 @@
             this.btn_reçeteİşlemleri.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_reçeteİşlemleri.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btn_reçeteİşlemleri.ForeColor = System.Drawing.Color.White;
-            this.btn_reçeteİşlemleri.Location = new System.Drawing.Point(0, 537);
+            this.btn_reçeteİşlemleri.Location = new System.Drawing.Point(0, 497);
             this.btn_reçeteİşlemleri.Name = "btn_reçeteİşlemleri";
             this.btn_reçeteİşlemleri.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn_reçeteİşlemleri.Size = new System.Drawing.Size(223, 54);
@@ -122,7 +123,7 @@
             this.pnl_ilaç.Controls.Add(this.btn_ilaçKaydet);
             this.pnl_ilaç.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_ilaç.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.pnl_ilaç.Location = new System.Drawing.Point(0, 413);
+            this.pnl_ilaç.Location = new System.Drawing.Point(0, 373);
             this.pnl_ilaç.Name = "pnl_ilaç";
             this.pnl_ilaç.Size = new System.Drawing.Size(223, 124);
             this.pnl_ilaç.TabIndex = 12;
@@ -182,7 +183,7 @@
             this.btn_ilaçİşlemleri.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ilaçİşlemleri.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btn_ilaçİşlemleri.ForeColor = System.Drawing.Color.White;
-            this.btn_ilaçİşlemleri.Location = new System.Drawing.Point(0, 359);
+            this.btn_ilaçİşlemleri.Location = new System.Drawing.Point(0, 319);
             this.btn_ilaçİşlemleri.Name = "btn_ilaçİşlemleri";
             this.btn_ilaçİşlemleri.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn_ilaçİşlemleri.Size = new System.Drawing.Size(223, 54);
@@ -202,9 +203,9 @@
             this.pnl_hasta.Controls.Add(this.btn_hastaKaydet);
             this.pnl_hasta.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_hasta.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.pnl_hasta.Location = new System.Drawing.Point(0, 235);
+            this.pnl_hasta.Location = new System.Drawing.Point(0, 190);
             this.pnl_hasta.Name = "pnl_hasta";
-            this.pnl_hasta.Size = new System.Drawing.Size(223, 124);
+            this.pnl_hasta.Size = new System.Drawing.Size(223, 129);
             this.pnl_hasta.TabIndex = 10;
             this.pnl_hasta.Visible = false;
             // 
@@ -266,7 +267,7 @@
             this.btn_hastaİşlemleri.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_hastaİşlemleri.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btn_hastaİşlemleri.ForeColor = System.Drawing.Color.White;
-            this.btn_hastaİşlemleri.Location = new System.Drawing.Point(0, 181);
+            this.btn_hastaİşlemleri.Location = new System.Drawing.Point(0, 136);
             this.btn_hastaİşlemleri.Name = "btn_hastaİşlemleri";
             this.btn_hastaİşlemleri.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn_hastaİşlemleri.Size = new System.Drawing.Size(223, 54);
@@ -285,7 +286,7 @@
             this.btn_anaSayfa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_anaSayfa.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btn_anaSayfa.ForeColor = System.Drawing.Color.White;
-            this.btn_anaSayfa.Location = new System.Drawing.Point(0, 127);
+            this.btn_anaSayfa.Location = new System.Drawing.Point(0, 82);
             this.btn_anaSayfa.Name = "btn_anaSayfa";
             this.btn_anaSayfa.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn_anaSayfa.Size = new System.Drawing.Size(223, 54);
@@ -307,7 +308,7 @@
             this.pnl_logo.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.pnl_logo.Location = new System.Drawing.Point(0, 0);
             this.pnl_logo.Name = "pnl_logo";
-            this.pnl_logo.Size = new System.Drawing.Size(223, 127);
+            this.pnl_logo.Size = new System.Drawing.Size(223, 82);
             this.pnl_logo.TabIndex = 0;
             // 
             // lbl_minimize
@@ -345,18 +346,18 @@
             // pnl_altForm
             // 
             this.pnl_altForm.BackColor = System.Drawing.Color.White;
-            this.pnl_altForm.Controls.Add(this.pnl_x);
             this.pnl_altForm.Controls.Add(this.pnl_işlemler);
+            this.pnl_altForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_altForm.Location = new System.Drawing.Point(223, 0);
             this.pnl_altForm.Name = "pnl_altForm";
-            this.pnl_altForm.Size = new System.Drawing.Size(777, 746);
+            this.pnl_altForm.Size = new System.Drawing.Size(751, 746);
             this.pnl_altForm.TabIndex = 3;
             // 
             // pnl_x
             // 
             this.pnl_x.BackColor = System.Drawing.Color.Transparent;
             this.pnl_x.Controls.Add(this.btn_EkranKapat);
-            this.pnl_x.Location = new System.Drawing.Point(739, 413);
+            this.pnl_x.Location = new System.Drawing.Point(713, 3);
             this.pnl_x.Name = "pnl_x";
             this.pnl_x.Size = new System.Drawing.Size(35, 35);
             this.pnl_x.TabIndex = 0;
@@ -364,6 +365,7 @@
             // 
             // btn_EkranKapat
             // 
+            this.btn_EkranKapat.BackColor = System.Drawing.SystemColors.Control;
             this.btn_EkranKapat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_EkranKapat.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_EkranKapat.Image = ((System.Drawing.Image)(resources.GetObject("btn_EkranKapat.Image")));
@@ -378,10 +380,11 @@
             // pnl_işlemler
             // 
             this.pnl_işlemler.BackColor = System.Drawing.SystemColors.Control;
+            this.pnl_işlemler.Controls.Add(this.pnl_x);
             this.pnl_işlemler.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnl_işlemler.Location = new System.Drawing.Point(0, 413);
             this.pnl_işlemler.Name = "pnl_işlemler";
-            this.pnl_işlemler.Size = new System.Drawing.Size(777, 333);
+            this.pnl_işlemler.Size = new System.Drawing.Size(751, 333);
             this.pnl_işlemler.TabIndex = 0;
             this.pnl_işlemler.Visible = false;
             // 
@@ -390,7 +393,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1000, 746);
+            this.ClientSize = new System.Drawing.Size(974, 746);
             this.Controls.Add(this.pnl_altForm);
             this.Controls.Add(this.pnl_yanMenü);
             this.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -407,6 +410,7 @@
             this.pnl_altForm.ResumeLayout(false);
             this.pnl_x.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btn_EkranKapat)).EndInit();
+            this.pnl_işlemler.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

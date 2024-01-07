@@ -89,6 +89,24 @@
     <Compile Include="AnaEkran.Designer.cs">
       <DependentUpon>AnaEkran.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AnaPanel\HastaProfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AnaPanel\HastaProfil.Designer.cs">
+      <DependentUpon>HastaProfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AnaPanel\SatisTakip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AnaPanel\SatisTakip.Designer.cs">
+      <DependentUpon>SatisTakip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AnaPanel\Stok.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AnaPanel\Stok.Designer.cs">
+      <DependentUpon>Stok.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Reçete\Recete.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +174,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AnaEkran.resx">
       <DependentUpon>AnaEkran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AnaPanel\HastaProfil.resx">
+      <DependentUpon>HastaProfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AnaPanel\SatisTakip.resx">
+      <DependentUpon>SatisTakip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AnaPanel\Stok.resx">
+      <DependentUpon>Stok.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Reçete\Recete.resx">
       <DependentUpon>Recete.cs</DependentUpon>

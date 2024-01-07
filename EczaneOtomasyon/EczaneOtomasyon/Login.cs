@@ -276,7 +276,6 @@ namespace EczaneOtomasyon
 
         private void Login_Load(object sender, EventArgs e)
         {
-            comboBox_yetki.DropDownStyle = ComboBoxStyle.DropDownList; // combobox a kullanıcı tarafından değer girilmesi engellendi
             txt_kayıtParola2.PasswordChar = Encoding.GetEncoding("Windows-1252").GetString(new byte[] { 149, })[0];
             txt_kayıtParola.PasswordChar = Encoding.GetEncoding("Windows-1252").GetString(new byte[] { 149, })[0];
             txt_Parola.PasswordChar = Encoding.GetEncoding("Windows-1252").GetString(new byte[] { 149, })[0];

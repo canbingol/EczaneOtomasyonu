@@ -29,144 +29,139 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnaPanel));
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_hastaProfil = new System.Windows.Forms.Label();
             this.lbl_ilaç = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.lbl_kazanç = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.label = new System.Windows.Forms.Label();
+            this.lbl4 = new System.Windows.Forms.Label();
+            this.lbl_toplamKazanc = new System.Windows.Forms.Label();
             this.pnl_kullanıcı = new System.Windows.Forms.Panel();
+            this.btn_kapat = new System.Windows.Forms.Button();
             this.lbl_aktifKullanıcı = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_hasta = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.lbl_bugunKazanc = new System.Windows.Forms.Label();
             this.lbl_toplamİlaç = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.lbl_recete = new System.Windows.Forms.Label();
+            this.label78 = new System.Windows.Forms.Label();
             this.lbl_ilaçSayısı = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.bar_dolulukOranı = new System.Windows.Forms.ProgressBar();
             this.label3 = new System.Windows.Forms.Label();
             this.lbl_doluluk = new System.Windows.Forms.Label();
-            this.panel2.SuspendLayout();
+            this.pnl_ana = new System.Windows.Forms.Panel();
+            this.pnl_alt = new System.Windows.Forms.Panel();
             this.pnl_kullanıcı.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
+            this.pnl_ana.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // lbl_hastaProfil
             // 
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(182)))), ((int)(((byte)(246)))));
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
-            this.label1.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(326, 97);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "TOPLAM HASTA";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lbl_hastaProfil.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(182)))), ((int)(((byte)(246)))));
+            this.lbl_hastaProfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_hastaProfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lbl_hastaProfil.ForeColor = System.Drawing.Color.White;
+            this.lbl_hastaProfil.Image = ((System.Drawing.Image)(resources.GetObject("lbl_hastaProfil.Image")));
+            this.lbl_hastaProfil.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.lbl_hastaProfil.Location = new System.Drawing.Point(30, 22);
+            this.lbl_hastaProfil.Name = "lbl_hastaProfil";
+            this.lbl_hastaProfil.Size = new System.Drawing.Size(326, 97);
+            this.lbl_hastaProfil.TabIndex = 0;
+            this.lbl_hastaProfil.Text = "TOPLAM HASTA";
+            this.lbl_hastaProfil.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lbl_hastaProfil.DoubleClick += new System.EventHandler(this.lbl_hastaProfil_DoubleClick);
             // 
             // lbl_ilaç
             // 
             this.lbl_ilaç.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(84)))), ((int)(((byte)(193)))));
-            this.lbl_ilaç.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbl_ilaç.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbl_ilaç.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lbl_ilaç.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lbl_ilaç.ForeColor = System.Drawing.Color.White;
             this.lbl_ilaç.Image = ((System.Drawing.Image)(resources.GetObject("lbl_ilaç.Image")));
             this.lbl_ilaç.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl_ilaç.Location = new System.Drawing.Point(0, 0);
+            this.lbl_ilaç.Location = new System.Drawing.Point(30, 174);
             this.lbl_ilaç.Name = "lbl_ilaç";
             this.lbl_ilaç.Size = new System.Drawing.Size(326, 97);
             this.lbl_ilaç.TabIndex = 0;
             this.lbl_ilaç.Text = "TOPLAM İLAÇ ADETİ";
             this.lbl_ilaç.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lbl_ilaç.DoubleClick += new System.EventHandler(this.lbl_ilaç_DoubleClick);
             // 
-            // label6
+            // label
             // 
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(184)))), ((int)(((byte)(107)))));
-            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Image = ((System.Drawing.Image)(resources.GetObject("label6.Image")));
-            this.label6.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label6.Location = new System.Drawing.Point(0, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(326, 97);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "TOPLAM KAZANÇ";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.label.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(184)))), ((int)(((byte)(107)))));
+            this.label.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label.ForeColor = System.Drawing.Color.White;
+            this.label.Image = ((System.Drawing.Image)(resources.GetObject("label.Image")));
+            this.label.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.label.Location = new System.Drawing.Point(443, 314);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(326, 97);
+            this.label.TabIndex = 0;
+            this.label.Text = "TOPLAM KAZANÇ";
+            this.label.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // lbl_kazanç
+            // lbl4
             // 
-            this.lbl_kazanç.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(184)))), ((int)(((byte)(107)))));
-            this.lbl_kazanç.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbl_kazanç.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbl_kazanç.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lbl_kazanç.ForeColor = System.Drawing.Color.White;
-            this.lbl_kazanç.Image = ((System.Drawing.Image)(resources.GetObject("lbl_kazanç.Image")));
-            this.lbl_kazanç.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl_kazanç.Location = new System.Drawing.Point(0, 0);
-            this.lbl_kazanç.Name = "lbl_kazanç";
-            this.lbl_kazanç.Size = new System.Drawing.Size(326, 97);
-            this.lbl_kazanç.TabIndex = 0;
-            this.lbl_kazanç.Text = "BU GÜNÜN KAZANCI";
-            this.lbl_kazanç.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lbl4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(184)))), ((int)(((byte)(107)))));
+            this.lbl4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lbl4.ForeColor = System.Drawing.Color.White;
+            this.lbl4.Image = ((System.Drawing.Image)(resources.GetObject("lbl4.Image")));
+            this.lbl4.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.lbl4.Location = new System.Drawing.Point(30, 314);
+            this.lbl4.Name = "lbl4";
+            this.lbl4.Size = new System.Drawing.Size(326, 97);
+            this.lbl4.TabIndex = 0;
+            this.lbl4.Text = "BU GÜNÜN KAZANCI";
+            this.lbl4.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lbl4.DoubleClick += new System.EventHandler(this.lbl4_DoubleClick);
             // 
-            // label10
+            // lbl_toplamKazanc
             // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(184)))), ((int)(((byte)(107)))));
-            this.label10.Font = new System.Drawing.Font("Microsoft YaHei", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(271, 48);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(34, 37);
-            this.label10.TabIndex = 3;
-            this.label10.Text = "0";
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Location = new System.Drawing.Point(377, 492);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(326, 97);
-            this.panel2.TabIndex = 5;
+            this.lbl_toplamKazanc.AutoSize = true;
+            this.lbl_toplamKazanc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(184)))), ((int)(((byte)(107)))));
+            this.lbl_toplamKazanc.Font = new System.Drawing.Font("Microsoft YaHei", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lbl_toplamKazanc.ForeColor = System.Drawing.Color.Black;
+            this.lbl_toplamKazanc.Location = new System.Drawing.Point(649, 352);
+            this.lbl_toplamKazanc.Name = "lbl_toplamKazanc";
+            this.lbl_toplamKazanc.Size = new System.Drawing.Size(34, 37);
+            this.lbl_toplamKazanc.TabIndex = 3;
+            this.lbl_toplamKazanc.Text = "0";
             // 
             // pnl_kullanıcı
             // 
             this.pnl_kullanıcı.BackColor = System.Drawing.Color.DodgerBlue;
+            this.pnl_kullanıcı.Controls.Add(this.btn_kapat);
             this.pnl_kullanıcı.Controls.Add(this.lbl_aktifKullanıcı);
             this.pnl_kullanıcı.Controls.Add(this.label7);
             this.pnl_kullanıcı.Controls.Add(this.pictureBox1);
             this.pnl_kullanıcı.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_kullanıcı.Location = new System.Drawing.Point(0, 0);
             this.pnl_kullanıcı.Name = "pnl_kullanıcı";
-            this.pnl_kullanıcı.Size = new System.Drawing.Size(718, 134);
+            this.pnl_kullanıcı.Size = new System.Drawing.Size(875, 106);
             this.pnl_kullanıcı.TabIndex = 6;
+            // 
+            // btn_kapat
+            // 
+            this.btn_kapat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btn_kapat.Image = ((System.Drawing.Image)(resources.GetObject("btn_kapat.Image")));
+            this.btn_kapat.Location = new System.Drawing.Point(818, 68);
+            this.btn_kapat.Name = "btn_kapat";
+            this.btn_kapat.Size = new System.Drawing.Size(57, 38);
+            this.btn_kapat.TabIndex = 0;
+            this.btn_kapat.UseVisualStyleBackColor = true;
+            this.btn_kapat.Visible = false;
+            this.btn_kapat.Click += new System.EventHandler(this.btn_kapat_Click);
             // 
             // lbl_aktifKullanıcı
             // 
             this.lbl_aktifKullanıcı.AutoSize = true;
             this.lbl_aktifKullanıcı.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lbl_aktifKullanıcı.ForeColor = System.Drawing.Color.White;
-            this.lbl_aktifKullanıcı.Location = new System.Drawing.Point(172, 75);
+            this.lbl_aktifKullanıcı.Location = new System.Drawing.Point(175, 62);
             this.lbl_aktifKullanıcı.Name = "lbl_aktifKullanıcı";
             this.lbl_aktifKullanıcı.Size = new System.Drawing.Size(36, 25);
             this.lbl_aktifKullanıcı.TabIndex = 2;
@@ -178,7 +173,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(167, 29);
+            this.label7.Location = new System.Drawing.Point(170, 16);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(176, 27);
             this.label7.TabIndex = 1;
@@ -187,21 +182,12 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(39, 29);
+            this.pictureBox1.Location = new System.Drawing.Point(42, 16);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(80, 80);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.lbl_hasta);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(17, 226);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(326, 97);
-            this.panel1.TabIndex = 7;
             // 
             // lbl_hasta
             // 
@@ -209,41 +195,23 @@
             this.lbl_hasta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(182)))), ((int)(((byte)(246)))));
             this.lbl_hasta.Font = new System.Drawing.Font("Microsoft YaHei", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lbl_hasta.ForeColor = System.Drawing.Color.Black;
-            this.lbl_hasta.Location = new System.Drawing.Point(270, 39);
+            this.lbl_hasta.Location = new System.Drawing.Point(221, 53);
             this.lbl_hasta.Name = "lbl_hasta";
             this.lbl_hasta.Size = new System.Drawing.Size(34, 37);
             this.lbl_hasta.TabIndex = 3;
             this.lbl_hasta.Text = "0";
             // 
-            // panel3
+            // lbl_bugunKazanc
             // 
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.lbl_kazanç);
-            this.panel3.Location = new System.Drawing.Point(17, 492);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(326, 97);
-            this.panel3.TabIndex = 8;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(184)))), ((int)(((byte)(107)))));
-            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(270, 48);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 37);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "0";
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.lbl_toplamİlaç);
-            this.panel4.Controls.Add(this.lbl_ilaç);
-            this.panel4.Location = new System.Drawing.Point(17, 360);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(326, 97);
-            this.panel4.TabIndex = 9;
+            this.lbl_bugunKazanc.AutoSize = true;
+            this.lbl_bugunKazanc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(184)))), ((int)(((byte)(107)))));
+            this.lbl_bugunKazanc.Font = new System.Drawing.Font("Microsoft YaHei", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lbl_bugunKazanc.ForeColor = System.Drawing.Color.Black;
+            this.lbl_bugunKazanc.Location = new System.Drawing.Point(221, 352);
+            this.lbl_bugunKazanc.Name = "lbl_bugunKazanc";
+            this.lbl_bugunKazanc.Size = new System.Drawing.Size(34, 37);
+            this.lbl_bugunKazanc.TabIndex = 3;
+            this.lbl_bugunKazanc.Text = "0";
             // 
             // lbl_toplamİlaç
             // 
@@ -251,56 +219,38 @@
             this.lbl_toplamİlaç.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(84)))), ((int)(((byte)(193)))));
             this.lbl_toplamİlaç.Font = new System.Drawing.Font("Microsoft YaHei", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lbl_toplamİlaç.ForeColor = System.Drawing.Color.Black;
-            this.lbl_toplamİlaç.Location = new System.Drawing.Point(271, 39);
+            this.lbl_toplamİlaç.Location = new System.Drawing.Point(221, 211);
             this.lbl_toplamİlaç.Name = "lbl_toplamİlaç";
             this.lbl_toplamİlaç.Size = new System.Drawing.Size(34, 37);
             this.lbl_toplamİlaç.TabIndex = 3;
             this.lbl_toplamİlaç.Text = "0";
             // 
-            // panel5
+            // lbl_recete
             // 
-            this.panel5.Controls.Add(this.label4);
-            this.panel5.Controls.Add(this.label5);
-            this.panel5.Location = new System.Drawing.Point(377, 226);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(326, 97);
-            this.panel5.TabIndex = 9;
+            this.lbl_recete.AutoSize = true;
+            this.lbl_recete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.lbl_recete.Font = new System.Drawing.Font("Microsoft YaHei", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lbl_recete.ForeColor = System.Drawing.Color.Black;
+            this.lbl_recete.Location = new System.Drawing.Point(649, 62);
+            this.lbl_recete.Name = "lbl_recete";
+            this.lbl_recete.Size = new System.Drawing.Size(34, 37);
+            this.lbl_recete.TabIndex = 3;
+            this.lbl_recete.Text = "0";
             // 
-            // label4
+            // label78
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(271, 39);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(34, 37);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "0";
-            // 
-            // label5
-            // 
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Image = ((System.Drawing.Image)(resources.GetObject("label5.Image")));
-            this.label5.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label5.Location = new System.Drawing.Point(0, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(326, 97);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "TOPLAM REÇETE";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.lbl_ilaçSayısı);
-            this.panel6.Controls.Add(this.label12);
-            this.panel6.Location = new System.Drawing.Point(377, 360);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(326, 97);
-            this.panel6.TabIndex = 11;
+            this.label78.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label78.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label78.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label78.ForeColor = System.Drawing.Color.White;
+            this.label78.Image = ((System.Drawing.Image)(resources.GetObject("label78.Image")));
+            this.label78.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.label78.Location = new System.Drawing.Point(443, 22);
+            this.label78.Name = "label78";
+            this.label78.Size = new System.Drawing.Size(326, 97);
+            this.label78.TabIndex = 0;
+            this.label78.Text = "TOPLAM REÇETE";
+            this.label78.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // lbl_ilaçSayısı
             // 
@@ -308,7 +258,7 @@
             this.lbl_ilaçSayısı.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(84)))), ((int)(((byte)(193)))));
             this.lbl_ilaçSayısı.Font = new System.Drawing.Font("Microsoft YaHei", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lbl_ilaçSayısı.ForeColor = System.Drawing.Color.Black;
-            this.lbl_ilaçSayısı.Location = new System.Drawing.Point(271, 39);
+            this.lbl_ilaçSayısı.Location = new System.Drawing.Point(649, 211);
             this.lbl_ilaçSayısı.Name = "lbl_ilaçSayısı";
             this.lbl_ilaçSayısı.Size = new System.Drawing.Size(34, 37);
             this.lbl_ilaçSayısı.TabIndex = 3;
@@ -317,13 +267,12 @@
             // label12
             // 
             this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(84)))), ((int)(((byte)(193)))));
-            this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label12.ForeColor = System.Drawing.Color.White;
             this.label12.Image = ((System.Drawing.Image)(resources.GetObject("label12.Image")));
             this.label12.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label12.Location = new System.Drawing.Point(0, 0);
+            this.label12.Location = new System.Drawing.Point(443, 174);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(326, 97);
             this.label12.TabIndex = 0;
@@ -332,10 +281,13 @@
             // 
             // bar_dolulukOranı
             // 
-            this.bar_dolulukOranı.Location = new System.Drawing.Point(51, 654);
+            this.bar_dolulukOranı.Location = new System.Drawing.Point(35, 457);
+            this.bar_dolulukOranı.Maximum = 30000;
+            this.bar_dolulukOranı.Minimum = 1;
             this.bar_dolulukOranı.Name = "bar_dolulukOranı";
             this.bar_dolulukOranı.Size = new System.Drawing.Size(245, 62);
             this.bar_dolulukOranı.TabIndex = 12;
+            this.bar_dolulukOranı.Value = 1;
             // 
             // label3
             // 
@@ -343,7 +295,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(71, 612);
+            this.label3.Location = new System.Drawing.Point(81, 566);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(177, 27);
             this.label3.TabIndex = 1;
@@ -355,46 +307,61 @@
             this.lbl_doluluk.BackColor = System.Drawing.Color.Transparent;
             this.lbl_doluluk.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lbl_doluluk.ForeColor = System.Drawing.Color.Black;
-            this.lbl_doluluk.Location = new System.Drawing.Point(312, 671);
+            this.lbl_doluluk.Location = new System.Drawing.Point(332, 469);
             this.lbl_doluluk.Name = "lbl_doluluk";
             this.lbl_doluluk.Size = new System.Drawing.Size(24, 27);
             this.lbl_doluluk.TabIndex = 1;
             this.lbl_doluluk.Text = "0";
+            // 
+            // pnl_ana
+            // 
+            this.pnl_ana.BackColor = System.Drawing.Color.White;
+            this.pnl_ana.Controls.Add(this.lbl_toplamKazanc);
+            this.pnl_ana.Controls.Add(this.lbl_doluluk);
+            this.pnl_ana.Controls.Add(this.bar_dolulukOranı);
+            this.pnl_ana.Controls.Add(this.lbl_ilaçSayısı);
+            this.pnl_ana.Controls.Add(this.label);
+            this.pnl_ana.Controls.Add(this.lbl_recete);
+            this.pnl_ana.Controls.Add(this.label12);
+            this.pnl_ana.Controls.Add(this.lbl_bugunKazanc);
+            this.pnl_ana.Controls.Add(this.label78);
+            this.pnl_ana.Controls.Add(this.lbl_toplamİlaç);
+            this.pnl_ana.Controls.Add(this.lbl4);
+            this.pnl_ana.Controls.Add(this.lbl_hasta);
+            this.pnl_ana.Controls.Add(this.lbl_ilaç);
+            this.pnl_ana.Controls.Add(this.lbl_hastaProfil);
+            this.pnl_ana.Location = new System.Drawing.Point(39, 155);
+            this.pnl_ana.Name = "pnl_ana";
+            this.pnl_ana.Size = new System.Drawing.Size(789, 555);
+            this.pnl_ana.TabIndex = 13;
+            // 
+            // pnl_alt
+            // 
+            this.pnl_alt.Location = new System.Drawing.Point(39, 716);
+            this.pnl_alt.Name = "pnl_alt";
+            this.pnl_alt.Size = new System.Drawing.Size(816, 653);
+            this.pnl_alt.TabIndex = 14;
+            this.pnl_alt.Visible = false;
             // 
             // AnaPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(718, 746);
-            this.Controls.Add(this.bar_dolulukOranı);
-            this.Controls.Add(this.lbl_doluluk);
+            this.CancelButton = this.btn_kapat;
+            this.ClientSize = new System.Drawing.Size(875, 800);
+            this.Controls.Add(this.pnl_alt);
+            this.Controls.Add(this.pnl_ana);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.panel6);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnl_kullanıcı);
-            this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AnaPanel";
             this.Load += new System.EventHandler(this.AnaPanel_Load);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.pnl_kullanıcı.ResumeLayout(false);
             this.pnl_kullanıcı.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
+            this.pnl_ana.ResumeLayout(false);
+            this.pnl_ana.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -402,30 +369,27 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_hastaProfil;
         private System.Windows.Forms.Label lbl_ilaç;
-        private System.Windows.Forms.Label lbl_kazanç;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lbl4;
+        private System.Windows.Forms.Label label;
+        private System.Windows.Forms.Label lbl_toplamKazanc;
         private System.Windows.Forms.Panel pnl_kullanıcı;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbl_hasta;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label lbl_bugunKazanc;
         private System.Windows.Forms.Label lbl_toplamİlaç;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbl_recete;
+        private System.Windows.Forms.Label label78;
         private System.Windows.Forms.Label lbl_aktifKullanıcı;
-        private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label lbl_ilaçSayısı;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ProgressBar bar_dolulukOranı;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbl_doluluk;
+        private System.Windows.Forms.Panel pnl_ana;
+        private System.Windows.Forms.Panel pnl_alt;
+        private System.Windows.Forms.Button btn_kapat;
     }
 }

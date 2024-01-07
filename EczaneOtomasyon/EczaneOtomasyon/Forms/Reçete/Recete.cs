@@ -29,8 +29,9 @@ namespace EczaneOtomasyon.Forms.Reçete
 
         bool TcListele()
         {
-            bool oldumu;
-            using (OleDbConnection con = new OleDbConnection(baglantı))
+            bool oldumu=false;
+            OleDbConnection con = new OleDbConnection(baglantı);
+            try
             {
                 string Tc = txt_hastaTc.Text;
                 string sorgu = "SELECT Adı, Soyadı, Tc FROM Hastalar Where Tc = @tc";
@@ -58,17 +59,23 @@ namespace EczaneOtomasyon.Forms.Reçete
                         {
                             oldumu = false;
                             MessageBox.Show("KAYIT BULUNAMADI");
-
                         }
                     }
                 }
             }
+            catch (Exception)
+            {
+                MessageBox.Show("HATA OLUŞTU TEKRAR DENEYİN");
+            }
+            finally
+            {
+                con.Close();
+            }
+
             return oldumu;
         }
         int olanAdet, toplamUcret, istenenAdet, sayac = 0;
 
-
-       
         private void btn_ilaçEkle_Click(object sender, EventArgs e)
         {
             if (hastaKayıtlımı == false)
@@ -134,10 +141,10 @@ namespace EczaneOtomasyon.Forms.Reçete
             {
                 VeriEkle();
                 Temizle(lbl_ilaçAdı1, lbl_ilaçKategori1, lbl_barkoNo1, lbl_ilaçFiyat1, lbl_ilaçAdeti1);
-                Temizle(lbl_ilaçAdı2, lbl_ilaçKategori2, lbl_barkoNo1, lbl_ilaçFiyat2, lbl_ilaçAdeti2);
-                Temizle(lbl_ilaçAdı3, lbl_ilaçKategori3, lbl_barkoNo1, lbl_ilaçFiyat3, lbl_ilaçAdeti3);
-                Temizle(lbl_ilaçAdı4, lbl_ilaçKategori4, lbl_barkoNo1, lbl_ilaçFiyat4, lbl_ilaçAdeti4);
-                Temizle(lbl_ilaçAdı5, lbl_ilaçKategori5, lbl_barkoNo1, lbl_ilaçFiyat5, lbl_ilaçAdeti5);
+                Temizle(lbl_ilaçAdı2, lbl_ilaçKategori2, lbl_barkoNo2, lbl_ilaçFiyat2, lbl_ilaçAdeti2);
+                Temizle(lbl_ilaçAdı3, lbl_ilaçKategori3, lbl_barkoNo3, lbl_ilaçFiyat3, lbl_ilaçAdeti3);
+                Temizle(lbl_ilaçAdı4, lbl_ilaçKategori4, lbl_barkoNo4, lbl_ilaçFiyat4, lbl_ilaçAdeti4);
+                Temizle(lbl_ilaçAdı5, lbl_ilaçKategori5, lbl_barkoNo5, lbl_ilaçFiyat5, lbl_ilaçAdeti5);
                 lbl_hastaAdı.Text = null; lbl_hastaSoyad.Text = null; lbl_hastaTc.Text = null;
                 lbl_hastaAdı.Visible = false; lbl_hastaSoyad.Visible = false; lbl_hastaTc.Visible = false;
                 pnl_hasta.Visible = true;
@@ -254,28 +261,36 @@ namespace EczaneOtomasyon.Forms.Reçete
         }
         void adetCikar()
         {
-            using (OleDbConnection con = new OleDbConnection(baglantı))
+            try
             {
-                string sorgu = "UPDATE İlaçlar SET adet=@adet WHERE barkod=@barkod";
-                using (OleDbCommand cmd = new OleDbCommand(sorgu,con))
+                using (OleDbConnection con = new OleDbConnection(baglantı))
                 {
-                    int sonuc = olanAdet - istenenAdet;
-                    cmd.Parameters.AddWithValue("@adet",sonuc.ToString());
-                    cmd.Parameters.AddWithValue("@barkod",barkod);
-                    con.Open();
-                    int sayac = cmd.ExecuteNonQuery();
-                    con.Close();
-                    if (sayac>0)
+                    string sorgu = "UPDATE İlaçlar SET adet=@adet WHERE barkod=@barkod";
+                    using (OleDbCommand cmd = new OleDbCommand(sorgu, con))
                     {
-                        MessageBox.Show("adet düşüldü");
-                    }
-                    else
-                    {
-                        MessageBox.Show("olmadı");
+                        int sonuc = olanAdet - istenenAdet;
+                        cmd.Parameters.AddWithValue("@adet", sonuc.ToString());
+                        cmd.Parameters.AddWithValue("@barkod", barkod);
+                        con.Open();
+                        int sayac = cmd.ExecuteNonQuery();
+                        con.Close();
+                        if (sayac > 0)
+                        {
+                            MessageBox.Show("adet düşüldü");
+                        }
+                        else
+                        {
+                            MessageBox.Show("olmadı");
 
+                        }
                     }
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("HATA OLUŞTU TEKRAR DENEYİN");
+            }
+
         }
         void BarkodListele()
         {
@@ -333,16 +348,50 @@ namespace EczaneOtomasyon.Forms.Reçete
                 using (OleDbCommand cmd = new OleDbCommand(sorgu, con))
                 {
                     cmd.Parameters.AddWithValue("@tc", lbl_hastaTc.Text);
+
                     cmd.Parameters.AddWithValue("@i1", lbl_ilaçAdı1.Text);
                     cmd.Parameters.AddWithValue("@f1", lbl_ilaçFiyat1.Text);
-                    cmd.Parameters.AddWithValue("@i2", lbl_ilaçAdı2.Text);
-                    cmd.Parameters.AddWithValue("@f2", lbl_ilaçFiyat2.Text);
-                    cmd.Parameters.AddWithValue("@i3", lbl_ilaçAdı3.Text);
-                    cmd.Parameters.AddWithValue("@f3", lbl_ilaçFiyat3.Text);
-                    cmd.Parameters.AddWithValue("@i4", lbl_ilaçAdı4.Text);
-                    cmd.Parameters.AddWithValue("@f4", lbl_ilaçFiyat4.Text);
-                    cmd.Parameters.AddWithValue("@i5", lbl_ilaçAdı5.Text);
-                    cmd.Parameters.AddWithValue("@f5", lbl_ilaçFiyat5.Text);
+
+                    if (lbl_ilaçAdı2.Text != "-")
+                        cmd.Parameters.AddWithValue("@i2", lbl_ilaçAdı2.Text);
+                    else
+                        cmd.Parameters.AddWithValue("@i2", DBNull.Value);
+
+                    if (lbl_ilaçFiyat2.Text != "-")
+                        cmd.Parameters.AddWithValue("@f2", lbl_ilaçFiyat2.Text);
+                    else
+                        cmd.Parameters.AddWithValue("@f2", DBNull.Value);
+
+                    if (lbl_ilaçAdı3.Text != "-")
+                        cmd.Parameters.AddWithValue("@i3", lbl_ilaçAdı3.Text);
+                    else
+                        cmd.Parameters.AddWithValue("@i3", DBNull.Value);
+
+                    if (lbl_ilaçFiyat3.Text != "-")
+                        cmd.Parameters.AddWithValue("@f3", lbl_ilaçFiyat3.Text);
+                    else
+                        cmd.Parameters.AddWithValue("@f3", DBNull.Value);
+
+                    if (lbl_ilaçAdı4.Text != "-")
+                        cmd.Parameters.AddWithValue("@i4", lbl_ilaçAdı4.Text);
+                    else
+                        cmd.Parameters.AddWithValue("@i4", DBNull.Value);
+
+                    if (lbl_ilaçFiyat4.Text != "-")
+                        cmd.Parameters.AddWithValue("@f4", lbl_ilaçFiyat4.Text);
+                    else
+                        cmd.Parameters.AddWithValue("@f4", DBNull.Value);
+
+                    if (lbl_ilaçAdı5.Text != "-")
+                        cmd.Parameters.AddWithValue("@i5", lbl_ilaçAdı5.Text);
+                    else
+                        cmd.Parameters.AddWithValue("@i5", DBNull.Value);
+
+                    if (lbl_ilaçFiyat5.Text != "-")
+                        cmd.Parameters.AddWithValue("@f5", lbl_ilaçFiyat5.Text);
+                    else
+                        cmd.Parameters.AddWithValue("@f5", DBNull.Value);
+
                     cmd.Parameters.AddWithValue("@topfiyat", lbl_toplamFiyat.Text);
                     cmd.Parameters.AddWithValue("@durum", false);
 
@@ -360,8 +409,6 @@ namespace EczaneOtomasyon.Forms.Reçete
                     }
                 }
             }
-
         }
-
     }
 }

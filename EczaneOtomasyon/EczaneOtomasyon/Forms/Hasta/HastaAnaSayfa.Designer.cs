@@ -121,7 +121,6 @@
             this.data_hasta.RowTemplate.Height = 24;
             this.data_hasta.Size = new System.Drawing.Size(718, 746);
             this.data_hasta.TabIndex = 6;
-            this.data_hasta.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_hasta_CellDoubleClick);
             // 
             // HastaAnaSayfa
             // 

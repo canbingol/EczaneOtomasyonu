@@ -167,7 +167,7 @@
             this.data_ilaçlar.RowTemplate.Height = 24;
             this.data_ilaçlar.Size = new System.Drawing.Size(987, 741);
             this.data_ilaçlar.TabIndex = 1;
-//            this.data_ilaçlar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_ilaçlar_CellContentClick);
+           // this.data_ilaçlar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_ilaçlar_CellContentClick);
             // 
             // panel_ilaçAnaSayfa
             // 

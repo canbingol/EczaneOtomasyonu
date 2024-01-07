@@ -17,7 +17,7 @@ namespace EczaneOtomasyon.Forms.Hasta
         public HastaGüncelle()
         {
             InitializeComponent();
-            
+
         }
 
 
@@ -104,7 +104,7 @@ namespace EczaneOtomasyon.Forms.Hasta
                 e.Handled = true;
         }
 
-       
+
         new void MouseHover(TextBox txt)
         {
             txt.BorderStyle = BorderStyle.None;

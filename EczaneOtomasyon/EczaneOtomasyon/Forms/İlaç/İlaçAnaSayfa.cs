@@ -137,6 +137,7 @@ namespace EczaneOtomasyon.Forms.İlaç
                 Listele();
             }
         }
+
     }
 
 }

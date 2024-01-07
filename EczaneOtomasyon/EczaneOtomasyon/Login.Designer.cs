@@ -36,8 +36,10 @@
             this.btn_sifreUnuttum = new System.Windows.Forms.LinkLabel();
             this.btn_yeniKullanıcı = new System.Windows.Forms.Button();
             this.PanelYeniKayıt = new System.Windows.Forms.Panel();
+            this.comboBox_yetki = new System.Windows.Forms.ComboBox();
             this.btn_kayıtKapat = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.lbl_yeniParolaTekrar = new System.Windows.Forms.Label();
             this.lbl_hataKayıtParola2 = new System.Windows.Forms.Label();
             this.lbl_hataKayıtParola1 = new System.Windows.Forms.Label();
@@ -65,8 +67,6 @@
             this.lbl_hataParola = new System.Windows.Forms.Label();
             this.btn_cıkıs = new System.Windows.Forms.Button();
             this.txt_Parola = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.comboBox_yetki = new System.Windows.Forms.ComboBox();
             this.PanelYeniKayıt.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_kayıtKapat)).BeginInit();
             this.panel_SifreDegistir.SuspendLayout();
@@ -170,6 +170,19 @@
             this.PanelYeniKayıt.TabIndex = 5;
             this.PanelYeniKayıt.Visible = false;
             // 
+            // comboBox_yetki
+            // 
+            this.comboBox_yetki.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_yetki.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.comboBox_yetki.FormattingEnabled = true;
+            this.comboBox_yetki.Items.AddRange(new object[] {
+            "admin",
+            "calisan"});
+            this.comboBox_yetki.Location = new System.Drawing.Point(190, 281);
+            this.comboBox_yetki.Name = "comboBox_yetki";
+            this.comboBox_yetki.Size = new System.Drawing.Size(212, 31);
+            this.comboBox_yetki.TabIndex = 10;
+            // 
             // btn_kayıtKapat
             // 
             this.btn_kayıtKapat.Image = ((System.Drawing.Image)(resources.GetObject("btn_kayıtKapat.Image")));
@@ -190,6 +203,20 @@
             this.label5.Size = new System.Drawing.Size(225, 23);
             this.label5.TabIndex = 8;
             this.label5.Text = "YENİ KULLANICI KAYDI";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.White;
+            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label6.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(75, 281);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(70, 29);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "YETKİ";
             // 
             // lbl_yeniParolaTekrar
             // 
@@ -511,32 +538,6 @@
             this.txt_Parola.Name = "txt_Parola";
             this.txt_Parola.Size = new System.Drawing.Size(217, 32);
             this.txt_Parola.TabIndex = 1;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.White;
-            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label6.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(75, 281);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 29);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "YETKİ";
-            // 
-            // comboBox_yetki
-            // 
-            this.comboBox_yetki.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.comboBox_yetki.FormattingEnabled = true;
-            this.comboBox_yetki.Items.AddRange(new object[] {
-            "admin",
-            "calisan"});
-            this.comboBox_yetki.Location = new System.Drawing.Point(190, 281);
-            this.comboBox_yetki.Name = "comboBox_yetki";
-            this.comboBox_yetki.Size = new System.Drawing.Size(212, 31);
-            this.comboBox_yetki.TabIndex = 10;
             // 
             // Login
             // 

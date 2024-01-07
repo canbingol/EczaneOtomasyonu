@@ -12,12 +12,10 @@ using System.Windows.Forms;
 
 namespace EczaneOtomasyon.Forms.Satış
 {
-   
-   
     public partial class Satış : Form
     {
-        string baglantı = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=EczaneVeri.accdb";
-        static public int toplamCiro;
+        string baglanti = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=EczaneVeri.accdb";
+        static public string toplamCiro;
         public Satış()
         {
             InitializeComponent();
@@ -25,7 +23,7 @@ namespace EczaneOtomasyon.Forms.Satış
         int siraAl()
         {
             int sira = 0;
-            using (OleDbConnection con = new OleDbConnection(baglantı))
+            using (OleDbConnection con = new OleDbConnection(baglanti))
             {
                 con.Open();
                 string sorgu = "SELECT sira FROM Reçeteler WHERE tc=@tc";
@@ -44,10 +42,9 @@ namespace EczaneOtomasyon.Forms.Satış
 
             return sira;
         }
-      
         void HastaListele()
         {
-            using (OleDbConnection con = new OleDbConnection(baglantı))
+            using (OleDbConnection con = new OleDbConnection(baglanti))
             {
                 string sorgu = "SELECT DISTINCT tc  FROM Reçeteler";
                 using (OleDbCommand cmd = new OleDbCommand(sorgu, con))
@@ -63,20 +60,20 @@ namespace EczaneOtomasyon.Forms.Satış
                 }
             }
         }
-        string tc,toplamfiyat;
+        string tc, toplamfiyat, sira, sigortaFiyat = "0";
         void ReçeteListele()
-           
+
         {
             string durum;
-            using (OleDbConnection con = new OleDbConnection(baglantı))
+            using (OleDbConnection con = new OleDbConnection(baglanti))
             {
-                string sorgu = "SELECT  ilac1, ilac2, ilac3, ilac4, ilac5,toplamfiyaT FROM Reçeteler WHERE  tc=@tc AND durum=@durum  ";
+                string sorgu = "SELECT  sira,ilac1, ilac2, ilac3, ilac4, ilac5,toplamfiyaT FROM Reçeteler WHERE  tc=@tc AND durum=@durum  ";
                 con.Open();
                 using (OleDbCommand cmd = new OleDbCommand(sorgu, con))
                 {
                     cmd.Parameters.AddWithValue("@tc", tc);
                     cmd.Parameters.AddWithValue("@durum", false);
-                   
+
                     using (OleDbDataReader reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
@@ -84,6 +81,7 @@ namespace EczaneOtomasyon.Forms.Satış
                             string ilaclar = "";
                             // Her bir ilaç değerini kontrol et, eğer değer "-" ise ListBox'a eklemez
                             // Reçete formunda boş ilaçlar - işareti ile belirtildiği için bu kontrol yapılmakta
+                            string sira = reader["sira"].ToString();
                             if (!(reader["ilac1"] is DBNull) && reader["ilac1"].ToString() != "-")
                             {
                                 ilaclar += reader["ilac1"].ToString();
@@ -106,29 +104,26 @@ namespace EczaneOtomasyon.Forms.Satış
                                 ilaclar += " - " + reader["ilac5"].ToString();
                             }
                             toplamfiyat = reader["toplamfiyat"].ToString();
-                            ilaclar += " - " + toplamfiyat;
-                            listBox_receteList.Items.Add(ilaclar);
-
+                            ilaclar += " - " + toplamfiyat+ "₺";
+                            listBox_receteList.Items.Add(sira +"-"+ ilaclar);
                         }
                     }
                 }
             }
-
-
         }
 
         private void btn_hastaSec_Click(object sender, EventArgs e)
         {
+
             tc = checklist_hastalar.CheckedItems[0].ToString();
             ReçeteListele();
-            checklist_hastalar.Enabled= false;
+            checklist_hastalar.Enabled = false;
 
         }
 
         private void Satış_Load(object sender, EventArgs e)
         {
             HastaListele();
-
         }
 
         private void checklist_hastalar_ItemCheck(object sender, ItemCheckEventArgs e)
@@ -143,7 +138,9 @@ namespace EczaneOtomasyon.Forms.Satış
         }
 
         string ad, soyad, fiyat, ilac1, ilac2, ilac3, ilac4, ilac5;
+        DateTime tarih;
 
+        // şeçilen reçetenin verilerini satışlar tablosuna eklemek için değişkenlere atanıyor
         private void btn_receteSec_Click(object sender, EventArgs e)
         {
             string ilaclar = listBox_receteList.CheckedItems[0].ToString();
@@ -151,16 +148,16 @@ namespace EczaneOtomasyon.Forms.Satış
             int sayac = ilaclarDizi.Length;
             fiyat = ilaclarDizi[sayac - 1];
             lbl_toplamFiyat.Text = fiyat;
-
+            sira = ilaclarDizi[0];
             ilac1 = ilaclarDizi[0];
-            if (ilaclarDizi.Length > 2)
-                ilac2 = ilaclarDizi[1];
             if (ilaclarDizi.Length > 3)
-                ilac3 = ilaclarDizi[2];
+                ilac2 = ilaclarDizi[2];
             if (ilaclarDizi.Length > 4)
-                ilac4 = ilaclarDizi[3];
+                ilac3 = ilaclarDizi[3];
             if (ilaclarDizi.Length > 5)
-                ilac5 = ilaclarDizi[4];
+                ilac4 = ilaclarDizi[4];
+            if (ilaclarDizi.Length > 6)
+                ilac5 = ilaclarDizi[5];
 
             Hastabul();
             lbl_tc.Text = tc;
@@ -170,18 +167,17 @@ namespace EczaneOtomasyon.Forms.Satış
         }
         private void btn_satis_Click(object sender, EventArgs e)
         {
-
-            using (OleDbConnection con = new OleDbConnection(baglantı))
+            bool sigortaDurumu = false;
+            using (OleDbConnection con = new OleDbConnection(baglanti))
             {
                 con.Open();
-                string sorgu = "INSERT INTO Satislar (Tc,Ad,Soyad,ToplamFiyat,Ilac1,Ilac2,Ilac3,Ilac4,Ilac5) VALUES " +
-                    "(@tc,@soyad,@ad,@fiyat,@ilac1,@ilac2,@ilac3,@ilac4,@ilac5)";
+                string sorgu = "INSERT INTO Satislar (Tc,Ad,Soyad,Ilac1,Ilac2,Ilac3,Ilac4,Ilac5,SatisTarihi,ToplamFiyat) VALUES " +
+                    "(@tc,@ad,@soyad,@ilac1,@ilac2,@ilac3,@ilac4,@ilac5,@tarih,@fiyat)";
                 using (OleDbCommand cmd = new OleDbCommand(sorgu, con))
                 {
                     cmd.Parameters.AddWithValue("@tc", tc);
                     cmd.Parameters.AddWithValue("@ad", ad);
                     cmd.Parameters.AddWithValue("@soyad", soyad);
-                    cmd.Parameters.AddWithValue("@fiyat", fiyat);
                     cmd.Parameters.AddWithValue("@ilac1", ilac1);
                     if (ilac2 != null)
                         cmd.Parameters.AddWithValue("@ilac2", ilac2);
@@ -199,59 +195,120 @@ namespace EczaneOtomasyon.Forms.Satış
                         cmd.Parameters.AddWithValue("@ilac5", ilac5);
                     else
                         cmd.Parameters.AddWithValue("@ilac5", DBNull.Value);
+                    TarihAl();
+                    DateTime bugun = DateTime.Today;
+                    string tarihParams = bugun.Day.ToString() + "." + bugun.Month.ToString() + "." + bugun.Year.ToString();
+                    cmd.Parameters.AddWithValue("@tarih", tarihParams);
+                    if (SigortaBak())
+                    {
+                        if (DateTime.Today.Subtract(tarih).TotalDays > 90)
+                        {
+                            cmd.Parameters.AddWithValue("@fiyat", sigortaFiyat);
+                            sigortaDurumu = true;
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@fiyat", toplamfiyat);
+                        }
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@fiyat", toplamfiyat);
+                    }
 
                     int sayac = cmd.ExecuteNonQuery();
                     if (sayac > 0)
                     {
-                        MessageBox.Show("SATIŞ YAPILDI SAĞLIKLI GNLER DİLERİZ");
-                        toplamCiro += Convert.ToInt32(toplamfiyat);
-                    }
-                    else
-                    {
-                        MessageBox.Show("SATIŞ YAPILAMADI KOMMENASİ");
-
-                    }
-                }
-
-                string sorgu2 = "UPDATE Reçeteler SET  durum =true WHERE sira=@sira ";
-                try
-                {
-                    using (OleDbCommand cmd = new OleDbCommand(sorgu2, con))
-                    {
-                        cmd.Parameters.AddWithValue("@sira", siraAl().ToString());
-                        // cmd.Parameters.AddWithValue("@durum", true);
-                        int sayac = cmd.ExecuteNonQuery();
-                        con.Close();
-                        if (sayac > 0)
+                        if (sigortaDurumu)
                         {
-                            MessageBox.Show("oldu");
+                            MessageBox.Show(" HASTA REÇETE BEDELİ SİGORTA TARAFINDAN KARŞILANDI");
                         }
                         else
                         {
-                            MessageBox.Show("olmadı");
-
+                            MessageBox.Show("SATIŞ YAPILDI ");
+                        }
+                        RecetDurumuAyarla();
+                    }
+                    else
+                        MessageBox.Show("SATIŞ YAPILAMADI ");
+                }
+            }
+            checklist_hastalar.Enabled = true;
+            listBox_receteList.Enabled = true;
+        }
+        
+        void RecetDurumuAyarla()
+        {
+            string sorgu = $"UPDATE Reçeteler SET  durum={true} WHERE sira=@sira ";
+            try
+            {
+                using (OleDbConnection con = new OleDbConnection(baglanti))
+                {
+                    con.Open();
+                    using (OleDbCommand cmd = new OleDbCommand(sorgu, con))
+                    {
+                        cmd.Parameters.AddWithValue("@sira", sira);
+                        int sayac = cmd.ExecuteNonQuery();
+                        if (sayac == 0)
+                        {
+                            MessageBox.Show(" Reçete durumu ayarlanırken hata oluştu");
                         }
 
                     }
                 }
-                catch (Exception)
-                {
-                    MessageBox.Show("HATA OLUŞTU TEKRAR DENEYİN");
-
-                }
-
             }
-            checklist_hastalar.Enabled = true;
-            listBox_receteList.Enabled = true;
-
-
+            catch (Exception)
+            {
+                MessageBox.Show("HATA OLUŞTU TEKRAR DENEYİN");
+            }
         }
+        void TarihAl()
+        {
+            using (OleDbConnection con = new OleDbConnection(baglanti))
+            {
+                string sorgu = "SELECT MAX(SatisTarihi) FROM Satislar WHERE Tc=@tc";
+                con.Open();
+                using (OleDbCommand tarihAl = new OleDbCommand(sorgu, con))
+                {
+                    tarihAl.Parameters.AddWithValue("@tc", tc);
 
+                    object sonuc = tarihAl.ExecuteScalar();
+
+                    if (sonuc != null && sonuc != DBNull.Value)
+                    {
+                        tarih = Convert.ToDateTime(sonuc);
+
+                    }
+                }
+            }
+        }
+        bool SigortaBak()
+        {
+            string sigorta = null;
+            using (OleDbConnection con = new OleDbConnection(baglanti))
+            {
+                string sorgu = "SELECT Sigorta FROM Hastalar WHERE Tc= @tc";
+                con.Open();
+                using (OleDbCommand cmd = new OleDbCommand(sorgu, con))
+                {
+                    cmd.Parameters.AddWithValue("@tc", tc);
+                    using (OleDbDataReader sigortaBul = cmd.ExecuteReader())
+                    {
+                        if (sigortaBul.Read())
+                        {
+                            sigorta = sigortaBul["Sigorta"].ToString();
+
+                        }
+                    }
+                }
+            }
+            return Convert.ToBoolean(sigorta);
+        }
         void Hastabul()
         {
-            using (OleDbConnection con = new OleDbConnection(baglantı))
+            using (OleDbConnection con = new OleDbConnection(baglanti))
             {
-                string sorgu = "SELECT Adı,Soyadı FROM Hastalar WHERE Tc= @tc";
+                string sorgu = "SELECT Adı,Soyadı,Sigorta FROM Hastalar WHERE Tc= @tc";
                 con.Open();
                 using (OleDbCommand cmd = new OleDbCommand(sorgu, con))
                 {
@@ -262,12 +319,11 @@ namespace EczaneOtomasyon.Forms.Satış
                         {
                             ad = hastabul["Adı"].ToString();
                             soyad = hastabul["Soyadı"].ToString();
+
                         }
                     }
                 }
             }
         }
-
     }
-
 }
