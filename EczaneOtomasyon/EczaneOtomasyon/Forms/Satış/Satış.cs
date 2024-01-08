@@ -64,7 +64,6 @@ namespace EczaneOtomasyon.Forms.Satış
         void ReçeteListele()
 
         {
-            string durum;
             using (OleDbConnection con = new OleDbConnection(baglanti))
             {
                 string sorgu = "SELECT  sira,ilac1, ilac2, ilac3, ilac4, ilac5,toplamfiyaT FROM Reçeteler WHERE  tc=@tc AND durum=@durum  ";
@@ -149,7 +148,7 @@ namespace EczaneOtomasyon.Forms.Satış
             fiyat = ilaclarDizi[sayac - 1];
             lbl_toplamFiyat.Text = fiyat;
             sira = ilaclarDizi[0];
-            ilac1 = ilaclarDizi[0];
+            ilac1 = ilaclarDizi[1];
             if (ilaclarDizi.Length > 3)
                 ilac2 = ilaclarDizi[2];
             if (ilaclarDizi.Length > 4)

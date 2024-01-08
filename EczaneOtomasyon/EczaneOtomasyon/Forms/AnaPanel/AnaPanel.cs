@@ -149,10 +149,5 @@ namespace EczaneOtomasyon.Forms.AnaPanel
             AltFormGöster(new Stok());
         }
 
-        private void lbl4_DoubleClick(object sender, EventArgs e)
-        {
-            AltFormGöster(new SatisTakip());
-
-        }
     }
 }

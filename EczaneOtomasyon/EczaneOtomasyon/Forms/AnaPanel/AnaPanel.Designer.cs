@@ -107,7 +107,7 @@
             // 
             this.lbl4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(184)))), ((int)(((byte)(107)))));
             this.lbl4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbl4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lbl4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lbl4.ForeColor = System.Drawing.Color.White;
             this.lbl4.Image = ((System.Drawing.Image)(resources.GetObject("lbl4.Image")));
             this.lbl4.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -117,7 +117,6 @@
             this.lbl4.TabIndex = 0;
             this.lbl4.Text = "BU GÜNÜN KAZANCI";
             this.lbl4.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.lbl4.DoubleClick += new System.EventHandler(this.lbl4_DoubleClick);
             // 
             // lbl_toplamKazanc
             // 
@@ -146,6 +145,7 @@
             // 
             // btn_kapat
             // 
+            this.btn_kapat.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btn_kapat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btn_kapat.Image = ((System.Drawing.Image)(resources.GetObject("btn_kapat.Image")));
             this.btn_kapat.Location = new System.Drawing.Point(818, 68);
@@ -315,6 +315,9 @@
             // 
             // pnl_ana
             // 
+            this.pnl_ana.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnl_ana.BackColor = System.Drawing.Color.White;
             this.pnl_ana.Controls.Add(this.lbl_toplamKazanc);
             this.pnl_ana.Controls.Add(this.lbl_doluluk);

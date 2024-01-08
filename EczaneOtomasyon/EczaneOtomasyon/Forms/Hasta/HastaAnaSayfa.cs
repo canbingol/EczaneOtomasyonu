@@ -13,16 +13,22 @@ namespace EczaneOtomasyon.Forms.Hasta
 {
     public partial class HastaAnaSayfa : Form
     {
-        string connection = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=EczaneVeri.accdb";
+        string baglanti = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=EczaneVeri.accdb";
 
         public void Listele()
         {
-            OleDbConnection con = new OleDbConnection(connection);
+            OleDbConnection con = new OleDbConnection(baglanti);
             OleDbCommand cmd = new OleDbCommand("SELECT Adı,Soyadı,Tc,Adres,Telno,sigorta FROM Hastalar", con);
             OleDbDataAdapter da = new OleDbDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
             data_hasta.DataSource = dt;
+            data_hasta.Columns["Adı"].HeaderText = "ADI";
+            data_hasta.Columns["Soyadı"].HeaderText = "SOYADI";
+            data_hasta.Columns["Tc"].HeaderText = "TC NO";
+            data_hasta.Columns["Adres"].HeaderText = "ADRESİ";
+            data_hasta.Columns["Telno"].HeaderText = "TELELFON NO";
+            data_hasta.Columns["sigorta"].HeaderText = "SİGORTA DURUMU";
         }
         public HastaAnaSayfa()
         {
@@ -38,7 +44,7 @@ namespace EczaneOtomasyon.Forms.Hasta
         private void txt_hastaAra_TextChanged(object sender, EventArgs e)
         {
             string aranan = txt_hastaAra.Text;
-            OleDbConnection con = new OleDbConnection(connection);
+            OleDbConnection con = new OleDbConnection(baglanti);
 
             if (aranan.Length >= 1)
             {
@@ -76,10 +82,53 @@ namespace EczaneOtomasyon.Forms.Hasta
             txt_hastaAra.Text = string.Empty;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void listeleToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Listele();
+
         }
 
+        private void btn_sil_Click(object sender, EventArgs e)
+        {
+            if (data_hasta.SelectedRows.Count > 0)
+            {
+                DialogResult sonuc;
+                sonuc = MessageBox.Show("KAYDI SİLMEK İSTİYORMUSUNUZ", "KAYIT SİLME", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (sonuc == DialogResult.OK)
+                {
+                    string barkod = data_hasta.SelectedRows[0].Cells["Tc"].Value.ToString();
+                    using (OleDbConnection con = new OleDbConnection(baglanti))
+                    {
+                        con.Open();
+                        string sorgu = "DELETE FROM Hastalar WHERE Tc=@tc";
+                        using (OleDbCommand sil = new OleDbCommand(sorgu, con))
+                        {
+                            sil.Parameters.AddWithValue("@tc", barkod);
+                            int sayac = sil.ExecuteNonQuery();
+                            if (sayac > 0)
+                            {
+                                MessageBox.Show("KAYI BAŞARLI BİR ŞEKİLDE SİLİNDİ");
+                                Listele();
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+
+        private void btn_hastaAra_Click(object sender, EventArgs e)
+        {
+            if (pnl_hastaAra.Visible == true)
+                pnl_hastaAra.Visible = false;
+            else
+                pnl_hastaAra.Visible = true;
+        }
+
+        private void btn_panelkapa_Click(object sender, EventArgs e)
+        {
+            txt_hastaAra.Clear();
+            pnl_hastaAra.Visible = false;
+        }
     }
 }

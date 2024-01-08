@@ -28,4 +28,3 @@ C:\Users\canbi\OneDrive\Documents\GitHub\EczaneOtomasyonu\EczaneOtomasyon\Eczane
 C:\Users\canbi\OneDrive\Documents\GitHub\EczaneOtomasyonu\EczaneOtomasyon\EczaneOtomasyon\obj\Debug\EczaneOtomasyon.Forms.Satış.Satış.resources
 C:\Users\canbi\OneDrive\Documents\GitHub\EczaneOtomasyonu\EczaneOtomasyon\EczaneOtomasyon\obj\Debug\EczaneOtomasyon.Forms.AnaPanel.HastaProfil.resources
 C:\Users\canbi\OneDrive\Documents\GitHub\EczaneOtomasyonu\EczaneOtomasyon\EczaneOtomasyon\obj\Debug\EczaneOtomasyon.Forms.AnaPanel.Stok.resources
-C:\Users\canbi\OneDrive\Documents\GitHub\EczaneOtomasyonu\EczaneOtomasyon\EczaneOtomasyon\obj\Debug\EczaneOtomasyon.Forms.AnaPanel.SatisTakip.resources

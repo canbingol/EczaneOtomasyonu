@@ -21,7 +21,7 @@ namespace EczaneOtomasyon.Forms.AnaPanel
         }
         private string baglanti = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=EczaneVeri.accdb";
 
-        private string ad, soyad, sigorta, telno, adres;
+        private string  sigorta;
 
         private void txt_girilenTc_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -96,7 +96,7 @@ namespace EczaneOtomasyon.Forms.AnaPanel
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("HATA OLUŞTU LÜTFEN TAKRAR DENEYİN");
 
@@ -116,8 +116,6 @@ namespace EczaneOtomasyon.Forms.AnaPanel
                 datagrid_hastarecete.DataSource = tablo;
             }
         }
-
-
     }
 }
 

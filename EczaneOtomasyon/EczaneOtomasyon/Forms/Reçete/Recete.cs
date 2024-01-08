@@ -29,7 +29,7 @@ namespace EczaneOtomasyon.Forms.Reçete
 
         bool TcListele()
         {
-            bool oldumu=false;
+            bool oldumu = false;
             OleDbConnection con = new OleDbConnection(baglantı);
             try
             {
@@ -286,7 +286,7 @@ namespace EczaneOtomasyon.Forms.Reçete
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("HATA OLUŞTU TEKRAR DENEYİN");
             }
@@ -338,8 +338,6 @@ namespace EczaneOtomasyon.Forms.Reçete
         // giirlen değerleri veri tabanına ekler r
         void VeriEkle()
         {
-            string tc, ilac1, fiyat1, ilac2, fiyat2, ilac3, fiyat3, ilac4, fiyat4, ila5, fiyat5;
-
             using (OleDbConnection con = new OleDbConnection(baglantı))
             {
                 string sorgu = "INSERT INTO Reçeteler (tc,ilac1,fiyat1,ilac2,fiyat2,ilac3,fiyat3,ilac4,fiyat4,ilac5,fiyat5,toplamfiyat,durum )" +
@@ -351,46 +349,14 @@ namespace EczaneOtomasyon.Forms.Reçete
 
                     cmd.Parameters.AddWithValue("@i1", lbl_ilaçAdı1.Text);
                     cmd.Parameters.AddWithValue("@f1", lbl_ilaçFiyat1.Text);
-
-                    if (lbl_ilaçAdı2.Text != "-")
-                        cmd.Parameters.AddWithValue("@i2", lbl_ilaçAdı2.Text);
-                    else
-                        cmd.Parameters.AddWithValue("@i2", DBNull.Value);
-
-                    if (lbl_ilaçFiyat2.Text != "-")
-                        cmd.Parameters.AddWithValue("@f2", lbl_ilaçFiyat2.Text);
-                    else
-                        cmd.Parameters.AddWithValue("@f2", DBNull.Value);
-
-                    if (lbl_ilaçAdı3.Text != "-")
-                        cmd.Parameters.AddWithValue("@i3", lbl_ilaçAdı3.Text);
-                    else
-                        cmd.Parameters.AddWithValue("@i3", DBNull.Value);
-
-                    if (lbl_ilaçFiyat3.Text != "-")
-                        cmd.Parameters.AddWithValue("@f3", lbl_ilaçFiyat3.Text);
-                    else
-                        cmd.Parameters.AddWithValue("@f3", DBNull.Value);
-
-                    if (lbl_ilaçAdı4.Text != "-")
-                        cmd.Parameters.AddWithValue("@i4", lbl_ilaçAdı4.Text);
-                    else
-                        cmd.Parameters.AddWithValue("@i4", DBNull.Value);
-
-                    if (lbl_ilaçFiyat4.Text != "-")
-                        cmd.Parameters.AddWithValue("@f4", lbl_ilaçFiyat4.Text);
-                    else
-                        cmd.Parameters.AddWithValue("@f4", DBNull.Value);
-
-                    if (lbl_ilaçAdı5.Text != "-")
-                        cmd.Parameters.AddWithValue("@i5", lbl_ilaçAdı5.Text);
-                    else
-                        cmd.Parameters.AddWithValue("@i5", DBNull.Value);
-
-                    if (lbl_ilaçFiyat5.Text != "-")
-                        cmd.Parameters.AddWithValue("@f5", lbl_ilaçFiyat5.Text);
-                    else
-                        cmd.Parameters.AddWithValue("@f5", DBNull.Value);
+                    ParamtreEkle("@i2", lbl_ilaçAdı2, cmd);
+                    ParamtreEkle("@f2", lbl_ilaçFiyat2, cmd);
+                    ParamtreEkle("@i3", lbl_ilaçAdı3, cmd);
+                    ParamtreEkle("@f3", lbl_ilaçFiyat3, cmd);
+                    ParamtreEkle("@i4", lbl_ilaçAdı4, cmd);
+                    ParamtreEkle("@f4", lbl_ilaçFiyat4, cmd);
+                    ParamtreEkle("@i5", lbl_ilaçAdı5, cmd);
+                    ParamtreEkle("@f5", lbl_ilaçFiyat5, cmd);
 
                     cmd.Parameters.AddWithValue("@topfiyat", lbl_toplamFiyat.Text);
                     cmd.Parameters.AddWithValue("@durum", false);
@@ -405,10 +371,16 @@ namespace EczaneOtomasyon.Forms.Reçete
                     else
                     {
                         MessageBox.Show("KAYIT  EKLENEMEDİ", "KAYIT EKLEME HATASI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
                     }
                 }
             }
+        }
+        void ParamtreEkle(string parametre, Label lbl, OleDbCommand cmd)
+        {
+            if (lbl.Text != "-")
+                cmd.Parameters.AddWithValue(parametre, lbl.Text);
+            else
+                cmd.Parameters.AddWithValue(parametre, DBNull.Value);
         }
     }
 }

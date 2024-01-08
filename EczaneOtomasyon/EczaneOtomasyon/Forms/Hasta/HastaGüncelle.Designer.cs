@@ -50,6 +50,9 @@
             // 
             // btn_hastaGüncelle
             // 
+            this.btn_hastaGüncelle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_hastaGüncelle.BackColor = System.Drawing.Color.Green;
             this.btn_hastaGüncelle.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btn_hastaGüncelle.ForeColor = System.Drawing.Color.White;
@@ -63,6 +66,9 @@
             // 
             // lbl_güncelleTelHata
             // 
+            this.lbl_güncelleTelHata.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_güncelleTelHata.AutoSize = true;
             this.lbl_güncelleTelHata.ForeColor = System.Drawing.Color.Red;
             this.lbl_güncelleTelHata.Location = new System.Drawing.Point(643, 76);
@@ -74,6 +80,9 @@
             // 
             // lbl_güncelleAdresHata
             // 
+            this.lbl_güncelleAdresHata.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_güncelleAdresHata.AutoSize = true;
             this.lbl_güncelleAdresHata.ForeColor = System.Drawing.Color.Red;
             this.lbl_güncelleAdresHata.Location = new System.Drawing.Point(638, 154);
@@ -85,6 +94,9 @@
             // 
             // lbl_güncelleSoyadHata
             // 
+            this.lbl_güncelleSoyadHata.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_güncelleSoyadHata.AutoSize = true;
             this.lbl_güncelleSoyadHata.ForeColor = System.Drawing.Color.Red;
             this.lbl_güncelleSoyadHata.Location = new System.Drawing.Point(148, 200);
@@ -96,6 +108,9 @@
             // 
             // lbl_güncelleAdHata
             // 
+            this.lbl_güncelleAdHata.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_güncelleAdHata.AutoSize = true;
             this.lbl_güncelleAdHata.ForeColor = System.Drawing.Color.Red;
             this.lbl_güncelleAdHata.Location = new System.Drawing.Point(148, 122);
@@ -107,6 +122,9 @@
             // 
             // lbl_gücelleTcHata
             // 
+            this.lbl_gücelleTcHata.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_gücelleTcHata.AutoSize = true;
             this.lbl_gücelleTcHata.ForeColor = System.Drawing.Color.Red;
             this.lbl_gücelleTcHata.Location = new System.Drawing.Point(148, 44);
@@ -118,6 +136,9 @@
             // 
             // txt_soyad
             // 
+            this.txt_soyad.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_soyad.BackColor = System.Drawing.Color.White;
             this.txt_soyad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_soyad.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
@@ -133,6 +154,9 @@
             // 
             // txt_ad
             // 
+            this.txt_ad.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_ad.BackColor = System.Drawing.Color.White;
             this.txt_ad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_ad.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
@@ -148,6 +172,9 @@
             // 
             // txt_tcNo
             // 
+            this.txt_tcNo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_tcNo.BackColor = System.Drawing.Color.White;
             this.txt_tcNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_tcNo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
@@ -165,6 +192,9 @@
             // 
             // label7
             // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label7.ForeColor = System.Drawing.Color.DodgerBlue;
@@ -176,6 +206,9 @@
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label6.ForeColor = System.Drawing.Color.DodgerBlue;
@@ -187,6 +220,9 @@
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label5.ForeColor = System.Drawing.Color.DodgerBlue;
@@ -198,6 +234,9 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label3.ForeColor = System.Drawing.Color.DodgerBlue;
@@ -209,6 +248,9 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label2.ForeColor = System.Drawing.Color.DodgerBlue;
@@ -220,6 +262,9 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
@@ -231,6 +276,9 @@
             // 
             // txt_telNo
             // 
+            this.txt_telNo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_telNo.BackColor = System.Drawing.Color.White;
             this.txt_telNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_telNo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
@@ -248,6 +296,9 @@
             // 
             // txt_adres
             // 
+            this.txt_adres.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_adres.BackColor = System.Drawing.Color.White;
             this.txt_adres.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_adres.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;

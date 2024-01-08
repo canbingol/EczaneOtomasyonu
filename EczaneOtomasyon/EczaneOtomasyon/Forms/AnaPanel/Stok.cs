@@ -53,7 +53,7 @@ namespace EczaneOtomasyon.Forms.AnaPanel
         void IlacListele(string sec)
         {
             using (OleDbConnection con = new OleDbConnection(baglantı))
-            {
+            {   
                 string sorgu = $"SELECT * FROM İlaçlar Where kategori=@kategori ";
                 con.Open();
                 OleDbCommand cmd = new OleDbCommand(sorgu, con);
