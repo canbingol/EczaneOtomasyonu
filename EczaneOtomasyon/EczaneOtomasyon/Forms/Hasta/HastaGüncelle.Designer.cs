@@ -46,13 +46,12 @@
             this.txt_telNo = new System.Windows.Forms.TextBox();
             this.txt_adres = new System.Windows.Forms.TextBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cmbbox_sigorta = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btn_hastaGüncelle
             // 
-            this.btn_hastaGüncelle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_hastaGüncelle.BackColor = System.Drawing.Color.Green;
             this.btn_hastaGüncelle.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btn_hastaGüncelle.ForeColor = System.Drawing.Color.White;
@@ -66,12 +65,9 @@
             // 
             // lbl_güncelleTelHata
             // 
-            this.lbl_güncelleTelHata.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_güncelleTelHata.AutoSize = true;
             this.lbl_güncelleTelHata.ForeColor = System.Drawing.Color.Red;
-            this.lbl_güncelleTelHata.Location = new System.Drawing.Point(643, 76);
+            this.lbl_güncelleTelHata.Location = new System.Drawing.Point(643, 44);
             this.lbl_güncelleTelHata.Name = "lbl_güncelleTelHata";
             this.lbl_güncelleTelHata.Size = new System.Drawing.Size(213, 16);
             this.lbl_güncelleTelHata.TabIndex = 69;
@@ -80,12 +76,9 @@
             // 
             // lbl_güncelleAdresHata
             // 
-            this.lbl_güncelleAdresHata.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_güncelleAdresHata.AutoSize = true;
             this.lbl_güncelleAdresHata.ForeColor = System.Drawing.Color.Red;
-            this.lbl_güncelleAdresHata.Location = new System.Drawing.Point(638, 154);
+            this.lbl_güncelleAdresHata.Location = new System.Drawing.Point(643, 122);
             this.lbl_güncelleAdresHata.Name = "lbl_güncelleAdresHata";
             this.lbl_güncelleAdresHata.Size = new System.Drawing.Size(213, 16);
             this.lbl_güncelleAdresHata.TabIndex = 68;
@@ -94,9 +87,6 @@
             // 
             // lbl_güncelleSoyadHata
             // 
-            this.lbl_güncelleSoyadHata.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_güncelleSoyadHata.AutoSize = true;
             this.lbl_güncelleSoyadHata.ForeColor = System.Drawing.Color.Red;
             this.lbl_güncelleSoyadHata.Location = new System.Drawing.Point(148, 200);
@@ -108,9 +98,6 @@
             // 
             // lbl_güncelleAdHata
             // 
-            this.lbl_güncelleAdHata.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_güncelleAdHata.AutoSize = true;
             this.lbl_güncelleAdHata.ForeColor = System.Drawing.Color.Red;
             this.lbl_güncelleAdHata.Location = new System.Drawing.Point(148, 122);
@@ -122,9 +109,6 @@
             // 
             // lbl_gücelleTcHata
             // 
-            this.lbl_gücelleTcHata.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_gücelleTcHata.AutoSize = true;
             this.lbl_gücelleTcHata.ForeColor = System.Drawing.Color.Red;
             this.lbl_gücelleTcHata.Location = new System.Drawing.Point(148, 44);
@@ -136,9 +120,6 @@
             // 
             // txt_soyad
             // 
-            this.txt_soyad.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_soyad.BackColor = System.Drawing.Color.White;
             this.txt_soyad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_soyad.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
@@ -154,9 +135,6 @@
             // 
             // txt_ad
             // 
-            this.txt_ad.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_ad.BackColor = System.Drawing.Color.White;
             this.txt_ad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_ad.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
@@ -172,9 +150,6 @@
             // 
             // txt_tcNo
             // 
-            this.txt_tcNo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_tcNo.BackColor = System.Drawing.Color.White;
             this.txt_tcNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_tcNo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
@@ -192,9 +167,6 @@
             // 
             // label7
             // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label7.ForeColor = System.Drawing.Color.DodgerBlue;
@@ -206,13 +178,10 @@
             // 
             // label6
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label6.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label6.Location = new System.Drawing.Point(449, 187);
+            this.label6.Location = new System.Drawing.Point(454, 154);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(177, 22);
             this.label6.TabIndex = 56;
@@ -220,13 +189,10 @@
             // 
             // label5
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label5.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label5.Location = new System.Drawing.Point(454, 108);
+            this.label5.Location = new System.Drawing.Point(454, 68);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(129, 22);
             this.label5.TabIndex = 52;
@@ -234,9 +200,6 @@
             // 
             // label3
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label3.ForeColor = System.Drawing.Color.DodgerBlue;
@@ -248,9 +211,6 @@
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label2.ForeColor = System.Drawing.Color.DodgerBlue;
@@ -262,9 +222,6 @@
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
@@ -276,14 +233,11 @@
             // 
             // txt_telNo
             // 
-            this.txt_telNo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_telNo.BackColor = System.Drawing.Color.White;
             this.txt_telNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_telNo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_telNo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txt_telNo.Location = new System.Drawing.Point(643, 173);
+            this.txt_telNo.Location = new System.Drawing.Point(643, 141);
             this.txt_telNo.MaxLength = 11;
             this.txt_telNo.Multiline = true;
             this.txt_telNo.Name = "txt_telNo";
@@ -296,14 +250,11 @@
             // 
             // txt_adres
             // 
-            this.txt_adres.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_adres.BackColor = System.Drawing.Color.White;
             this.txt_adres.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_adres.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_adres.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txt_adres.Location = new System.Drawing.Point(646, 95);
+            this.txt_adres.Location = new System.Drawing.Point(646, 63);
             this.txt_adres.Multiline = true;
             this.txt_adres.Name = "txt_adres";
             this.txt_adres.Size = new System.Drawing.Size(258, 43);
@@ -312,12 +263,37 @@
             this.txt_adres.MouseLeave += new System.EventHandler(this.txt_adres_MouseLeave);
             this.txt_adres.MouseHover += new System.EventHandler(this.txt_adres_MouseHover);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label4.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label4.Location = new System.Drawing.Point(454, 233);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(85, 22);
+            this.label4.TabIndex = 56;
+            this.label4.Text = "SİGORTA";
+            // 
+            // cmbbox_sigorta
+            // 
+            this.cmbbox_sigorta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbbox_sigorta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cmbbox_sigorta.FormattingEnabled = true;
+            this.cmbbox_sigorta.Items.AddRange(new object[] {
+            "VAR",
+            "YOK"});
+            this.cmbbox_sigorta.Location = new System.Drawing.Point(646, 231);
+            this.cmbbox_sigorta.Name = "cmbbox_sigorta";
+            this.cmbbox_sigorta.Size = new System.Drawing.Size(258, 28);
+            this.cmbbox_sigorta.TabIndex = 71;
+            // 
             // HastaGüncelle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightGray;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(913, 361);
+            this.Controls.Add(this.cmbbox_sigorta);
             this.Controls.Add(this.btn_hastaGüncelle);
             this.Controls.Add(this.lbl_güncelleTelHata);
             this.Controls.Add(this.lbl_güncelleAdresHata);
@@ -330,6 +306,7 @@
             this.Controls.Add(this.txt_ad);
             this.Controls.Add(this.txt_tcNo);
             this.Controls.Add(this.label7);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
@@ -341,6 +318,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "HastaGüncelle";
+            this.Load += new System.EventHandler(this.HastaGüncelle_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -366,6 +344,8 @@
         public System.Windows.Forms.TextBox txt_telNo;
         public System.Windows.Forms.TextBox txt_adres;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cmbbox_sigorta;
         // public System.Windows.Forms.RichTextBox txt_adres;
     }
 }

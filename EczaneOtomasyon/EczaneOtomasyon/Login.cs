@@ -58,29 +58,22 @@ namespace EczaneOtomasyon
                     using (OleDbDataReader reader = cmd.ExecuteReader())
                     {
                         if (reader.Read())
-                        {
                             aktifKullanıcı = reader["kullanıcıAdı"].ToString();
-
-                        }
 
                         if (reader.HasRows)
                         {
-
                             AnaEkran anaEkran = new AnaEkran();
                             anaEkran.Show();
                             this.Hide();
                         }
                         else
-                        {
-
                             MessageBox.Show("Kullanıcı adı veya şifre hatalı!");
-
-                        }
                     }
                 }
             }
 
         }
+        // parametre ile girilen kullanı adının olup olmadığını kontrol eder
         public bool KullaniciAdiMevcutMu(string kullaniciAdi)
         {
             using (OleDbConnection con = new OleDbConnection(connection))
@@ -91,8 +84,6 @@ namespace EczaneOtomasyon
                 int count = (int)cmd.ExecuteScalar();
                 return count > 0;
             }
-
-
         }
         public void HataMesajı(string str, Label lbl)
         {
@@ -104,8 +95,6 @@ namespace EczaneOtomasyon
 
         private void btn_yeniParolaKaydet_Click(object sender, EventArgs e)
         {
-
-
             string parola1 = txt_YeniParola.Text;
             string parola2 = txt_YeniParola2.Text;
             String kullanıcı = txt_parolaKullanıcıAdı.Text;
@@ -140,7 +129,7 @@ namespace EczaneOtomasyon
 
                                     con.Open();
                                     int etkilenenSatırSayısı = cmd.ExecuteNonQuery();
-                                    //con.Close();
+                                    con.Close();
 
                                     if (etkilenenSatırSayısı > 0)
                                     {
@@ -158,13 +147,9 @@ namespace EczaneOtomasyon
                         }
                     }
                 }
-                //  Temizle(txt_YeniParola2, txt_YeniParola, txt_parolaKullanıcıAdı);
             }
             else
-            {
                 Console.WriteLine("Kullanıcı bulunamadı. Geçerli bir kullanıcı adı giriniz.");
-            }
-
         }
         private void btn_yeniKullanıcı_Click(object sender, EventArgs e)
         {
@@ -222,7 +207,7 @@ namespace EczaneOtomasyon
             else
             {
                 if (string.IsNullOrEmpty(parola2) && string.IsNullOrEmpty(parola1) && string.IsNullOrEmpty(yetki))
-                    MessageBox.Show("  şifre alanları boş bırakılamaz");
+                    MessageBox.Show("lütfen bütün alanları doldurun");
                 else
                 {
                     if (!(parola1 == parola2))
@@ -276,6 +261,7 @@ namespace EczaneOtomasyon
 
         private void Login_Load(object sender, EventArgs e)
         {
+            // form üzerinden paswordChar kullanılamadığı için burada yapıldı
             txt_kayıtParola2.PasswordChar = Encoding.GetEncoding("Windows-1252").GetString(new byte[] { 149, })[0];
             txt_kayıtParola.PasswordChar = Encoding.GetEncoding("Windows-1252").GetString(new byte[] { 149, })[0];
             txt_Parola.PasswordChar = Encoding.GetEncoding("Windows-1252").GetString(new byte[] { 149, })[0];

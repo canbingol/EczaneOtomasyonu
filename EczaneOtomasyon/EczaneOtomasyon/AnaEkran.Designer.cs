@@ -48,17 +48,17 @@
             this.btn_maksimize = new System.Windows.Forms.Label();
             this.btn_uygulamaKapat = new System.Windows.Forms.Label();
             this.pnl_altForm = new System.Windows.Forms.Panel();
+            this.pnl_işlemler = new System.Windows.Forms.Panel();
             this.pnl_x = new System.Windows.Forms.Panel();
             this.btn_EkranKapat = new System.Windows.Forms.PictureBox();
-            this.pnl_işlemler = new System.Windows.Forms.Panel();
             this.pnl_yanMenü.SuspendLayout();
             this.pnl_ilaç.SuspendLayout();
             this.pnl_hasta.SuspendLayout();
             this.pnl_logo.SuspendLayout();
             this.pnl_altForm.SuspendLayout();
+            this.pnl_işlemler.SuspendLayout();
             this.pnl_x.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_EkranKapat)).BeginInit();
-            this.pnl_işlemler.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl_yanMenü
@@ -76,7 +76,7 @@
             this.pnl_yanMenü.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnl_yanMenü.Location = new System.Drawing.Point(0, 0);
             this.pnl_yanMenü.Name = "pnl_yanMenü";
-            this.pnl_yanMenü.Size = new System.Drawing.Size(223, 746);
+            this.pnl_yanMenü.Size = new System.Drawing.Size(223, 800);
             this.pnl_yanMenü.TabIndex = 1;
             // 
             // btn_satısİslemleri
@@ -350,14 +350,25 @@
             this.pnl_altForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_altForm.Location = new System.Drawing.Point(223, 0);
             this.pnl_altForm.Name = "pnl_altForm";
-            this.pnl_altForm.Size = new System.Drawing.Size(751, 746);
+            this.pnl_altForm.Size = new System.Drawing.Size(777, 800);
             this.pnl_altForm.TabIndex = 3;
+            // 
+            // pnl_işlemler
+            // 
+            this.pnl_işlemler.BackColor = System.Drawing.SystemColors.Control;
+            this.pnl_işlemler.Controls.Add(this.pnl_x);
+            this.pnl_işlemler.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnl_işlemler.Location = new System.Drawing.Point(0, 467);
+            this.pnl_işlemler.Name = "pnl_işlemler";
+            this.pnl_işlemler.Size = new System.Drawing.Size(777, 333);
+            this.pnl_işlemler.TabIndex = 0;
+            this.pnl_işlemler.Visible = false;
             // 
             // pnl_x
             // 
             this.pnl_x.BackColor = System.Drawing.Color.Transparent;
             this.pnl_x.Controls.Add(this.btn_EkranKapat);
-            this.pnl_x.Location = new System.Drawing.Point(713, 3);
+            this.pnl_x.Location = new System.Drawing.Point(739, 0);
             this.pnl_x.Name = "pnl_x";
             this.pnl_x.Size = new System.Drawing.Size(35, 35);
             this.pnl_x.TabIndex = 0;
@@ -377,23 +388,12 @@
             this.btn_EkranKapat.TabStop = false;
             this.btn_EkranKapat.Click += new System.EventHandler(this.btn_EkranKapat_Click);
             // 
-            // pnl_işlemler
-            // 
-            this.pnl_işlemler.BackColor = System.Drawing.SystemColors.Control;
-            this.pnl_işlemler.Controls.Add(this.pnl_x);
-            this.pnl_işlemler.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnl_işlemler.Location = new System.Drawing.Point(0, 413);
-            this.pnl_işlemler.Name = "pnl_işlemler";
-            this.pnl_işlemler.Size = new System.Drawing.Size(751, 333);
-            this.pnl_işlemler.TabIndex = 0;
-            this.pnl_işlemler.Visible = false;
-            // 
             // AnaEkran
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(974, 746);
+            this.ClientSize = new System.Drawing.Size(1000, 800);
             this.Controls.Add(this.pnl_altForm);
             this.Controls.Add(this.pnl_yanMenü);
             this.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -408,9 +408,9 @@
             this.pnl_logo.ResumeLayout(false);
             this.pnl_logo.PerformLayout();
             this.pnl_altForm.ResumeLayout(false);
+            this.pnl_işlemler.ResumeLayout(false);
             this.pnl_x.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btn_EkranKapat)).EndInit();
-            this.pnl_işlemler.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

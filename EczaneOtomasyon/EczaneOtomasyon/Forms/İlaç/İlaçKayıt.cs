@@ -17,7 +17,6 @@ namespace EczaneOtomasyon.Forms.İlaç
         public İlaçKayıt()
         {
             InitializeComponent();
-
         }
 
         OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=EczaneVeri.accdb");
@@ -36,25 +35,20 @@ namespace EczaneOtomasyon.Forms.İlaç
 
                 if (string.IsNullOrEmpty(ad) || string.IsNullOrEmpty(adet) || string.IsNullOrEmpty(kategori) || sonKullanma == null || string.IsNullOrEmpty(barkod))
                 {
-
                     MessageBox.Show("Lütfen bütün satırları doldurun", "Kayıt Hatası", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     HataMesajlariGoster(txt_barkod, txt_ilaçAd, txt_kategori, txt_barkod, lbl_hataİlaçAd, lbl_hataİlaçKategori, lbl_hataİlaçBarkod, lbl_hataİlaçFiyat);
-
                 }
                 else if (txt_barkod.Text.Length != 13)
                 {
                     MessageBox.Show("Ltfen borkodu 13 haneli olarak giriniz");
                     HataMesajlariGoster(txt_barkod, txt_ilaçAd, txt_kategori, txt_barkod, lbl_hataİlaçAd, lbl_hataİlaçKategori, lbl_hataİlaçBarkod, lbl_hataİlaçFiyat);
-
                 }
                 else if (İlaçvarmı(txt_barkod.Text) != 0)
                 {
                     MessageBox.Show("Bu ilaç zaten Kayıtlı", " Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     //   metod.HataMesajları(txt_tcNo, txt_ad, txt_soyad, txt_telNo, txt_adres, lbl_kayıtTcHata, lbl_kayıtAdHata, lbl_hayıtSoyadHata, lbl_kayıtTelHata, lbl_kayıtAdresHata);
                     AlanlariTemizle(txt_barkod, txt_ilaçAd, txt_adet, txt_barkod);
-
                 }
-
                 else
                 {
                     con.Open();
@@ -73,25 +67,19 @@ namespace EczaneOtomasyon.Forms.İlaç
                     AlanlariTemizle(txt_barkod, txt_ilaçAd, txt_adet, txt_barkod);
 
                     if (sayac > 0)
-                    {
                         MessageBox.Show("Kayıt başarıyla eklendi", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
                     else
                     {
                         MessageBox.Show("Kayıt eklenemedi", "Başarısız", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         AlanlariTemizle(txt_barkod, txt_ilaçAd, txt_adet, txt_barkod);
-
                     }
-
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 AlanlariTemizle(txt_barkod, txt_ilaçAd, txt_adet, txt_barkod);
-
             }
-
         }
 
         #region Iİlaçİşlemleri metodları
@@ -106,7 +94,6 @@ namespace EczaneOtomasyon.Forms.İlaç
                 lbl_hataİlaçAd.Visible = true;
             else
                 lbl_hataİlaçAd.Visible = false;
-
 
             if (string.IsNullOrEmpty(txtkategori.Text))
                 lbl_hataİlaçKategori.Visible = true;
@@ -138,26 +125,7 @@ namespace EczaneOtomasyon.Forms.İlaç
         }
         #endregion
         #region TextBox metodları
-        private void txt_fiyat_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
-            {
-                e.Handled = true;
-            }
-        }
 
-        private void txt_barkod_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
-            {
-                e.Handled = true;
-            }
-        }
-        private void txt_kategori_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = true; // Kullanıcının klavye girişini engeller
-
-        }
         // textBoxların değişimini kontrol eden metod
 
         new void MouseHover(TextBox txt)
@@ -172,11 +140,6 @@ namespace EczaneOtomasyon.Forms.İlaç
             txt.BackColor = Color.White;
             txt.ForeColor = Color.Black;
         }
-        private void btn_KayıtKapat_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-        }
-
         private void txt_ilaçAd_MouseHover(object sender, EventArgs e)
         {
             MouseHover(txt_ilaçAd);
@@ -185,17 +148,6 @@ namespace EczaneOtomasyon.Forms.İlaç
         private void txt_ilaçAd_MouseLeave(object sender, EventArgs e)
         {
             MouseLeave(txt_ilaçAd);
-        }
-
-
-        private void txt_fiyat_MouseHover(object sender, EventArgs e)
-        {
-            MouseHover(txt_fiyat);
-        }
-
-        private void txt_fiyat_MouseLeave(object sender, EventArgs e)
-        {
-            MouseLeave(txt_fiyat);
         }
 
         private void txt_barkod_MouseHover(object sender, EventArgs e)
@@ -208,13 +160,17 @@ namespace EczaneOtomasyon.Forms.İlaç
             MouseLeave(txt_barkod);
         }
 
+        private void txt_fiyat_MouseHover(object sender, EventArgs e)
+        {
+            MouseHover(txt_fiyat);
+        }
 
+        private void txt_fiyat_MouseLeave(object sender, EventArgs e)
+        {
+            MouseLeave(txt_fiyat);
+        }
         #endregion
 
-        private void İlaçKayıt_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
 

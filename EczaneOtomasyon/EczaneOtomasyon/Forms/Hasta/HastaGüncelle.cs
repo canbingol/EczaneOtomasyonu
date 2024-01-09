@@ -17,16 +17,13 @@ namespace EczaneOtomasyon.Forms.Hasta
         public HastaGüncelle()
         {
             InitializeComponent();
-
         }
-
 
         OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=EczaneVeri.accdb");
 
         // hasta güncelleme işlemleri
         private void btn_hastaGüncelle_Click(object sender, EventArgs e)
         {
-
             try
             {
                 string tcNo = txt_tcNo.Text;
@@ -34,8 +31,8 @@ namespace EczaneOtomasyon.Forms.Hasta
                 string soyad = txt_soyad.Text;
                 string telNo = txt_telNo.Text;
                 string adres = txt_adres.Text;
-
-                if (string.IsNullOrEmpty(tcNo) || string.IsNullOrEmpty(ad) || string.IsNullOrEmpty(soyad) || string.IsNullOrEmpty(telNo) || string.IsNullOrEmpty(adres))
+                string sigorta =cmbbox_sigorta.Text;
+                if (string.IsNullOrEmpty(tcNo) || string.IsNullOrEmpty(ad) || string.IsNullOrEmpty(soyad) || string.IsNullOrEmpty(telNo) || string.IsNullOrEmpty(adres)|| string.IsNullOrEmpty(sigorta))
                 {
                     MessageBox.Show("Lütfen bütün satırları doldurun", "Kayıt Hatası", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     HataMesajlariGoster(txt_tcNo, txt_ad, txt_soyad, txt_telNo, txt_adres, lbl_güncelleAdHata, lbl_gücelleTcHata, lbl_güncelleSoyadHata, lbl_güncelleTelHata, lbl_güncelleAdresHata);
@@ -51,7 +48,6 @@ namespace EczaneOtomasyon.Forms.Hasta
                     //   metod.HataMesajları(txt_tcNo, txt_ad, txt_soyad, txt_telNo, txt_adres, lbl_kayıtTcHata, lbl_kayıtAdHata, lbl_hayıtSoyadHata, lbl_kayıtTelHata, lbl_kayıtAdresHata);
                     AlanlariTemizle(txt_tcNo, txt_ad, txt_soyad, txt_telNo, txt_adres);
                 }
-
                 else
                 {
                     con.Open();
@@ -61,6 +57,7 @@ namespace EczaneOtomasyon.Forms.Hasta
                     hastaEkle.Parameters.AddWithValue("@p3", adres);
                     hastaEkle.Parameters.AddWithValue("@p4", telNo);
                     hastaEkle.Parameters.AddWithValue("@p5", tcNo);
+                    hastaEkle.Parameters.AddWithValue("@sigorta", sigorta);
 
                     int sayac = hastaEkle.ExecuteNonQuery();
                     con.Close();
@@ -71,13 +68,13 @@ namespace EczaneOtomasyon.Forms.Hasta
                     if (sayac > 0)
                     {
                         MessageBox.Show("Kayıt başarıyla güncellendi", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        anaSayfa.btn_listele.PerformClick();
                     }
                     else
                     {
                         MessageBox.Show("Kayıt güncellenemedi", "Başarısız", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         AlanlariTemizle(txt_tcNo, txt_ad, txt_soyad, txt_telNo, txt_adres);
                     }
-
                 }
             }
             catch (Exception ex)
@@ -86,11 +83,7 @@ namespace EczaneOtomasyon.Forms.Hasta
                 AlanlariTemizle(txt_tcNo, txt_ad, txt_soyad, txt_telNo, txt_adres);
             }
         }
-        private void btn_EkranKapat_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-        }
-
+       
         #region  textBox kontrolleri
 
         private void txt_telNo_KeyPress(object sender, KeyPressEventArgs e)
@@ -103,7 +96,6 @@ namespace EczaneOtomasyon.Forms.Hasta
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
                 e.Handled = true;
         }
-
 
         new void MouseHover(TextBox txt)
         {
@@ -218,6 +210,10 @@ namespace EczaneOtomasyon.Forms.Hasta
 
         #endregion
 
+        private void HastaGüncelle_Load(object sender, EventArgs e)
+        {
+            cmbbox_sigorta.Text = "YOK";
+        }
     }
 }
 

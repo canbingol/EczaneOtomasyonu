@@ -127,7 +127,6 @@ namespace EczaneOtomasyon.Forms.İlaç
                 }
                 catch (OleDbException ex)
                 {
-
                     MessageBox.Show("Veritabanı hatası: " + ex.Message);
                 }
                 finally

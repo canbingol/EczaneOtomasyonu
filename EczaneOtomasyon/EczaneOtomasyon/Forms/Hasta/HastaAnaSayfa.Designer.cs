@@ -31,13 +31,13 @@
             this.panel_hastaAnaSayfa = new System.Windows.Forms.Panel();
             this.data_hasta = new System.Windows.Forms.DataGridView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.listeleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_listele = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_sil = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_hastaAra = new System.Windows.Forms.ToolStripMenuItem();
             this.pnl_hastaAra = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txt_hastaAra = new System.Windows.Forms.TextBox();
             this.btn_panelkapa = new System.Windows.Forms.Button();
+            this.txt_hastaAra = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.data_hasta)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnl_hastaAra.SuspendLayout();
@@ -72,7 +72,7 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listeleToolStripMenuItem,
+            this.btn_listele,
             this.btn_sil,
             this.btn_hastaAra});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -81,12 +81,12 @@
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // listeleToolStripMenuItem
+            // btn_listele
             // 
-            this.listeleToolStripMenuItem.Name = "listeleToolStripMenuItem";
-            this.listeleToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
-            this.listeleToolStripMenuItem.Text = "Listele";
-            this.listeleToolStripMenuItem.Click += new System.EventHandler(this.listeleToolStripMenuItem_Click);
+            this.btn_listele.Name = "btn_listele";
+            this.btn_listele.Size = new System.Drawing.Size(65, 24);
+            this.btn_listele.Text = "Listele";
+            this.btn_listele.Click += new System.EventHandler(this.listeleToolStripMenuItem_Click);
             // 
             // btn_sil
             // 
@@ -114,27 +114,6 @@
             this.pnl_hastaAra.TabIndex = 10;
             this.pnl_hastaAra.Visible = false;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label1.Location = new System.Drawing.Point(31, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "HASTA ARA";
-            // 
-            // txt_hastaAra
-            // 
-            this.txt_hastaAra.Location = new System.Drawing.Point(12, 50);
-            this.txt_hastaAra.MaxLength = 11;
-            this.txt_hastaAra.Multiline = true;
-            this.txt_hastaAra.Name = "txt_hastaAra";
-            this.txt_hastaAra.Size = new System.Drawing.Size(141, 33);
-            this.txt_hastaAra.TabIndex = 1;
-            this.txt_hastaAra.TextChanged += new System.EventHandler(this.txt_hastaAra_TextChanged);
-            // 
             // btn_panelkapa
             // 
             this.btn_panelkapa.BackColor = System.Drawing.Color.Transparent;
@@ -147,6 +126,27 @@
             this.btn_panelkapa.Text = "X";
             this.btn_panelkapa.UseVisualStyleBackColor = false;
             this.btn_panelkapa.Click += new System.EventHandler(this.btn_panelkapa_Click);
+            // 
+            // txt_hastaAra
+            // 
+            this.txt_hastaAra.Location = new System.Drawing.Point(12, 50);
+            this.txt_hastaAra.MaxLength = 11;
+            this.txt_hastaAra.Multiline = true;
+            this.txt_hastaAra.Name = "txt_hastaAra";
+            this.txt_hastaAra.Size = new System.Drawing.Size(141, 33);
+            this.txt_hastaAra.TabIndex = 1;
+            this.txt_hastaAra.TextChanged += new System.EventHandler(this.txt_hastaAra_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label1.Location = new System.Drawing.Point(31, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(104, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "HASTA ARA";
             // 
             // HastaAnaSayfa
             // 
@@ -176,7 +176,7 @@
         public System.Windows.Forms.Panel panel_hastaAnaSayfa;
         private System.Windows.Forms.DataGridView data_hasta;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem listeleToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem btn_listele;
         private System.Windows.Forms.ToolStripMenuItem btn_sil;
         private System.Windows.Forms.ToolStripMenuItem btn_hastaAra;
         private System.Windows.Forms.Panel pnl_hastaAra;

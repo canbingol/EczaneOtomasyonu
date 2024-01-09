@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using System.Diagnostics;
 
 namespace EczaneOtomasyon.Forms.Hasta
 {
@@ -18,21 +19,22 @@ namespace EczaneOtomasyon.Forms.Hasta
         public void Listele()
         {
             OleDbConnection con = new OleDbConnection(baglanti);
-            OleDbCommand cmd = new OleDbCommand("SELECT Adı,Soyadı,Tc,Adres,Telno,sigorta FROM Hastalar", con);
+            con.Open();
+            OleDbCommand cmd = new OleDbCommand("SELECT Adı,Soyadı,Tc,Adres,Telno,sigorta FROM Hastalar ORDER BY Tc", con);
             OleDbDataAdapter da = new OleDbDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
-            data_hasta.DataSource = dt;
+            data_hasta.DataSource = dt; 
+            data_hasta.Columns["Tc"].HeaderText = "TC NO";
             data_hasta.Columns["Adı"].HeaderText = "ADI";
             data_hasta.Columns["Soyadı"].HeaderText = "SOYADI";
-            data_hasta.Columns["Tc"].HeaderText = "TC NO";
             data_hasta.Columns["Adres"].HeaderText = "ADRESİ";
             data_hasta.Columns["Telno"].HeaderText = "TELELFON NO";
             data_hasta.Columns["sigorta"].HeaderText = "SİGORTA DURUMU";
+            con.Close();
         }
         public HastaAnaSayfa()
         {
-
             InitializeComponent();
         }
 
@@ -63,7 +65,6 @@ namespace EczaneOtomasyon.Forms.Hasta
                 }
                 catch (OleDbException ex)
                 {
-
                     MessageBox.Show("Veritabanı hatası: " + ex.Message);
                 }
                 finally
@@ -77,43 +78,48 @@ namespace EczaneOtomasyon.Forms.Hasta
             }
         }
 
-        private void txt_hastaAra_Click(object sender, EventArgs e)
-        {
-            txt_hastaAra.Text = string.Empty;
-        }
-
         private void listeleToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            pnl_hastaAra.Visible = false;
             Listele();
-
         }
 
         private void btn_sil_Click(object sender, EventArgs e)
         {
-            if (data_hasta.SelectedRows.Count > 0)
+            try
             {
-                DialogResult sonuc;
-                sonuc = MessageBox.Show("KAYDI SİLMEK İSTİYORMUSUNUZ", "KAYIT SİLME", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                if (sonuc == DialogResult.OK)
+                if (data_hasta.SelectedRows.Count > 0)
                 {
-                    string barkod = data_hasta.SelectedRows[0].Cells["Tc"].Value.ToString();
-                    using (OleDbConnection con = new OleDbConnection(baglanti))
+                    DialogResult sonuc;
+                    sonuc = MessageBox.Show("KAYDI SİLMEK İSTİYORMUSUNUZ", "KAYIT SİLME", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (sonuc == DialogResult.OK)
                     {
-                        con.Open();
-                        string sorgu = "DELETE FROM Hastalar WHERE Tc=@tc";
-                        using (OleDbCommand sil = new OleDbCommand(sorgu, con))
+                        string barkod = data_hasta.SelectedRows[0].Cells["Tc"].Value.ToString();
+                        using (OleDbConnection con = new OleDbConnection(baglanti))
                         {
-                            sil.Parameters.AddWithValue("@tc", barkod);
-                            int sayac = sil.ExecuteNonQuery();
-                            if (sayac > 0)
+                            con.Open();
+                            string sorgu = "DELETE FROM Hastalar WHERE Tc=@tc";
+                            using (OleDbCommand sil = new OleDbCommand(sorgu, con))
                             {
-                                MessageBox.Show("KAYI BAŞARLI BİR ŞEKİLDE SİLİNDİ");
-                                Listele();
+                                sil.Parameters.AddWithValue("@tc", barkod);
+                                int sayac = sil.ExecuteNonQuery();
+                                if (sayac > 0)
+                                {
+                                    MessageBox.Show("KAYI BAŞARLI BİR ŞEKİLDE SİLİNDİ");
+                                    Listele();
+                                }
                             }
                         }
                     }
                 }
-
+                else
+                {
+                    MessageBox.Show("SİLMEK İÇİN BİR KAYIT SEÇİNİZ");
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("SİLME İŞLEMİ SIRASINDA BİR HATA OLUŞTU");
             }
         }
 

@@ -18,7 +18,7 @@ namespace EczaneOtomasyon
 {
     public partial class AnaEkran : Form
     {
-        string baglanti = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=EczaneVeri.accdb";
+       // string baglanti = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=EczaneVeri.accdb";
 
         public AnaEkran()
         {
@@ -26,38 +26,7 @@ namespace EczaneOtomasyon
             panelAyarları();
         }
         string kullanıcı = Login.aktifKullanıcı;
-        void YetkiKontrol()
-        {
-            string yetki;
-            using (OleDbConnection con = new OleDbConnection(baglanti))
-            {
-
-                con.Open();
-                string sorgu = "SELECT yetki FROM Kullanıcılar WHERE kullanıcıadı=@kullanıcı";
-                using (OleDbCommand cmd = new OleDbCommand(sorgu, con))
-                {
-                    cmd.Parameters.AddWithValue("@kullanıcı", kullanıcı);
-                    using (OleDbDataReader yetkiOku = cmd.ExecuteReader())
-                    {
-                        if (yetkiOku.Read())
-                        {
-                            yetki = yetkiOku["yetki"].ToString();
-                            if (yetki == "calisan")
-                            {
-                                btn_hastaGüncelle.Enabled = false;
-                                btn_hastaGüncelle.ForeColor = Color.Red;
-                                btn_ilaçGüncelle.Enabled = false;
-                                btn_ilaçGüncelle.ForeColor = Color.Red;
-                                btn_ilaçKaydet.Enabled = false;
-                                btn_ilaçKaydet.ForeColor = Color.Red;
-                                MessageBox.Show("oldu");
-                            }
-                        }
-
-                    }
-                }
-            }
-        }
+       
 
         #region Tıklama işlemleri 
         private void btn_hastaİşlemleri_Click(object sender, EventArgs e)
@@ -253,7 +222,7 @@ namespace EczaneOtomasyon
 
         private void AnaEkran_Load(object sender, EventArgs e)
         {
-            YetkiKontrol();
+          
             AltMenüSakla();
             AltFormGöster(new AnaPanel());
         }

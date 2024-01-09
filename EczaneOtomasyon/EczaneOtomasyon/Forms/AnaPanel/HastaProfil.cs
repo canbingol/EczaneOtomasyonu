@@ -21,8 +21,8 @@ namespace EczaneOtomasyon.Forms.AnaPanel
         }
         private string baglanti = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=EczaneVeri.accdb";
 
-        private string  sigorta;
-
+        private string sigorta;
+        // ilgili textboax a numerik değer dışında giriş engelleniliyor
         private void txt_girilenTc_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
@@ -75,31 +75,21 @@ namespace EczaneOtomasyon.Forms.AnaPanel
                                         lbl_hastaTelno.Text = hastaOku["Telno"].ToString();
                                         sigorta = hastaOku["sigorta"].ToString();
                                         if (sigorta == "False")
-                                        {
                                             lbl_hastaSigorta.Text = "YOK";
-                                        }
                                         else
-                                        {
                                             lbl_hastaSigorta.Text = "VAR";
-
-                                        }
                                     }
                                     else
-                                    {
                                         MessageBox.Show("GİRİLEN KİMLİK NUMRASINA GÖRE KAYIT BULUNAMADI");
-
-                                    }
                                 }
                             }
                         }
                     }
                 }
-
             }
             catch (Exception)
             {
                 MessageBox.Show("HATA OLUŞTU LÜTFEN TAKRAR DENEYİN");
-
             }
 
         }
@@ -109,7 +99,7 @@ namespace EczaneOtomasyon.Forms.AnaPanel
             {
                 string sorgu = "SELECT * FROM Reçeteler WHERE Tc=@tc";
                 OleDbCommand receteBul = new OleDbCommand(sorgu, con);
-                    receteBul.Parameters.AddWithValue("@tc",tc);
+                receteBul.Parameters.AddWithValue("@tc", tc);
                 OleDbDataAdapter da = new OleDbDataAdapter(receteBul);
                 DataTable tablo = new DataTable();
                 da.Fill(tablo);

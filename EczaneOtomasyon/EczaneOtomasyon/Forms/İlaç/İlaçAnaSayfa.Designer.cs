@@ -40,13 +40,13 @@
             this.btn_diğer = new System.Windows.Forms.ToolStripMenuItem();
             this.txt_listele = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_sil = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_ilacAra = new System.Windows.Forms.ToolStripMenuItem();
             this.antideprToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.data_ilaçlar = new System.Windows.Forms.DataGridView();
             this.pnl_ilacArama = new System.Windows.Forms.Panel();
             this.btn_panelkapa = new System.Windows.Forms.Button();
             this.txt_ilacAra = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btn_ilacAra = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data_ilaçlar)).BeginInit();
             this.pnl_ilacArama.SuspendLayout();
@@ -62,7 +62,7 @@
             this.btn_ilacAra});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(987, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(987, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -84,56 +84,56 @@
             // btn_ağrıKesici
             // 
             this.btn_ağrıKesici.Name = "btn_ağrıKesici";
-            this.btn_ağrıKesici.Size = new System.Drawing.Size(224, 26);
+            this.btn_ağrıKesici.Size = new System.Drawing.Size(196, 26);
             this.btn_ağrıKesici.Text = "Ağrı Kesiciler";
             this.btn_ağrıKesici.Click += new System.EventHandler(this.btn_ağrıKesici_Click);
             // 
             // btn_kalp
             // 
             this.btn_kalp.Name = "btn_kalp";
-            this.btn_kalp.Size = new System.Drawing.Size(224, 26);
+            this.btn_kalp.Size = new System.Drawing.Size(196, 26);
             this.btn_kalp.Text = "Kalp İlaçları";
             this.btn_kalp.Click += new System.EventHandler(this.btn_kalp_Click);
             // 
             // btn_alerji
             // 
             this.btn_alerji.Name = "btn_alerji";
-            this.btn_alerji.Size = new System.Drawing.Size(224, 26);
+            this.btn_alerji.Size = new System.Drawing.Size(196, 26);
             this.btn_alerji.Text = "Alerji İlaçları";
             this.btn_alerji.Click += new System.EventHandler(this.btn_alerji_Click);
             // 
             // btn_antibiyotik
             // 
             this.btn_antibiyotik.Name = "btn_antibiyotik";
-            this.btn_antibiyotik.Size = new System.Drawing.Size(224, 26);
+            this.btn_antibiyotik.Size = new System.Drawing.Size(196, 26);
             this.btn_antibiyotik.Text = "Antibiyotikler";
             this.btn_antibiyotik.Click += new System.EventHandler(this.btn_antibiyotik_Click);
             // 
             // btn_diyabetİlaçları
             // 
             this.btn_diyabetİlaçları.Name = "btn_diyabetİlaçları";
-            this.btn_diyabetİlaçları.Size = new System.Drawing.Size(224, 26);
+            this.btn_diyabetİlaçları.Size = new System.Drawing.Size(196, 26);
             this.btn_diyabetİlaçları.Text = "Diyabet İlaçları";
             this.btn_diyabetİlaçları.Click += new System.EventHandler(this.btn_diyabetİlaçları_Click);
             // 
             // btn_tansiyon
             // 
             this.btn_tansiyon.Name = "btn_tansiyon";
-            this.btn_tansiyon.Size = new System.Drawing.Size(224, 26);
+            this.btn_tansiyon.Size = new System.Drawing.Size(196, 26);
             this.btn_tansiyon.Text = "Tansiyon İlaçları";
             this.btn_tansiyon.Click += new System.EventHandler(this.btn_tansiyon_Click);
             // 
             // btn_depresan
             // 
             this.btn_depresan.Name = "btn_depresan";
-            this.btn_depresan.Size = new System.Drawing.Size(224, 26);
+            this.btn_depresan.Size = new System.Drawing.Size(196, 26);
             this.btn_depresan.Text = "Antidepresan";
             this.btn_depresan.Click += new System.EventHandler(this.btn_depresan_Click);
             // 
             // btn_diğer
             // 
             this.btn_diğer.Name = "btn_diğer";
-            this.btn_diğer.Size = new System.Drawing.Size(224, 26);
+            this.btn_diğer.Size = new System.Drawing.Size(196, 26);
             this.btn_diğer.Text = "Diğer İlaçlar";
             this.btn_diğer.Click += new System.EventHandler(this.btn_diğer_Click);
             // 
@@ -150,6 +150,13 @@
             this.btn_sil.Size = new System.Drawing.Size(39, 24);
             this.btn_sil.Text = "Sil";
             this.btn_sil.Click += new System.EventHandler(this.btn_sil_Click);
+            // 
+            // btn_ilacAra
+            // 
+            this.btn_ilacAra.Name = "btn_ilacAra";
+            this.btn_ilacAra.Size = new System.Drawing.Size(73, 24);
+            this.btn_ilacAra.Text = "İlaç Ara";
+            this.btn_ilacAra.Click += new System.EventHandler(this.btn_ilacAra_Click);
             // 
             // antideprToolStripMenuItem
             // 
@@ -183,9 +190,9 @@
             this.pnl_ilacArama.Controls.Add(this.txt_ilacAra);
             this.pnl_ilacArama.Controls.Add(this.label1);
             this.pnl_ilacArama.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnl_ilacArama.Location = new System.Drawing.Point(787, 30);
+            this.pnl_ilacArama.Location = new System.Drawing.Point(787, 28);
             this.pnl_ilacArama.Name = "pnl_ilacArama";
-            this.pnl_ilacArama.Size = new System.Drawing.Size(200, 739);
+            this.pnl_ilacArama.Size = new System.Drawing.Size(200, 741);
             this.pnl_ilacArama.TabIndex = 2;
             this.pnl_ilacArama.Visible = false;
             // 
@@ -222,13 +229,6 @@
             this.label1.Size = new System.Drawing.Size(85, 20);
             this.label1.TabIndex = 13;
             this.label1.Text = "İLAÇ ARA";
-            // 
-            // btn_ilacAra
-            // 
-            this.btn_ilacAra.Name = "btn_ilacAra";
-            this.btn_ilacAra.Size = new System.Drawing.Size(73, 24);
-            this.btn_ilacAra.Text = "İlaç Ara";
-            this.btn_ilacAra.Click += new System.EventHandler(this.btn_ilacAra_Click);
             // 
             // İlaçAnaSayfa
             // 

@@ -359,7 +359,7 @@
             this.lbl_hastaTc.BackColor = System.Drawing.Color.Transparent;
             this.lbl_hastaTc.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lbl_hastaTc.ForeColor = System.Drawing.Color.Black;
-            this.lbl_hastaTc.Location = new System.Drawing.Point(166, 13);
+            this.lbl_hastaTc.Location = new System.Drawing.Point(203, 13);
             this.lbl_hastaTc.Name = "lbl_hastaTc";
             this.lbl_hastaTc.Size = new System.Drawing.Size(102, 23);
             this.lbl_hastaTc.TabIndex = 15;

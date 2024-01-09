@@ -19,9 +19,7 @@ namespace EczaneOtomasyon.Forms.Hasta
         public HastaKayıt()
         {
             InitializeComponent();
-
         }
-
 
         OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=EczaneVeri.accdb");
         // hasta kaydet buton işlemleri
@@ -29,14 +27,14 @@ namespace EczaneOtomasyon.Forms.Hasta
         {
             try
             {
-
                 string tcNo = txt_tcNo.Text;
                 string ad = txt_ad.Text;
                 string soyad = txt_soyad.Text;
                 string telNo = txt_telNo.Text;
                 string adres = txt_adres.Text;
+                string sigorta= cmbbox_sigorta.Text;
 
-                if (string.IsNullOrEmpty(tcNo) || string.IsNullOrEmpty(ad) || string.IsNullOrEmpty(soyad) || string.IsNullOrEmpty(telNo) || string.IsNullOrEmpty(adres))
+                if (string.IsNullOrEmpty(tcNo) || string.IsNullOrEmpty(ad) || string.IsNullOrEmpty(soyad) || string.IsNullOrEmpty(telNo) || string.IsNullOrEmpty(adres)|| string.IsNullOrEmpty(sigorta))
                 {
 
                     MessageBox.Show("Lütfen bütün satırları doldurun", "Kayıt Hatası", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -59,12 +57,16 @@ namespace EczaneOtomasyon.Forms.Hasta
                 else
                 {
                     con.Open();
-                    OleDbCommand hastaEkle = new OleDbCommand("INSERT INTO Hastalar (adı, soyadı, tc, adres, telno) VALUES (@ad, @soyad,@tcno, @adres,  @telno)", con);
+                    OleDbCommand hastaEkle = new OleDbCommand("INSERT INTO Hastalar (Adı, Soyadı, Tc, Adres, Telno,sigorta) VALUES (@ad, @soyad,@tcno, @adres,  @telno,@sigorta)", con);
                     hastaEkle.Parameters.AddWithValue("@ad", ad);
                     hastaEkle.Parameters.AddWithValue("@soyad", soyad);
                     hastaEkle.Parameters.AddWithValue("@tcno", tcNo);
                     hastaEkle.Parameters.AddWithValue("@adres", adres);
                     hastaEkle.Parameters.AddWithValue("@telno", telNo);
+                    if (sigorta=="VAR")
+                        hastaEkle.Parameters.AddWithValue("@sigorta", true);
+                    else
+                        hastaEkle.Parameters.AddWithValue("@sigorta", false);
 
                     int sayac = hastaEkle.ExecuteNonQuery();
                     con.Close();
@@ -75,23 +77,20 @@ namespace EczaneOtomasyon.Forms.Hasta
                     if (sayac > 0)
                     {
                         MessageBox.Show("Kayıt başarıyla eklendi", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        anaSayfa.btn_listele.PerformClick();
                     }
                     else
                     {
                         MessageBox.Show("Kayıt eklenemedi", "Başarısız", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         AlanlariTemizle(txt_tcNo, txt_ad, txt_soyad, txt_telNo, txt_adres);
-
                     }
-
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 AlanlariTemizle(txt_tcNo, txt_ad, txt_soyad, txt_telNo, txt_adres);
-
             }
-
         }
 
         #region textbox işlemleri
@@ -224,14 +223,9 @@ namespace EczaneOtomasyon.Forms.Hasta
 
         #endregion
 
-        private void btn_EkranKapat_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-        }
-
         private void HastaKayıt_Load(object sender, EventArgs e)
         {
-
+            cmbbox_sigorta.Text = "YOK";
         }
     }
 }

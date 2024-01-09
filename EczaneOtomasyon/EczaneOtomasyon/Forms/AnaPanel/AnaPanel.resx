@@ -144,7 +144,7 @@
         AMvKOwCeZh0EE6f4Z9MUvPA0izXOkcvk8QAvy6H1bWXZE48P57toEWGbAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="label.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="lbl_toplamKazancYazi.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
         cQAAEnEB89x6jgAAAi5JREFUWEft131xFEEQBfCVgAQk4CA4IA7AQXAADoiD4AAcgANwAA7AAfTvcq9q
@@ -159,7 +159,7 @@
         sye/ki45Lw7gvZlVO0rMMIU9kiFrj72bDfcfy7IsvwHe7cRCUAXxaQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="lbl4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="lbl_bugunKazancYazi.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
         cQAAEnEB89x6jgAAAi5JREFUWEft131xFEEQBfCVgAQk4CA4IA7AQXAADoiD4AAcgANwAA7AAfTvcq9q
@@ -206,7 +206,7 @@
         Tbi9chHk1O6rBdm8XhaRvchGvuH6OJ1+A/7N0zqZ6GgVAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="label78.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="lbl_receteYazi.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
         cQAAEnEB89x6jgAAAUZJREFUWEft1u1NxDAQRdGUQAl0Ap1AB5QAJdABJUAHUAIdQAfQAcyRdlaW5Xzs
@@ -217,7 +217,7 @@
         fl2JGmcZ0DawBznprAHnuaSboPXZvQY11R67M47iWOIWqL2r0DD8AiUVCR9UpUFBAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="label12.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="lbl_ilacSayiYazi.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
         cQAAEnEB89x6jgAAAUBJREFUWEftlm0RgkAURYlgBCMYwQbaQBtoA41gA22gDbSBNtAINtB70P3DuPCA

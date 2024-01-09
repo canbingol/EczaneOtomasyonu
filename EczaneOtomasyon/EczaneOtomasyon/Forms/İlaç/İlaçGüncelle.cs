@@ -19,7 +19,6 @@ namespace EczaneOtomasyon.Forms.İlaç
         public İlaçGüncelle()
         {
             InitializeComponent();
-
         }
         private void btn_ilaçGüncelle_Click(object sender, EventArgs e)
         {
@@ -35,23 +34,16 @@ namespace EczaneOtomasyon.Forms.İlaç
                 {
                     MessageBox.Show("Ltfen borkodu 13 haneli olarak giriniz");
                     HataMesajlariGoster(txt_barkod, txt_ilaçAd, txt_kategori, txt_barkod, lbl_hataİlaçAd, lbl_hataİlaçKategori, lbl_hataİlaçBarkod, lbl_hataİlaçFiyat);
-
                 }
                 else if (İlaçvarmı(txt_barkod.Text) == 0)
                 {
                     MessageBox.Show("Bu ilaç Kayıtlı değil lütfen önce kayıt oluşturun", " Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    //   metod.HataMesajları(txt_tcNo, txt_ad, txt_soyad, txt_telNo, txt_adres, lbl_kayıtTcHata, lbl_kayıtAdHata, lbl_hayıtSoyadHata, lbl_kayıtTelHata, lbl_kayıtAdresHata);
                     AlanlariTemizle(txt_barkod, txt_ilaçAd, txt_adet, txt_barkod);
-
                 }
-
-
                 else if (string.IsNullOrEmpty(ad) || string.IsNullOrEmpty(adet) || string.IsNullOrEmpty(kategori) || sonKullanma == null || string.IsNullOrEmpty(barkod))
                 {
-
                     MessageBox.Show("Lütfen bütün satırları doldurun", "Kayıt Hatası", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     HataMesajlariGoster(txt_barkod, txt_ilaçAd, txt_kategori, txt_barkod, lbl_hataİlaçAd, lbl_hataİlaçKategori, lbl_hataİlaçBarkod, lbl_hataİlaçFiyat);
-
                 }
                 else
                 {
@@ -72,7 +64,6 @@ namespace EczaneOtomasyon.Forms.İlaç
 
                     if (sayac > 0)
                     {
-
                         MessageBox.Show("Kayıt başarıyla güncellendi", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         txt_barkod.ReadOnly = false;
                     }
@@ -80,20 +71,17 @@ namespace EczaneOtomasyon.Forms.İlaç
                     {
                         MessageBox.Show("Kayıt güncellenemedi", "Başarısız", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         AlanlariTemizle(txt_barkod, txt_ilaçAd, txt_adet, txt_barkod);
-
                     }
-
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 AlanlariTemizle(txt_barkod, txt_ilaçAd, txt_adet, txt_barkod);
-
             }
         }
 
-       #region Iİlaçİşlemleri metodları
+        #region Iİlaçİşlemleri metodları
         public void HataMesajlariGoster(TextBox txtfiyat, TextBox txtad, ComboBox txtkategori, TextBox txtbarkod, Label adhata, Label kategorihata, Label barkodhata, Label fiyathat)
         {
             if (string.IsNullOrEmpty(txtfiyat.Text))
@@ -135,11 +123,8 @@ namespace EczaneOtomasyon.Forms.İlaç
             con.Close();
             return count;
         }
-        #endregion
-
         void Borkodvarmı()
         {
-
             if (İlaçvarmı(txt_barkod.Text) != 0)
             {
                 lbl_ad.Visible = true; txt_ilaçAd.Visible = true;
@@ -165,6 +150,7 @@ namespace EczaneOtomasyon.Forms.İlaç
         {
             MessageBox.Show(" GÜNCELLEMEK İSTEDİĞİNİZ İLACIN BARKOD NOSUNU GİRİNİZ");
         }
+        #endregion
 
         #region buton işlemleri
 
@@ -186,56 +172,45 @@ namespace EczaneOtomasyon.Forms.İlaç
             e.Handled = true;
         }
 
-
         private void txt_barkod_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
-            {
                 e.Handled = true;
-            }
         }
 
         private void txt_fiyat_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
-            {
                 e.Handled = true;
-            }
 
         }
         private void txt_ilaçAd_MouseHover_1(object sender, EventArgs e)
         {
             MouseHover(txt_ilaçAd);
-
         }
         private void txt_ilaçAd_MouseLeave(object sender, EventArgs e)
         {
             MouseLeave(txt_ilaçAd);
-
         }
         private void txt_fiyat_MouseHover(object sender, EventArgs e)
         {
             MouseHover(txt_fiyat);
-
         }
         private void txt_fiyat_MouseLeave(object sender, EventArgs e)
         {
             MouseLeave(txt_fiyat);
-
         }
 
         private void txt_barkod_MouseHover(object sender, EventArgs e)
         {
             MouseHover(txt_barkod);
-
         }
 
         private void txt_barkod_MouseLeave(object sender, EventArgs e)
         {
             MouseLeave(txt_barkod);
-
         }
     }
-#endregion
+    #endregion
 
 }

@@ -31,10 +31,10 @@ namespace EczaneOtomasyon.Forms.Reçete
         {
             bool oldumu = false;
             OleDbConnection con = new OleDbConnection(baglantı);
+            string Tc = txt_hastaTc.Text;
+            string sorgu = "SELECT Adı, Soyadı, Tc FROM Hastalar Where Tc = @tc";
             try
             {
-                string Tc = txt_hastaTc.Text;
-                string sorgu = "SELECT Adı, Soyadı, Tc FROM Hastalar Where Tc = @tc";
                 using (OleDbCommand tcBul = new OleDbCommand(sorgu, con))
                 {
                     tcBul.Parameters.AddWithValue("@tc", Tc);
@@ -59,6 +59,7 @@ namespace EczaneOtomasyon.Forms.Reçete
                         {
                             oldumu = false;
                             MessageBox.Show("KAYIT BULUNAMADI");
+                            txt_hastaTc.Clear();
                         }
                     }
                 }
@@ -71,7 +72,6 @@ namespace EczaneOtomasyon.Forms.Reçete
             {
                 con.Close();
             }
-
             return oldumu;
         }
         int olanAdet, toplamUcret, istenenAdet, sayac = 0;
@@ -84,7 +84,6 @@ namespace EczaneOtomasyon.Forms.Reçete
             }
             else
             {
-
                 if (sayac > 5)
                 {
                     MessageBox.Show(" DAHA FAZLA İLAÇ EKLENEMEZ");
@@ -167,15 +166,11 @@ namespace EczaneOtomasyon.Forms.Reçete
         // reçeteye ekleye basıldığı zaman sıras ile eklenen değerler label larda görünür
         void ReçeteyeEkle()
         {
-
-
             switch (sayac)
             {
                 case 0:
                     if (ad == null || kategori == null || barkod == null || adet == null || İlaçFiyat == null)
-                    {
                         MessageBox.Show("BOŞ DEĞER VAR LÜTFEN BÜTÜN DEĞERLERİ DOLDURUN");
-                    }
                     else
                     {
                         lbl_ilaçAdı1.Text = ad; lbl_ilaçKategori1.Text = kategori; lbl_barkoNo1.Text = barkod;
@@ -185,13 +180,10 @@ namespace EczaneOtomasyon.Forms.Reçete
                         MessageBox.Show("İLAÇ REÇETEYE EKLENDİ");
                         ++sayac;
                     }
-
                     break;
                 case 1:
                     if (ad == null || kategori == null || barkod == null || adet == null || İlaçFiyat == null)
-                    {
                         MessageBox.Show("BOŞ DEĞER VAR LÜTFEN BÜTÜN DEĞERLERİ DOLDURUN");
-                    }
                     else
                     {
                         lbl_ilaçAdı2.Text = ad; lbl_ilaçKategori2.Text = kategori; lbl_barkoNo2.Text = barkod;
@@ -204,9 +196,7 @@ namespace EczaneOtomasyon.Forms.Reçete
                     break;
                 case 2:
                     if (ad == null || kategori == null || barkod == null || adet == null || İlaçFiyat == null)
-                    {
                         MessageBox.Show("BOŞ DEĞER VAR LÜTFEN BÜTÜN DEĞERLERİ DOLDURUN");
-                    }
                     else
                     {
                         lbl_ilaçAdı3.Text = ad; lbl_ilaçKategori3.Text = kategori; lbl_barkoNo3.Text = barkod;
@@ -219,9 +209,7 @@ namespace EczaneOtomasyon.Forms.Reçete
                     break;
                 case 3:
                     if (ad == null || kategori == null || barkod == null || adet == null || İlaçFiyat == null)
-                    {
                         MessageBox.Show("BOŞ DEĞER VAR LÜTFEN BÜTÜN DEĞERLERİ DOLDURUN");
-                    }
                     else
                     {
                         lbl_ilaçAdı4.Text = ad; lbl_ilaçKategori4.Text = kategori; lbl_barkoNo4.Text = barkod;
@@ -234,9 +222,7 @@ namespace EczaneOtomasyon.Forms.Reçete
                     break;
                 case 4:
                     if (ad == null || kategori == null || barkod == null || adet == null || İlaçFiyat == null)
-                    {
                         MessageBox.Show("BOŞ DEĞER VAR LÜTFEN BÜTÜN DEĞERLERİ DOLDURUN");
-                    }
                     else
                     {
                         lbl_ilaçAdı5.Text = ad; lbl_ilaçKategori5.Text = kategori; lbl_barkoNo5.Text = barkod;
@@ -247,17 +233,18 @@ namespace EczaneOtomasyon.Forms.Reçete
                         ++sayac;
                     }
                     break;
-
             }
         }
         private void btn_barkodBul_Click(object sender, EventArgs e)
         {
+            txt_ilaçBarkod.ReadOnly = true;
             if (txt_ilaçBarkod.Text == null)
             {
                 MessageBox.Show("LİÜTFEN İLAÇ BARKODU GİRİN");
+                txt_ilaçBarkod.ReadOnly = false;
             }
             BarkodListele();
-            txt_ilaçBarkod.ReadOnly = true;
+            txt_ilaçBarkod.Clear();
         }
         void adetCikar()
         {
@@ -274,15 +261,6 @@ namespace EczaneOtomasyon.Forms.Reçete
                         con.Open();
                         int sayac = cmd.ExecuteNonQuery();
                         con.Close();
-                        if (sayac > 0)
-                        {
-                            MessageBox.Show("adet düşüldü");
-                        }
-                        else
-                        {
-                            MessageBox.Show("olmadı");
-
-                        }
                     }
                 }
             }
@@ -290,7 +268,6 @@ namespace EczaneOtomasyon.Forms.Reçete
             {
                 MessageBox.Show("HATA OLUŞTU TEKRAR DENEYİN");
             }
-
         }
         void BarkodListele()
         {
@@ -312,30 +289,28 @@ namespace EczaneOtomasyon.Forms.Reçete
                             İlaçFiyat = barkodOku["fiyat"].ToString();
                             string deger = barkodOku["adet"].ToString();
                             olanAdet = Convert.ToInt16(deger);
-                            adet = txt_adet.Text;
 
+                            adet = txt_adet.Text;
                             lbl_ilaçAd.Text = ad;
                             lbl_kategori.Text = kategori;
                             lbl_fiyat.Text = İlaçFiyat;
                             lbl_adet.Text = adet;
 
-
                             lbl_ilaçAd.Visible = true;
                             lbl_kategori.Visible = true;
                             lbl_fiyat.Visible = true;
                             lbl_adet.Visible = true;
-
                         }
                         else
                         {
-                            MessageBox.Show("KAYIT EKLEMEDİ");
+                            MessageBox.Show("İLAÇ BULUNAMADI");
+                            txt_ilaçBarkod.ReadOnly = false;
                         }
                     }
                 }
             }
-
         }
-        // giirlen değerleri veri tabanına ekler r
+        // giirlen değerleri veri tabanına ekler
         void VeriEkle()
         {
             using (OleDbConnection con = new OleDbConnection(baglantı))

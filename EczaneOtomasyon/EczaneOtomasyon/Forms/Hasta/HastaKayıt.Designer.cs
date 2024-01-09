@@ -45,6 +45,8 @@
             this.lbl_kayıtAdresHata = new System.Windows.Forms.Label();
             this.lbl_kayıtTelHata = new System.Windows.Forms.Label();
             this.btn_hastaKaydet = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cmbbox_sigorta = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label6
@@ -52,7 +54,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label6.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label6.Location = new System.Drawing.Point(451, 185);
+            this.label6.Location = new System.Drawing.Point(431, 141);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(177, 22);
             this.label6.TabIndex = 32;
@@ -63,7 +65,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label5.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label5.Location = new System.Drawing.Point(451, 87);
+            this.label5.Location = new System.Drawing.Point(451, 64);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(129, 22);
             this.label5.TabIndex = 28;
@@ -151,7 +153,7 @@
             this.txt_adres.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_adres.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_adres.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txt_adres.Location = new System.Drawing.Point(643, 74);
+            this.txt_adres.Location = new System.Drawing.Point(643, 63);
             this.txt_adres.Multiline = true;
             this.txt_adres.Name = "txt_adres";
             this.txt_adres.Size = new System.Drawing.Size(258, 43);
@@ -165,7 +167,7 @@
             this.txt_telNo.BackColor = System.Drawing.Color.White;
             this.txt_telNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_telNo.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txt_telNo.Location = new System.Drawing.Point(643, 173);
+            this.txt_telNo.Location = new System.Drawing.Point(643, 141);
             this.txt_telNo.MaxLength = 11;
             this.txt_telNo.Multiline = true;
             this.txt_telNo.Name = "txt_telNo";
@@ -228,7 +230,7 @@
             // 
             this.lbl_kayıtAdresHata.AutoSize = true;
             this.lbl_kayıtAdresHata.ForeColor = System.Drawing.Color.Red;
-            this.lbl_kayıtAdresHata.Location = new System.Drawing.Point(640, 55);
+            this.lbl_kayıtAdresHata.Location = new System.Drawing.Point(640, 44);
             this.lbl_kayıtAdresHata.Name = "lbl_kayıtAdresHata";
             this.lbl_kayıtAdresHata.Size = new System.Drawing.Size(213, 16);
             this.lbl_kayıtAdresHata.TabIndex = 49;
@@ -239,7 +241,7 @@
             // 
             this.lbl_kayıtTelHata.AutoSize = true;
             this.lbl_kayıtTelHata.ForeColor = System.Drawing.Color.Red;
-            this.lbl_kayıtTelHata.Location = new System.Drawing.Point(640, 154);
+            this.lbl_kayıtTelHata.Location = new System.Drawing.Point(640, 122);
             this.lbl_kayıtTelHata.Name = "lbl_kayıtTelHata";
             this.lbl_kayıtTelHata.Size = new System.Drawing.Size(213, 16);
             this.lbl_kayıtTelHata.TabIndex = 50;
@@ -258,12 +260,37 @@
             this.btn_hastaKaydet.UseVisualStyleBackColor = false;
             this.btn_hastaKaydet.Click += new System.EventHandler(this.btn_hastaKaydet_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label4.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label4.Location = new System.Drawing.Point(451, 220);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(85, 22);
+            this.label4.TabIndex = 32;
+            this.label4.Text = "SİGORTA";
+            // 
+            // cmbbox_sigorta
+            // 
+            this.cmbbox_sigorta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbbox_sigorta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cmbbox_sigorta.FormattingEnabled = true;
+            this.cmbbox_sigorta.Items.AddRange(new object[] {
+            "VAR",
+            "YOK"});
+            this.cmbbox_sigorta.Location = new System.Drawing.Point(643, 225);
+            this.cmbbox_sigorta.Name = "cmbbox_sigorta";
+            this.cmbbox_sigorta.Size = new System.Drawing.Size(258, 28);
+            this.cmbbox_sigorta.TabIndex = 72;
+            // 
             // HastaKayıt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(913, 361);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(989, 361);
+            this.Controls.Add(this.cmbbox_sigorta);
             this.Controls.Add(this.btn_hastaKaydet);
             this.Controls.Add(this.lbl_kayıtTelHata);
             this.Controls.Add(this.lbl_kayıtAdresHata);
@@ -276,6 +303,7 @@
             this.Controls.Add(this.txt_ad);
             this.Controls.Add(this.txt_tcNo);
             this.Controls.Add(this.label7);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
@@ -311,5 +339,7 @@
         public System.Windows.Forms.Label lbl_kayıtAdresHata;
         public System.Windows.Forms.Label lbl_kayıtTelHata;
         public System.Windows.Forms.Button btn_hastaKaydet;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cmbbox_sigorta;
     }
 }
