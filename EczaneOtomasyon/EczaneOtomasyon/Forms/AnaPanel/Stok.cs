@@ -65,6 +65,11 @@ namespace EczaneOtomasyon.Forms.AnaPanel
                 DataTable tablo = new DataTable();
                 da.Fill(tablo) ; 
                 datagrid_ilac.DataSource= tablo;
+                datagrid_ilac.Columns["isim"].HeaderText = "İSİM";
+                datagrid_ilac.Columns["kategori"].HeaderText = "KATEGORİ";
+                datagrid_ilac.Columns["fiyat"].HeaderText = "FİYAT";
+                datagrid_ilac.Columns["barkod"].HeaderText = "BARKOD";
+                datagrid_ilac.Columns["adet"].HeaderText = "ADET";
             }
         }
         // ilaclar tablosundan bütün verileri çeker ve datagrid e atar
@@ -79,9 +84,15 @@ namespace EczaneOtomasyon.Forms.AnaPanel
                 DataTable tablo = new DataTable();
                 da.Fill(tablo);
                 datagrid_ilac.DataSource = tablo;
+                datagrid_ilac.Columns["isim"].HeaderText = "İSİM";
+                datagrid_ilac.Columns["kategori"].HeaderText = "KATEGORİ";
+                datagrid_ilac.Columns["fiyat"].HeaderText = "FİYAT";
+                datagrid_ilac.Columns["barkod"].HeaderText = "BARKOD";
+                datagrid_ilac.Columns["adet"].HeaderText = "ADET";
             }
         }
         // label lara çitf tıklama olayları
+        #region label çift tıklama
         private void lbl_agriKesici_DoubleClick(object sender, EventArgs e)
         {
             IlacListele("Ağrı Kesici");
@@ -121,5 +132,6 @@ namespace EczaneOtomasyon.Forms.AnaPanel
         {
             IlacListele("Diğer");
         }
+        #endregion
     }
 }

@@ -34,8 +34,8 @@ namespace EczaneOtomasyon.Forms.Reçete
         {
             TcListele();
         }
-        // girilen tc noya göre veri çeker ve verileri label lara atar
-        bool TcListele()
+       
+        bool TcListele() // girilen tc noya göre veri çeker ve verileri label lara atar
         {
             bool oldumu = false;
             OleDbConnection con = new OleDbConnection(baglantı);
@@ -49,7 +49,7 @@ namespace EczaneOtomasyon.Forms.Reçete
                     con.Open();
                     using (OleDbDataReader tcOku = tcBul.ExecuteReader())
                     {
-                        if (tcOku.Read())
+                        if (tcOku.Read())// girilen tc ile veri tabanından değer okunuyorsa çalışır
                         {
                             hastaAdı = tcOku["adi"].ToString();
                             hastaSoyad = tcOku["soyadi"].ToString();
@@ -83,8 +83,8 @@ namespace EczaneOtomasyon.Forms.Reçete
             return oldumu;
         }
         int olanAdet, toplamUcret, istenenAdet, sayac = 0;
-        // label lara girilen ilacın bilgilerini atar
-        private void btn_ilaçEkle_Click(object sender, EventArgs e)
+        
+        private void btn_ilaçEkle_Click(object sender, EventArgs e)// label lara girilen ilacın bilgilerini atar
         {
             if (hastaKayıtlımı == false)
             {
@@ -173,7 +173,15 @@ namespace EczaneOtomasyon.Forms.Reçete
                 }
             }
         }
+
+        private void btn_kameraKapa_Click(object sender, EventArgs e)
+        {
+            pnl_kamera.Visible=false;
+            vcd.Stop();
+
+        }
         #endregion
+
         // reçeteyi veri tabanına ekler ve reçetedeki ilaç label larını temizler, görünürlüklerini kapatır
         private void btn_satıs_Click(object sender, EventArgs e)
         {
@@ -190,14 +198,14 @@ namespace EczaneOtomasyon.Forms.Reçete
                 Temizle(lbl_ilacAdi2, lbl_ilacKategori2, lbl_barkoNo2, lbl_ilacFiyat2, lbl_ilacAdeti2);
                 Temizle(lbl_ilacAdi3, lbl_ilacKategori3, lbl_barkoNo3, lbl_ilacFiyat3, lbl_ilacAdeti3);
                 Temizle(lbl_ilacAdi4, lbl_ilacKategori4, lbl_barkoNo4, lbl_ilacFiyat4, lbl_ilacAdeti4);
-                Temizle(lbl_ilacAdı5, lbl_ilacKategori5, lbl_barkoNo5, lbl_ilacFiyat5, lbl_ilacAdeti5);
+                Temizle(lbl_ilacAdi5, lbl_ilacKategori5, lbl_barkoNo5, lbl_ilacFiyat5, lbl_ilacAdeti5);
                 lbl_hastaAdi.Text = null; lbl_hastaSoyad.Text = null; lbl_hastaTc.Text = null;
                 lbl_hastaAdi.Visible = false; lbl_hastaSoyad.Visible = false; lbl_hastaTc.Visible = false;
                 pnl_hasta.Visible = true;
                 pnl_hastaBilgisi.Visible = false;
                 pnl_ilacEkle.Visible = false;
                 lbl_toplamFiyat.Text = "0";
-                RefMetot(ref toplamUcret); // toplam ücret değğişkenin değerini sıfırlar
+                RefMetot(ref toplamUcret); // toplam ücret değişkenin değerini sıfırlar
             }
         }
         private void RefMetot(ref int ucret)
@@ -214,7 +222,7 @@ namespace EczaneOtomasyon.Forms.Reçete
 
         // reçeteye ekleye basıldığı zaman sıras ile eklenen değerler label larda görünür
         void ReçeteyeEkle()
-        { // her ilaç eklendiğinde sayac 1 artar ve artan değere göre diğer label lara ialç bilgileri atanır
+        { // her ilaç eklendiğinde sayac 1 artar ve artan değere göre diğer label lara ilaç bilgileri atanır
             switch (sayac)
             {
                 case 0:
@@ -274,9 +282,9 @@ namespace EczaneOtomasyon.Forms.Reçete
                         MessageBox.Show("BOŞ DEĞER VAR LÜTFEN BÜTÜN DEĞERLERİ DOLDURUN");
                     else
                     {
-                        lbl_ilacAdı5.Text = ad; lbl_ilacKategori5.Text = kategori; lbl_barkoNo5.Text = barkod;
+                        lbl_ilacAdi5.Text = ad; lbl_ilacKategori5.Text = kategori; lbl_barkoNo5.Text = barkod;
                         lbl_ilacAdeti5.Text = adet; lbl_ilacFiyat5.Text = İlaçFiyat;
-                        lbl_ilacAdı5.Visible = true; lbl_ilacKategori5.Visible = true; lbl_barkoNo5.Visible = true;
+                        lbl_ilacAdi5.Visible = true; lbl_ilacKategori5.Visible = true; lbl_barkoNo5.Visible = true;
                         lbl_ilacAdeti5.Visible = true; lbl_ilacFiyat5.Visible = true;
                         MessageBox.Show("İLAÇ REÇETEYE EKLENDİ");
                         ++sayac;
@@ -383,7 +391,7 @@ namespace EczaneOtomasyon.Forms.Reçete
                     ParamtreEkle("@f3", lbl_ilacFiyat3, cmd);
                     ParamtreEkle("@i4", lbl_ilacAdi4, cmd);
                     ParamtreEkle("@f4", lbl_ilacFiyat4, cmd);
-                    ParamtreEkle("@i5", lbl_ilacAdı5, cmd);
+                    ParamtreEkle("@i5", lbl_ilacAdi5, cmd);
                     ParamtreEkle("@f5", lbl_ilacFiyat5, cmd);
 
                     cmd.Parameters.AddWithValue("@topfiyat", lbl_toplamFiyat.Text);

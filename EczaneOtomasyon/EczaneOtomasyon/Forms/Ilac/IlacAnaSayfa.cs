@@ -64,42 +64,34 @@ namespace EczaneOtomasyon.Forms.İlaç
         {
             Listele("Ağrı Kesici");
         }
-
         private void btn_kalp_Click(object sender, EventArgs e)
         {
             Listele("Kalp İlacı");
         }
-
         private void btn_alerji_Click(object sender, EventArgs e)
         {
             Listele("Alerji İlacı");
         }
-
         private void btn_antibiyotik_Click(object sender, EventArgs e)
         {
             Listele("Antibiyotik");
         }
-
         private void btn_diyabetİlaçları_Click(object sender, EventArgs e)
         {
             Listele("Diyabet İlacı");
         }
-
         private void btn_tansiyon_Click(object sender, EventArgs e)
         {
             Listele("Tansiyon İlacı");
         }
-
         private void btn_depresan_Click(object sender, EventArgs e)
         {
             Listele("Antidepresan");
         }
-
         private void btn_diğer_Click(object sender, EventArgs e)
         {
             Listele("Diğer");
         }
-
         #endregion
 
         private void txt_listele_Click(object sender, EventArgs e)
@@ -124,8 +116,12 @@ namespace EczaneOtomasyon.Forms.İlaç
                     OleDbDataAdapter da = new OleDbDataAdapter(cmd);
                     DataTable tablo = new DataTable();
                     da.Fill(tablo);
-
                     data_ilaclar.DataSource = tablo;
+                    data_ilaclar.Columns["isim"].HeaderText = "İSİM";
+                    data_ilaclar.Columns["kategori"].HeaderText = "KATEGORİ";
+                    data_ilaclar.Columns["fiyat"].HeaderText = "FİYAT";
+                    data_ilaclar.Columns["barkod"].HeaderText = "BARKOD";
+                    data_ilaclar.Columns["adet"].HeaderText = "ADET";
                 }
                 catch (OleDbException ex)
                 {
@@ -162,10 +158,9 @@ namespace EczaneOtomasyon.Forms.İlaç
                                 sil.Parameters.AddWithValue("@barkod", barkod);
                                 int sayac = sil.ExecuteNonQuery();
                                 if (sayac > 0)
-                                {
                                     MessageBox.Show("KAYI BAŞARLI BİR ŞEKİLDE SİLİNDİ");
-                                    Listele();
-                                }
+                                else
+                                    MessageBox.Show("KAYIT SİLİNEMEDİ");
                             }
                         }
                     }

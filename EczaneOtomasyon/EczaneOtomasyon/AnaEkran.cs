@@ -29,9 +29,9 @@ namespace EczaneOtomasyon
         #region Tıklama işlemleri 
         private void btn_hastaİşlemleri_Click(object sender, EventArgs e)
         {
-            AltMenüSakla();
-            AltFormGöster(new HastaAnaSayfa());
-            AltMenüGöster(pnl_hasta);
+            AltMenüSakla(); // alt panell er açık ise kapatır
+            AltFormGöster(new HastaAnaSayfa()); // hastaAnaSayfa dan bir nesne üretir ve ekrandaki ana panel e ekler
+            AltMenüGöster(pnl_hasta);// hasta butonu altındaki paneli gösterir
         }
 
         private void btn_anaSayfa_Click_1(object sender, EventArgs e)
@@ -41,7 +41,7 @@ namespace EczaneOtomasyon
         }
         private void btn_hastaKaydet_Click(object sender, EventArgs e)
         {
-            AltFormİşlemGöster(new HastaKayit());
+            AltFormİşlemGöster(new HastaKayit());// hastakaydet formunu ana panelşn altındakş panelde gösterir
         }
 
         private void btn_ilaçİşlemleri_Click(object sender, EventArgs e)
@@ -53,11 +53,8 @@ namespace EczaneOtomasyon
         private void btn_reçeteİşlemleri_Click(object sender, EventArgs e)
         {
             AltFormGöster(new Recete());
-
             AltMenüSakla();
-
         }
-
         #endregion
 
         #region panel metodları
@@ -105,7 +102,6 @@ namespace EczaneOtomasyon
             altForm.BringToFront(); // diğer formların önünde olmasını sağlar
             altForm.Show();
         }
-
 
         // anaekran içinde diğer formları gösterir
         Form aktifForm = null;
@@ -189,7 +185,6 @@ namespace EczaneOtomasyon
         private void btn_hastaGüncelle_Click(object sender, EventArgs e)
         {
             AltFormİşlemGöster(new HastaGuncelle());
-
         }
 
         private void btn_hastaListele_Click(object sender, EventArgs e)

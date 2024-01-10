@@ -23,7 +23,7 @@ namespace EczaneOtomasyon.Forms.AnaPanel
         {
             InitializeComponent();
         }
-
+        // parametre olarak girilen sorgudan okunan değeri parametre olarak girilen label e atar
         void ToplamDeger(string sorgu, Label lbl)
         {
             using (OleDbConnection con = new OleDbConnection(baglanti))
@@ -54,6 +54,7 @@ namespace EczaneOtomasyon.Forms.AnaPanel
             }
         }
         string yetki;
+        // giriş yapan kullanıcının kullanıcı adı üzerinden yetki kontrölü yaparak ana panel üzerinde yetki izinsiz giriş engellendi
         void YetkiKontrol()
         {
             string kullanici = Login.aktifKullanici;
@@ -126,10 +127,10 @@ namespace EczaneOtomasyon.Forms.AnaPanel
                     string sorgu = "SELECT SUM(toplamFiyat) FROM Satislar WHERE SatisTarihi=@tarih";
                     using (OleDbCommand ciro = new OleDbCommand(sorgu, con))
                     {
-                        ciro.Parameters.AddWithValue("@tarih", tarih );
+                        ciro.Parameters.AddWithValue("@tarih", tarih);
 
                         object toplam = ciro.ExecuteScalar();
-                        int sonuc = (toplam == DBNull.Value || toplam == null) ? 0 : Convert.ToInt32(toplam);
+                        int sonuc = (toplam == DBNull.Value || toplam == null) ? 0 : Convert.ToInt32(toplam);// veri tabanında çekilen değerin boş olup olmadığını kontrol edne ternary ifadesi
                         lbl_bugunKazanc.Text = sonuc.ToString();
                     }
                 }
@@ -157,7 +158,7 @@ namespace EczaneOtomasyon.Forms.AnaPanel
             altForm.Show();
 
         }
-        // giriş yapan çalışana göre eyetki kontrolü yapılıyor
+        // giriş yapan çalışana göre yetki kontrolü yapılıyor yetki çalışan ise buton işlevi kapatılır
         private void lbl_hastaProfil_DoubleClick(object sender, EventArgs e)
         {
             if (yetki == "calisan")

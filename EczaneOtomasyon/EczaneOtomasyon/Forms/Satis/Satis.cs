@@ -20,12 +20,12 @@ namespace EczaneOtomasyon.Forms.Satış
         {
             InitializeComponent();
         }
-      // satılmayan reçetesi olan hastaları listbox a ekler
+        // satılmayan reçetesi olan hastaları listbox a ekler
         void HastaListele()
         {
             using (OleDbConnection con = new OleDbConnection(baglanti))
             {
-                string sorgu = $"SELECT DISTINCT tc  FROM Receteler WHERE durum=@durum";// reçete durumu false(satılmayan) 
+                string sorgu = $"SELECT DISTINCT tc  FROM Receteler WHERE durum=@durum";// reçete durumu false(satılmayan) olan
                 using (OleDbCommand cmd = new OleDbCommand(sorgu, con))                 //hastları(her hasta 1 defa) okur
                 {
                     cmd.Parameters.AddWithValue("@durum", false);
@@ -223,12 +223,13 @@ namespace EczaneOtomasyon.Forms.Satış
                         MessageBox.Show("SATIŞ YAPILAMADI ");
                 }
             }
-            checklist_hastalar.Enabled = false;
-            listBox_receteList.Enabled = false;
+
             pnl_bilgi.Visible = false; pnl_ilacBilgi.Visible = false;
             checklist_hastalar.Items.Clear();
-           listBox_receteList.Items.Clear();
+            listBox_receteList.Items.Clear();
             HastaListele();
+            checklist_hastalar.Enabled = true;
+            listBox_receteList.Enabled = true;
         }
 
         // satılan reçetenin durumunu true atar

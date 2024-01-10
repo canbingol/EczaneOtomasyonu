@@ -35,8 +35,8 @@ namespace EczaneOtomasyon.Forms.AnaPanel
         private void btn_hastaBul_Click(object sender, EventArgs e)
         {
             pnl_hastabilgi.Visible = true;
-            HastaBul();
-            ReceteListele();
+            HastaBul(); // datagrid e hasta bilgileri atanır
+            ReceteListele();// hastanın reçeteleri lşsteneleir
         }
         // hastalar tabolundan textbox a girilen değere göre datagrid e değer atanır
         void HastaBul()
@@ -104,7 +104,7 @@ namespace EczaneOtomasyon.Forms.AnaPanel
                 OleDbDataAdapter da = new OleDbDataAdapter(receteBul);
                 DataTable tablo = new DataTable();
                 da.Fill(tablo);
-                datagrid_hastarecete.DataSource = tablo;
+                
             }
         }
         // receteler tablosundan bütün veriler çeker
@@ -118,11 +118,12 @@ namespace EczaneOtomasyon.Forms.AnaPanel
                 DataTable tablo = new DataTable();
                 da.Fill(tablo);
                 datagrid_hastarecete.DataSource = tablo;
+                
             }
         }
         private void HastaProfil_Load(object sender, EventArgs e)
         {
-            Listele();
+            Listele();  // receteler tablosundan bütün veriler çeker
         }
     }
 }

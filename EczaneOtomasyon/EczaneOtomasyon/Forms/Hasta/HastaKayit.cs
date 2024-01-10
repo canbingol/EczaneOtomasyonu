@@ -37,7 +37,7 @@ namespace EczaneOtomasyon.Forms.Hasta
                 if (string.IsNullOrEmpty(tcNo) || string.IsNullOrEmpty(ad) || string.IsNullOrEmpty(soyad) || string.IsNullOrEmpty(telNo) || string.IsNullOrEmpty(adres) || string.IsNullOrEmpty(sigorta))
                 {
                     MessageBox.Show("Lütfen bütün satırları doldurun", "Kayıt Hatası", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    HataMesajlariGoster(txt_tcNo, txt_ad, txt_soyad, txt_telNo, txt_adres, lbl_kayitTcHata, lbl_kayitAdHata, lbl_hayitSoyadHata, lbl_kayitTelHata, lbl_kayitAdresHata);
+                    HataMesajlariGoster(txt_tcNo, txt_ad, txt_soyad,txt_adres, txt_telNo,  lbl_kayitTcHata, lbl_kayitAdHata, lbl_hayitSoyadHata, lbl_kayitAdresHata, lbl_kayitTelHata);
 
                 }
                 else if (tcNo.Length != 11)
@@ -211,12 +211,12 @@ namespace EczaneOtomasyon.Forms.Hasta
             else
                 lblSoyadHata.Visible = false;
 
-            if (string.IsNullOrEmpty(txtTelNo.Text))
+            if (string.IsNullOrEmpty(txtAdres.Text))
                 lblTelHata.Visible = true;
             else
                 lblTelHata.Visible = false;
 
-            if (string.IsNullOrEmpty(txtAdres.Text))
+            if (string.IsNullOrEmpty(txt_telNo.Text))
                 lblAdresHata.Visible = true;
             else
                 lblAdresHata.Visible = false;

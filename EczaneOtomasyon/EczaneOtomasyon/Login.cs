@@ -42,44 +42,47 @@ namespace EczaneOtomasyon
             if (string.IsNullOrEmpty(kullaniciAdi))
                 lbl_hataKullaniciAdi.Visible = true;
             else
+            {
                 lbl_hataKullaniciAdi.Visible = false;
 
-            if (string.IsNullOrEmpty(parola))
-                lbl_hataParola.Visible = true;
-            else
-                lbl_hataParola.Visible = false;
-            try
-            {
-                using (OleDbConnection con = new OleDbConnection(baglanti))
+                if (string.IsNullOrEmpty(parola))
+                    lbl_hataParola.Visible = true;
+                else
                 {
-                    con.Open();
-                    using (OleDbCommand cmd = new OleDbCommand("Select * from Kullanicilar where kullaniciAdi=@kullaniciAdi and parola =@parola", con))
+                    lbl_hataParola.Visible = false;
+                    try
                     {
-                        cmd.Parameters.AddWithValue("@kullaniciAdi", kullaniciAdi);
-                        cmd.Parameters.AddWithValue("@parola", parola);
-                        using (OleDbDataReader reader = cmd.ExecuteReader())
+                        using (OleDbConnection con = new OleDbConnection(baglanti))
                         {
-                            if (reader.Read())
-                                aktifKullanici = reader["kullaniciAdi"].ToString();
-                            //  okunan değer boş değil ise
-                            if (reader.HasRows)
+                            con.Open();
+                            using (OleDbCommand cmd = new OleDbCommand("Select * from Kullanicilar where kullaniciAdi=@kullaniciAdi and parola =@parola", con))
                             {
-                                AnaEkran anaEkran = new AnaEkran();
-                                anaEkran.Show();
-                                this.Hide();
+                                cmd.Parameters.AddWithValue("@kullaniciAdi", kullaniciAdi);
+                                cmd.Parameters.AddWithValue("@parola", parola);
+                                using (OleDbDataReader reader = cmd.ExecuteReader())
+                                {
+                                    if (reader.Read())
+                                        aktifKullanici = reader["kullaniciAdi"].ToString();
+                                    //  okunan değer boş değil ise
+                                    if (reader.HasRows)
+                                    {
+                                        AnaEkran anaEkran = new AnaEkran();
+                                        anaEkran.Show();
+                                        this.Hide();
+                                    }
+                                    else
+                                        MessageBox.Show("Kullanıcı adı veya şifre hatalı!");
+                                }
                             }
-                            else
-                                MessageBox.Show("Kullanıcı adı veya şifre hatalı!");
                         }
                     }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("HATA OLUŞTU LÜTFEN TEKRAR DENEYİN");
+                    }
                 }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("HATA OLUŞTU LÜTGEN TEKRAR DENEYİN");
-            }
 
-
+            }
         }
         // parametre ile girilen kullanı adının olup olmadığını kontrol eder
         public bool KullaniciAdiMevcutMu(string kullaniciAdi)
@@ -241,7 +244,6 @@ namespace EczaneOtomasyon
                                 {
                                     using (OleDbCommand cmd = new OleDbCommand("INSERT INTO  Kullanicilar(kullaniciAdi, parola,yetki) VALUES (@kullanici, @parola,@yetki) ", con))
                                     {
-
                                         cmd.Parameters.AddWithValue("@kullanıcı", kullanici);
                                         cmd.Parameters.AddWithValue("@parola", parola1);
                                         cmd.Parameters.AddWithValue("@yetki", yetki);
@@ -250,7 +252,7 @@ namespace EczaneOtomasyon
                                         int sayac = cmd.ExecuteNonQuery();
                                         con.Close();
 
-                                        if (sayac > 0)
+                                        if (sayac > 0) // veri tabanına ekleme yapıldı ise çalışır
                                         {
                                             MessageBox.Show("Kayıt  başarılı bir şekilde eklendi");
                                             txt_kayitKullaniciAdi.Clear();

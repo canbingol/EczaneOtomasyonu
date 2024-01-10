@@ -31,7 +31,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btn_ilacKaydet = new System.Windows.Forms.Button();
             this.txt_ilacAd = new System.Windows.Forms.TextBox();
-            this.txt_barkod = new System.Windows.Forms.TextBox();
             this.txt_fiyat = new System.Windows.Forms.TextBox();
             this.txt_adet = new System.Windows.Forms.NumericUpDown();
             this.txt_kategori = new System.Windows.Forms.ComboBox();
@@ -39,13 +38,14 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.lbl_hataIlacAd = new System.Windows.Forms.Label();
             this.lbl_hataIlacFiyat = new System.Windows.Forms.Label();
             this.lbl_hataIlacKategori = new System.Windows.Forms.Label();
             this.lbl_hataIlacBarkod = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txt_barkod = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.txt_adet)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,7 +75,7 @@
             // txt_ilacAd
             // 
             this.txt_ilacAd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_ilacAd.Location = new System.Drawing.Point(123, 55);
+            this.txt_ilacAd.Location = new System.Drawing.Point(122, 118);
             this.txt_ilacAd.Margin = new System.Windows.Forms.Padding(4);
             this.txt_ilacAd.Multiline = true;
             this.txt_ilacAd.Name = "txt_ilacAd";
@@ -83,19 +83,6 @@
             this.txt_ilacAd.TabIndex = 0;
             this.txt_ilacAd.MouseLeave += new System.EventHandler(this.txt_ilaçAd_MouseLeave);
             this.txt_ilacAd.MouseHover += new System.EventHandler(this.txt_ilaçAd_MouseHover);
-            // 
-            // txt_barkod
-            // 
-            this.txt_barkod.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_barkod.Location = new System.Drawing.Point(122, 130);
-            this.txt_barkod.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_barkod.MaxLength = 13;
-            this.txt_barkod.Multiline = true;
-            this.txt_barkod.Name = "txt_barkod";
-            this.txt_barkod.Size = new System.Drawing.Size(258, 43);
-            this.txt_barkod.TabIndex = 1;
-            this.txt_barkod.MouseLeave += new System.EventHandler(this.txt_barkod_MouseLeave);
-            this.txt_barkod.MouseHover += new System.EventHandler(this.txt_barkod_MouseHover);
             // 
             // txt_fiyat
             // 
@@ -168,7 +155,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label21.Location = new System.Drawing.Point(2, 64);
+            this.label21.Location = new System.Drawing.Point(1, 127);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(86, 22);
             this.label21.TabIndex = 82;
@@ -193,16 +180,6 @@
             this.label18.Size = new System.Drawing.Size(96, 22);
             this.label18.TabIndex = 85;
             this.label18.Text = "KATEGORİ";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label17.Location = new System.Drawing.Point(2, 131);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(115, 22);
-            this.label17.TabIndex = 88;
-            this.label17.Text = "BARKOD NO";
             // 
             // label16
             // 
@@ -229,7 +206,7 @@
             this.lbl_hataIlacAd.AutoSize = true;
             this.lbl_hataIlacAd.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lbl_hataIlacAd.ForeColor = System.Drawing.Color.Red;
-            this.lbl_hataIlacAd.Location = new System.Drawing.Point(120, 34);
+            this.lbl_hataIlacAd.Location = new System.Drawing.Point(119, 97);
             this.lbl_hataIlacAd.Name = "lbl_hataIlacAd";
             this.lbl_hataIlacAd.Size = new System.Drawing.Size(198, 17);
             this.lbl_hataIlacAd.TabIndex = 91;
@@ -267,12 +244,33 @@
             this.lbl_hataIlacBarkod.AutoSize = true;
             this.lbl_hataIlacBarkod.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lbl_hataIlacBarkod.ForeColor = System.Drawing.Color.Red;
-            this.lbl_hataIlacBarkod.Location = new System.Drawing.Point(120, 108);
+            this.lbl_hataIlacBarkod.Location = new System.Drawing.Point(119, 29);
             this.lbl_hataIlacBarkod.Name = "lbl_hataIlacBarkod";
             this.lbl_hataIlacBarkod.Size = new System.Drawing.Size(198, 17);
-            this.lbl_hataIlacBarkod.TabIndex = 95;
+            this.lbl_hataIlacBarkod.TabIndex = 98;
             this.lbl_hataIlacBarkod.Text = " BU ALANI BOŞ BIRAKAMAZSINIZ";
             this.lbl_hataIlacBarkod.Visible = false;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label17.Location = new System.Drawing.Point(1, 52);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(115, 22);
+            this.label17.TabIndex = 97;
+            this.label17.Text = "BARKOD NO";
+            // 
+            // txt_barkod
+            // 
+            this.txt_barkod.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_barkod.Location = new System.Drawing.Point(121, 51);
+            this.txt_barkod.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_barkod.MaxLength = 13;
+            this.txt_barkod.Multiline = true;
+            this.txt_barkod.Name = "txt_barkod";
+            this.txt_barkod.Size = new System.Drawing.Size(258, 43);
+            this.txt_barkod.TabIndex = 96;
             // 
             // IlacKayit
             // 
@@ -281,12 +279,13 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(777, 333);
             this.Controls.Add(this.lbl_hataIlacBarkod);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.txt_barkod);
             this.Controls.Add(this.lbl_hataIlacKategori);
             this.Controls.Add(this.lbl_hataIlacFiyat);
             this.Controls.Add(this.lbl_hataIlacAd);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.label17);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label21);
@@ -294,7 +293,6 @@
             this.Controls.Add(this.txt_kategori);
             this.Controls.Add(this.txt_adet);
             this.Controls.Add(this.txt_fiyat);
-            this.Controls.Add(this.txt_barkod);
             this.Controls.Add(this.txt_ilacAd);
             this.Controls.Add(this.btn_ilacKaydet);
             this.Controls.Add(this.label7);
@@ -314,7 +312,6 @@
         private System.Windows.Forms.Label label7;
         public System.Windows.Forms.Button btn_ilacKaydet;
         private System.Windows.Forms.TextBox txt_ilacAd;
-        private System.Windows.Forms.TextBox txt_barkod;
         private System.Windows.Forms.TextBox txt_fiyat;
         private System.Windows.Forms.NumericUpDown txt_adet;
         private System.Windows.Forms.ComboBox txt_kategori;
@@ -322,12 +319,13 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         public System.Windows.Forms.Label lbl_hataIlacAd;
         public System.Windows.Forms.Label lbl_hataIlacFiyat;
         public System.Windows.Forms.Label lbl_hataIlacKategori;
         public System.Windows.Forms.Label lbl_hataIlacBarkod;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox txt_barkod;
     }
 }

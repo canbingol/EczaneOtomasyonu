@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbl_agriKesici = new System.Windows.Forms.Label();
             this.bar_agriKesici = new System.Windows.Forms.ProgressBar();
             this.pnl_agriKesici = new System.Windows.Forms.Panel();
@@ -421,13 +422,21 @@
             this.datagrid_ilac.AllowUserToAddRows = false;
             this.datagrid_ilac.AllowUserToDeleteRows = false;
             this.datagrid_ilac.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Green;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.datagrid_ilac.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.datagrid_ilac.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.datagrid_ilac.Location = new System.Drawing.Point(-2, 410);
             this.datagrid_ilac.Name = "datagrid_ilac";
             this.datagrid_ilac.ReadOnly = true;
             this.datagrid_ilac.RowHeadersWidth = 51;
             this.datagrid_ilac.RowTemplate.Height = 24;
-            this.datagrid_ilac.Size = new System.Drawing.Size(838, 261);
+            this.datagrid_ilac.Size = new System.Drawing.Size(862, 261);
             this.datagrid_ilac.TabIndex = 7;
             // 
             // Stok
@@ -435,7 +444,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(837, 675);
+            this.ClientSize = new System.Drawing.Size(864, 675);
             this.Controls.Add(this.datagrid_ilac);
             this.Controls.Add(this.pnl_diger);
             this.Controls.Add(this.pnl_tansiyon);

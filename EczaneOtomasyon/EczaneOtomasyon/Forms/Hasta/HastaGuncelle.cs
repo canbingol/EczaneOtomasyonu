@@ -36,12 +36,12 @@ namespace EczaneOtomasyon.Forms.Hasta
                 if (string.IsNullOrEmpty(tcNo) || string.IsNullOrEmpty(ad) || string.IsNullOrEmpty(soyad) || string.IsNullOrEmpty(telNo) || string.IsNullOrEmpty(adres)|| string.IsNullOrEmpty(sigorta))
                 {
                     MessageBox.Show("Lütfen bütün satırları doldurun", "Kayıt Hatası", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    HataMesajlariGoster(txt_tcNo, txt_ad, txt_soyad, txt_telNo, txt_adres, lbl_guncelleAdHata, lbl_gucelleTcHata, lbl_guncelleSoyadHata, lbl_guncelleTelHata, lbl_guncelleAdresHata);
+                    HataMesajlariGoster(txt_tcNo, txt_ad, txt_soyad, txt_telNo, txt_adres,lbl_gucelleTcHata, lbl_guncelleAdHata , lbl_guncelleSoyadHata, lbl_guncelleTelHata, lbl_guncelleAdresHata);
                 }
                 else if (txt_tcNo.Text.Length != 11)
                 {
                     MessageBox.Show("Ltfen Tc noyu 11 haneli olarak giriniz");
-                    HataMesajlariGoster(txt_tcNo, txt_ad, txt_soyad, txt_telNo, txt_adres, lbl_guncelleAdHata, lbl_gucelleTcHata, lbl_guncelleSoyadHata, lbl_guncelleTelHata, lbl_guncelleAdresHata);
+                    HataMesajlariGoster(txt_tcNo, txt_ad, txt_soyad, txt_telNo, txt_adres, lbl_gucelleTcHata,lbl_guncelleAdHata,  lbl_guncelleSoyadHata, lbl_guncelleTelHata, lbl_guncelleAdresHata);
                 }
                 //int türünde olan TcVarmi metodu çagırılarak girilen tc no nun daha önce kayıtlı olup olmadığını kontrol eder
                 else if (TcVarmi(txt_tcNo.Text) == 0)
@@ -52,6 +52,7 @@ namespace EczaneOtomasyon.Forms.Hasta
                 // güncelleme işlemleri yapılır
                 else
                 {
+                    // burada using kullanılsaydı con.close() metoduna gerek kalmaycaktı
                     con.Open();
                     OleDbCommand hastaEkle = new OleDbCommand("UPDATE  Hastalar SET  adi =@p1, soyadi=@p2, adres=@p3, telno=@p4  WHERE  tc=@p5", con);
                     hastaEkle.Parameters.AddWithValue("@p1", ad);

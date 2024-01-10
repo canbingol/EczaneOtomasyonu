@@ -115,7 +115,7 @@ namespace EczaneOtomasyon.Forms.İlaç
             txtadet.Value = 1;
             txtbarkod.Clear();
         }
-
+        // barkodu girilen ilaç varko kontrol edilir
         public int Ilacvarmi(string barkod)
         {
             con.Open();
@@ -154,7 +154,7 @@ namespace EczaneOtomasyon.Forms.İlaç
         }
         #endregion
 
-        #region buton işlemleri
+        #region textbox renk işlemleri
 
         new void MouseHover(TextBox txt)
         {

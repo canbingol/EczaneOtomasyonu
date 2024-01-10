@@ -183,9 +183,9 @@
             this.label6.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label6.Location = new System.Drawing.Point(454, 154);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(177, 22);
+            this.label6.Size = new System.Drawing.Size(163, 22);
             this.label6.TabIndex = 56;
-            this.label6.Text = "TELEFON NUMARASI";
+            this.label6.Text = "TELEFON NUMARA";
             // 
             // label5
             // 
@@ -194,9 +194,9 @@
             this.label5.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label5.Location = new System.Drawing.Point(454, 68);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(129, 22);
+            this.label5.Size = new System.Drawing.Size(124, 22);
             this.label5.TabIndex = 52;
-            this.label5.Text = "HASTA ADRESİ";
+            this.label5.Text = "HASTA ADRES";
             // 
             // label3
             // 
@@ -205,9 +205,9 @@
             this.label3.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label3.Location = new System.Drawing.Point(8, 233);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(136, 22);
+            this.label3.Size = new System.Drawing.Size(131, 22);
             this.label3.TabIndex = 57;
-            this.label3.Text = "HASTA SOYADI";
+            this.label3.Text = "HASTA SOYAD";
             // 
             // label2
             // 
@@ -216,9 +216,9 @@
             this.label2.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label2.Location = new System.Drawing.Point(8, 154);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 22);
+            this.label2.Size = new System.Drawing.Size(101, 22);
             this.label2.TabIndex = 54;
-            this.label2.Text = "HASTA  ADI";
+            this.label2.Text = "HASTA  AD";
             // 
             // label1
             // 

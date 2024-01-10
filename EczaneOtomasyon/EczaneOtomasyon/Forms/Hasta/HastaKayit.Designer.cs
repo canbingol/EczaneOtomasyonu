@@ -76,11 +76,11 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label3.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label3.Location = new System.Drawing.Point(12, 231);
+            this.label3.Location = new System.Drawing.Point(-3, 231);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(136, 22);
+            this.label3.Size = new System.Drawing.Size(131, 22);
             this.label3.TabIndex = 33;
-            this.label3.Text = "HASTA SOYADI";
+            this.label3.Text = "HASTA SOYAD";
             // 
             // label2
             // 

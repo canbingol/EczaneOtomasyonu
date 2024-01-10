@@ -47,7 +47,6 @@ namespace EczaneOtomasyon.Forms.İlaç
                 else if (Ilacvarmi(txt_barkod.Text) != 0) // girilen barkodun kayıtlı olup olmaddığını kontrol eder
                 {
                     MessageBox.Show("Bu ilaç zaten Kayıtlı", " Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    //   metod.HataMesajları(txt_tcNo, txt_ad, txt_soyad, txt_telNo, txt_adres, lbl_kayıtTcHata, lbl_kayıtAdHata, lbl_hayıtSoyadHata, lbl_kayıtTelHata, lbl_kayıtAdresHata);
                     AlanlariTemizle(txt_barkod, txt_ilacAd, txt_adet, txt_barkod);
                 }
                 else
@@ -83,6 +82,7 @@ namespace EczaneOtomasyon.Forms.İlaç
         }
 
         #region Iİlaçİşlemleri metodları
+        // girlen label ların görünürlüğünü textboxın durumuna göre değiştirir
         public void HataMesajlariGoster(TextBox txtfiyat, TextBox txtad, ComboBox txtkategori, TextBox txtbarkod, Label adhata, Label kategorihata, Label barkodhata, Label fiyathat)
         {
             if (string.IsNullOrEmpty(txtfiyat.Text))
@@ -105,7 +105,7 @@ namespace EczaneOtomasyon.Forms.İlaç
             else
                 lbl_hataIlacBarkod.Visible = false;
         }
-
+        // girilen textboxları temizler
         public void AlanlariTemizle(TextBox txtfiyat, TextBox txtad, NumericUpDown txtadet, TextBox txtbarkod)
         {
             txtfiyat.Clear();

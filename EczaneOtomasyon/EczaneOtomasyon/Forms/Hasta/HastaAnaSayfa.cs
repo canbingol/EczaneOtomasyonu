@@ -15,8 +15,8 @@ namespace EczaneOtomasyon.Forms.Hasta
     public partial class HastaAnaSayfa : Form
     {
         string baglanti = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=EczaneVeri.accdb";
-        // Hasatalar tablosundan bütün değerleri çekre ve datagrid e atar
-        public void Listele()
+       
+        public void Listele() // Hasatalar tablosundan bütün değerleri çekre ve datagrid e atar
         {
             OleDbConnection con = new OleDbConnection(baglanti);
             con.Open();
@@ -25,6 +25,7 @@ namespace EczaneOtomasyon.Forms.Hasta
             DataTable dt = new DataTable();
             da.Fill(dt);
             data_hasta.DataSource = dt; 
+            // datagridin başlıklarını düzenler
             data_hasta.Columns["tc"].HeaderText = "TC NO";
             data_hasta.Columns["adi"].HeaderText = "ADI";
             data_hasta.Columns["soyadi"].HeaderText = "SOYADI";
@@ -88,11 +89,11 @@ namespace EczaneOtomasyon.Forms.Hasta
         {
             try
             {
-                if (data_hasta.SelectedRows.Count > 0)
+                if (data_hasta.SelectedRows.Count > 0)// datagrid de seçiili satır varmı kontrol eder
                 {
                     DialogResult sonuc;
                     sonuc = MessageBox.Show("KAYDI SİLMEK İSTİYORMUSUNUZ", "KAYIT SİLME", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                    if (sonuc == DialogResult.OK)
+                    if (sonuc == DialogResult.OK)  // messagebox ta verilen uyarıda ok tuşuna basıldı ise çalışır
                     {
                         string barkod = data_hasta.SelectedRows[0].Cells["tc"].Value.ToString();
                         using (OleDbConnection con = new OleDbConnection(baglanti))

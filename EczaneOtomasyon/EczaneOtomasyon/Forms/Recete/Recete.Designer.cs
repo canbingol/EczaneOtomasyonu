@@ -68,6 +68,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txt_ilacBarkod = new System.Windows.Forms.TextBox();
             this.pnl_ilac = new System.Windows.Forms.Panel();
+            this.pnl_kamera = new System.Windows.Forms.Panel();
+            this.picture_kamera = new System.Windows.Forms.PictureBox();
             this.lbl_barkoNo5 = new System.Windows.Forms.Label();
             this.lbl_barkoNo4 = new System.Windows.Forms.Label();
             this.lbl_barkoNo3 = new System.Windows.Forms.Label();
@@ -85,7 +87,7 @@
             this.lbl_ilacKategori4 = new System.Windows.Forms.Label();
             this.lbl_ilacFiyat2 = new System.Windows.Forms.Label();
             this.lbl_ilacKategori3 = new System.Windows.Forms.Label();
-            this.lbl_ilacAdı5 = new System.Windows.Forms.Label();
+            this.lbl_ilacAdi5 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.lbl_ilacAdeti1 = new System.Windows.Forms.Label();
             this.lbl_ilacAdi4 = new System.Windows.Forms.Label();
@@ -102,8 +104,7 @@
             this.lbl_toplamFiyat = new System.Windows.Forms.Label();
             this.btn_receteEkle = new System.Windows.Forms.Button();
             this.timer_zaman = new System.Windows.Forms.Timer(this.components);
-            this.pnl_kamera = new System.Windows.Forms.Panel();
-            this.picture_kamera = new System.Windows.Forms.PictureBox();
+            this.btn_kameraKapa = new System.Windows.Forms.Button();
             this.pnl_hasta.SuspendLayout();
             this.pnl_hastaBilgisi.SuspendLayout();
             this.pnl_ilacEkle.SuspendLayout();
@@ -625,7 +626,7 @@
             this.pnl_ilac.Controls.Add(this.lbl_ilacKategori4);
             this.pnl_ilac.Controls.Add(this.lbl_ilacFiyat2);
             this.pnl_ilac.Controls.Add(this.lbl_ilacKategori3);
-            this.pnl_ilac.Controls.Add(this.lbl_ilacAdı5);
+            this.pnl_ilac.Controls.Add(this.lbl_ilacAdi5);
             this.pnl_ilac.Controls.Add(this.label14);
             this.pnl_ilac.Controls.Add(this.lbl_ilacAdeti1);
             this.pnl_ilac.Controls.Add(this.lbl_ilacAdi4);
@@ -643,6 +644,25 @@
             this.pnl_ilac.Name = "pnl_ilac";
             this.pnl_ilac.Size = new System.Drawing.Size(777, 335);
             this.pnl_ilac.TabIndex = 6;
+            // 
+            // pnl_kamera
+            // 
+            this.pnl_kamera.BackColor = System.Drawing.SystemColors.Control;
+            this.pnl_kamera.Controls.Add(this.btn_kameraKapa);
+            this.pnl_kamera.Controls.Add(this.picture_kamera);
+            this.pnl_kamera.Location = new System.Drawing.Point(210, 58);
+            this.pnl_kamera.Name = "pnl_kamera";
+            this.pnl_kamera.Size = new System.Drawing.Size(338, 203);
+            this.pnl_kamera.TabIndex = 12;
+            this.pnl_kamera.Visible = false;
+            // 
+            // picture_kamera
+            // 
+            this.picture_kamera.Location = new System.Drawing.Point(3, 29);
+            this.picture_kamera.Name = "picture_kamera";
+            this.picture_kamera.Size = new System.Drawing.Size(332, 174);
+            this.picture_kamera.TabIndex = 13;
+            this.picture_kamera.TabStop = false;
             // 
             // lbl_barkoNo5
             // 
@@ -864,19 +884,19 @@
             this.lbl_ilacKategori3.Text = "-";
             this.lbl_ilacKategori3.Visible = false;
             // 
-            // lbl_ilacAdı5
+            // lbl_ilacAdi5
             // 
-            this.lbl_ilacAdı5.AutoSize = true;
-            this.lbl_ilacAdı5.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_ilacAdı5.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lbl_ilacAdı5.ForeColor = System.Drawing.Color.Black;
-            this.lbl_ilacAdı5.Location = new System.Drawing.Point(20, 234);
-            this.lbl_ilacAdı5.Name = "lbl_ilacAdı5";
-            this.lbl_ilacAdı5.Size = new System.Drawing.Size(20, 27);
-            this.lbl_ilacAdı5.TabIndex = 35;
-            this.lbl_ilacAdı5.Text = "-";
-            this.lbl_ilacAdı5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl_ilacAdı5.Visible = false;
+            this.lbl_ilacAdi5.AutoSize = true;
+            this.lbl_ilacAdi5.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_ilacAdi5.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lbl_ilacAdi5.ForeColor = System.Drawing.Color.Black;
+            this.lbl_ilacAdi5.Location = new System.Drawing.Point(20, 234);
+            this.lbl_ilacAdi5.Name = "lbl_ilacAdi5";
+            this.lbl_ilacAdi5.Size = new System.Drawing.Size(20, 27);
+            this.lbl_ilacAdi5.TabIndex = 35;
+            this.lbl_ilacAdi5.Text = "-";
+            this.lbl_ilacAdi5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_ilacAdi5.Visible = false;
             // 
             // label14
             // 
@@ -1076,23 +1096,15 @@
             // 
             this.timer_zaman.Tick += new System.EventHandler(this.timer_zaman_Tick);
             // 
-            // pnl_kamera
+            // btn_kameraKapa
             // 
-            this.pnl_kamera.BackColor = System.Drawing.SystemColors.Control;
-            this.pnl_kamera.Controls.Add(this.picture_kamera);
-            this.pnl_kamera.Location = new System.Drawing.Point(210, 81);
-            this.pnl_kamera.Name = "pnl_kamera";
-            this.pnl_kamera.Size = new System.Drawing.Size(338, 180);
-            this.pnl_kamera.TabIndex = 12;
-            this.pnl_kamera.Visible = false;
-            // 
-            // picture_kamera
-            // 
-            this.picture_kamera.Location = new System.Drawing.Point(3, 3);
-            this.picture_kamera.Name = "picture_kamera";
-            this.picture_kamera.Size = new System.Drawing.Size(332, 174);
-            this.picture_kamera.TabIndex = 13;
-            this.picture_kamera.TabStop = false;
+            this.btn_kameraKapa.Location = new System.Drawing.Point(282, 0);
+            this.btn_kameraKapa.Name = "btn_kameraKapa";
+            this.btn_kameraKapa.Size = new System.Drawing.Size(55, 29);
+            this.btn_kameraKapa.TabIndex = 14;
+            this.btn_kameraKapa.Text = "X";
+            this.btn_kameraKapa.UseVisualStyleBackColor = true;
+            this.btn_kameraKapa.Click += new System.EventHandler(this.btn_kameraKapa_Click);
             // 
             // Recete
             // 
@@ -1182,7 +1194,7 @@
         private System.Windows.Forms.Label lbl_ilacKategori4;
         private System.Windows.Forms.Label lbl_ilacFiyat2;
         private System.Windows.Forms.Label lbl_ilacKategori3;
-        private System.Windows.Forms.Label lbl_ilacAdı5;
+        private System.Windows.Forms.Label lbl_ilacAdi5;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label lbl_ilacAdeti1;
         private System.Windows.Forms.Label lbl_ilacAdi4;
@@ -1203,5 +1215,6 @@
         private System.Windows.Forms.Timer timer_zaman;
         private System.Windows.Forms.Panel pnl_kamera;
         private System.Windows.Forms.PictureBox picture_kamera;
+        private System.Windows.Forms.Button btn_kameraKapa;
     }
 }
