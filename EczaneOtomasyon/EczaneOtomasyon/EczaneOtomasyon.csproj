@@ -63,6 +63,15 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.2.2.5\lib\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.2.2.5\lib\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
     <Reference Include="CircularProgressBar, Version=2.8.0.16, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
       <HintPath>..\packages\CircularProgressBar.2.8.0.16\lib\net40\CircularProgressBar.dll</HintPath>
     </Reference>
@@ -80,6 +89,12 @@
     <Reference Include="System.Xml" />
     <Reference Include="WinFormAnimation, Version=1.6.0.4, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
       <HintPath>..\packages\WinFormAnimation.1.6.0.4\lib\net40\WinFormAnimation.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing, Version=0.16.9.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.9\lib\net47\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.9.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.9\lib\net47\zxing.presentation.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -101,17 +116,17 @@
     <Compile Include="Forms\AnaPanel\Stok.Designer.cs">
       <DependentUpon>Stok.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Reçete\Recete.cs">
+    <Compile Include="Forms\Recete\Recete.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Reçete\Recete.Designer.cs">
+    <Compile Include="Forms\Recete\Recete.Designer.cs">
       <DependentUpon>Recete.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Satış\Satış.cs">
+    <Compile Include="Forms\Satis\Satis.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Satış\Satış.Designer.cs">
-      <DependentUpon>Satış.cs</DependentUpon>
+    <Compile Include="Forms\Satis\Satış.Designer.cs">
+      <DependentUpon>Satis.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -131,37 +146,37 @@
     <Compile Include="Forms\Hasta\HastaAnaSayfa.Designer.cs">
       <DependentUpon>HastaAnaSayfa.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Hasta\HastaGüncelle.cs">
+    <Compile Include="Forms\Hasta\HastaGuncelle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Hasta\HastaGüncelle.Designer.cs">
-      <DependentUpon>HastaGüncelle.cs</DependentUpon>
+    <Compile Include="Forms\Hasta\HastaGuncelle.Designer.cs">
+      <DependentUpon>HastaGuncelle.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Hasta\HastaKayıt.cs">
+    <Compile Include="Forms\Hasta\HastaKayit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Hasta\HastaKayıt.Designer.cs">
-      <DependentUpon>HastaKayıt.cs</DependentUpon>
+    <Compile Include="Forms\Hasta\HastaKayit.Designer.cs">
+      <DependentUpon>HastaKayit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Hasta\IHastaİslemleri.cs" />
-    <Compile Include="Forms\İlaç\Iilaçİşlemleri.cs" />
-    <Compile Include="Forms\İlaç\İlaçAnaSayfa.cs">
+    <Compile Include="Forms\Hasta\IHastaIslemleri.cs" />
+    <Compile Include="Forms\Ilac\IilacIslemleri.cs" />
+    <Compile Include="Forms\Ilac\IlacAnaSayfa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\İlaç\İlaçAnaSayfa.Designer.cs">
-      <DependentUpon>İlaçAnaSayfa.cs</DependentUpon>
+    <Compile Include="Forms\Ilac\IlacAnaSayfa.Designer.cs">
+      <DependentUpon>IlacAnaSayfa.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\İlaç\İlaçGüncelle.cs">
+    <Compile Include="Forms\Ilac\IlacGuncelle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\İlaç\İlaçGüncelle.Designer.cs">
-      <DependentUpon>İlaçGüncelle.cs</DependentUpon>
+    <Compile Include="Forms\Ilac\IlacGuncelle.Designer.cs">
+      <DependentUpon>IlacGuncelle.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\İlaç\İlaçKayıt.cs">
+    <Compile Include="Forms\Ilac\IlacKayit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\İlaç\İlaçKayıt.Designer.cs">
-      <DependentUpon>İlaçKayıt.cs</DependentUpon>
+    <Compile Include="Forms\Ilac\IlacKayit.Designer.cs">
+      <DependentUpon>IlacKayit.cs</DependentUpon>
     </Compile>
     <Compile Include="IVeriİslemleri.cs" />
     <Compile Include="Program.cs" />
@@ -175,11 +190,11 @@
     <EmbeddedResource Include="Forms\AnaPanel\Stok.resx">
       <DependentUpon>Stok.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Reçete\Recete.resx">
+    <EmbeddedResource Include="Forms\Recete\Recete.resx">
       <DependentUpon>Recete.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Satış\Satış.resx">
-      <DependentUpon>Satış.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Satis\Satis.resx">
+      <DependentUpon>Satis.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -190,20 +205,20 @@
     <EmbeddedResource Include="Forms\Hasta\HastaAnaSayfa.resx">
       <DependentUpon>HastaAnaSayfa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Hasta\HastaGüncelle.resx">
-      <DependentUpon>HastaGüncelle.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Hasta\HastaGuncelle.resx">
+      <DependentUpon>HastaGuncelle.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Hasta\HastaKayıt.resx">
-      <DependentUpon>HastaKayıt.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Hasta\HastaKayit.resx">
+      <DependentUpon>HastaKayit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\İlaç\İlaçAnaSayfa.resx">
-      <DependentUpon>İlaçAnaSayfa.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Ilac\IlacAnaSayfa.resx">
+      <DependentUpon>IlacAnaSayfa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\İlaç\İlaçGüncelle.resx">
-      <DependentUpon>İlaçGüncelle.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Ilac\IlacGuncelle.resx">
+      <DependentUpon>IlacGuncelle.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\İlaç\İlaçKayıt.resx">
-      <DependentUpon>İlaçKayıt.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Ilac\IlacKayit.resx">
+      <DependentUpon>IlacKayit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -18,14 +18,12 @@ namespace EczaneOtomasyon
 {
     public partial class AnaEkran : Form
     {
-       // string baglanti = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=EczaneVeri.accdb";
-
         public AnaEkran()
         {
             InitializeComponent();
             panelAyarları();
         }
-        string kullanıcı = Login.aktifKullanıcı;
+        string kullanıcı = Login.aktifKullanici;
        
 
         #region Tıklama işlemleri 
@@ -43,13 +41,13 @@ namespace EczaneOtomasyon
         }
         private void btn_hastaKaydet_Click(object sender, EventArgs e)
         {
-            AltFormİşlemGöster(new HastaKayıt());
+            AltFormİşlemGöster(new HastaKayit());
         }
 
         private void btn_ilaçİşlemleri_Click(object sender, EventArgs e)
         {
             AltMenüSakla();
-            AltFormGöster(new İlaçAnaSayfa());
+            AltFormGöster(new IlacAnaSayfa());
             AltMenüGöster(pnl_ilaç);
         }
         private void btn_reçeteİşlemleri_Click(object sender, EventArgs e)
@@ -68,6 +66,7 @@ namespace EczaneOtomasyon
             pnl_ilaç.Visible = false;
             pnl_hasta.Visible = false;
         }
+        // sol tarafta bulunan alt panellerin ve alt panel şlemlerinin göründüğü işlemler panelinin görünürlüğü ayarlanıyor
         void AltMenüSakla()
         {
             if (pnl_hasta.Visible == true)
@@ -77,6 +76,7 @@ namespace EczaneOtomasyon
             if (pnl_işlemler.Visible == true)
                 pnl_işlemler.Visible = false;
         }
+        // ilaç ve hasta formlarının alt menülerini gösterme için kullanılır
         void AltMenüGöster(Panel pnl)
         {
             if (pnl.Visible == false)
@@ -87,7 +87,7 @@ namespace EczaneOtomasyon
             else
                 pnl.Visible = false;
         }
-        // ana formların dışında ana formlaara bağımlı formları gösterir /hastaAnasayfa-hastagüncelle
+        // ana formların dışında ana formlara bağımlı formları gösterir /hastaAnasayfa-hastagüncelle
         public void AltFormİşlemGöster(Form altForm)
         {
             pnl_işlemler.Controls.Clear();
@@ -107,7 +107,7 @@ namespace EczaneOtomasyon
         }
 
 
-        // anaekran içinde diğe formları gösterir
+        // anaekran içinde diğer formları gösterir
         Form aktifForm = null;
         void AltFormGöster(Form altForm)
         {
@@ -188,7 +188,7 @@ namespace EczaneOtomasyon
 
         private void btn_hastaGüncelle_Click(object sender, EventArgs e)
         {
-            AltFormİşlemGöster(new HastaGüncelle());
+            AltFormİşlemGöster(new HastaGuncelle());
 
         }
 
@@ -202,16 +202,16 @@ namespace EczaneOtomasyon
 
         private void btn_ilaçKaydet_Click(object sender, EventArgs e)
         {
-            AltFormİşlemGöster(new İlaçKayıt());
+            AltFormİşlemGöster(new IlacKayit());
 
         }
 
         private void btn_ilaçGüncelle_Click(object sender, EventArgs e)
         {
-            AltFormİşlemGöster(new İlaçGüncelle());
+            AltFormİşlemGöster(new IlacGuncelle());
 
         }
-        İlaçAnaSayfa ilaç = new İlaçAnaSayfa();
+        IlacAnaSayfa ilaç = new IlacAnaSayfa();
         private void btn_ilaçListele_Click(object sender, EventArgs e)
         {
             ilaç.Listele();
@@ -222,7 +222,6 @@ namespace EczaneOtomasyon
 
         private void AnaEkran_Load(object sender, EventArgs e)
         {
-          
             AltMenüSakla();
             AltFormGöster(new AnaPanel());
         }
@@ -237,7 +236,7 @@ namespace EczaneOtomasyon
             }
 
         }
-
+        // uygulamayı tam ekran yapar
         private void btn_maksimize_Click(object sender, EventArgs e)
         {
 
@@ -254,7 +253,7 @@ namespace EczaneOtomasyon
         private void btn_satısİslemleri_Click(object sender, EventArgs e)
         {
             AltMenüSakla();
-            AltFormGöster(new Satış());
+            AltFormGöster(new Satis());
             AltMenüSakla();
         }
 

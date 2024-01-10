@@ -14,14 +14,14 @@ namespace EczaneOtomasyon
 {
     public partial class Login : Form
     {
-        string connection = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=EczaneVeri.accdb";
+        string baglanti = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=EczaneVeri.accdb";
 
         public Login()
         {
             InitializeComponent();
         }
-        public static string aktifKullanıcı;
-
+        public static string aktifKullanici;
+        // parametre olarak girilen textboxlar temizlenir
         void Temizle(TextBox txt, TextBox txt2, TextBox txt3)
         {
             txt.Clear();
@@ -33,135 +33,152 @@ namespace EczaneOtomasyon
             txt.Clear();
             txt2.Clear();
         }
+        // giriş butonuna tıklandığında çalışır
         private void btn_Giriş_Click(object sender, EventArgs e)
         {
-            string kullanıcıAdı = txt_KullanıcıAdı.Text;
+            string kullaniciAdi = txt_KullaniciAdi.Text;
             string parola = txt_Parola.Text;
 
-            if (string.IsNullOrEmpty(kullanıcıAdı))
-                lbl_hataKullanıcıAdı.Visible = true;
+            if (string.IsNullOrEmpty(kullaniciAdi))
+                lbl_hataKullaniciAdi.Visible = true;
             else
-                lbl_hataKullanıcıAdı.Visible = false;
+                lbl_hataKullaniciAdi.Visible = false;
 
             if (string.IsNullOrEmpty(parola))
                 lbl_hataParola.Visible = true;
             else
                 lbl_hataParola.Visible = false;
-
-            using (OleDbConnection con = new OleDbConnection(connection))
+            try
             {
-                con.Open();
-                using (OleDbCommand cmd = new OleDbCommand("Select * from Kullanıcılar where kullanıcıAdı=@kullanıcıAdı and parola =@parola", con))
+                using (OleDbConnection con = new OleDbConnection(baglanti))
                 {
-                    cmd.Parameters.AddWithValue("@Username", kullanıcıAdı);
-                    cmd.Parameters.AddWithValue("@Password", parola);
-                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    con.Open();
+                    using (OleDbCommand cmd = new OleDbCommand("Select * from Kullanicilar where kullaniciAdi=@kullaniciAdi and parola =@parola", con))
                     {
-                        if (reader.Read())
-                            aktifKullanıcı = reader["kullanıcıAdı"].ToString();
-
-                        if (reader.HasRows)
+                        cmd.Parameters.AddWithValue("@kullaniciAdi", kullaniciAdi);
+                        cmd.Parameters.AddWithValue("@parola", parola);
+                        using (OleDbDataReader reader = cmd.ExecuteReader())
                         {
-                            AnaEkran anaEkran = new AnaEkran();
-                            anaEkran.Show();
-                            this.Hide();
+                            if (reader.Read())
+                                aktifKullanici = reader["kullaniciAdi"].ToString();
+                            //  okunan değer boş değil ise
+                            if (reader.HasRows)
+                            {
+                                AnaEkran anaEkran = new AnaEkran();
+                                anaEkran.Show();
+                                this.Hide();
+                            }
+                            else
+                                MessageBox.Show("Kullanıcı adı veya şifre hatalı!");
                         }
-                        else
-                            MessageBox.Show("Kullanıcı adı veya şifre hatalı!");
                     }
                 }
             }
+            catch (Exception)
+            {
+                MessageBox.Show("HATA OLUŞTU LÜTGEN TEKRAR DENEYİN");
+            }
+
 
         }
         // parametre ile girilen kullanı adının olup olmadığını kontrol eder
         public bool KullaniciAdiMevcutMu(string kullaniciAdi)
         {
-            using (OleDbConnection con = new OleDbConnection(connection))
+            using (OleDbConnection con = new OleDbConnection(baglanti))
             {
                 con.Open();
-                OleDbCommand cmd = new OleDbCommand("SELECT COUNT(*) FROM Kullanıcılar WHERE kullanıcıAdı = @p1", con);
+                OleDbCommand cmd = new OleDbCommand("SELECT COUNT(*) FROM Kullanicilar WHERE kullaniciAdi = @p1", con);
                 cmd.Parameters.AddWithValue("@p1", kullaniciAdi);
                 int count = (int)cmd.ExecuteScalar();
                 return count > 0;
             }
         }
-        public void HataMesajı(string str, Label lbl)
+        // parametre olarak girilen label ların görünürlükleri ayarlanır
+        public void HataMesaji(string str, Label lbl)
         {
             if (string.IsNullOrEmpty(str))
                 lbl.Visible = true;
             else
                 lbl.Visible = false;
         }
-
+        // parolamı unuttuma basınca çalışır
         private void btn_yeniParolaKaydet_Click(object sender, EventArgs e)
         {
             string parola1 = txt_YeniParola.Text;
             string parola2 = txt_YeniParola2.Text;
-            String kullanıcı = txt_parolaKullanıcıAdı.Text;
+            String kullanici = txt_parolaKullaniciAdi.Text;
 
             // textBox ların boş olup olmadığını kontrol eder
-            HataMesajı(parola1, lbl_hataUnuttumParola1);
-            HataMesajı(parola2, lbl_hataUnuttumParola2);
-            HataMesajı(kullanıcı, lbl_hataParolaKullanıcıadı);
+            HataMesaji(parola1, lbl_hataUnuttumParola1);
+            HataMesaji(parola2, lbl_hataUnuttumParola2);
+            HataMesaji(kullanici, lbl_hataParolaKullaniciAdi);
 
-            if (KullaniciAdiMevcutMu(kullanıcı))
+            if (!string.IsNullOrEmpty(kullanici))
             {
-                if (!string.IsNullOrEmpty(parola2) && !string.IsNullOrEmpty(parola1))
+                // girilen kullanıcı adının olup olmadığı kontrol edilir
+                if (KullaniciAdiMevcutMu(kullanici))
                 {
-                    if (parola1.Length < 4)
+                    if (!string.IsNullOrEmpty(parola2) && !string.IsNullOrEmpty(parola1))
                     {
-                        MessageBox.Show(" Parola 4 haneden kısa olamaz");
-                    }
-                    else
-                    {
-                        if (parola1 != parola2)
-                            MessageBox.Show(" Şifreler uyuşmuyor !");
-
-                        // parolalar uyuşuyor ise şifreyi günceller
+                        if (parola1.Length < 4)
+                        {
+                            MessageBox.Show(" Parola 4 haneden kısa olamaz");
+                        }
                         else
                         {
-                            using (OleDbConnection con = new OleDbConnection(connection))
+                            if (parola1 != parola2)
+                                MessageBox.Show(" Şifreler uyuşmuyor !");
+
+                            // parolalar uyuşuyor ise şifreyi günceller
+                            else
                             {
-                                using (OleDbCommand cmd = new OleDbCommand("UPDATE Kullanıcılar SET parola = @parola WHERE kullanıcıAdı =@kullanıcı", con))
+                                using (OleDbConnection con = new OleDbConnection(baglanti))
                                 {
-                                    cmd.Parameters.AddWithValue("@parola", parola1);
-                                    cmd.Parameters.AddWithValue("@kullanıcı", kullanıcı);
-
-                                    con.Open();
-                                    int etkilenenSatırSayısı = cmd.ExecuteNonQuery();
-                                    con.Close();
-
-                                    if (etkilenenSatırSayısı > 0)
+                                    using (OleDbCommand cmd = new OleDbCommand("UPDATE Kullanicilar SET parola = @parola WHERE kullaniciAdi =@kullaniciAdi", con))
                                     {
-                                        txt_YeniParola.Clear();
-                                        txt_YeniParola2.Clear();
-                                        txt_parolaKullanıcıAdı.Clear();
-                                        MessageBox.Show("Parola başarılı bir şekilde güncellendi");
-                                    }
-                                    else
-                                    {
-                                        MessageBox.Show("Güncelleme başarısız. Kullanıcı bulunamadı veya başka bir hata oluştu.");
+                                        cmd.Parameters.AddWithValue("@parola", parola1);
+                                        cmd.Parameters.AddWithValue("@kullaniciAdi", kullanici);
+
+                                        con.Open();
+                                        int sayac = cmd.ExecuteNonQuery();
+                                        con.Close();
+
+                                        if (sayac > 0)
+                                        {
+                                            txt_YeniParola.Clear();
+                                            txt_YeniParola2.Clear();
+                                            txt_parolaKullaniciAdi.Clear();
+                                            MessageBox.Show("Parola başarılı bir şekilde güncellendi");
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("Güncelleme başarısız. Kullanıcı bulunamadı veya başka bir hata oluştu.");
+                                        }
                                     }
                                 }
                             }
                         }
                     }
                 }
+                else
+                    MessageBox.Show("Kullanıcı bulunamadı. Geçerli bir kullanıcı adı giriniz.");
             }
             else
-                Console.WriteLine("Kullanıcı bulunamadı. Geçerli bir kullanıcı adı giriniz.");
+                MessageBox.Show("LÜTFEN KULLANICI ADINI GİRİNİZ");
+
         }
-        private void btn_yeniKullanıcı_Click(object sender, EventArgs e)
+
+        private void btn_yeniKullanici_Click(object sender, EventArgs e)
         {
 
             // panel görünür kılındı ve lokasyınu yeniden ayarlandı
-            PanelYeniKayıt.Visible = true;
-            PanelYeniKayıt.Location = new Point(345, 10);
+            PanelYeniKayit.Visible = true;
+            PanelYeniKayit.Location = new Point(345, 10);
             if (panel_SifreDegistir.Visible == true)
             {
                 panel_SifreDegistir.Visible = false;
             }
-            Temizle(txt_kayıtKullanıcıAdı, txt_Parola);
+            Temizle(txt_kayitKullaniciAdi, txt_Parola);
         }
 
         private void btn_sifreUnuttum_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -169,87 +186,93 @@ namespace EczaneOtomasyon
 
             panel_SifreDegistir.Visible = true;
             panel_SifreDegistir.Location = new Point(346, 1);
-            btn_YeniKayıtEkle.Visible = false;
-            if (PanelYeniKayıt.Visible == true)
+            btn_YeniKayitEkle.Visible = false;
+            if (PanelYeniKayit.Visible == true)
             {
-                PanelYeniKayıt.Visible = false;
+                PanelYeniKayit.Visible = false;
             }
-            Temizle(txt_KullanıcıAdı, txt_Parola);
+            Temizle(txt_KullaniciAdi, txt_Parola);
         }
-        private void btn_kayıtKapat_Click(object sender, EventArgs e)
+        private void btn_kayitKapat_Click(object sender, EventArgs e)
         {
 
-            PanelYeniKayıt.Visible = false;
-            Temizle(txt_kayıtKullanıcıAdı, txt_kayıtParola, txt_kayıtParola2);
+            PanelYeniKayit.Visible = false;
+            Temizle(txt_kayitKullaniciAdi, txt_kayitParola, txt_kayitParola2);
         }
 
         private void btn_parolaKapat_Click(object sender, EventArgs e)
         {
-
             panel_SifreDegistir.Visible = false;
-            btn_YeniKayıtEkle.Visible = true;
-            Temizle(txt_YeniParola2, txt_YeniParola, txt_parolaKullanıcıAdı);
+            btn_YeniKayitEkle.Visible = true;
+            Temizle(txt_YeniParola2, txt_YeniParola, txt_parolaKullaniciAdi);
         }
 
-        private void btn_YeniKayıtEkle_Click(object sender, EventArgs e)
+        // yeni kayıt ekleme işlemi
+        private void btn_YeniKayitEkle_Click(object sender, EventArgs e)
         {
 
-            string kullanıcı = txt_kayıtKullanıcıAdı.Text;
-            string parola1 = txt_kayıtParola.Text;
-            string parola2 = txt_kayıtParola2.Text;
+            string kullanici = txt_kayitKullaniciAdi.Text;
+            string parola1 = txt_kayitParola.Text;
+            string parola2 = txt_kayitParola2.Text;
             string yetki = comboBox_yetki.Text;
-            HataMesajı(kullanıcı, lbl_hataKayıtKullanıcıAdı);
-            HataMesajı(parola1, lbl_hataKayıtParola1);
-            HataMesajı(parola2, lbl_hataKayıtParola2);
+            HataMesaji(kullanici, lbl_hataKayitKullaniciAdi);
+            HataMesaji(parola1, lbl_hataKayitParola1);
+            HataMesaji(parola2, lbl_hataKayitParola2);
 
-            if (KullaniciAdiMevcutMu(kullanıcı))
-                MessageBox.Show(" Bu kullanıcı adı alınmış lütfen tekrar deneyin");
-            else
+            try
             {
-                if (string.IsNullOrEmpty(parola2) && string.IsNullOrEmpty(parola1) && string.IsNullOrEmpty(yetki))
-                    MessageBox.Show("lütfen bütün alanları doldurun");
+                if (KullaniciAdiMevcutMu(kullanici))
+                    MessageBox.Show(" Bu kullanıcı adı alınmış lütfen tekrar deneyin");
                 else
                 {
-                    if (!(parola1 == parola2))
-                        MessageBox.Show(" Şifreler aynı olmalı");
+                    if (string.IsNullOrEmpty(parola2) && string.IsNullOrEmpty(parola1) && string.IsNullOrEmpty(yetki))
+                        MessageBox.Show("lütfen bütün alanları doldurun");
                     else
                     {
-                        if (parola1.Length < 4)
-                            MessageBox.Show("Parola 4 haneden küçük olamaz");
+                        if (!(parola1 == parola2))
+                            MessageBox.Show(" Şifreler aynı olmalı");
                         else
                         {
-                            using (OleDbConnection con = new OleDbConnection(connection))
+                            if (parola1.Length < 4)
+                                MessageBox.Show("Parola 4 haneden küçük olamaz");
+                            else
                             {
-                                using (OleDbCommand cmd = new OleDbCommand("INSERT INTO  Kullanıcılar(kullanıcıAdı, parola,yetki) VALUES (@kullanıcı, @parola,@yetki) ", con))
+                                using (OleDbConnection con = new OleDbConnection(baglanti))
                                 {
-
-                                    cmd.Parameters.AddWithValue("@kullanıcı", kullanıcı);
-                                    cmd.Parameters.AddWithValue("@parola", parola1);
-                                    cmd.Parameters.AddWithValue("@yetki", yetki);
-
-                                    con.Open();
-                                    int etkilenenSatırSayısı = cmd.ExecuteNonQuery();
-                                    con.Close();
-
-                                    if (etkilenenSatırSayısı > 0)
+                                    using (OleDbCommand cmd = new OleDbCommand("INSERT INTO  Kullanicilar(kullaniciAdi, parola,yetki) VALUES (@kullanici, @parola,@yetki) ", con))
                                     {
-                                        MessageBox.Show("Kayıt  başarılı bir şekilde eklendi");
-                                        txt_kayıtKullanıcıAdı.Clear();
-                                        txt_kayıtParola.Clear();
-                                        txt_kayıtParola2.Clear();
+
+                                        cmd.Parameters.AddWithValue("@kullanıcı", kullanici);
+                                        cmd.Parameters.AddWithValue("@parola", parola1);
+                                        cmd.Parameters.AddWithValue("@yetki", yetki);
+
+                                        con.Open();
+                                        int sayac = cmd.ExecuteNonQuery();
+                                        con.Close();
+
+                                        if (sayac > 0)
+                                        {
+                                            MessageBox.Show("Kayıt  başarılı bir şekilde eklendi");
+                                            txt_kayitKullaniciAdi.Clear();
+                                            txt_kayitParola.Clear();
+                                            txt_kayitParola2.Clear();
+                                        }
+                                        else
+                                            MessageBox.Show("Kayıt Yapılırken Hata oluştu Lütfen tekrar deneyim");
                                     }
-                                    else
-                                        MessageBox.Show("Kayıt Yapılırken Hata oluştu Lütfen tekrar deneyim");
                                 }
                             }
                         }
                     }
                 }
             }
-            // Temizle(txt_kayıtKullanıcıAdı, txt_kayıtParola, txt_kayıtParola2);
+            catch (Exception)
+            {
+                MessageBox.Show("Kayıt Yapılırken Hata oluştu Lütfen tekrar deneyin");
+            }
         }
 
-        private void btn_cıkıs_Click_1(object sender, EventArgs e)
+        private void btn_cikis_Click_1(object sender, EventArgs e)
         {
             DialogResult sonuc;
             sonuc = MessageBox.Show("ÇIKIŞ YAPMAK İSTEDİĞİNE EMİN MİSİN?", "ÇIKIŞ", MessageBoxButtons.OKCancel);
@@ -262,8 +285,8 @@ namespace EczaneOtomasyon
         private void Login_Load(object sender, EventArgs e)
         {
             // form üzerinden paswordChar kullanılamadığı için burada yapıldı
-            txt_kayıtParola2.PasswordChar = Encoding.GetEncoding("Windows-1252").GetString(new byte[] { 149, })[0];
-            txt_kayıtParola.PasswordChar = Encoding.GetEncoding("Windows-1252").GetString(new byte[] { 149, })[0];
+            txt_kayitParola2.PasswordChar = Encoding.GetEncoding("Windows-1252").GetString(new byte[] { 149, })[0];
+            txt_kayitParola.PasswordChar = Encoding.GetEncoding("Windows-1252").GetString(new byte[] { 149, })[0];
             txt_Parola.PasswordChar = Encoding.GetEncoding("Windows-1252").GetString(new byte[] { 149, })[0];
             txt_YeniParola.PasswordChar = Encoding.GetEncoding("Windows-1252").GetString(new byte[] { 149, })[0];
             txt_YeniParola2.PasswordChar = Encoding.GetEncoding("Windows-1252").GetString(new byte[] { 149, })[0];

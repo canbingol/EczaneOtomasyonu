@@ -13,7 +13,7 @@ namespace EczaneOtomasyon.Forms.AnaPanel
 {
     public partial class Stok : Form
     {
-        string baglantı = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=EczaneVeri.accdb";
+        string baglanti = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=EczaneVeri.accdb";
         int kapasite = AnaPanel.kapasite;
         public Stok()
         {
@@ -22,7 +22,9 @@ namespace EczaneOtomasyon.Forms.AnaPanel
 
         private void Stok_Load(object sender, EventArgs e)
         {
-            IlacListesi();
+       
+            IlacListesi();   // ilaclar tablosundan bütün verileri çeker ve datagrid e atar
+            // bütün kategirilere göre tolam ilaç sayısını alır ve prosessbar lara atar
             IlacArama("Antibiyotik", bar_antibiyotik, lbl_antibiyotikOran);
             IlacArama("Antidepresan", bar_antidepresan, lbl_antidepresanOran);
             IlacArama("Alerji İlacı", bar_alerji, lbl_alerjiOran);
@@ -32,12 +34,12 @@ namespace EczaneOtomasyon.Forms.AnaPanel
             IlacArama("Tansiyon İlacı", bar_tansiyon, lbl_tansiyonOran);
             IlacArama("Diğer", bar_diger, lbl_digerOran);
         }
-
+        // parametre olarak girilen kategoriye göre prosessbar a değer atar
         void IlacArama(string kategori, ProgressBar bar, Label lbl)
         {
-            using (OleDbConnection con = new OleDbConnection(baglantı))
+            using (OleDbConnection con = new OleDbConnection(baglanti))
             {
-                string sorgu = $"SELECT SUM(adet) FROM İlaçlar Where kategori=@kategori ";
+                string sorgu = $"SELECT SUM(adet) FROM Ilaclar Where kategori=@kategori ";
                 con.Open();
                 using (OleDbCommand cmd = new OleDbCommand(sorgu, con))
                 {
@@ -50,11 +52,12 @@ namespace EczaneOtomasyon.Forms.AnaPanel
                 }
             }
         }
+        // girilen parametreye göre kategoriden veri çekip datagrid e atar
         void IlacListele(string sec)
         {
-            using (OleDbConnection con = new OleDbConnection(baglantı))
+            using (OleDbConnection con = new OleDbConnection(baglanti))
             {   
-                string sorgu = $"SELECT * FROM İlaçlar Where kategori=@kategori ";
+                string sorgu = $"SELECT * FROM Ilaclar Where kategori=@kategori ";
                 con.Open();
                 OleDbCommand cmd = new OleDbCommand(sorgu, con);
                 cmd.Parameters.AddWithValue("@kategori", sec);
@@ -64,11 +67,12 @@ namespace EczaneOtomasyon.Forms.AnaPanel
                 datagrid_ilac.DataSource= tablo;
             }
         }
+        // ilaclar tablosundan bütün verileri çeker ve datagrid e atar
         void IlacListesi()
         {
-            using (OleDbConnection con = new OleDbConnection(baglantı))
+            using (OleDbConnection con = new OleDbConnection(baglanti))
             {
-                string sorgu = $"SELECT * FROM İlaçlar";
+                string sorgu = $"SELECT * FROM Ilaclar";
                 con.Open();
                 OleDbCommand cmd = new OleDbCommand(sorgu, con);
                 OleDbDataAdapter da = new OleDbDataAdapter(cmd);
@@ -77,7 +81,7 @@ namespace EczaneOtomasyon.Forms.AnaPanel
                 datagrid_ilac.DataSource = tablo;
             }
         }
-
+        // label lara çitf tıklama olayları
         private void lbl_agriKesici_DoubleClick(object sender, EventArgs e)
         {
             IlacListele("Ağrı Kesici");

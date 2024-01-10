@@ -60,12 +60,12 @@
             this.data_hasta.ColumnHeadersHeight = 35;
             this.data_hasta.Dock = System.Windows.Forms.DockStyle.Fill;
             this.data_hasta.GridColor = System.Drawing.Color.Black;
-            this.data_hasta.Location = new System.Drawing.Point(0, 28);
+            this.data_hasta.Location = new System.Drawing.Point(0, 30);
             this.data_hasta.Name = "data_hasta";
             this.data_hasta.ReadOnly = true;
             this.data_hasta.RowHeadersWidth = 51;
             this.data_hasta.RowTemplate.Height = 24;
-            this.data_hasta.Size = new System.Drawing.Size(718, 718);
+            this.data_hasta.Size = new System.Drawing.Size(718, 716);
             this.data_hasta.TabIndex = 8;
             // 
             // menuStrip1
@@ -77,28 +77,28 @@
             this.btn_hastaAra});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(718, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(718, 30);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // btn_listele
             // 
             this.btn_listele.Name = "btn_listele";
-            this.btn_listele.Size = new System.Drawing.Size(65, 24);
+            this.btn_listele.Size = new System.Drawing.Size(65, 26);
             this.btn_listele.Text = "Listele";
             this.btn_listele.Click += new System.EventHandler(this.listeleToolStripMenuItem_Click);
             // 
             // btn_sil
             // 
             this.btn_sil.Name = "btn_sil";
-            this.btn_sil.Size = new System.Drawing.Size(39, 24);
+            this.btn_sil.Size = new System.Drawing.Size(39, 26);
             this.btn_sil.Text = "Sil";
             this.btn_sil.Click += new System.EventHandler(this.btn_sil_Click);
             // 
             // btn_hastaAra
             // 
             this.btn_hastaAra.Name = "btn_hastaAra";
-            this.btn_hastaAra.Size = new System.Drawing.Size(92, 24);
+            this.btn_hastaAra.Size = new System.Drawing.Size(92, 26);
             this.btn_hastaAra.Text = "Hasta Ara ";
             this.btn_hastaAra.Click += new System.EventHandler(this.btn_hastaAra_Click);
             // 
@@ -108,9 +108,9 @@
             this.pnl_hastaAra.Controls.Add(this.txt_hastaAra);
             this.pnl_hastaAra.Controls.Add(this.label1);
             this.pnl_hastaAra.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnl_hastaAra.Location = new System.Drawing.Point(514, 28);
+            this.pnl_hastaAra.Location = new System.Drawing.Point(514, 30);
             this.pnl_hastaAra.Name = "pnl_hastaAra";
-            this.pnl_hastaAra.Size = new System.Drawing.Size(204, 718);
+            this.pnl_hastaAra.Size = new System.Drawing.Size(204, 716);
             this.pnl_hastaAra.TabIndex = 10;
             this.pnl_hastaAra.Visible = false;
             // 

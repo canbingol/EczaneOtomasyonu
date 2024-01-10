@@ -29,63 +29,63 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
-            this.lbl_KullanıcıAdı = new System.Windows.Forms.Label();
+            this.lbl_KullaniciAdi = new System.Windows.Forms.Label();
             this.lbl_Parola = new System.Windows.Forms.Label();
-            this.txt_KullanıcıAdı = new System.Windows.Forms.TextBox();
-            this.btn_Giriş = new System.Windows.Forms.Button();
+            this.txt_KullaniciAdi = new System.Windows.Forms.TextBox();
+            this.btn_Giris = new System.Windows.Forms.Button();
             this.btn_sifreUnuttum = new System.Windows.Forms.LinkLabel();
             this.btn_yeniKullanıcı = new System.Windows.Forms.Button();
-            this.PanelYeniKayıt = new System.Windows.Forms.Panel();
+            this.PanelYeniKayit = new System.Windows.Forms.Panel();
             this.comboBox_yetki = new System.Windows.Forms.ComboBox();
-            this.btn_kayıtKapat = new System.Windows.Forms.PictureBox();
+            this.btn_kayitKapat = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lbl_yeniParolaTekrar = new System.Windows.Forms.Label();
-            this.lbl_hataKayıtParola2 = new System.Windows.Forms.Label();
-            this.lbl_hataKayıtParola1 = new System.Windows.Forms.Label();
-            this.lbl_hataKayıtKullanıcıAdı = new System.Windows.Forms.Label();
-            this.btn_YeniKayıtEkle = new System.Windows.Forms.Button();
+            this.lbl_hataKayitParola2 = new System.Windows.Forms.Label();
+            this.lbl_hataKayitParola1 = new System.Windows.Forms.Label();
+            this.lbl_hataKayitKullaniciAdi = new System.Windows.Forms.Label();
+            this.btn_YeniKayitEkle = new System.Windows.Forms.Button();
             this.lbl_YeniParola = new System.Windows.Forms.Label();
             this.lblYeniKullanıcıAdı = new System.Windows.Forms.Label();
-            this.txt_kayıtKullanıcıAdı = new System.Windows.Forms.TextBox();
-            this.txt_kayıtParola = new System.Windows.Forms.TextBox();
-            this.txt_kayıtParola2 = new System.Windows.Forms.TextBox();
+            this.txt_kayitKullaniciAdi = new System.Windows.Forms.TextBox();
+            this.txt_kayitParola = new System.Windows.Forms.TextBox();
+            this.txt_kayitParola2 = new System.Windows.Forms.TextBox();
             this.panel_SifreDegistir = new System.Windows.Forms.Panel();
             this.btn_parolaKapat = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.lbl_hataUnuttumParola2 = new System.Windows.Forms.Label();
-            this.lbl_hataParolaKullanıcıadı = new System.Windows.Forms.Label();
+            this.lbl_hataParolaKullaniciAdi = new System.Windows.Forms.Label();
             this.lbl_hataUnuttumParola1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_yeniParolaKaydet = new System.Windows.Forms.Button();
             this.txt_YeniParola2 = new System.Windows.Forms.TextBox();
             this.txt_YeniParola = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txt_parolaKullanıcıAdı = new System.Windows.Forms.TextBox();
+            this.txt_parolaKullaniciAdi = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.lbl_hataKullanıcıAdı = new System.Windows.Forms.Label();
+            this.lbl_hataKullaniciAdi = new System.Windows.Forms.Label();
             this.lbl_hataParola = new System.Windows.Forms.Label();
-            this.btn_cıkıs = new System.Windows.Forms.Button();
+            this.btn_cikis = new System.Windows.Forms.Button();
             this.txt_Parola = new System.Windows.Forms.TextBox();
-            this.PanelYeniKayıt.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_kayıtKapat)).BeginInit();
+            this.PanelYeniKayit.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_kayitKapat)).BeginInit();
             this.panel_SifreDegistir.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_parolaKapat)).BeginInit();
             this.SuspendLayout();
             // 
-            // lbl_KullanıcıAdı
+            // lbl_KullaniciAdi
             // 
-            this.lbl_KullanıcıAdı.AutoSize = true;
-            this.lbl_KullanıcıAdı.BackColor = System.Drawing.Color.White;
-            this.lbl_KullanıcıAdı.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_KullanıcıAdı.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.lbl_KullanıcıAdı.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lbl_KullanıcıAdı.ForeColor = System.Drawing.Color.Black;
-            this.lbl_KullanıcıAdı.Location = new System.Drawing.Point(474, 109);
-            this.lbl_KullanıcıAdı.Name = "lbl_KullanıcıAdı";
-            this.lbl_KullanıcıAdı.Size = new System.Drawing.Size(154, 29);
-            this.lbl_KullanıcıAdı.TabIndex = 0;
-            this.lbl_KullanıcıAdı.Text = "Kullanıcı Adı";
+            this.lbl_KullaniciAdi.AutoSize = true;
+            this.lbl_KullaniciAdi.BackColor = System.Drawing.Color.White;
+            this.lbl_KullaniciAdi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl_KullaniciAdi.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.lbl_KullaniciAdi.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lbl_KullaniciAdi.ForeColor = System.Drawing.Color.Black;
+            this.lbl_KullaniciAdi.Location = new System.Drawing.Point(474, 109);
+            this.lbl_KullaniciAdi.Name = "lbl_KullaniciAdi";
+            this.lbl_KullaniciAdi.Size = new System.Drawing.Size(154, 29);
+            this.lbl_KullaniciAdi.TabIndex = 0;
+            this.lbl_KullaniciAdi.Text = "Kullanıcı Adı";
             // 
             // lbl_Parola
             // 
@@ -101,28 +101,28 @@
             this.lbl_Parola.TabIndex = 0;
             this.lbl_Parola.Text = "Parola";
             // 
-            // txt_KullanıcıAdı
+            // txt_KullaniciAdi
             // 
-            this.txt_KullanıcıAdı.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txt_KullanıcıAdı.Location = new System.Drawing.Point(652, 109);
-            this.txt_KullanıcıAdı.Multiline = true;
-            this.txt_KullanıcıAdı.Name = "txt_KullanıcıAdı";
-            this.txt_KullanıcıAdı.Size = new System.Drawing.Size(217, 32);
-            this.txt_KullanıcıAdı.TabIndex = 0;
+            this.txt_KullaniciAdi.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txt_KullaniciAdi.Location = new System.Drawing.Point(652, 109);
+            this.txt_KullaniciAdi.Multiline = true;
+            this.txt_KullaniciAdi.Name = "txt_KullaniciAdi";
+            this.txt_KullaniciAdi.Size = new System.Drawing.Size(217, 32);
+            this.txt_KullaniciAdi.TabIndex = 0;
             // 
-            // btn_Giriş
+            // btn_Giris
             // 
-            this.btn_Giriş.BackColor = System.Drawing.Color.White;
-            this.btn_Giriş.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Giriş.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btn_Giriş.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btn_Giriş.Location = new System.Drawing.Point(645, 238);
-            this.btn_Giriş.Name = "btn_Giriş";
-            this.btn_Giriş.Size = new System.Drawing.Size(217, 44);
-            this.btn_Giriş.TabIndex = 2;
-            this.btn_Giriş.Text = "&GİRİŞ";
-            this.btn_Giriş.UseVisualStyleBackColor = false;
-            this.btn_Giriş.Click += new System.EventHandler(this.btn_Giriş_Click);
+            this.btn_Giris.BackColor = System.Drawing.Color.White;
+            this.btn_Giris.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Giris.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btn_Giris.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_Giris.Location = new System.Drawing.Point(645, 238);
+            this.btn_Giris.Name = "btn_Giris";
+            this.btn_Giris.Size = new System.Drawing.Size(217, 44);
+            this.btn_Giris.TabIndex = 2;
+            this.btn_Giris.Text = "&GİRİŞ";
+            this.btn_Giris.UseVisualStyleBackColor = false;
+            this.btn_Giris.Click += new System.EventHandler(this.btn_Giriş_Click);
             // 
             // btn_sifreUnuttum
             // 
@@ -145,30 +145,30 @@
             this.btn_yeniKullanıcı.TabIndex = 4;
             this.btn_yeniKullanıcı.Text = "YENİ KULLANICI";
             this.btn_yeniKullanıcı.UseVisualStyleBackColor = true;
-            this.btn_yeniKullanıcı.Click += new System.EventHandler(this.btn_yeniKullanıcı_Click);
+            this.btn_yeniKullanıcı.Click += new System.EventHandler(this.btn_yeniKullanici_Click);
             // 
-            // PanelYeniKayıt
+            // PanelYeniKayit
             // 
-            this.PanelYeniKayıt.BackColor = System.Drawing.Color.Transparent;
-            this.PanelYeniKayıt.Controls.Add(this.comboBox_yetki);
-            this.PanelYeniKayıt.Controls.Add(this.btn_kayıtKapat);
-            this.PanelYeniKayıt.Controls.Add(this.label5);
-            this.PanelYeniKayıt.Controls.Add(this.label6);
-            this.PanelYeniKayıt.Controls.Add(this.lbl_yeniParolaTekrar);
-            this.PanelYeniKayıt.Controls.Add(this.lbl_hataKayıtParola2);
-            this.PanelYeniKayıt.Controls.Add(this.lbl_hataKayıtParola1);
-            this.PanelYeniKayıt.Controls.Add(this.lbl_hataKayıtKullanıcıAdı);
-            this.PanelYeniKayıt.Controls.Add(this.btn_YeniKayıtEkle);
-            this.PanelYeniKayıt.Controls.Add(this.lbl_YeniParola);
-            this.PanelYeniKayıt.Controls.Add(this.lblYeniKullanıcıAdı);
-            this.PanelYeniKayıt.Controls.Add(this.txt_kayıtKullanıcıAdı);
-            this.PanelYeniKayıt.Controls.Add(this.txt_kayıtParola);
-            this.PanelYeniKayıt.Controls.Add(this.txt_kayıtParola2);
-            this.PanelYeniKayıt.Location = new System.Drawing.Point(12, 109);
-            this.PanelYeniKayıt.Name = "PanelYeniKayıt";
-            this.PanelYeniKayıt.Size = new System.Drawing.Size(474, 557);
-            this.PanelYeniKayıt.TabIndex = 5;
-            this.PanelYeniKayıt.Visible = false;
+            this.PanelYeniKayit.BackColor = System.Drawing.Color.Transparent;
+            this.PanelYeniKayit.Controls.Add(this.comboBox_yetki);
+            this.PanelYeniKayit.Controls.Add(this.btn_kayitKapat);
+            this.PanelYeniKayit.Controls.Add(this.label5);
+            this.PanelYeniKayit.Controls.Add(this.label6);
+            this.PanelYeniKayit.Controls.Add(this.lbl_yeniParolaTekrar);
+            this.PanelYeniKayit.Controls.Add(this.lbl_hataKayitParola2);
+            this.PanelYeniKayit.Controls.Add(this.lbl_hataKayitParola1);
+            this.PanelYeniKayit.Controls.Add(this.lbl_hataKayitKullaniciAdi);
+            this.PanelYeniKayit.Controls.Add(this.btn_YeniKayitEkle);
+            this.PanelYeniKayit.Controls.Add(this.lbl_YeniParola);
+            this.PanelYeniKayit.Controls.Add(this.lblYeniKullanıcıAdı);
+            this.PanelYeniKayit.Controls.Add(this.txt_kayitKullaniciAdi);
+            this.PanelYeniKayit.Controls.Add(this.txt_kayitParola);
+            this.PanelYeniKayit.Controls.Add(this.txt_kayitParola2);
+            this.PanelYeniKayit.Location = new System.Drawing.Point(12, 109);
+            this.PanelYeniKayit.Name = "PanelYeniKayit";
+            this.PanelYeniKayit.Size = new System.Drawing.Size(474, 557);
+            this.PanelYeniKayit.TabIndex = 5;
+            this.PanelYeniKayit.Visible = false;
             // 
             // comboBox_yetki
             // 
@@ -183,16 +183,16 @@
             this.comboBox_yetki.Size = new System.Drawing.Size(212, 31);
             this.comboBox_yetki.TabIndex = 10;
             // 
-            // btn_kayıtKapat
+            // btn_kayitKapat
             // 
-            this.btn_kayıtKapat.Image = ((System.Drawing.Image)(resources.GetObject("btn_kayıtKapat.Image")));
-            this.btn_kayıtKapat.Location = new System.Drawing.Point(385, 20);
-            this.btn_kayıtKapat.Name = "btn_kayıtKapat";
-            this.btn_kayıtKapat.Size = new System.Drawing.Size(35, 35);
-            this.btn_kayıtKapat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btn_kayıtKapat.TabIndex = 9;
-            this.btn_kayıtKapat.TabStop = false;
-            this.btn_kayıtKapat.Click += new System.EventHandler(this.btn_kayıtKapat_Click);
+            this.btn_kayitKapat.Image = ((System.Drawing.Image)(resources.GetObject("btn_kayitKapat.Image")));
+            this.btn_kayitKapat.Location = new System.Drawing.Point(385, 20);
+            this.btn_kayitKapat.Name = "btn_kayitKapat";
+            this.btn_kayitKapat.Size = new System.Drawing.Size(35, 35);
+            this.btn_kayitKapat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btn_kayitKapat.TabIndex = 9;
+            this.btn_kayitKapat.TabStop = false;
+            this.btn_kayitKapat.Click += new System.EventHandler(this.btn_kayitKapat_Click);
             // 
             // label5
             // 
@@ -232,52 +232,52 @@
             this.lbl_yeniParolaTekrar.TabIndex = 0;
             this.lbl_yeniParolaTekrar.Text = "Parola";
             // 
-            // lbl_hataKayıtParola2
+            // lbl_hataKayitParola2
             // 
-            this.lbl_hataKayıtParola2.AutoSize = true;
-            this.lbl_hataKayıtParola2.BackColor = System.Drawing.Color.White;
-            this.lbl_hataKayıtParola2.ForeColor = System.Drawing.Color.Red;
-            this.lbl_hataKayıtParola2.Location = new System.Drawing.Point(187, 201);
-            this.lbl_hataKayıtParola2.Name = "lbl_hataKayıtParola2";
-            this.lbl_hataKayıtParola2.Size = new System.Drawing.Size(184, 16);
-            this.lbl_hataKayıtParola2.TabIndex = 7;
-            this.lbl_hataKayıtParola2.Text = "BU ALAN BOŞ BIRAKILAMAZ";
-            this.lbl_hataKayıtParola2.Visible = false;
+            this.lbl_hataKayitParola2.AutoSize = true;
+            this.lbl_hataKayitParola2.BackColor = System.Drawing.Color.White;
+            this.lbl_hataKayitParola2.ForeColor = System.Drawing.Color.Red;
+            this.lbl_hataKayitParola2.Location = new System.Drawing.Point(187, 201);
+            this.lbl_hataKayitParola2.Name = "lbl_hataKayitParola2";
+            this.lbl_hataKayitParola2.Size = new System.Drawing.Size(184, 16);
+            this.lbl_hataKayitParola2.TabIndex = 7;
+            this.lbl_hataKayitParola2.Text = "BU ALAN BOŞ BIRAKILAMAZ";
+            this.lbl_hataKayitParola2.Visible = false;
             // 
-            // lbl_hataKayıtParola1
+            // lbl_hataKayitParola1
             // 
-            this.lbl_hataKayıtParola1.AutoSize = true;
-            this.lbl_hataKayıtParola1.BackColor = System.Drawing.Color.White;
-            this.lbl_hataKayıtParola1.ForeColor = System.Drawing.Color.Red;
-            this.lbl_hataKayıtParola1.Location = new System.Drawing.Point(188, 142);
-            this.lbl_hataKayıtParola1.Name = "lbl_hataKayıtParola1";
-            this.lbl_hataKayıtParola1.Size = new System.Drawing.Size(184, 16);
-            this.lbl_hataKayıtParola1.TabIndex = 7;
-            this.lbl_hataKayıtParola1.Text = "BU ALAN BOŞ BIRAKILAMAZ";
-            this.lbl_hataKayıtParola1.Visible = false;
+            this.lbl_hataKayitParola1.AutoSize = true;
+            this.lbl_hataKayitParola1.BackColor = System.Drawing.Color.White;
+            this.lbl_hataKayitParola1.ForeColor = System.Drawing.Color.Red;
+            this.lbl_hataKayitParola1.Location = new System.Drawing.Point(188, 142);
+            this.lbl_hataKayitParola1.Name = "lbl_hataKayitParola1";
+            this.lbl_hataKayitParola1.Size = new System.Drawing.Size(184, 16);
+            this.lbl_hataKayitParola1.TabIndex = 7;
+            this.lbl_hataKayitParola1.Text = "BU ALAN BOŞ BIRAKILAMAZ";
+            this.lbl_hataKayitParola1.Visible = false;
             // 
-            // lbl_hataKayıtKullanıcıAdı
+            // lbl_hataKayitKullaniciAdi
             // 
-            this.lbl_hataKayıtKullanıcıAdı.AutoSize = true;
-            this.lbl_hataKayıtKullanıcıAdı.BackColor = System.Drawing.Color.White;
-            this.lbl_hataKayıtKullanıcıAdı.ForeColor = System.Drawing.Color.Red;
-            this.lbl_hataKayıtKullanıcıAdı.Location = new System.Drawing.Point(187, 80);
-            this.lbl_hataKayıtKullanıcıAdı.Name = "lbl_hataKayıtKullanıcıAdı";
-            this.lbl_hataKayıtKullanıcıAdı.Size = new System.Drawing.Size(184, 16);
-            this.lbl_hataKayıtKullanıcıAdı.TabIndex = 7;
-            this.lbl_hataKayıtKullanıcıAdı.Text = "BU ALAN BOŞ BIRAKILAMAZ";
-            this.lbl_hataKayıtKullanıcıAdı.Visible = false;
+            this.lbl_hataKayitKullaniciAdi.AutoSize = true;
+            this.lbl_hataKayitKullaniciAdi.BackColor = System.Drawing.Color.White;
+            this.lbl_hataKayitKullaniciAdi.ForeColor = System.Drawing.Color.Red;
+            this.lbl_hataKayitKullaniciAdi.Location = new System.Drawing.Point(187, 80);
+            this.lbl_hataKayitKullaniciAdi.Name = "lbl_hataKayitKullaniciAdi";
+            this.lbl_hataKayitKullaniciAdi.Size = new System.Drawing.Size(184, 16);
+            this.lbl_hataKayitKullaniciAdi.TabIndex = 7;
+            this.lbl_hataKayitKullaniciAdi.Text = "BU ALAN BOŞ BIRAKILAMAZ";
+            this.lbl_hataKayitKullaniciAdi.Visible = false;
             // 
-            // btn_YeniKayıtEkle
+            // btn_YeniKayitEkle
             // 
-            this.btn_YeniKayıtEkle.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_YeniKayıtEkle.Location = new System.Drawing.Point(185, 375);
-            this.btn_YeniKayıtEkle.Name = "btn_YeniKayıtEkle";
-            this.btn_YeniKayıtEkle.Size = new System.Drawing.Size(217, 44);
-            this.btn_YeniKayıtEkle.TabIndex = 4;
-            this.btn_YeniKayıtEkle.Text = "KAYIT EKLE";
-            this.btn_YeniKayıtEkle.UseVisualStyleBackColor = true;
-            this.btn_YeniKayıtEkle.Click += new System.EventHandler(this.btn_YeniKayıtEkle_Click);
+            this.btn_YeniKayitEkle.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_YeniKayitEkle.Location = new System.Drawing.Point(185, 375);
+            this.btn_YeniKayitEkle.Name = "btn_YeniKayitEkle";
+            this.btn_YeniKayitEkle.Size = new System.Drawing.Size(217, 44);
+            this.btn_YeniKayitEkle.TabIndex = 4;
+            this.btn_YeniKayitEkle.Text = "KAYIT EKLE";
+            this.btn_YeniKayitEkle.UseVisualStyleBackColor = true;
+            this.btn_YeniKayitEkle.Click += new System.EventHandler(this.btn_YeniKayitEkle_Click);
             // 
             // lbl_YeniParola
             // 
@@ -307,32 +307,32 @@
             this.lblYeniKullanıcıAdı.TabIndex = 0;
             this.lblYeniKullanıcıAdı.Text = "Kullanıcı Adı";
             // 
-            // txt_kayıtKullanıcıAdı
+            // txt_kayitKullaniciAdi
             // 
-            this.txt_kayıtKullanıcıAdı.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txt_kayıtKullanıcıAdı.Location = new System.Drawing.Point(185, 97);
-            this.txt_kayıtKullanıcıAdı.Multiline = true;
-            this.txt_kayıtKullanıcıAdı.Name = "txt_kayıtKullanıcıAdı";
-            this.txt_kayıtKullanıcıAdı.Size = new System.Drawing.Size(217, 32);
-            this.txt_kayıtKullanıcıAdı.TabIndex = 1;
+            this.txt_kayitKullaniciAdi.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txt_kayitKullaniciAdi.Location = new System.Drawing.Point(185, 97);
+            this.txt_kayitKullaniciAdi.Multiline = true;
+            this.txt_kayitKullaniciAdi.Name = "txt_kayitKullaniciAdi";
+            this.txt_kayitKullaniciAdi.Size = new System.Drawing.Size(217, 32);
+            this.txt_kayitKullaniciAdi.TabIndex = 1;
             // 
-            // txt_kayıtParola
+            // txt_kayitParola
             // 
-            this.txt_kayıtParola.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txt_kayıtParola.Location = new System.Drawing.Point(185, 159);
-            this.txt_kayıtParola.Multiline = true;
-            this.txt_kayıtParola.Name = "txt_kayıtParola";
-            this.txt_kayıtParola.Size = new System.Drawing.Size(217, 32);
-            this.txt_kayıtParola.TabIndex = 1;
+            this.txt_kayitParola.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txt_kayitParola.Location = new System.Drawing.Point(185, 159);
+            this.txt_kayitParola.Multiline = true;
+            this.txt_kayitParola.Name = "txt_kayitParola";
+            this.txt_kayitParola.Size = new System.Drawing.Size(217, 32);
+            this.txt_kayitParola.TabIndex = 1;
             // 
-            // txt_kayıtParola2
+            // txt_kayitParola2
             // 
-            this.txt_kayıtParola2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txt_kayıtParola2.Location = new System.Drawing.Point(185, 219);
-            this.txt_kayıtParola2.Multiline = true;
-            this.txt_kayıtParola2.Name = "txt_kayıtParola2";
-            this.txt_kayıtParola2.Size = new System.Drawing.Size(217, 32);
-            this.txt_kayıtParola2.TabIndex = 1;
+            this.txt_kayitParola2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txt_kayitParola2.Location = new System.Drawing.Point(185, 219);
+            this.txt_kayitParola2.Multiline = true;
+            this.txt_kayitParola2.Name = "txt_kayitParola2";
+            this.txt_kayitParola2.Size = new System.Drawing.Size(217, 32);
+            this.txt_kayitParola2.TabIndex = 1;
             // 
             // panel_SifreDegistir
             // 
@@ -340,14 +340,14 @@
             this.panel_SifreDegistir.Controls.Add(this.btn_parolaKapat);
             this.panel_SifreDegistir.Controls.Add(this.label4);
             this.panel_SifreDegistir.Controls.Add(this.lbl_hataUnuttumParola2);
-            this.panel_SifreDegistir.Controls.Add(this.lbl_hataParolaKullanıcıadı);
+            this.panel_SifreDegistir.Controls.Add(this.lbl_hataParolaKullaniciAdi);
             this.panel_SifreDegistir.Controls.Add(this.lbl_hataUnuttumParola1);
             this.panel_SifreDegistir.Controls.Add(this.label2);
             this.panel_SifreDegistir.Controls.Add(this.btn_yeniParolaKaydet);
             this.panel_SifreDegistir.Controls.Add(this.txt_YeniParola2);
             this.panel_SifreDegistir.Controls.Add(this.txt_YeniParola);
             this.panel_SifreDegistir.Controls.Add(this.label1);
-            this.panel_SifreDegistir.Controls.Add(this.txt_parolaKullanıcıAdı);
+            this.panel_SifreDegistir.Controls.Add(this.txt_parolaKullaniciAdi);
             this.panel_SifreDegistir.Controls.Add(this.label3);
             this.panel_SifreDegistir.Location = new System.Drawing.Point(539, 296);
             this.panel_SifreDegistir.Name = "panel_SifreDegistir";
@@ -388,17 +388,17 @@
             this.lbl_hataUnuttumParola2.Text = "BU ALAN BOŞ BIRAKILAMAZ";
             this.lbl_hataUnuttumParola2.Visible = false;
             // 
-            // lbl_hataParolaKullanıcıadı
+            // lbl_hataParolaKullaniciAdi
             // 
-            this.lbl_hataParolaKullanıcıadı.AutoSize = true;
-            this.lbl_hataParolaKullanıcıadı.BackColor = System.Drawing.Color.White;
-            this.lbl_hataParolaKullanıcıadı.ForeColor = System.Drawing.Color.Red;
-            this.lbl_hataParolaKullanıcıadı.Location = new System.Drawing.Point(197, 85);
-            this.lbl_hataParolaKullanıcıadı.Name = "lbl_hataParolaKullanıcıadı";
-            this.lbl_hataParolaKullanıcıadı.Size = new System.Drawing.Size(184, 16);
-            this.lbl_hataParolaKullanıcıadı.TabIndex = 7;
-            this.lbl_hataParolaKullanıcıadı.Text = "BU ALAN BOŞ BIRAKILAMAZ";
-            this.lbl_hataParolaKullanıcıadı.Visible = false;
+            this.lbl_hataParolaKullaniciAdi.AutoSize = true;
+            this.lbl_hataParolaKullaniciAdi.BackColor = System.Drawing.Color.White;
+            this.lbl_hataParolaKullaniciAdi.ForeColor = System.Drawing.Color.Red;
+            this.lbl_hataParolaKullaniciAdi.Location = new System.Drawing.Point(197, 85);
+            this.lbl_hataParolaKullaniciAdi.Name = "lbl_hataParolaKullaniciAdi";
+            this.lbl_hataParolaKullaniciAdi.Size = new System.Drawing.Size(184, 16);
+            this.lbl_hataParolaKullaniciAdi.TabIndex = 7;
+            this.lbl_hataParolaKullaniciAdi.Text = "BU ALAN BOŞ BIRAKILAMAZ";
+            this.lbl_hataParolaKullaniciAdi.Visible = false;
             // 
             // lbl_hataUnuttumParola1
             // 
@@ -470,14 +470,14 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Parola";
             // 
-            // txt_parolaKullanıcıAdı
+            // txt_parolaKullaniciAdi
             // 
-            this.txt_parolaKullanıcıAdı.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txt_parolaKullanıcıAdı.Location = new System.Drawing.Point(191, 105);
-            this.txt_parolaKullanıcıAdı.Multiline = true;
-            this.txt_parolaKullanıcıAdı.Name = "txt_parolaKullanıcıAdı";
-            this.txt_parolaKullanıcıAdı.Size = new System.Drawing.Size(217, 32);
-            this.txt_parolaKullanıcıAdı.TabIndex = 1;
+            this.txt_parolaKullaniciAdi.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txt_parolaKullaniciAdi.Location = new System.Drawing.Point(191, 105);
+            this.txt_parolaKullaniciAdi.Multiline = true;
+            this.txt_parolaKullaniciAdi.Name = "txt_parolaKullaniciAdi";
+            this.txt_parolaKullaniciAdi.Size = new System.Drawing.Size(217, 32);
+            this.txt_parolaKullaniciAdi.TabIndex = 1;
             // 
             // label3
             // 
@@ -493,17 +493,17 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Kullanıcı Adı";
             // 
-            // lbl_hataKullanıcıAdı
+            // lbl_hataKullaniciAdi
             // 
-            this.lbl_hataKullanıcıAdı.AutoSize = true;
-            this.lbl_hataKullanıcıAdı.BackColor = System.Drawing.Color.White;
-            this.lbl_hataKullanıcıAdı.ForeColor = System.Drawing.Color.Red;
-            this.lbl_hataKullanıcıAdı.Location = new System.Drawing.Point(658, 89);
-            this.lbl_hataKullanıcıAdı.Name = "lbl_hataKullanıcıAdı";
-            this.lbl_hataKullanıcıAdı.Size = new System.Drawing.Size(184, 16);
-            this.lbl_hataKullanıcıAdı.TabIndex = 7;
-            this.lbl_hataKullanıcıAdı.Text = "BU ALAN BOŞ BIRAKILAMAZ";
-            this.lbl_hataKullanıcıAdı.Visible = false;
+            this.lbl_hataKullaniciAdi.AutoSize = true;
+            this.lbl_hataKullaniciAdi.BackColor = System.Drawing.Color.White;
+            this.lbl_hataKullaniciAdi.ForeColor = System.Drawing.Color.Red;
+            this.lbl_hataKullaniciAdi.Location = new System.Drawing.Point(658, 89);
+            this.lbl_hataKullaniciAdi.Name = "lbl_hataKullaniciAdi";
+            this.lbl_hataKullaniciAdi.Size = new System.Drawing.Size(184, 16);
+            this.lbl_hataKullaniciAdi.TabIndex = 7;
+            this.lbl_hataKullaniciAdi.Text = "BU ALAN BOŞ BIRAKILAMAZ";
+            this.lbl_hataKullaniciAdi.Visible = false;
             // 
             // lbl_hataParola
             // 
@@ -517,18 +517,18 @@
             this.lbl_hataParola.Text = "BU ALAN BOŞ BIRAKILAMAZ";
             this.lbl_hataParola.Visible = false;
             // 
-            // btn_cıkıs
+            // btn_cikis
             // 
-            this.btn_cıkıs.BackColor = System.Drawing.Color.Transparent;
-            this.btn_cıkıs.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btn_cıkıs.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btn_cıkıs.Location = new System.Drawing.Point(1090, 2);
-            this.btn_cıkıs.Name = "btn_cıkıs";
-            this.btn_cıkıs.Size = new System.Drawing.Size(42, 36);
-            this.btn_cıkıs.TabIndex = 11;
-            this.btn_cıkıs.Text = "&X";
-            this.btn_cıkıs.UseVisualStyleBackColor = false;
-            this.btn_cıkıs.Click += new System.EventHandler(this.btn_cıkıs_Click_1);
+            this.btn_cikis.BackColor = System.Drawing.Color.Transparent;
+            this.btn_cikis.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btn_cikis.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_cikis.Location = new System.Drawing.Point(1090, 2);
+            this.btn_cikis.Name = "btn_cikis";
+            this.btn_cikis.Size = new System.Drawing.Size(42, 36);
+            this.btn_cikis.TabIndex = 11;
+            this.btn_cikis.Text = "&X";
+            this.btn_cikis.UseVisualStyleBackColor = false;
+            this.btn_cikis.Click += new System.EventHandler(this.btn_cikis_Click_1);
             // 
             // txt_Parola
             // 
@@ -541,33 +541,33 @@
             // 
             // Login
             // 
-            this.AcceptButton = this.btn_Giriş;
+            this.AcceptButton = this.btn_Giris;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DodgerBlue;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.CancelButton = this.btn_cıkıs;
+            this.CancelButton = this.btn_cikis;
             this.ClientSize = new System.Drawing.Size(1132, 690);
-            this.Controls.Add(this.btn_cıkıs);
+            this.Controls.Add(this.btn_cikis);
             this.Controls.Add(this.lbl_hataParola);
-            this.Controls.Add(this.lbl_hataKullanıcıAdı);
-            this.Controls.Add(this.PanelYeniKayıt);
+            this.Controls.Add(this.lbl_hataKullaniciAdi);
+            this.Controls.Add(this.PanelYeniKayit);
             this.Controls.Add(this.panel_SifreDegistir);
             this.Controls.Add(this.btn_yeniKullanıcı);
             this.Controls.Add(this.btn_sifreUnuttum);
-            this.Controls.Add(this.btn_Giriş);
-            this.Controls.Add(this.txt_KullanıcıAdı);
+            this.Controls.Add(this.btn_Giris);
+            this.Controls.Add(this.txt_KullaniciAdi);
             this.Controls.Add(this.lbl_Parola);
-            this.Controls.Add(this.lbl_KullanıcıAdı);
+            this.Controls.Add(this.lbl_KullaniciAdi);
             this.Controls.Add(this.txt_Parola);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Login_Load);
-            this.PanelYeniKayıt.ResumeLayout(false);
-            this.PanelYeniKayıt.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_kayıtKapat)).EndInit();
+            this.PanelYeniKayit.ResumeLayout(false);
+            this.PanelYeniKayit.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_kayitKapat)).EndInit();
             this.panel_SifreDegistir.ResumeLayout(false);
             this.panel_SifreDegistir.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_parolaKapat)).EndInit();
@@ -578,19 +578,19 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lbl_KullanıcıAdı;
+        private System.Windows.Forms.Label lbl_KullaniciAdi;
         private System.Windows.Forms.Label lbl_Parola;
-        private System.Windows.Forms.TextBox txt_KullanıcıAdı;
-        private System.Windows.Forms.Button btn_Giriş;
+        private System.Windows.Forms.TextBox txt_KullaniciAdi;
+        private System.Windows.Forms.Button btn_Giris;
         private System.Windows.Forms.LinkLabel btn_sifreUnuttum;
         private System.Windows.Forms.Button btn_yeniKullanıcı;
-        private System.Windows.Forms.Panel PanelYeniKayıt;
+        private System.Windows.Forms.Panel PanelYeniKayit;
         private System.Windows.Forms.Label lbl_YeniParola;
         private System.Windows.Forms.Label lblYeniKullanıcıAdı;
         private System.Windows.Forms.Label lbl_yeniParolaTekrar;
-        private System.Windows.Forms.TextBox txt_kayıtKullanıcıAdı;
-        private System.Windows.Forms.TextBox txt_kayıtParola2;
-        private System.Windows.Forms.Button btn_YeniKayıtEkle;
+        private System.Windows.Forms.TextBox txt_kayitKullaniciAdi;
+        private System.Windows.Forms.TextBox txt_kayitParola2;
+        private System.Windows.Forms.Button btn_YeniKayitEkle;
         private System.Windows.Forms.Panel panel_SifreDegistir;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btn_yeniParolaKaydet;
@@ -599,21 +599,21 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbl_hataUnuttumParola2;
         private System.Windows.Forms.Label lbl_hataUnuttumParola1;
-        private System.Windows.Forms.Label lbl_hataKullanıcıAdı;
+        private System.Windows.Forms.Label lbl_hataKullaniciAdi;
         private System.Windows.Forms.Label lbl_hataParola;
-        private System.Windows.Forms.Label lbl_hataKayıtParola1;
-        private System.Windows.Forms.Label lbl_hataKayıtKullanıcıAdı;
-        private System.Windows.Forms.Label lbl_hataKayıtParola2;
-        private System.Windows.Forms.Label lbl_hataParolaKullanıcıadı;
-        private System.Windows.Forms.TextBox txt_parolaKullanıcıAdı;
+        private System.Windows.Forms.Label lbl_hataKayitParola1;
+        private System.Windows.Forms.Label lbl_hataKayitKullaniciAdi;
+        private System.Windows.Forms.Label lbl_hataKayitParola2;
+        private System.Windows.Forms.Label lbl_hataParolaKullaniciAdi;
+        private System.Windows.Forms.TextBox txt_parolaKullaniciAdi;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.PictureBox btn_kayıtKapat;
+        private System.Windows.Forms.PictureBox btn_kayitKapat;
         private System.Windows.Forms.PictureBox btn_parolaKapat;
-        private System.Windows.Forms.Button btn_cıkıs;
+        private System.Windows.Forms.Button btn_cikis;
         private System.Windows.Forms.TextBox txt_Parola;
-        private System.Windows.Forms.TextBox txt_kayıtParola;
+        private System.Windows.Forms.TextBox txt_kayitParola;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox comboBox_yetki;
     }

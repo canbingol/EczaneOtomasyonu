@@ -15,7 +15,7 @@ namespace EczaneOtomasyon.Forms.AnaPanel
 
     public partial class AnaPanel : Form
     {
-        static public int kapasite = 30000;
+        static public int kapasite = 10000;
         string toplamIlac;
         string baglanti = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=EczaneVeri.accdb";
         int deger;
@@ -36,27 +36,18 @@ namespace EczaneOtomasyon.Forms.AnaPanel
                 }
             }
         }
-
+        // toplam ilaç değerini alıp ilgili label e atayan metod 
         void IlacSayisi()
         {
             using (OleDbConnection con = new OleDbConnection(baglanti))
             {
-                string sorgu = "SELECT SUM(adet) FROM İlaçlar";
+                string sorgu = "SELECT SUM(adet) FROM Ilaclar";
 
                 using (OleDbCommand cmd = new OleDbCommand(sorgu, con))
                 {
                     con.Open();
                     object result = cmd.ExecuteScalar();
 
-                    //if (result != DBNull.Value)
-                    //{
-                    //    int toplamAdet = Convert.ToInt32(result);
-                    //    toplamIlac = toplamAdet.ToString();
-                    //}
-                    //else
-                    //{
-                    //    toplamIlac = "0";
-                    //}
                     int toplamAdet = (result == DBNull.Value || result == null) ? 0 : Convert.ToInt32(result);
                     toplamIlac = toplamAdet.ToString();
                 }
@@ -65,14 +56,14 @@ namespace EczaneOtomasyon.Forms.AnaPanel
         string yetki;
         void YetkiKontrol()
         {
-            string kullanici = Login.aktifKullanıcı;
+            string kullanici = Login.aktifKullanici;
             using (OleDbConnection con = new OleDbConnection(baglanti))
             {
                 con.Open();
-                string sorgu = "SELECT yetki FROM Kullanıcılar WHERE kullanıcıadı=@kullanıcı";
+                string sorgu = "SELECT yetki FROM Kullanicilar WHERE kullaniciAdi=@kullanici";
                 using (OleDbCommand cmd = new OleDbCommand(sorgu, con))
                 {
-                    cmd.Parameters.AddWithValue("@kullanıcı", kullanici);
+                    cmd.Parameters.AddWithValue("@kullanici", kullanici);
                     using (OleDbDataReader yetkiOku = cmd.ExecuteReader())
                     {
                         if (yetkiOku.Read())
@@ -81,39 +72,39 @@ namespace EczaneOtomasyon.Forms.AnaPanel
                             if (yetki == "calisan")
                             {
                                 lbl_hasta.Text = "****"; lbl_hastaProfil.Enabled = true;
-                                lbl_toplamİlaç.Text = "****"; lbl_ilaç.Enabled = true; lbl_ilaçSayısı.Text = "****";
+                                lbl_toplamIlac.Text = "****"; lbl_ilac.Enabled = true; lbl_ilacSayisi.Text = "****";
                                 lbl_toplamKazanc.Text = "****"; lbl_recete.Text = "****"; lbl_bugunKazanc.Text = "****";
 
                             }
                         }
-
                     }
                 }
             }
         }
         private void AnaPanel_Load(object sender, EventArgs e)
         {
-            IlacSayisi();
+            IlacSayisi(); // toplam ilaç değerini alıp ilgili label e atayan metod çagılıdı
             int deger = Convert.ToInt32(toplamIlac);
             int oran = (deger * 100) / kapasite;
-            bar_dolulukOranı.Value = deger;
-            lbl_doluluk.Text = "ECZANE DOLULUK ORANI -->" + "%" + oran.ToString();
+            bar_dolulukOrani.Value = deger;
+            lbl_doluluk.Text = "ECZANE DOLULUK ORANI " + "%" + oran.ToString();
 
-            lbl_aktifKullanıcı.Text = Login.aktifKullanıcı.ToUpper();
+            lbl_aktifKullanici.Text = Login.aktifKullanici.ToUpper();
             ToplamDeger("SELECT COUNT(*) FROM Hastalar", lbl_hasta);
-            ToplamDeger("SELECT COUNT(*) FROM İlaçlar", lbl_ilaçSayısı);
-            ToplamDeger("SELECT SUM(adet) FROM İlaçlar", lbl_toplamİlaç);
-            ToplamDeger("SELECT COUNT(*) FROM Reçeteler", lbl_recete);
+            ToplamDeger("SELECT COUNT(*) FROM Ilaclar", lbl_ilacSayisi);
+            ToplamDeger("SELECT SUM(adet) FROM Ilaclar", lbl_toplamIlac);
+            ToplamDeger("SELECT COUNT(*) FROM Receteler", lbl_recete);
             ToplamCiroAl();
             BugunCiroAl();
             YetkiKontrol();
         }
+        // satislar tablosundan toplam satışları çekip ilgili label e atar
         void ToplamCiroAl()
         {
             using (OleDbConnection con = new OleDbConnection(baglanti))
             {
                 con.Open();
-                string sorgu = "SELECT SUM(ToplamFiyat) FROM Satislar";
+                string sorgu = "SELECT SUM(toplamFiyat) FROM Satislar";
                 using (OleDbCommand ciro = new OleDbCommand(sorgu, con))
                 {
                     object toplam = ciro.ExecuteScalar();
@@ -122,19 +113,20 @@ namespace EczaneOtomasyon.Forms.AnaPanel
                 }
             }
         }
+        // satislar tablosundan bu güne ait satışları çekip ilgili label e atar
         void BugunCiroAl()
         {
             DateTime bugun = DateTime.Today;
-            string tarihParams = bugun.Day.ToString() + "." + bugun.Month.ToString() + "." + bugun.Year.ToString();
+            string tarih = bugun.Day.ToString() + "." + bugun.Month.ToString() + "." + bugun.Year.ToString();
             try
             {
                 using (OleDbConnection con = new OleDbConnection(baglanti))
                 {
                     con.Open();
-                    string sorgu = "SELECT SUM(ToplamFiyat) FROM Satislar WHERE SatisTarihi=@tarih";
+                    string sorgu = "SELECT SUM(toplamFiyat) FROM Satislar WHERE SatisTarihi=@tarih";
                     using (OleDbCommand ciro = new OleDbCommand(sorgu, con))
                     {
-                        ciro.Parameters.AddWithValue("@tarih", tarihParams);
+                        ciro.Parameters.AddWithValue("@tarih", tarih );
 
                         object toplam = ciro.ExecuteScalar();
                         int sonuc = (toplam == DBNull.Value || toplam == null) ? 0 : Convert.ToInt32(toplam);
@@ -148,7 +140,8 @@ namespace EczaneOtomasyon.Forms.AnaPanel
             }
         }
         Form aktifForm = null;
-        void AltFormGöster(Form altForm)
+        // bu form üzerinde başka bir formu göstermek için
+        void AltFormGoster(Form altForm)
         {
             btn_kapat.Visible = true;
             pnl_alt.Controls.Clear();
@@ -164,13 +157,13 @@ namespace EczaneOtomasyon.Forms.AnaPanel
             altForm.Show();
 
         }
+        // giriş yapan çalışana göre eyetki kontrolü yapılıyor
         private void lbl_hastaProfil_DoubleClick(object sender, EventArgs e)
         {
             if (yetki == "calisan")
                 MessageBox.Show("YETKİSİZ ERİŞİM");
             else
-                AltFormGöster(new HastaProfil());
-
+                AltFormGoster(new HastaProfil());
         }
 
         private void btn_kapat_Click(object sender, EventArgs e)
@@ -178,14 +171,14 @@ namespace EczaneOtomasyon.Forms.AnaPanel
             btn_kapat.Visible = false;
             pnl_alt.Visible = false;
         }
+        // giriş yapan çalışana göre eyetki kontrolü yapılıyor
 
-        private void lbl_ilaç_DoubleClick(object sender, EventArgs e)
+        private void lbl_ilac_DoubleClick(object sender, EventArgs e)
         {
             if (yetki == "calisan")
                 MessageBox.Show("YETKİSİZ ERİŞİM");
             else
-                AltFormGöster(new Stok());
+                AltFormGoster(new Stok());
         }
-
     }
 }

@@ -30,23 +30,23 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnaPanel));
             this.lbl_hastaProfil = new System.Windows.Forms.Label();
-            this.lbl_ilaç = new System.Windows.Forms.Label();
+            this.lbl_ilac = new System.Windows.Forms.Label();
             this.lbl_toplamKazancYazi = new System.Windows.Forms.Label();
             this.lbl_bugunKazancYazi = new System.Windows.Forms.Label();
             this.lbl_toplamKazanc = new System.Windows.Forms.Label();
             this.pnl_kullanıcı = new System.Windows.Forms.Panel();
             this.btn_kapat = new System.Windows.Forms.Button();
-            this.lbl_aktifKullanıcı = new System.Windows.Forms.Label();
+            this.lbl_aktifKullanici = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_hasta = new System.Windows.Forms.Label();
             this.lbl_bugunKazanc = new System.Windows.Forms.Label();
-            this.lbl_toplamİlaç = new System.Windows.Forms.Label();
+            this.lbl_toplamIlac = new System.Windows.Forms.Label();
             this.lbl_recete = new System.Windows.Forms.Label();
             this.lbl_receteYazi = new System.Windows.Forms.Label();
-            this.lbl_ilaçSayısı = new System.Windows.Forms.Label();
+            this.lbl_ilacSayisi = new System.Windows.Forms.Label();
             this.lbl_ilacSayiYazi = new System.Windows.Forms.Label();
-            this.bar_dolulukOranı = new System.Windows.Forms.ProgressBar();
+            this.bar_dolulukOrani = new System.Windows.Forms.ProgressBar();
             this.label3 = new System.Windows.Forms.Label();
             this.lbl_doluluk = new System.Windows.Forms.Label();
             this.pnl_ana = new System.Windows.Forms.Panel();
@@ -70,24 +70,23 @@
             this.lbl_hastaProfil.TabIndex = 0;
             this.lbl_hastaProfil.Text = "TOPLAM HASTA";
             this.lbl_hastaProfil.TextAlign = System.Drawing.ContentAlignment.TopRight;
-//            this.lbl_hastaProfil.Click += new System.EventHandler(this.lbl_hastaProfil_Click);
             this.lbl_hastaProfil.DoubleClick += new System.EventHandler(this.lbl_hastaProfil_DoubleClick);
             // 
-            // lbl_ilaç
+            // lbl_ilac
             // 
-            this.lbl_ilaç.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(84)))), ((int)(((byte)(193)))));
-            this.lbl_ilaç.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbl_ilaç.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lbl_ilaç.ForeColor = System.Drawing.Color.White;
-            this.lbl_ilaç.Image = ((System.Drawing.Image)(resources.GetObject("lbl_ilaç.Image")));
-            this.lbl_ilaç.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl_ilaç.Location = new System.Drawing.Point(30, 174);
-            this.lbl_ilaç.Name = "lbl_ilaç";
-            this.lbl_ilaç.Size = new System.Drawing.Size(326, 97);
-            this.lbl_ilaç.TabIndex = 0;
-            this.lbl_ilaç.Text = "TOPLAM İLAÇ ADETİ";
-            this.lbl_ilaç.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.lbl_ilaç.DoubleClick += new System.EventHandler(this.lbl_ilaç_DoubleClick);
+            this.lbl_ilac.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(84)))), ((int)(((byte)(193)))));
+            this.lbl_ilac.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_ilac.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lbl_ilac.ForeColor = System.Drawing.Color.White;
+            this.lbl_ilac.Image = ((System.Drawing.Image)(resources.GetObject("lbl_ilac.Image")));
+            this.lbl_ilac.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.lbl_ilac.Location = new System.Drawing.Point(30, 174);
+            this.lbl_ilac.Name = "lbl_ilac";
+            this.lbl_ilac.Size = new System.Drawing.Size(326, 97);
+            this.lbl_ilac.TabIndex = 0;
+            this.lbl_ilac.Text = "TOPLAM İLAÇ ADETİ";
+            this.lbl_ilac.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lbl_ilac.DoubleClick += new System.EventHandler(this.lbl_ilac_DoubleClick);
             // 
             // lbl_toplamKazancYazi
             // 
@@ -137,7 +136,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnl_kullanıcı.BackColor = System.Drawing.Color.DodgerBlue;
             this.pnl_kullanıcı.Controls.Add(this.btn_kapat);
-            this.pnl_kullanıcı.Controls.Add(this.lbl_aktifKullanıcı);
+            this.pnl_kullanıcı.Controls.Add(this.lbl_aktifKullanici);
             this.pnl_kullanıcı.Controls.Add(this.label7);
             this.pnl_kullanıcı.Controls.Add(this.pictureBox1);
             this.pnl_kullanıcı.Location = new System.Drawing.Point(0, 0);
@@ -158,16 +157,16 @@
             this.btn_kapat.Visible = false;
             this.btn_kapat.Click += new System.EventHandler(this.btn_kapat_Click);
             // 
-            // lbl_aktifKullanıcı
+            // lbl_aktifKullanici
             // 
-            this.lbl_aktifKullanıcı.AutoSize = true;
-            this.lbl_aktifKullanıcı.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lbl_aktifKullanıcı.ForeColor = System.Drawing.Color.White;
-            this.lbl_aktifKullanıcı.Location = new System.Drawing.Point(175, 62);
-            this.lbl_aktifKullanıcı.Name = "lbl_aktifKullanıcı";
-            this.lbl_aktifKullanıcı.Size = new System.Drawing.Size(36, 25);
-            this.lbl_aktifKullanıcı.TabIndex = 2;
-            this.lbl_aktifKullanıcı.Text = "ad";
+            this.lbl_aktifKullanici.AutoSize = true;
+            this.lbl_aktifKullanici.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lbl_aktifKullanici.ForeColor = System.Drawing.Color.White;
+            this.lbl_aktifKullanici.Location = new System.Drawing.Point(175, 62);
+            this.lbl_aktifKullanici.Name = "lbl_aktifKullanici";
+            this.lbl_aktifKullanici.Size = new System.Drawing.Size(36, 25);
+            this.lbl_aktifKullanici.TabIndex = 2;
+            this.lbl_aktifKullanici.Text = "ad";
             // 
             // label7
             // 
@@ -215,17 +214,17 @@
             this.lbl_bugunKazanc.TabIndex = 3;
             this.lbl_bugunKazanc.Text = "0";
             // 
-            // lbl_toplamİlaç
+            // lbl_toplamIlac
             // 
-            this.lbl_toplamİlaç.AutoSize = true;
-            this.lbl_toplamİlaç.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(84)))), ((int)(((byte)(193)))));
-            this.lbl_toplamİlaç.Font = new System.Drawing.Font("Microsoft YaHei", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lbl_toplamİlaç.ForeColor = System.Drawing.Color.Black;
-            this.lbl_toplamİlaç.Location = new System.Drawing.Point(221, 211);
-            this.lbl_toplamİlaç.Name = "lbl_toplamİlaç";
-            this.lbl_toplamİlaç.Size = new System.Drawing.Size(34, 37);
-            this.lbl_toplamİlaç.TabIndex = 3;
-            this.lbl_toplamİlaç.Text = "0";
+            this.lbl_toplamIlac.AutoSize = true;
+            this.lbl_toplamIlac.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(84)))), ((int)(((byte)(193)))));
+            this.lbl_toplamIlac.Font = new System.Drawing.Font("Microsoft YaHei", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lbl_toplamIlac.ForeColor = System.Drawing.Color.Black;
+            this.lbl_toplamIlac.Location = new System.Drawing.Point(221, 211);
+            this.lbl_toplamIlac.Name = "lbl_toplamIlac";
+            this.lbl_toplamIlac.Size = new System.Drawing.Size(34, 37);
+            this.lbl_toplamIlac.TabIndex = 3;
+            this.lbl_toplamIlac.Text = "0";
             // 
             // lbl_recete
             // 
@@ -254,17 +253,17 @@
             this.lbl_receteYazi.Text = "TOPLAM REÇETE";
             this.lbl_receteYazi.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // lbl_ilaçSayısı
+            // lbl_ilacSayisi
             // 
-            this.lbl_ilaçSayısı.AutoSize = true;
-            this.lbl_ilaçSayısı.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(84)))), ((int)(((byte)(193)))));
-            this.lbl_ilaçSayısı.Font = new System.Drawing.Font("Microsoft YaHei", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lbl_ilaçSayısı.ForeColor = System.Drawing.Color.Black;
-            this.lbl_ilaçSayısı.Location = new System.Drawing.Point(649, 211);
-            this.lbl_ilaçSayısı.Name = "lbl_ilaçSayısı";
-            this.lbl_ilaçSayısı.Size = new System.Drawing.Size(34, 37);
-            this.lbl_ilaçSayısı.TabIndex = 3;
-            this.lbl_ilaçSayısı.Text = "0";
+            this.lbl_ilacSayisi.AutoSize = true;
+            this.lbl_ilacSayisi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(84)))), ((int)(((byte)(193)))));
+            this.lbl_ilacSayisi.Font = new System.Drawing.Font("Microsoft YaHei", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lbl_ilacSayisi.ForeColor = System.Drawing.Color.Black;
+            this.lbl_ilacSayisi.Location = new System.Drawing.Point(649, 211);
+            this.lbl_ilacSayisi.Name = "lbl_ilacSayisi";
+            this.lbl_ilacSayisi.Size = new System.Drawing.Size(34, 37);
+            this.lbl_ilacSayisi.TabIndex = 3;
+            this.lbl_ilacSayisi.Text = "0";
             // 
             // lbl_ilacSayiYazi
             // 
@@ -281,15 +280,15 @@
             this.lbl_ilacSayiYazi.Text = "İLAÇ SAYISI";
             this.lbl_ilacSayiYazi.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // bar_dolulukOranı
+            // bar_dolulukOrani
             // 
-            this.bar_dolulukOranı.Location = new System.Drawing.Point(35, 457);
-            this.bar_dolulukOranı.Maximum = 30000;
-            this.bar_dolulukOranı.Minimum = 1;
-            this.bar_dolulukOranı.Name = "bar_dolulukOranı";
-            this.bar_dolulukOranı.Size = new System.Drawing.Size(245, 62);
-            this.bar_dolulukOranı.TabIndex = 12;
-            this.bar_dolulukOranı.Value = 1;
+            this.bar_dolulukOrani.Location = new System.Drawing.Point(35, 457);
+            this.bar_dolulukOrani.Maximum = 10000;
+            this.bar_dolulukOrani.Minimum = 1;
+            this.bar_dolulukOrani.Name = "bar_dolulukOrani";
+            this.bar_dolulukOrani.Size = new System.Drawing.Size(245, 62);
+            this.bar_dolulukOrani.TabIndex = 12;
+            this.bar_dolulukOrani.Value = 1;
             // 
             // label3
             // 
@@ -323,17 +322,17 @@
             this.pnl_ana.BackColor = System.Drawing.Color.White;
             this.pnl_ana.Controls.Add(this.lbl_toplamKazanc);
             this.pnl_ana.Controls.Add(this.lbl_doluluk);
-            this.pnl_ana.Controls.Add(this.bar_dolulukOranı);
-            this.pnl_ana.Controls.Add(this.lbl_ilaçSayısı);
+            this.pnl_ana.Controls.Add(this.bar_dolulukOrani);
+            this.pnl_ana.Controls.Add(this.lbl_ilacSayisi);
             this.pnl_ana.Controls.Add(this.lbl_toplamKazancYazi);
             this.pnl_ana.Controls.Add(this.lbl_recete);
             this.pnl_ana.Controls.Add(this.lbl_ilacSayiYazi);
             this.pnl_ana.Controls.Add(this.lbl_bugunKazanc);
             this.pnl_ana.Controls.Add(this.lbl_receteYazi);
-            this.pnl_ana.Controls.Add(this.lbl_toplamİlaç);
+            this.pnl_ana.Controls.Add(this.lbl_toplamIlac);
             this.pnl_ana.Controls.Add(this.lbl_bugunKazancYazi);
             this.pnl_ana.Controls.Add(this.lbl_hasta);
-            this.pnl_ana.Controls.Add(this.lbl_ilaç);
+            this.pnl_ana.Controls.Add(this.lbl_ilac);
             this.pnl_ana.Controls.Add(this.lbl_hastaProfil);
             this.pnl_ana.Location = new System.Drawing.Point(39, 155);
             this.pnl_ana.Name = "pnl_ana";
@@ -375,22 +374,22 @@
         #endregion
 
         private System.Windows.Forms.Label lbl_hastaProfil;
-        private System.Windows.Forms.Label lbl_ilaç;
+        private System.Windows.Forms.Label lbl_ilac;
         private System.Windows.Forms.Label lbl_bugunKazancYazi;
         private System.Windows.Forms.Label lbl_toplamKazancYazi;
         private System.Windows.Forms.Label lbl_toplamKazanc;
         private System.Windows.Forms.Panel pnl_kullanıcı;
         private System.Windows.Forms.Label lbl_hasta;
         private System.Windows.Forms.Label lbl_bugunKazanc;
-        private System.Windows.Forms.Label lbl_toplamİlaç;
+        private System.Windows.Forms.Label lbl_toplamIlac;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lbl_recete;
         private System.Windows.Forms.Label lbl_receteYazi;
-        private System.Windows.Forms.Label lbl_aktifKullanıcı;
-        private System.Windows.Forms.Label lbl_ilaçSayısı;
+        private System.Windows.Forms.Label lbl_aktifKullanici;
+        private System.Windows.Forms.Label lbl_ilacSayisi;
         private System.Windows.Forms.Label lbl_ilacSayiYazi;
-        private System.Windows.Forms.ProgressBar bar_dolulukOranı;
+        private System.Windows.Forms.ProgressBar bar_dolulukOrani;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbl_doluluk;
         private System.Windows.Forms.Panel pnl_ana;

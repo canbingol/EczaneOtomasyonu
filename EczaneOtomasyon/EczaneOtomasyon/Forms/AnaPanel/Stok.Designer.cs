@@ -422,12 +422,12 @@
             this.datagrid_ilac.AllowUserToDeleteRows = false;
             this.datagrid_ilac.BackgroundColor = System.Drawing.Color.White;
             this.datagrid_ilac.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datagrid_ilac.Location = new System.Drawing.Point(8, 410);
+            this.datagrid_ilac.Location = new System.Drawing.Point(-2, 410);
             this.datagrid_ilac.Name = "datagrid_ilac";
             this.datagrid_ilac.ReadOnly = true;
             this.datagrid_ilac.RowHeadersWidth = 51;
             this.datagrid_ilac.RowTemplate.Height = 24;
-            this.datagrid_ilac.Size = new System.Drawing.Size(806, 261);
+            this.datagrid_ilac.Size = new System.Drawing.Size(838, 261);
             this.datagrid_ilac.TabIndex = 7;
             // 
             // Stok
@@ -435,7 +435,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(816, 675);
+            this.ClientSize = new System.Drawing.Size(837, 675);
             this.Controls.Add(this.datagrid_ilac);
             this.Controls.Add(this.pnl_diger);
             this.Controls.Add(this.pnl_tansiyon);
